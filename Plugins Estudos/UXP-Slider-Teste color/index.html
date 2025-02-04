@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+	<link  href="modal.html" >
+</head>
+
+<style>
+ 	@charset "UTF-8";
+	*{margin: 0; }
+	body{cursor: Default;  padding:10px}
+
+    .main{
+        width: 232px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        color: rgb(196, 197, 197);
+        border:  1px solid rgb(73, 72, 72); 
+        padding: 5px;
+        background-color: #5e5e5e;
+        border-radius: 7px;
+     }
+
+    .pnlEQcores{
+        width: 210px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 2px;
+        padding: 10px;
+        background-color: #525151;
+        border-radius: 3px;
+        margin-top: -2px;
+        border-left: 1px solid #3d3d3d;
+    }
+    
+    .coln1{
+        width:27%;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: rgb(167, 167, 164);
+        align-items:flex-end;
+        padding: 7px;
+        margin-top: -10px; 
+    }
+    .cores{ margin-top: 7px; } 
+
+    .coln2{
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        padding:0px;
+     }
+     .slider{ padding: 0px; margin:-2px; } 
+
+    .coln3{
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #c2c2c2;
+        text-align: center;
+        justify-content: flex-start;
+        margin-top: -8px;
+        padding: 5px;
+     }
+    .valoes{ 
+        width: 30px;
+        background-color: #39393a;
+        border-radius: 3px;
+        padding: 3px;
+        margin: 1.5px;
+    }
+
+    .btnMedio { 
+        width: 59px;
+        height: 20px;
+        background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+        border: 1px solid #232323;   
+        outline: none;
+        color: #d5d2d2;  
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        margin: 1px;
+        padding: 2px;
+        border-radius: 2px;
+        line-height: 14px; /*Alina o texto verticalmente*/
+    }	
+
+    .btnMedio:hover{	
+        background: #aca8a8;
+        color: rgb(0, 0, 0);
+    }
+
+    .btnMedio:active{	
+        background:#3e6c92;
+        color: rgb(0, 0, 0);
+        transform: translate(0px, 1px);
+        border-top: 3px solid #232323;
+    }
+
+    .btnIcons { 
+        width:30px; 
+        height:28px;
+        background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+        border: 1px solid #3d3d3d;
+        border-left: 1px solid #747373;
+        color:#d8d8d8;
+        font-family: UXPSfxIcon;
+        font-size: 18px;
+        text-align:center; /*Alina o texto horizontalmente*/
+        line-height: 28px; /*Alina o texto verticalmente*/
+        border-radius: 4px;
+    }	
+
+    .btnIcons:hover{	
+        background:#3e6c92;
+     }
+    .btnIcons:active{	
+        background:#3e6c92;
+        transform: translate(0px, 1px);
+        border-top: 3px solid #232323;
+    }
+    .selecionado{
+        background: #525151;
+    }
+
+    .ajustOff{display: none;}
+    .ajustON{display: flex;}
+
+    .sp-dropDowA{
+         width: 137px; height: 20px; margin: 2px;  font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #d6d4d4;
+     }
+    .sp-dropDowB{
+        background-color: #878b8d;
+        overflow-x: hidden;
+    }
+    .sp-dropDowC{
+        transform: translateX(-5px); font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #1d1d1d;
+        display: flex; 
+        width: 112px;
+        height: 10px;
+    }
+</style>
+
+<body>
+    <div class="main">
+    
+    <div style="width: 100%; display: flex; align-items: center; margin-left: 10px;">
+        <div class="btnIcons ajustIcon selecionado" id="ajbtn1" style="font-size: 15px;">8</div>
+        <div class="btnIcons ajustIcon" id="ajbtn2" >9</div>
+        <div class="btnIcons ajustIcon" id="ajbtn3">0</div>
+        <h6 id="tituloAba" style="margin-left: 5px;">BALANÇO DE CORES</h6>
+    </div>
+
+    <div id="aj1" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Ciano</p> 
+            <p class="cores">Magenta</p> 
+            <p class="cores">Yellow</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld1" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5" ></sp-slider>
+            <sp-slider id="sld2" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld3" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld1" class="cores valoes">0</p> 
+            <p id="vsld2" class="cores valoes">0</p> 
+            <p id="vsld3" class="cores valoes">0</p> 
+        </div>
+    </div>
+
+    <div  id="aj2" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Hue</p> 
+            <p class="cores">Saturar</p> 
+            <p class="cores">Lightne</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld4" variant="filled" fill-offset="left" class="slider" size="s" min="-180" max="180" value="0" step="5"></sp-slider>
+            <sp-slider id="sld5" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld6" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld4" class="cores valoes">0</p> 
+            <p id="vsld5" class="cores valoes">0</p> 
+            <p id="vsld6" class="cores valoes">0</p> 
+        </div>
+    </div>
+     
+    <div id="aj3" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Brilho</p> 
+            <p class="cores">Contrast</p> 
+            <p class="cores">CLarear</p> 
+            <p class="cores">Escurece</p> 
+            <p class="cores">Sombras</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld7" variant="filled" fill-offset="left" class="slider" size="s" min="-150" max="150" value="0" step="5"></sp-slider>
+            <sp-slider id="sld8" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld9" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld10" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld11" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0" step="5"></sp-slider>
+         </div>
+        <div class="coln3">
+            <p id="vsld7" class="cores valoes">0</p> 
+            <p id="vsld8" class="cores valoes">0</p> 
+            <p id="vsld9" class="cores valoes">0</p> 
+            <p id="vsld10" class="cores valoes">0</p> 
+            <p id="vsld11" class="cores valoes">0</p> 
+        </div>
+      </div>
+ 
+        <sp-checkbox size="s" checked " ><label style="transform: translateX(-5px); font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #c2c2c2;">Preview</label></sp-checkbox >
+        <div class="btnMedio"  id="resetar" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; width: 70px;">Resetar</div>  
+
+        <div style=" display: flex;padding: 3px; align-items: center; border: 1px solid #747373; padding: 5px; background-color: #525151; padding-top: 18px;  border-radius: 4px;transform: translateY(3px);">
+            <!-- <select id="list_MD" style="width: 133px ; margin: 2px;"></select>-->
+            <sp-dropdown  class="sp-dropDowA"  size="s" > <sp-menu  id="list_MD" class="sp-dropDowB" slot="options" > </sp-menu> </sp-dropdown>
+            <div class="btnIcons" id="btnAddPresset" style="height: 26px;  line-height: 25px; transform: translateY(2px);">R</div>
+            <div class="btnIcons" id="btnRemover" style="height: 26px;  line-height: 25px; transform: translateY(2px);">M</div>
+        </div>
+        <label style="font-size: 11px; transform: translate( -64px, -44px);">Predefinições</label>
+    </div>
+    <dialog id="dlgAjuste"style="padding: 10px;"></dialog> 
+
+</body>
+
+</html>
+
+

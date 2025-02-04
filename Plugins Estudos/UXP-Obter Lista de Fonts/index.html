@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+    @charset "UTF-8";
+   *{margin: 0; }
+   body{
+        cursor: Default;  
+        padding:10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+     }
+
+     .lista-btns-base{
+       width: 205px;
+       height: 22px;
+       align-items: center;
+       line-height:19px;
+       color: rgb(255, 255, 255);
+       border:  1px solid rgb(110, 109, 109); 
+       padding-left: 9px ;
+       background-color: #2d2e2e;
+       border-radius: 3px; 
+       position: relative;
+       font-size: 11px;
+     }
+     .icon{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+     .lista{
+        width: 100%;
+        /* display:none; */
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+     }
+
+   .lista_btns{
+       width: 200px;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(58, 58, 58); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #3e3f3f;
+       overflow-y: scroll; height: 125px;
+    }
+
+   .btns{
+        width: 200px;
+        height: 20px; 
+        color: rgb(224, 220, 220);
+        text-align: left;
+        line-height: 15px;
+        border-radius: 0px; 
+        font-size: 10px;
+        padding-left: 5px ;
+        display: block;
+     }
+
+    .btns:hover{	
+        background: #666565;
+        color: rgb(0, 0, 0);
+    }
+
+    .clicado { 
+        background-color:#979797;
+        color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0); 
+    }
+
+</style>
+
+
+<body>
+    <div class="lista-btns-base"><div  id="result"  >Item 1</div><div class="icon"><img src="icons/iconList.png" ></div></div>
+    <div class="lista"> <div class="lista_btns"  id="container"></div></div>
+</body>
+</html>  

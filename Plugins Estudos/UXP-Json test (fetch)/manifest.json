@@ -1,0 +1,126 @@
+{
+  "id": "UXP-TABELA-DINAMICA",
+  "name": "UXP-Tabelas",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.2.0",
+      "data":{
+        "apiVersion": 2
+      }
+    }
+  ],
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "webview": {
+      "allow": "yes",
+      "domains": "all",
+      "allowLocalRendering": "yes",
+      "enableMessageBridge": "localAndRemote"
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "fullAccess",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "UXP-Tabelas",
+        "en-US": "UXP-Tabelas",
+        "es-ES": "UXP-Tabelas"
+      },
+      "minimumSize": {
+        "width": 230,
+        "height": 320
+      },
+      "maximumSize": {
+        "width": 230,
+        "height": 320
+      },
+      "preferredDockedSize": {
+        "width": 230,
+        "height": 320
+      },
+      "preferredFloatingSize": {
+        "width": 230,
+        "height": 320
+      },
+      "commands": [
+        {
+          "id": "show_alert",
+          "label": {
+            "default": "Show Alert",
+            "en-US": "Show Alert (US)",
+            "es-ES": "Show Alert (ES)"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+           "path": "icons/light.png",
+          "scale": [1,2],
+          "theme": [ "dark", "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/dark.png",
+           "scale": [
+            1,
+            2
+          ],
+          "theme": [ "lightest", "light" ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_D.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_N.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}

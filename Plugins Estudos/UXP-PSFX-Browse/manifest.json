@@ -1,0 +1,121 @@
+{
+  "id": "UXP-BROWSE",
+  "name": "PSFX-Browse",
+  "version": "1.0.0",
+  "host": {
+    "app": "PS",
+    "minVersion": "24.2.0",
+    "data": {
+      "apiVersion": 2
+    }
+  },
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "webview": {
+      "allow": "yes",
+      "domains": "all",
+      "allowLocalRendering": "yes",
+      "enableMessageBridge": "localAndRemote"
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "fullAccess",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "mainPanel",
+      "label": "PSFX-Browse",
+      "minimumSize": {
+        "width": 137,
+        "height": 270
+      },
+      "maximumSize": {
+        "width": 137,
+        "height": 278
+      },
+      "preferredDockedSize": {
+        "width": 137,
+        "height": 278
+      },
+      "preferredFloatingSize": {
+        "width": 650,
+        "height": 658
+      },
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/light.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "dark",
+            "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/light.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "lightest",
+            "light"
+          ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/light.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/light.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ],
+  "featureFlags": {
+    "enableExperimentalWebviewSupport": true
+  }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+
+@charset "UTF-8";
+*{margin: 0; }
+body{cursor: Default}
+
+.container{
+		width: 100%;
+		height: 100%; 
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center; 
+		/* border:  1px solid rgb(65, 65, 65);  */
+		padding: 10px;
+		/* margin-top: 10px;  */
+		position: relative;
+	}
+
+	.ckeckbox {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		font-family: Arial, Helvetica, sans-serif;
+		color: rgb(212, 212, 212);
+		font-size: 10px; 
+		align-items: center; 
+		margin-bottom: 5px;
+	}
+
+	.botoes{
+		width: 100%;
+		height: 25px;
+		justify-content: center;
+		font-family: Arial, Helvetica, sans-serif;
+		color: rgb(212, 212, 212);
+		font-size: 10px; 
+		align-items: center; 
+	}
+
+	.container2{
+		width: 100%;
+		height: 100%; 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; 
+		border:  1px solid rgb(65, 65, 65); 
+		padding: 10px;
+		/* margin-top: 10px;  */
+		position: relative;
+		border-radius: 10px; 
+	}
+
+	.container3{
+		width: 100%;
+		height: 100%; 
+		display: flex;
+		justify-content: center;
+		align-items: center; 
+		border:  1px solid rgb(65, 65, 65); 
+		padding: 10px;
+		/* margin-top: 10px;  */
+		position: relative;
+		border-radius: 10px; 
+	}
+
+
+	.lista-btns-base{
+       width: 100%;
+       height: 18px;
+       align-items: center;
+       line-height:19px;
+       color: rgb(255, 255, 255);
+       border:  1px solid rgb(110, 109, 109); 
+       padding-left: 9px ;
+       /* background-color: #2d2e2e; */
+       border-radius: 3px; 
+       position: relative;
+       font-size: 11px;
+     }
+     .icon{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+     .lista{
+        width: 100%;
+        display:none;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+		display: block;
+     }
+
+   .lista_btns{
+       width: 100%;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(58, 58, 58); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #444343; 
+       overflow-y: scroll; height: 125px;
+    }
+
+   .btns{
+        width: 200px;
+        height: 15px; 
+        color: rgb(224, 220, 220);
+        text-align: left;
+        line-height: 15px;
+        border-radius: 0px; 
+        font-size: 11px;
+        padding-left: 5px ;
+        display: block;
+     }
+
+    .btns:hover{	
+        background: #979797;
+        color: rgb(0, 0, 0);
+    }
+
+	.btnMedio { 
+			width: 100%;
+			height: 22px;
+			background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+			border: 1px solid #232323;
+			outline: none;
+			color: #d5d2d2;
+			text-align: center;
+			line-height:15px;
+			font-family: Arial, sans-serif;
+			font-size: 11px;
+			margin: 5px;
+			padding: 2px;
+			border-radius: 3px;
+		}	
+
+		.btnMedio:hover{	
+			background: #aca8a8;
+			color: rgb(0, 0, 0);
+		}
+
+		.btnMedio:active{	
+			background:#3e6c92;
+			color: rgb(0, 0, 0);
+			transform: translate(0px, 1px);
+			border-top: 3px solid #232323;
+		}
+
+    .clicado { 
+        background-color:#2d2c2c;
+        color: rgb(190, 189, 189);
+    }
+
+	.gpImagSize{
+		width: 100%;
+        display: flex;
+        flex-direction: row;
+        border:  1px solid rgb(68, 67, 67); 
+        border-radius: 5px;
+		padding: 5px;
+		background-color: #5a5959;
+	}
+
+	.textfield{
+		width: 60%;
+		height: 23px;
+		margin: 0px;
+		padding: 5px;
+	}
+
+	.txtSt{
+		width: 70px;
+		color: #b6b4b4;
+		font-size: 12px;
+	}
+
+    .coluna1{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        color: beige;
+        text-align:right;
+        justify-content:flex-start;
+        padding: 5px;
+		transform: translate(-54px, 0px);
+    }
+
+	.coluna2{
+        width: 80%;
+		height: 60%;
+        display: flex;
+        flex-direction: column;
+        color: beige;
+  		position: absolute;
+		left: 40px;
+		transform: translate(0px, 3px);
+     }
+
+
+</style>
+
+
+<body>
+	<div class="container">
+		<div class="container2">
+			<div style="display: flex; width: 100%;">
+			<div class="btnMedio" id="btn1" style="margin: 1px; width: 40%" >Size</div>
+			<div class="btnMedio" id="btn2" style="margin: 1px; width: 70%" >UpSize</div>
+		   </div>
+			 <div class="gpImagSize">
+
+            <div class="coluna1"  >
+				<small class="txtSt">W:</small>
+				<small class="txtSt" style="margin-top: 8px;">H:</small>
+				<small class="txtSt" style="margin-top: 5px;">R:</small>
+			</div>
+
+			<div class="coluna2">
+				<input type="text" id="sizeL" name="fname" class="textfield" placeholder="cm">
+				<input type="text" id="sizeA" name="fname" class="textfield" placeholder="cm">
+				<input type="text" id="resol" name="fname" class="textfield"placeholder="dpi">
+			</div>
+			 </div>
+			 <h5 id="mb-result" style="color: #d8d6d6; margin-top: 5px;">Size</h5> 
+		</div>
+		
+		
+	</div>
+</body>
+
+</html>
+
+

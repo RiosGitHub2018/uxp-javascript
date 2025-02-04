@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<style>
+	.Rectangle {
+		width: 118px; 
+		height: 60px;
+		margin-left: 16px; 
+		padding: 10px;
+		margin-top:15px;
+		border: 1px solid #3a3a3a; 
+		background: #424242;
+	}
+	
+	.textStyle{	font-size:11px; text-align:right; font-family: Arial; font-weight: normal; font-style: normal; color: #d5d2d2; margin-top:0px;}
+</style>
+
+<body>
+
+    <img class="style_bg" src="images/--bg.png">
+    <div id="panel_pr">		        
+		<sp-action-button id="importIMG" style='left:15px;top:10px;width:120px;height:24px; font-size: 12px; ' >Layer Bounds</sp-action-button>
+    </div>
+	
+	 <div class ="Rectangle">	
+		<sp-detail id="largura" class="textStyle" >Largura: ?</sp-detail>
+		<sp-detail id="altura" class="textStyle">Altura: ?</sp-detail>
+	 </div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+{
+  "id": "TEXT-CONFIG",
+  "name": "Text-Configs",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.2.0",
+      "data":{
+        "apiVersion": 2
+      }
+    }
+  ],
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "webview": {
+      "allow": "yes",
+      "domains": "all",
+      "allowLocalRendering": "yes",
+      "enableMessageBridge": "localAndRemote"
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "fullAccess",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "Text-Configs"
+      },
+      "minimumSize": {
+        "width": 270,
+        "height": 530
+      },
+      "maximumSize": {
+        "width": 270,
+        "height": 530
+      },
+      "preferredDockedSize": {
+        "width": 270,
+        "height": 530
+      },
+      "preferredFloatingSize": {
+        "width": 150,
+        "height": 530
+      },
+      "commands": [
+        {
+          "id": "show_alert",
+          "label": {
+            "default": "Show Alert",
+            "en-US": "Show Alert (US)",
+            "es-ES": "Show Alert (ES)"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "width": 46,
+          "height": 46,
+           "path": "icons/light.png",
+          "scale": [1,2],
+          "theme": [ "dark", "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 46,
+          "height": 46,
+          "path": "icons/dark.png",
+           "scale": [
+            1,
+            2
+          ],
+          "theme": [ "lightest", "light" ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 46,
+      "height": 46,
+      "path": "icons/icon_D.png",
+      "scale": [1, 2],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 46,
+      "height": 46,
+      "path": "icons/icon_N.png",
+      "scale": [1, 2],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}

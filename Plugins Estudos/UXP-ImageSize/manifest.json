@@ -1,0 +1,113 @@
+{
+  "id": "UXP-IMAGE-SIZE",
+  "name": "ImageSize",
+  "version": "1.0.1",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "host": {
+    "app": "PS",
+    "minVersion": "24.2.0"
+  },
+  "requiredPermissions": {
+    "webview": {
+      "allow": "yes",
+      "domains": "all",
+      "allowLocalRendering": "yes",
+      "enableMessageBridge": "localAndRemote"
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "mainPanel",
+      "label": "ImageSize",
+      "minimumSize": {
+        "width": 137,
+        "height": 200
+      },
+      "maximumSize": {
+        "width": 137,
+        "height":200
+      },
+      "preferredDockedSize": {
+        "width": 137,
+        "height": 200
+      },
+      "preferredFloatingSize": {
+        "width": 650,
+        "height": 650
+      },
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/light.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "dark",
+            "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/light.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "lightest",
+            "light"
+          ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/light.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/light.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ],
+  "featureFlags": {
+    "enableExperimentalWebviewSupport": true
+  }
+}

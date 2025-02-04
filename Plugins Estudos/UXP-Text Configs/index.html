@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+
+    .text-element {
+        font-family: 'UXP PSfxIcons';
+        font-size: 25px;
+        color: #aca8a8;
+        border-radius: 3px; 
+        padding: 3px;
+        height: 35px;
+        margin: 2px;
+        display: flex;
+        align-items: center; 
+     }
+        
+    @charset "UTF-8";
+   *{margin: 30; }
+
+     .interface{
+        width: 90%;
+        height: 100%; 
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; 
+        padding: 10px;
+        position: relative;
+        cursor: default;
+     }
+
+     .conteudo{
+		width: 100%;
+		height: 100%; 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; 
+		border:  1px solid rgb(65, 65, 65); 
+		padding: 10px;
+		position: relative;
+		border-radius: 10px; 
+	}
+
+    .Paineis{
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        border:  1px solid rgb(65, 65, 65); 
+        padding: 8px;
+        position: relative;
+        border-radius: 5px; 
+    }
+     
+     .Edit-text-config{
+        width: 100%;
+        height: 25px;
+        margin: 0px;
+        padding: 2px;
+        background-color: #353434;
+        border: none;
+	}
+
+    .Sliders-config{
+        width: 200px;
+        padding: 10px;
+        align-items: center; 
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border:  1px solid rgb(68, 67, 67); 
+        border-radius: 5px;
+        background-color:#3d3c3c;
+        margin: 2px;
+    }
+
+    .Painel-fonte-color{
+        width: 200px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content:center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border:  1px solid rgb(68, 67, 67); 
+    }
+
+    .botaoColor {
+		  background-color: #000;
+          border:  1px solid rgb(68, 67, 67); 
+		  cursor: pointer;
+		  width: 40px;
+		  height: 20px;
+          margin: 5px
+		}
+
+    .btn-alinhar-txt { 
+        width: 23px;
+        height: 20px;
+        outline: none;
+        color: #d5d2d2;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        margin: 1px;
+        padding: 2px;
+        /* border-radius: 2px; */
+    }	
+
+    .btn-alinhar-txt:hover{	
+        background: #aca8a8;
+        color: rgb(0, 0, 0);
+    }
+
+    .selecionado {
+          background-color:#383838;
+    }
+
+</style>
+
+
+<body>
+    <div class="interface" id="container">
+        <div class="conteudo">
+              
+            <div class="Paineis">
+                <sp-label class="desiner " slot="label" style="font-size: 18px;">Configurações de Texto</sp-label> 
+              <form> <select id="list_MD"  style="width: 185px"></select></form>
+
+                <div style="width: 100%; display: flex;">
+                    <input id="busca-font" class="desiner Edit-text-config" type="text" id="sizeL" placeholder="Buscar fontes">
+                    <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(0px, 0px); background-color: #353434;  color: #d5d2d2; padding: 4px;"> 
+                        <svg viewBox="0 0 20 20" style="width: 20px; height: 15px;">
+                        <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+    
+
+            <div class="Painel-fonte-color">
+            <sp-label class="desiner " slot="label" style="width: 60px;">Fonte Color</sp-label> 
+            <div  id= "btnColor" class="botaoColor "> </div>
+       
+
+            <div class="btn-alinhar-txt" id="btnAlg01">
+                <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(-2px, 1px); "> 
+                    <svg viewBox="0 0 20 20" style="width: 20px; height: 15px;">
+                        <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><rect class="fill" height="2" rx="0.5" width="12" x="2" y="14" />
+                        <rect class="fill" height="2" rx="0.5" width="15" x="2" y="2" /> <rect class="fill" height="2" rx="0.5" width="12" x="2" y="6" /> <rect class="fill" height="2" rx="0.5" width="15" x="2" y="10" />
+                      </svg>
+                </div>
+            </div>
+
+            <div class="btn-alinhar-txt" id="btnAlg02">
+                <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(0px, 1px); "> 
+                    <svg viewBox="0 0 20 20" style="width: 20px; height: 15px;">
+                        <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><rect class="fill" height="2" rx="0.5" width="10" x="4" y="14" />
+                        <rect class="fill" height="2" rx="0.5" width="16" x="1" y="10" />
+                        <rect class="fill" height="2" rx="0.5" width="16" x="1" y="2" />
+                        <rect class="fill" height="2" rx="0.5" width="10" x="4" y="6" />
+                      </svg>
+                </div>
+            </div>
+
+            <div class="btn-alinhar-txt" id="btnAlg03">
+                <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(0px, 1px); "> 
+                    <svg viewBox="0 0 20 20" style="width: 20px; height: 15px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><rect class="fill" height="2" rx="0.5" width="12" x="4" y="14" />
+                    <rect class="fill" height="2" rx="0.5" width="15" x="1" y="2" /> <rect class="fill" height="2" rx="0.5" width="12" x="4" y="6" /> <rect class="fill" height="2" rx="0.5" width="15" x="1" y="10" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <div  style="display: flex; width: 100%; align-items: center;">
+            <!-- <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(-2px, 1px); color: #adadad;"> <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;"> <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M6.75,9A.25.25,0,0,1,7,9.25v1.5a.25.25,0,0,1-.25.25h-.5A.25.25,0,0,1,6,10.75V10H4v5h.75a.25.25,0,0,1,.25.25v.5a.25.25,0,0,1-.25.25H2.25A.25.25,0,0,1,2,15.75v-.5A.25.25,0,0,1,2.25,15H3V10H1v.75A.25.25,0,0,1,.75,11H.25A.25.25,0,0,1,0,10.75V9.25A.25.25,0,0,1,.25,9Z" /> <path class="fill" d="M4.5,2a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h1A.5.5,0,0,0,6,5.5V4h4V14H8.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5H12V4h4V5.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-3a.5.5,0,0,0-.5-.5Z" /> </svg> </div> -->
+            <sp-slider size="s" id="ftSize" class="Sliders-config" min="1" max="300" value="50"> <sp-label slot="label">Fonte Size</sp-label> </sp-slider>
+        </div>
+
+        <div  style="display: flex; width: 100%; align-items: center;">
+            <!-- <div class ="icon_color"  slot="icon"  style="fill: currentColor; transform: translate(-2px, 1px); color: #adadad;"> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                <g transform="matrix(39.6358,0,0,39.6358,-3241.92,-169.572)"> <g> <path d="M81.908,4.649l0.075,0l-0.089,0.069l-0.097-0.069l0.076,0V4.374l-0.076,0l0.097-0.071l0.089,0.07l-0.075,0V4.649z"/> </g> </g> <g> <rect x="6.792" y="8.936" width="10.875" height="0.625"/> </g> <g> <path d="M11.117,6.53l-0.215,0.528c-0.191,0.47-0.504,0.704-0.941,0.704c-0.437,0-0.75-0.123-0.938-0.37 C8.833,7.145,8.738,6.923,8.738,6.727s0.047-0.39,0.141-0.58l2.66-5.376h0.719c0.48,0,0.834,0.235,1.063,0.705l2.328,4.672 c0.098,0.193,0.146,0.388,0.146,0.585s-0.092,0.418-0.275,0.663s-0.498,0.368-0.941,0.368c-0.445,0-0.762-0.234-0.953-0.704 L13.41,6.53H11.117z M12.748,4.872L12.264,3.66l-0.484,1.212H12.748z"/> </g> <g> <path d="M15.749,15.414c0,1.34-0.795,2.01-2.385,2.01h-2.428H9.823V16.55v-5.036V10.64h1.113h2.26c1.514,0,2.271,0.539,2.271,1.618 c0,0.71-0.303,1.203-0.91,1.478C15.351,14.077,15.749,14.637,15.749,15.414z M13.364,12.66c0-0.436-0.242-0.653-0.73-0.653H12.05 v1.307h0.607C13.128,13.313,13.364,13.096,13.364,12.66z M13.522,15.303c0-0.488-0.273-0.733-0.82-0.733H12.05v1.468h0.674 C13.257,16.037,13.522,15.792,13.522,15.303z"/> </g>
+                </svg>
+            </div> -->
+        <sp-slider size="s" id="ofsetV" class="Sliders-config" min="0" max="150" value="10"> <sp-label slot="label">Espaçamento de linhas</sp-label> </sp-slider>
+        </div>
+
+        <div  style="display: flex; width: 100%; align-items: center;">
+            <!-- <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(-2px, 1px); color: #adadad;"> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M13.183,3.35c-.216.9045-.9,2.9035-1.3045,4.132h2.65c-.2835-.8915-1.0615-3.1865-1.332-4.132Z" />
+                    <path class="fill" d="M17.75,1H.25A.25.25,0,0,0,0,1.25v10.5A.25.25,0,0,0,.25,12h17.5a.25.25,0,0,0,.25-.25V1.25A.25.25,0,0,0,17.75,1ZM6.0365,10.7775a.1175.1175,0,0,1-.1345.0945H4.335a.11949.11949,0,0,1-.1345-.0805L1.027,2.1215C1,2.054,1.027,2,1.1075,2H2.661a.0935.0935,0,0,1,.107.07765L2.7685,2.081C4.05,5.633,4.929,8.2525,5.1725,9.25H5.2c.3-1.053.9725-3.35,2.255-7.1435.027-.081.0545-.108.1215-.108H9.05c.067,0,.1075.0405.0805.1215ZM17.25,10.872H15.7355a.1365.1365,0,0,1-.1355-.0805L14.9335,8.872H11.477l-.6305,1.892a.13349.13349,0,0,1-.15.108H9.35c-.0815,0-.1085-.0405-.0945-.135L12.035,2.824a2.05547,2.05547,0,0,0,.1215-.7295c0-.054.0275-.0945.081-.0945h1.877c.0675,0,.0815.0135.0945.081l3.1195,8.669C17.3425,10.8315,17.3285,10.872,17.25,10.872Z" />
+                    <path class="fill" d="M16.3615,15.075l-1.977-1.9815a.216.216,0,0,0-.3625.131v1.283H3.978v-1.283a.216.216,0,0,0-.3625-.131L1.6385,15.075a.25.25,0,0,0,0,.353L3.616,17.414a.216.216,0,0,0,.3625-.1315V16H14.022v1.2825a.216.216,0,0,0,.3625.1315l1.9775-1.986A.25.25,0,0,0,16.3615,15.075Z" />
+                    <path class="fill" d="M16.4155,15.0635,14.417,13.064A.245.245,0,0,0,14.25,13a.25.25,0,0,0-.25.25V14.5H4V13.25A.25.25,0,0,0,3.75,13a.245.245,0,0,0-.1655.0645l-2,2a.25.25,0,0,0-.019.353l.019.019,2,2A.245.245,0,0,0,3.75,17.5.25.25,0,0,0,4,17.25V16H14v1.25a.25.25,0,0,0,.25.25.245.245,0,0,0,.1655-.0645l2-2a.25.25,0,0,0,.019-.353Z" />
+                 </svg>
+            </div> -->
+        <sp-slider size="s" id="ofsetH" class="Sliders-config" min="-100" max="500" value="0"> <sp-label slot="label">Espaçamento de Letras</sp-label> </sp-slider>
+        </div>
+
+        <div  style="display: flex; width: 100%; align-items: center;">
+            <!-- <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(-2px, 1px); color: #adadad;"> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                   <rect id="Canvas" fill="#FF13DC" fill-opacity="0" width="18" height="18"/> <path d="M1,0.247c-0.276,0-0.5,0.224-0.5,0.5v3c0,0.276,0.224,0.5,0.5,0.5h1c0.276,0,0.5-0.224,0.5-0.5v-1.5h4v8H5 c-0.276,0-0.5,0.224-0.5,0.5v1c0,0.276,0.224,0.5,0.5,0.5h8c0.276,0,0.5-0.224,0.5-0.5v-1c0-0.276-0.224-0.5-0.5-0.5h-1.5v-8h4v1.5 c0,0.276,0.224,0.5,0.5,0.5h1c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5H1z"/> <g transform="matrix(39.6358,0,0,39.6358,-3241.92,-169.572)"> <path d="M81.869,4.675l0,0.051l-0.076-0.061l0.076-0.066l0,0.052h0.302l0-0.052l0.076,0.066l-0.076,0.061l0-0.051H81.869z"/> </g>
+               </svg>
+            </div> -->
+        <sp-slider size="s" id="scalaH" class="Sliders-config" min="100" max="300" value="100"> <sp-label slot="label">Horizontal Scala</sp-label> </sp-slider>
+        </div>
+
+        <div  style="display: flex; width: 100%; align-items: center;">
+            <!-- <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(-2px, 1px); color: #adadad;"> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <g transform="matrix(39.6358,0,0,39.6358,-3241.92,-169.572)"> <path d="M81.873,4.634l0.051,0l-0.061,0.066l-0.066-0.066l0.052,0V4.371l-0.052,0l0.066-0.066l0.061,0.066l-0.051,0V4.634z"/> </g> <path d="M6.292,1.042c-0.276,0-0.5,0.251-0.5,0.561v3.365c0,0.31,0.224,0.561,0.5,0.561h1c0.276,0,0.5-0.251,0.5-0.561V3.285h3 v11.218h-1.5c-0.276,0-0.5,0.251-0.5,0.561v1.122c0,0.31,0.224,0.561,0.5,0.561h5c0.276,0,0.5-0.251,0.5-0.561v-1.122 c0-0.31-0.224-0.561-0.5-0.561h-1.5V3.285h3v1.683c0,0.31,0.224,0.561,0.5,0.561h1c0.276,0,0.5-0.251,0.5-0.561V1.603 c0-0.31-0.224-0.561-0.5-0.561H6.292z"/>
+                    </svg>
+            </div> -->
+        <sp-slider size="s" id="scalaV" class="Sliders-config" min="100" max="300" value="100"> <sp-label slot="label">Vertical Scala</sp-label> </sp-slider>
+        </div>
+    
+        <div class="Painel-fonte-color" style="padding: 5px; margin-top: 5px;">
+        <div style="display: flex;">
+
+            <div id="txBtn1" class="text-element" slot="icon" style="fill: currentColor; transform: translate(0px, 1px); color: #adadad; "> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M6.75,9A.25.25,0,0,1,7,9.25v1.5a.25.25,0,0,1-.25.25h-.5A.25.25,0,0,1,6,10.75V10H4v5h.75a.25.25,0,0,1,.25.25v.5a.25.25,0,0,1-.25.25H2.25A.25.25,0,0,1,2,15.75v-.5A.25.25,0,0,1,2.25,15H3V10H1v.7365a.25.25,0,0,1-.25.25H.25a.25.25,0,0,1-.25-.25V9.25A.25.25,0,0,1,.25,9Z" />
+                    <path class="fill" d="M10,9.261a5.4865,5.4865,0,0,1,2-1.0475V4h4V5.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-3a.5.5,0,0,0-.5-.5H4.5a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h1A.5.5,0,0,0,6,5.5V4h4Z" />
+                    <path class="fill" d="M13.5,9.05a4.45,4.45,0,1,0,4.45,4.45A4.45,4.45,0,0,0,13.5,9.05Zm2.45,5.2h-1.7v1.7a.25.25,0,0,1-.25.25H13a.25.25,0,0,1-.25-.25v-1.7h-1.7A.25.25,0,0,1,10.8,14V13a.25.25,0,0,1,.25-.25h1.7v-1.7A.25.25,0,0,1,13,10.8h1a.25.25,0,0,1,.25.25v1.7h1.7a.25.25,0,0,1,.25.25v1A.25.25,0,0,1,15.95,14.25Z" />
+                 </svg>
+            </div>
+
+            <div id="txBtn2" class="text-element" slot="icon" style="fill: currentColor; transform: translate(0px, 1px); color: #adadad; "> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M.5,2a.5.5,0,0,0-.5.5v3A.5.5,0,0,0,.5,6h1A.5.5,0,0,0,2,5.5V4H6V14H4.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h8a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5H11V4h4V5.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-3a.5.5,0,0,0-.5-.5Z" />
+                </svg>
+            </div>
+
+            <div id="txBtn3" class="text-element" slot="icon" style="fill: currentColor; transform: translate(0px, 1px); color: #adadad; "> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><rect class="fill" height="1" rx="0.25" width="14" x="2" y="16" />
+                    <path class="fill" d="M2.5,2a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5h1A.5.5,0,0,0,4,5.5V4H8v9H6.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5h5a.5.5,0,0,0,.5-.5v-1a.5.5,0,0,0-.5-.5H10V4h4V5.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5v-3a.5.5,0,0,0-.5-.5Z" />
+                   </svg>
+            </div>
+
+            <div id="txBtn4" class="text-element" slot="icon" style="fill: currentColor; transform: translate(0px, 1px); color: #adadad; "> 
+                <svg viewBox="-1 0 20 20" style="width: 25px; height: 25px;">
+                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M3.9595,2a.7805.7805,0,0,0-.6755.5l-1.0545,3A.3425.3425,0,0,0,2.554,6h1a.7785.7785,0,0,0,.6755-.5L4.757,4h4L5.243,14h-1.5a.7785.7785,0,0,0-.6755.5l-.35,1a.3425.3425,0,0,0,.3245.5h5a.7785.7785,0,0,0,.6755-.5l.35-1A.342.342,0,0,0,8.743,14h-1.5L10.757,4h4l-.5275,1.5a.3425.3425,0,0,0,.3245.5h1a.7785.7785,0,0,0,.6755-.5l1.0545-3a.343.343,0,0,0-.3245-.5Z" />
+                </svg>
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+    </div>
+</body>
+</html>  
+
+
+
+

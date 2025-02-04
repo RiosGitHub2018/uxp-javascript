@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+	<link  href="modal.html" >
+</head>
+
+<style>
+ 	@charset "UTF-8";
+	*{margin: 0; }
+	body{cursor: Default;  padding:10px}
+
+    .main{
+        width: 232px;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        color: rgb(196, 197, 197);
+        border:  1px solid rgb(73, 72, 72); 
+        /* border-radius: 10px; */
+        padding: 2px;
+     }
+
+    .pnlEQcores{
+        width: 210px;
+        height: 145px;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        padding: 10px;
+        background-color: #424242;
+        /* background-color: #333333; */
+        border-radius: 0px;
+    }
+    
+    .coln1{
+        width:27%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: rgb(167, 167, 164);
+        align-items:flex-end;
+        padding: 7px;
+        margin-top: -10px; 
+    }
+    .cores{ margin-top: 7px; } 
+
+    .coln2{
+        width: 55%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        padding:0px;
+     }
+     .slider{ padding: 0px; margin:-2px; } 
+
+    .coln3{
+        width: 10%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #c2c2c2;
+        text-align: center;
+        justify-content: flex-start;
+        margin-top: -8px;
+        padding: 5px;
+     }
+    .valoes{ 
+        width: 25px;
+        background-color: #6a6a6b;
+        border-radius: 3px;
+        padding: 3px;
+        margin: 1.5px;
+    }
+
+</style>
+
+<body>
+    <div class="main">
+       <h3>EQUILÍBRIOS DE CORES</h3>
+
+    <div class="pnlEQcores">
+        <div class="coln1"> 
+            <p class="cores">Ciano</p> <p class="cores">Vermelho</p> <p class="cores">Verde</p>
+            <p class="cores">Magenta</p> <p class="cores">Amarelo</p> <p class="cores">Azul</p>
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld1" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+            <sp-slider id="sld2" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+            <sp-slider id="sld3" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+            <sp-slider id="sld4" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+            <sp-slider id="sld5" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+            <sp-slider id="sld6" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld1" class="cores valoes">0</p> 
+            <p id="vsld1" class="cores valoes">0</p>
+            <p id="vsld1" class="cores valoes">0</p> 
+            <p id="vsld1" class="cores valoes">0</p>
+            <p id="vsld1" class="cores valoes">0</p> 
+            <p id="vsld1" class="cores valoes">0</p>
+        </div>
+    </div>
+    <sp-checkbox size="s" checked>Preview</sp-checkbox>
+</div>
+</body>
+
+</html>
+
+

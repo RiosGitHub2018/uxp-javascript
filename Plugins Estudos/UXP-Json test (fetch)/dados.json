@@ -1,0 +1,54 @@
+{
+    "presetCorte": [
+        {
+            "nome": "Maria", 
+            "Idade":"10 anos", 
+            "altura":"1.5 m"
+        },
+        {
+            "nome": "Pedro", 
+            "Idade":"12 anos", 
+            "altura":"1.8 m"
+        },
+        {
+            "nome": "Andre", 
+            "Idade":"19 anos", 
+            "altura":"1.3 m"
+        },
+        {
+            "nome": "Josué", 
+            "Idade":"15 anos", 
+            "altura":"1.3m"
+        },
+        {
+            "nome": "Amanda", 
+            "Idade":"14 anos", 
+            "altura":"1.2 m"
+        },
+        {
+            "nome": "Maria", 
+            "Idade":"10 anos", 
+            "altura":"1.5 m"
+        },
+        {
+            "nome": "Pedro", 
+            "Idade":"12 anos", 
+            "altura":"1.8 m"
+        },
+        {
+            "nome": "Andre", 
+            "Idade":"19 anos", 
+            "altura":"1.3 m"
+        },
+        {
+            "nome": "Josué", 
+            "Idade":"15 anos", 
+            "altura":"1.3m"
+        },
+        {
+            "nome": "Amanda", 
+            "Idade":"14 anos", 
+            "altura":"1.2 m"
+        }
+    ]
+}

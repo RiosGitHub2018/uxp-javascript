@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+</head>
+
+
+<style>
+      body{cursor: Default;  padding:10px;}
+
+      .container2{
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        border:  1px solid rgb(65, 65, 65); 
+        padding: 10px;
+        /* margin-top: 10px;  */
+        position: relative;
+        border-radius: 10px; 
+        background-color: rgb(82, 80, 80);
+      }
+
+
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        color: rgb(192, 192, 192);
+        margin-left: 5px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: #444;
+        font-weight: bold;
+        border-bottom: 2px solid rgb(12, 12, 12);
+        font-size: 13px;
+        
+    }
+
+    td {
+        border: 1px solid rgb(63, 63, 63);
+    }
+
+    tr:nth-child(even) {
+        background-color: #424242;
+        color: #ddd;
+    }
+
+    tr:hover {
+        background-color: #727272;
+        color: #ddd;
+    }
+
+    @media only screen and (max-width: 600px) {
+        table {
+            font-size: 12px;
+        }
+        th, td {
+            padding: 2px;
+            text-align: center;
+         }
+    }
+
+    tr.selected {
+    background-color: #283841;
+    color: rgb(255, 255, 255);
+}
+
+</style>
+
+<body>
+
+  <div class="container2" >
+	<table id="tabela">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Idade</th>
+				<th>Profissão</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>
+
+</body>
+
+  <script>
+  </script>
+
+
+</html>

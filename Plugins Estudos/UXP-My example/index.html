@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+</head>
+
+
+<style>
+	@charset "UTF-8";
+	body{cursor: Default;  padding:50px;}
+</style>
+
+<body>
+	<sp-dropdown  placeholder="Make a selection..." style="width: 200px">
+		<sp-menu slot="options"  id="select" size="s">
+			<sp-menu-item> Option A </sp-menu-item>
+            <sp-menu-item> Option B </sp-menu-item>
+			<sp-menu-item> Option C </sp-menu-item>
+		</sp-menu>
+	</sp-dropdown>
+
+	<sp-textfield  id="textfield"  placeholder="Add a new name"  style="width: 200px">New name</sp-textfield>
+	<sp-action-button  id="btn_adn" style="width: 200px">Add New Item</sp-action-button>
+	<sp-action-button  id="btn_rep" style="width: 200px">Replace item text</sp-action-button>
+</body>
+</html>
