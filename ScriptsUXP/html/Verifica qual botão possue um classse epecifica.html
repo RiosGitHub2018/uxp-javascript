@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .rchecado {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1" class="rchecado">Botão 1</button>
+    <button id="btn2">Botão 2</button>
+    <button id="btn3" class="rchecado">Botão 3</button>
+    
+    <script>
+        // Função para identificar qual botão tem a classe 'rchecado'
+        function identificarBotaoComClasse() {
+            // Obtém os elementos de botão
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var btn3 = document.getElementById("btn3");
+
+            // Verifica qual botão tem a classe 'rchecado'
+            if (btn1.classList.contains('rchecado')) {
+                alert("O Botão 1 possui a classe 'rchecado'");
+            }
+
+            if (btn2.classList.contains('rchecado')) {
+                alert("O Botão 2 possui a classe 'rchecado'");
+            }
+
+            if (btn3.classList.contains('rchecado')) {
+                alert("O Botão 3 possui a classe 'rchecado'");
+            }
+        }
+
+        // Chama a função quando necessário (por exemplo, em resposta a um evento)
+        identificarBotaoComClasse();
+    </script>
+</body>
+</html>

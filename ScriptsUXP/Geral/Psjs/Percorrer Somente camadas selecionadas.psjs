@@ -1,0 +1,64 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const fs = require('uxp').storage.localFileSystem;
+const shell=require("uxp").shell;
+const Constants = require('photoshop').constants;
+const alert = app.showAlert;
+const os = require('os') ;
+const Usuario = os.homedir().replace(/\\/g, '/');
+const photoshop = require("photoshop");
+const imaging = photoshop.imaging;
+const kSRGBProfile = "sRGB IEC61966-2.1";
+
+
+const activeDocument = app.activeDocument;
+const layers = app.activeDocument.activeLayers
+
+const method= 1
+switch(method){
+    case 0: 
+            alert("Esse é método tradicional\nUsando o for (let i = 0;  i < layers.length; i ++)")
+            for (let i = 0;  i < layers.length; i ++) {
+            await core.executeAsModal(async () => {
+                await app.batchPlay( [{"_obj":"select","_target":[{"_name":layers[i].name,"_ref":"layer"}],"makeVisible":false}], {});
+                ///////// RESULTADO 
+                alert(layers[i].name)
+                })
+            }
+        break;
+
+    case 1:
+        alert("Usando o  for(const quadro of layers)")
+        for(const quadro of layers){
+            await core.executeAsModal(async () => {
+                await app.batchPlay( [{"_obj":"select","_target":[{"_name":quadro.name,"_ref":"layer"}],"makeVisible":false}], {});
+                ///////// RESULTADO 
+                alert(quadro.name)
+                })
+            }
+         break;
+
+    case 2:
+           alert("Usando o  forEach sem o esecuteModal")
+            layers.forEach((quadro) => {
+            app.batchPlay( [{"_obj":"select","_target":[{"_name":quadro.name,"_ref":"layer"}],"makeVisible":false}], {});
+            ///////// RESULTADO 
+            alert(quadro.name)
+            });
+         break;
+
+    case 3: 
+    alert("Usando o  forEach com o esecuteModal")
+            layers.forEach((quadro) => {
+                core.executeAsModal(() => {
+                    app.batchPlay( [{"_obj":"select","_target":[{"_name":quadro.name,"_ref":"layer"}],"makeVisible":false}], {});
+                    ///////// RESULTADO 
+                    alert(quadro.name)
+                });
+            })
+        break;
+}
+
+  
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input com Formatação</title>
+</head>
+<body>
+    <label for="tamanho1">Tamanho 1:</label>
+    <input type="text" id="tamanho1" placeholder="0cm">
+    
+    <label for="tamanho2">Tamanho 2:</label>
+    <input type="text" id="tamanho2" placeholder="0cm">
+
+    <script>
+        function formatarPrecos(elementos) {
+            elementos.forEach(id => {
+                const input = document.getElementById(id);
+
+                input.addEventListener('input', function(e) {
+                    let value = input.value.replace(/ cm/g, '').trim(); // Remove "cm" temporariamente
+                    input.value = `${value} cm`; // Adiciona "cm" ao final
+                });
+
+                input.addEventListener('keydown', function(e) {
+                    if ((e.key === 'Backspace' || e.key === 'Delete') && input.value.endsWith('cm')) {
+                        e.preventDefault(); // Evita remover "cm"
+                        let value = input.value.slice(0, -4); // Remove o número anterior
+                        if (value.length > 0) {
+                            input.value =`${value} cm`; // Mantém "cm"
+                        } else {
+                            input.value = ''; // Permite apagar todo o conteúdo
+                        }
+                    }
+                });
+                input.addEventListener('focus', function() {
+                    // Remove temporariamente "cm" para facilitar a edição do número
+                    if (input.value === 'cm') {
+                        input.value = '';
+                    } else {
+                        input.value = input.value.replace(/cm/g, '').trim();
+                    }
+                });
+            });
+        }
+
+        // Chamando a função para os elementos desejados
+        formatarPrecos(["tamanho1", "tamanho2"]);
+    </script>
+</body>
+</html>

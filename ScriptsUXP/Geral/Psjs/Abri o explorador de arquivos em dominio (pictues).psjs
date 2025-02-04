@@ -1,0 +1,5 @@
+const application = require("photoshop").app;
+const fs = require('uxp').storage.localFileSystem
+let domains = require('uxp').storage.domains
+
+let fold = await fs.getFileForOpening({ initialDomain: domains.userPictures, allowMultiple: true})

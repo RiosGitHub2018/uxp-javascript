@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Nomes</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Nomes</h1>
+
+  <label for="nomeInput">Nome:</label>
+  <input type="text" id="nomeInput">
+  <button onclick="adicionarNome()">Adicionar</button>
+
+  <ul id="listaNomes"></ul>
+
+  <button onclick="exibirIDs()">Exibir IDs</button>
+
+  <script >
+        var nomes = [];
+        var contadorID = 0;
+
+        // Verifica se existem itens salvos no LocalStorage
+        if (localStorage.getItem("nomes")) {
+        // Se existirem, recupera os itens e atualiza a lista
+        nomes = JSON.parse(localStorage.getItem("nomes"));
+        atualizarListaNomes();
+        }
+
+        function adicionarNome() {
+        var nomeInput = document.getElementById("nomeInput");
+        var nome = nomeInput.value;
+
+        if (nome !== "") {
+            nomes.push({id: contadorID, nome: nome});
+            contadorID++;
+            nomeInput.value = "";
+            atualizarListaNomes();
+            salvarNoLocalStorage();
+        }
+        }
+
+        function removerNome(index) {
+        nomes.splice(index, 1);
+        atualizarListaNomes();
+        salvarNoLocalStorage();
+        }
+
+        function atualizarListaNomes() {
+        var listaNomes = document.getElementById("listaNomes");
+        listaNomes.innerHTML = "";
+
+        for (var i = 0; i < nomes.length; i++) {
+            var nome = nomes[i].nome;
+            var id = nomes[i].id;
+
+            var itemLista = document.createElement("li");
+            itemLista.innerHTML = ` <label id="nome-${id}">${nome}</label> <button onclick="removerNome(${i})">Remover</button>`;
+
+            listaNomes.appendChild(itemLista);
+        }
+        }
+
+        function salvarNoLocalStorage() {
+        localStorage.setItem("nomes", JSON.stringify(nomes));
+        }
+
+        function exibirIDs() {
+        for (var i = 0; i < nomes.length; i++) {
+            var id = nomes[i].id;
+            var label = document.getElementById(`nome-${id}`);
+            alert(`ID do item "${label.innerText}": ${id}`);
+        }
+        }
+  </script>
+</body>
+</html>

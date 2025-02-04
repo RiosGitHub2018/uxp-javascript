@@ -1,0 +1,36 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const fs = require('uxp').storage.localFileSystem;
+const shell=require("uxp").shell;
+const Constants = require('photoshop').constants;
+const alert = app.showAlert;
+const os = require('os') ;
+const Usuario = os.homedir().replace(/\\/g, '/');
+const photoshop = require("photoshop");
+const imaging = photoshop.imaging;
+const kSRGBProfile = "sRGB IEC61966-2.1";
+// /////////////////////////////////////////////
+        
+await core.executeAsModal(async () => {
+        const camadaAtiva = app.activeDocument.activeLayers;
+        camadaAtiva.forEach(grupo => {
+                grupo.selected=false
+                grupo.layers.forEach(camada => {
+                        camada.selected=true
+                        grupo.rotate(90)
+                        camada.selected=false
+                })
+                //grupo.layers.forEach(camada => { camada.selected=true}) //////  SELECIONA TODOSA AS CAMADAS DENTO
+                grupo.selected=true //////  MANÉM A CAMDASGRUPO SELECIONADA
+        });
+       
+});
+
+
+
+
+
+
+
+

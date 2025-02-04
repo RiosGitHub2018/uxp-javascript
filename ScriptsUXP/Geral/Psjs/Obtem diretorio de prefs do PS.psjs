@@ -1,0 +1,13 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const alert = app.showAlert;
+const fs = require('uxp').storage.localFileSystem;
+const shell=require("uxp").shell;
+
+try {
+    const result = await app.batchPlay( [ {_obj: 'get', _target: [{ _property: 'preferencesFolder' }, { _ref: "application", _enum: "ordinal", _value: "targetEnum" } ] }], { synchronousExecution: false, });
+    const dirPrefs = result[0].preferencesFolder._path; ////OBTER O DIRTÓRIO DA PASTA DE PREFERENCIAS DA VERSÃO ATUAL
+    const versãoAno= dirPrefs.split("\\Roaming\\Adobe\\")[1].split("\\")[1].replace("Settings", "")
+    alert(`Estamos no ${versãoAno}`) ////OBTER O ANO DA VERSÃO ATUAL
+} catch (err) {alert(err)}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Estudo sobre loop com botões de radio </title>
+</head>
+<body>
+    <input type="radio" class="radiobtn" value="1" checked>0001
+    <input type="radio" class="radiobtn" value="2">0002
+    <input type="radio" class="radiobtn" value="3">0003
+</body>
+
+<script>
+        radios = document.getElementsByClassName("radiobtn");
+        radioBtn = Array.from(radios);
+
+        for (const radio of radioBtn) {// radio.checked = true;
+        radio.addEventListener("click", () => {
+            index= radioBtn.indexOf(radio)
+            for (const radio of radioBtn) { radio.checked = false}
+            radio.checked = true
+            alert(index);  alert(radio.value)
+        });
+        }
+</script>
+
+</html>

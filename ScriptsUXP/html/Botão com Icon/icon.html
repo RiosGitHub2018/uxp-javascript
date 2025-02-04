@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+
+    <style>
+        .botao {
+            padding: 10px 20px;
+            background-color: #0074d9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .icone {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-image: url('icon.svg'); /* Substitua 'icone.png' pelo caminho para a sua imagem de ícone */
+            background-size: cover;
+            margin-left: 5px;
+        }
+
+
+        
+    .botao:hover {
+        background-color: #ff5733; /* Nova cor de fundo no hover */
+        color: #000; /* Nova cor do texto no hover */
+    }
+
+    .botao:hover .icone {
+        /* Você pode alterar o ícone no hover, fornecendo uma nova imagem ou ajustando outras propriedades do ícone */
+        background-image: url('icon2.svg'); /* Substitua 'icone.png' pelo caminho para a sua imagem de ícone */
+    }
+
+    </style>
+
+</head>
+<body>
+    <button class="botao">Clique <span class="icone"></span></button>
+</body>
+</html>

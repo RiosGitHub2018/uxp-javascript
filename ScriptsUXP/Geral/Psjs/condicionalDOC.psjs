@@ -1,0 +1,16 @@
+const alert = app.showAlert;
+
+const altura = app.activeDocument.height;
+const lagura = app.activeDocument.width;
+
+  ////// MÉTODO 1: ↓
+altura > lagura ? alert("Documento Vertical"): alert("Documento Horizontal")
+  
+  ////// MÉTODO 2: ↓
+  if(altura > lagura){
+    alert("Documento Vertical")
+  }
+  else{
+    alert("Documento Horizontal")
+  }
+  

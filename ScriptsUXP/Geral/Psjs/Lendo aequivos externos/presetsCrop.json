@@ -1,0 +1,92 @@
+[
+    {
+        "nome": "3 x 4",
+        "largura": "3",
+        "altura": "4"
+    },
+    {
+        "nome": "10 x 15",
+        "largura": "10",
+        "altura": "15"
+    },
+    {
+        "nome": "13 x 18",
+        "largura": "13",
+        "altura": "18"
+    },
+    {
+        "nome": "15 x 21",
+        "largura": "15",
+        "altura": "21"
+    },
+    {
+        "nome": "25 x 30",
+        "largura": "25",
+        "altura": "30"
+    },
+    {
+        "nome": "25 x 35",
+        "largura": "25",
+        "altura": "35"
+    },
+    {
+        "nome": "30 x 30",
+        "largura": "30",
+        "altura": "30"
+    },
+    {
+        "nome": "30 x 40",
+        "largura": "30",
+        "altura": "40"
+    },
+    {
+        "nome": "30 x 45",
+        "largura": "30",
+        "altura": "45"
+    },
+    {
+        "nome": "40 x 50",
+        "largura": "40",
+        "altura": "50"
+    },
+    {
+        "nome": "40 x 60",
+        "largura": "40",
+        "altura": "60"
+    },
+    {
+        "nome": "50 x 60",
+        "largura": "50",
+        "altura": "60"
+    },
+    {
+        "nome": "53 x 74",
+        "largura": "53",
+        "altura": "74"
+    },
+    {
+        "nome": "60 x 40",
+        "largura": "60",
+        "altura": "40"
+    },
+    {
+        "nome": "90 x 90",
+        "largura": "90",
+        "altura": "90"
+    },
+    {
+        "nome": "100 x 100",
+        "largura": "100",
+        "altura": "100"
+    },
+    {
+        "nome": "120 x 120",
+        "largura": "120",
+        "altura": "120"
+    },
+    {
+        "nome": "140 x 140",
+        "largura": "140",
+        "altura": "140"
+    }
+]

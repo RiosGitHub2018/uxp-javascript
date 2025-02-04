@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .selecionado{
+        background-color:  rgb(99, 138, 245);
+        border: none;
+     }
+
+    .btn-radio{
+        display: flex;
+        align-items: center;
+        cursor: default;
+        color: rgb(0, 0, 0);
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50px;
+        border: 1px solid rgb(0, 0, 0);
+        margin: 5px;
+        margin-bottom: 2px;
+    }
+ .text{
+    position: absolute;
+    transform: translate(15px, 0px);
+ }
+
+</style>
+
+
+<body>
+    <!-- <button class="radio-elipse">00001</button>
+    <button class="radio-elipse">00002</button>
+    <button class="radio-elipse">00003</button>
+    <button class="radio-elipse">00004</button>
+    <button class="radio-elipse">00005</button> -->
+    <hr>
+    <div value="r1" class="btn-radio  selecionado"  ><span class="text">Importar</span></div>
+    <div class="btn-radio" ><span class="text">Inserir na Imagem</span></div> 
+    <div class="btn-radio" ><span class="text">Inserir na seleção</span></div>
+    <div class="btn-radio" ><span class="text">Substituir</span></div>
+    <hr>
+
+</body>
+
+<script>
+    const elementos = document.getElementsByClassName("btn-radio");
+        const radioBtn = Array.from(elementos);
+        for(let i = 0; i < radioBtn.length; i++){ 
+            radioBtn[i].addEventListener('click', (event) => {
+            for(let i = 0; i < radioBtn.length; i++){  
+                index = radioBtn.indexOf(event.currentTarget);
+                radioBtn[i].classList.remove('selecionado');  
+            }
+            event.currentTarget.classList.add('selecionado');
+           alert(index);
+           alert(event.target.textContent);
+        })
+   }
+</script>
+
+
+</html>

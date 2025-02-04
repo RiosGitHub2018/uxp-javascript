@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .clicado { 
+        background-color:#f13030;
+        color: rgb(255, 255, 255);
+    }
+</style>
+
+<body>
+    <!-- EXEMPLO 1 -->
+    <!-- <button id="btn1" onclick="changeColor(this)">Botão 1</button>
+    <button id="btn2" onclick="changeColor(this)">Botão 2</button>
+    <button id="btn3" onclick="changeColor(this)">Botão 3</button> -->
+    <!-- EXEMPLO 2 -->
+    <!-- <button class="color-button" style=" border:  0px">Button 1</button>
+    <button class="color-button" style=" border:  0px">Button 2</button>
+    <button class="color-button" style=" border:  0px">Button 3</button> -->
+
+    <!-- EXEMPLO 3 -->
+    <button id="btn1" style=" border:  0px" class="botoes">Botão 1</button>
+    <button id="btn2" style=" border:  0px" class="botoes">Botão 2</button>
+    <button id="btn3" style=" border:  0px" class="botoes">Botão 3</button>
+
+
+
+    <button id="btn4" style=" border:  0px" >Botão asasas</button>
+
+</body>
+
+    <script>
+            ///// EXEMPLO 1
+            // function changeColor(btn) {
+            // // define a cor de fundo do botão clicado para vermelho
+            // btn.style.backgroundColor = "red";
+            // alert(btn.textContent)
+
+            // // define a cor de fundo dos outros botões para branco
+            // var buttons = document.getElementsByTagName("button");
+            //     for (var i = 0; i < buttons.length; i++) {
+            //         if (buttons[i] != btn) {
+            //         buttons[i].style.backgroundColor = "white";
+            //         }
+            //     }
+            // }
+
+            // ///// EXEMPLO 2
+            // const buttons = document.querySelectorAll('.color-button');
+            // buttons.forEach((button) => {
+            //     button.addEventListener('click', (event) => {
+            //     buttons.forEach((button) => {
+            //         // button.style.backgroundColor = ''; // Remove background color from all buttons
+            //         button.classList.remove('clicado')
+            //     });
+            //         // event.target.style.backgroundColor = 'red'; // Set background color of clicked button
+            //         event.target.classList.add('clicado');
+            //         alert(button.textContent)
+            //       });
+            // });
+
+
+            ///// EXEMPLO 3
+            const btn1 = document.querySelector("#btn1")
+            const btn2 = document.querySelector("#btn2")
+            const btn3 = document.querySelector("#btn3")
+            const btn4 = document.querySelector("#btn4")
+
+            btn4.addEventListener("click",  () => {alert("Btn 4")}) 
+
+
+            btn1.addEventListener("click",  () => {changeColor(btn1)}) 
+            btn2.addEventListener("click",  () => {changeColor(btn2)}) 
+            btn3.addEventListener("click",  () => {changeColor(btn3)}) 
+
+            function changeColor(btn) {
+                // define a cor de fundo do botão clicado para vermelho
+                btn.style.backgroundColor = "red";
+                alert(btn.textContent)
+                // define a cor de fundo dos outros botões para branco
+                var buttons = document.getElementsByTagName("button");  
+                    for (var i = 0; i < buttons.length; i++) {
+                        if (buttons[i] != btn) {
+                        buttons[i].style.backgroundColor = "white";
+                        }
+                    }
+            }
+
+    </script>
+
+</html>

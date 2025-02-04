@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>
+	<script src="./scripts/DLG_Canecas.js"></script>
+</head>
+<style>
+
+@charset "UTF-8";
+	.bgButtons {
+		width: 168px; padding: 1px;
+		background: #424242;
+		margin-left: auto; margin-right: auto; margin-top: 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		}
+	
+	.btnsM {
+		width: 80px; height: 19px; 
+		background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+		outline: none; border-radius: 1px; color: #bcbcbc; font-family: Arial, sans-serif;	font-size: 11px;  margin:1px;
+		}
+
+  	.btnsM:hover{
+		width: 80px; height: 19px; 	background: #949494; 
+		outline: none; border-radius: 1px; color: #000000; font-family: Arial, sans-serif; font-size: 11px;
+		}
+	
+	.btnsM:active{
+		width: 80px; height: 19px; 	background: #616060; 
+		outline: none; border-radius: 1px; color: #000000; font-family: Arial, sans-serif; font-size: 11px;
+		transform: translate(0px, 1px);
+		}
+	
+	#list_MD {
+		width: 150px; padding: 1px;
+		background: #424242;
+		}
+	
+	#adicionar {
+		width: 150px; padding: 1px;
+		}
+		
+	.Rectangle {
+		width: 90px; 
+		height: 120px;
+		margin-left: 10px; 
+		padding: 10px;
+		margin-top:10px;
+		border: 1px solid #3a3a3a; 
+	}
+	.mainDiv {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.abas {
+		width: 240px; 
+		height: 232px;
+		margin-left: 10px; 
+		padding: 0px;
+		transform: translate(0px, 20px);
+		border: 1px solid #3a3a3a; 
+	}
+
+
+	.tablink {
+		background-color: #535353;
+		color: white;
+		cursor: pointer;
+		font-size: 10px;
+		width: 80px;
+		margin:0px;
+		height: 28px;
+	}
+	
+	.tablink2 {
+		background-color: #000;
+		color: white;
+		cursor: pointer;
+		font-size: 10px;
+		width: 80px;
+		height: 80px;
+		margin:10px;
+		border: 1px solid #3a3a3a; 
+	}
+
+</style>
+<body>
+
+<div  class="bgButtons" >
+	<sp-action-button size="s"  onClick='runScript_01();' class="btnsM">Saturação</sp-action-button>
+	<sp-action-button size="s"  onClick='runScript_02();' class="btnsM"> Niveis</sp-action-button>
+	<sp-action-button size="s"  onClick='runScript_03();' class="btnsM"> Curvas</sp-action-button>
+	<sp-action-button size="s"  onClick='runScript_04();' class="btnsM"> Desfazer</sp-action-button>
+	<sp-action-button size="s"  id="mdCanecas" class="btnsM"> with modal</sp-action-button>
+	<sp-action-button size="s"  id="Arrange"  class="btnsM"> No modal</sp-action-button>
+	<form> <select id="list_MDx" size="8" style="width: 154px;"> </select></form>
+	<sp-textfield size="s"  id="adicionar" placeholder="" style= "width: 120px;  font-size: 8.4px;" ></sp-textfield>
+	<sp-action-button size="s"  onClick='savePresets();' > + </sp-action-button>
+	<sp-checkbox checked size="s" id="check_01" onChange ="functionCheck();">Teste Checkbox</sp-checkbox>
+</div>
+
+<div class="mainDiv" >
+    <div class="Rectangle" >
+		<sp-radio-group id="x" onClick="g1Radio()" >
+		<sp-radio checked id="r1" size="s" name="group2">Option 1</sp-radio>
+		<sp-radio id="r2"  size="s" name="group2">Option 2</sp-radio>
+		<sp-radio id="r3"  size="s" name="group2">Option 3</sp-radio>
+		<sp-radio id="r4"  size="s" name="group2">Option 4</sp-radio>
+		</sp-radio-group>
+	</div>
+    <div class="Rectangle" >
+		<sp-radio-group onClick="g2Radio()" >
+		<sp-radio id="r5"  size="s" name="group1">Option 5</sp-radio>
+		<sp-radio id="r6"  size="s" name="group1">Option 6</sp-radio>
+		<sp-radio id="r7"  size="s" name="group1">Option 7</sp-radio>
+		<sp-radio id="r8"  size="s" name="group1">Option 8</sp-radio>
+		</sp-radio-group>
+	</div>
+</div>
+
+<!----
+<div class="abas" >
+    <div  style=" border:none; width: 100%; height: 28px; background: #424242" >
+		<button id= "btTab1" class="tablink" onclick="openPage('tab1', this, '#535353')" >Estampa</button>
+		<button id= "btTab2" class="tablink" onclick="openPage('tab2', this, '#535353')" >Ajuste</button>
+	</div>
+	
+	   <div id="tab1" class="tabcontent">
+			<h3>Estampa</h3>
+			<button id= "btnColor" class="tablink2" >Cores</button>
+		</div>
+
+		<div id="tab2" class="tabcontent">
+			<sp-heading size="s">Adicionar Camada de Texto</sp-heading>
+			<sp-textfield id="textName" placeholder="Nome" ><sp-label isrequired="true" slot="label">Digite o nome</sp-label></sp-textfield>
+  		    <sp-button id="getForecastBtn" onClick="camadaText_add()">Adicionar</sp-button>
+
+		</div>
+</div>
+-->
+<!----///////////////////////////////////////////////////////////-->
+
+
+
+<!-- EXTRUTURA DE MODAIS AQUI + AQUI!  INICIL--->	
+<dialog id="dlgCanecas" style='cursor: pointer; background: url(aa../img/bgCanecas.png); margin:0px; height: 311px'>
+<div style=' width:354px; display: flex; transform: translate(-34px, -34px)'>
+	<div style= 'width: 75%; height:310px; display: block; justify-content: center; margin:5px; '>
+	   <!--lOGOSAQUIIIIIII-->
+	   <div style='background: url(../img/logoCaneca.png); width:201px; height:51px; transform: translate(20px, 10px);'> </div>
+	   <!--ABAS AQUIIIIIII-->
+	   <div class="abas" >
+		  <div  style=" border:none; width: 100%; height: 28px; background: #424242" >
+			 <button id= "btTab1" class="tablink" onclick="openPage('tab1', this, '#535353')" >Estampa</button>
+			 <button id= "btTab2" class="tablink" onclick="openPage('tab2', this, '#535353')" >Ajuste</button>
+		  </div>
+		  
+		  <div id="tab1" class="tabcontent"> <!--IIII INÍCIO DIV ABAS ESTAMPA III-->
+		  <img style='transform: translate(8px, 10px); 'src="../img/bgCan_estp.png">
+			 <sp-radio-group >
+				<sp-radio checked id="r1" size="s" name="group2"  style="width: 50; transform: translate(22px, -156px);"></sp-radio>
+				<sp-radio id="r2"  size="s" name="group2" style="width: 30px; transform: translate(35px, -156px);"></sp-radio>
+				<sp-radio id="r3"  size="s" name="group2" style="width: 30px; transform: translate(30px,-156px);"></sp-radio>
+				<sp-radio id="r4"  size="s" name="group2" style="width: 30px; transform: translate(25px, -156px);"></sp-radio>
+				<sp-radio id="r5"  size="s" name="group2" style="width: 30px; transform: translate(20px, -156px);"></sp-radio>
+			 </sp-radio-group>
+			 <form> <select id="list_MD" size="8" style="width: 200px;  transform: translate(10px, -125px)"> </select></form>
+			 
+			 <!--IIIIII LISTA LEIALT DE IMPRESSÃOIIII-->
+			<select id="list_AC" nomesize="8" style="width: 154px;  transform: translate(55px, -99px)"> 
+				<option >Default</option>	
+				<option >Estampa dupla</option><option >Estampa tripla</option><option >Estampas A e B</option>
+			</select>
+		  </div><!--IIIIII lFINAL DIV ABAS ESTAMPA IIII-->
+		  
+		  <div id="tab2" class="tabcontent">
+		     <!--ABAS AJUSTE AQUI-->
+			 <sp-action-button id="ArrangeM" style='left:20px;top:20px;width:200px;height:24px; font-size: 12px; ' >Arrange [ 2 amp -Vertical ]</sp-action-button>
+			 <sp-detail size="s"   style='width:151px; height:20px; font-size:12px;  font-family: Arial; font-weight: normal; font-style: normal; text-align:center; transform: translate(0px,50px)'>ABC</sp-detail>
+		  </div>
+	   </div>
+	</div>
+	
+	<div style='width:25%;  height:100px;display: flex;justify-content: center; margin:5px;'>
+	   <!--BOTÕES DODIALOGO-->
+	   <div  style="transform: translate(0px, 5px); width: 100px;">
+		  <sp-button  size="s" variant="primary" style="width: 80px;">Enter</sp-button>
+		  <sp-button  size="s" variant="secondary" style="width: 80px;" onclick="document.querySelector('#dlgCanecas').close('OK')">Cancel</sp-button>
+		  <sp-button  size="s" variant="secondary" style="width: 80px;">Reset</sp-button>
+		  <sp-checkbox size="s" style="width: 80px">Maquete</sp-checkbox>
+	   </div>
+	</div>
+</div>
+		
+</dialog>
+<!----//////==========-->
+
+</body>
+</html>

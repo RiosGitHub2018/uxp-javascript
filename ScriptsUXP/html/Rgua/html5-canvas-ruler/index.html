@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Demo of HTML5 Canvas Scale Plugin</title>
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.ruler-wrap {
+		width: 100%;
+		max-width: 600px;
+		/*height: 60px;*/
+		line-height: 1px;
+		overflow: hidden;
+		margin: 0 auto 50px;
+	}
+
+	.text-input{
+		display: block;
+		width: 100px;
+		height: 30px;
+		border-radius: 5px;
+		background: #f6f6f6;
+		border: none;
+		text-align: center;
+		font-size: 14px;
+		color: #4142cc;
+		font-weight: bold;
+		letter-spacing: 1px;
+		margin: 0 auto;
+	}
+	.text-input:focus{
+		outline: none;
+	}
+</style>
+    <script src="js/ruler.js"></script>
+</head>
+<body>
+
+<div style="height:50px;"></div>
+
+<div class="ruler-wrap" id="ruler"></div>
+
+<div class="ruler-wrap" style="width: 90%;" id="ruler2"></div>
+
+
+<input id="rulerText3" class="text-input" type="text" readonly value="">
+
+<div class="ruler-wrap" style="width: 80%;" id="ruler3"></div>
+
+<!-- AD -->
+
+
+<script src="js/ruler.js"></script>
+<script>
+
+ruler.initPlugin({
+	el: "ruler",
+	startValue: 100,
+	background: "#f5f5f5",
+	success: function (res) {
+		console.log(res);
+	}
+});
+
+
+ruler.initPlugin({
+	el: "ruler2",
+	maxScale: 300,
+	startValue: 50,
+	region: [10, 200],
+	background: "#2bd4bc",
+	markColor: "#c968ff",
+	success: function (res) {
+		console.log(res);
+	}
+});
+
+
+var rulerText3 = document.getElementById("rulerText3");
+rulerText3.value = 200;
+ruler.initPlugin({
+	el: "ruler3",
+	height: 50,
+	maxScale: 300,
+	startValue: 200,
+	region: [50, 220],
+	background: "#ffa43c",
+	color: "#fff",
+	markColor: "#3786db",
+	isConstant: true,
+	success: function (res) {
+		console.log(res);
+		rulerText3.value = res;
+	}
+});
+
+</script>
+
+</body>
+</html>

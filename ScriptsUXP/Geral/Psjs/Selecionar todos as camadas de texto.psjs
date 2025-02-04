@@ -1,0 +1,9 @@
+const constants = require("photoshop").constants
+const layers = await app.activeDocument.layers;
+
+for (var i = 0; i < layers.length; i++) {
+	var layer = layers[i];
+	if (layer.kind === constants.LayerKind.TEXT) {
+		layer.selected = true;
+	}
+}

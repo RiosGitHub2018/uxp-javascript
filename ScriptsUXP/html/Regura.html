@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div com Réguas em cm</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container-re {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .main-re {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            overflow: auto;
+        }
+        .ruler-horizontal-re {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 0;
+            height: 30px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        .ruler-vertical-re {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 30px;
+            bottom: 0;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        .tick {
+            position: absolute;
+            background-color: #999;
+        }
+        .tick-label {
+            position: absolute;
+            font-size: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-re">
+        <div class="ruler-horizontal-re" id="rulerH"></div>
+        <div class="ruler-vertical-re" id="rulerV"></div>
+        <div class="main-re">
+            <h1>Conteúdo Principal</h1>
+            <p>Esta é a div principal com réguas ao topo e à esquerda (em cm).</p>
+        </div>
+    </div>
+
+    <script>
+        function createRulers(tamanho) {
+            const rulerH = document.getElementById('rulerH');
+            const rulerV = document.getElementById('rulerV');
+            const pixelsPerCm = 5;
+
+            for (let i = 0; i < tamanho; i++) {
+                const tickH = document.createElement('div');
+                tickH.className = 'tick';
+                tickH.style.left = i * pixelsPerCm + 'px';
+                tickH.style.top = '20px';
+                tickH.style.width = '1px';
+                tickH.style.height = '10px';
+
+                const tickV = document.createElement('div');
+                tickV.className = 'tick';
+                tickV.style.top = i * pixelsPerCm + 'px';
+                tickV.style.left = '20px';
+                tickV.style.height = '1px';
+                tickV.style.width = '10px';
+
+                if (i % 5 === 0) {
+                    tickH.style.height = '15px';
+                    tickV.style.width = '15px';
+
+                    const labelH = document.createElement('div');
+                    labelH.className = 'tick-label';
+                    labelH.style.left = i * pixelsPerCm + 'px';
+                    labelH.style.top = '3px';
+                    labelH.textContent = i + '';// labelH.textContent = i + ' cm';
+                    rulerH.appendChild(labelH);
+
+                    const labelV = document.createElement('div');
+                    labelV.className = 'tick-label';
+                    labelV.style.top = i * pixelsPerCm + 'px';
+                    labelV.style.left = '3px';
+                    labelV.textContent = i + '';
+                    rulerV.appendChild(labelV);
+                }
+
+                rulerH.appendChild(tickH);
+                rulerV.appendChild(tickV);
+            }
+        }
+        createRulers(125);
+    </script>
+</body>
+</html>

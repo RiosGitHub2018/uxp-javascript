@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<style>
+    .tab {
+      width: 100%;
+      height: 25px;
+      display: flex;
+    
+      border: 1px solid rgb(59, 58, 58);
+    }
+
+    .tab div {
+        width: 100%;
+        outline: none;
+        color: #d5d2d2;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .tab div.active {
+       
+        background-color: #535353; 
+        color: #d5d2d2;
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+    }
+
+   .tablinks {
+      width: 50px;
+      height: 25px;
+      background-color: rgb(44, 44, 44);
+      display: flex;
+      text-align: center;
+      border-top: 1px srgb(80, 80, 80) rgb(32, 32, 32);
+   }
+    
+
+</style>
+
+
+<body>
+    <div class="tab">
+        <div id="defaultOpen" class="tablinks active" onclick="openTab(event, 'tab1')">Tab 1</div>
+        <div class="tablinks" onclick="openTab(event, 'tab2')">Tab 2</div>
+        <div class="tablinks " onclick="openTab(event, 'tab3')">Tab 3</div>
+      </div>
+      
+      <div id="tab1" class="tabcontent" style="display: block;">
+        <h3>Tab 1 content</h3>
+        <p>Some text here.</p>
+      </div>
+      
+      <div id="tab2" class="tabcontent" style="display: none;">
+        <h3>Tab 2 content</h3>
+        <p>Some text here.</p>
+      </div>
+      
+      <div id="tab3" class="tabcontent" style="display: none;">
+        <h3>Tab 3 content</h3>
+        <p>Some text here.</p>
+      </div>
+
+</body>
+
+<script>
+
+        const app = require("photoshop").app;
+        const action = require("photoshop").action;
+        const core = require("photoshop").core;
+        const alert = app.showAlert;
+
+
+        function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+
+        document.getElementById("defaultOpen").click();
+</script>
+
+</html>

@@ -1,0 +1,18 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const alert = app.showAlert;
+const fs = require('uxp').storage.localFileSystem;
+const shell=require("uxp").shell;
+
+async function importAtnFiles() {
+    try {
+        const action = require("photoshop").action;
+        const fs = require('uxp').storage.localFileSystem;
+        const atnFile = await fs.getFileForOpening({ types: ["atn"] });
+        const ActionSetName = action.validateReference({_ref: "actionSet", _name: atnFile.name.match(/(.*)\.[^\.]+$/)[1]})
+        if(ActionSetName == true){alert(`"${atnFile.name}" já foi carregado!`)}
+        else{app.open(atnFile);}
+    } catch (err) {alert(err)}
+}
+await importAtnFiles()

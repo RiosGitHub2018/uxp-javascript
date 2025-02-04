@@ -1,0 +1,10 @@
+const app = window.require("photoshop").app;
+const layers = await app.activeDocument.layers;
+// Percorre todas as camadas
+for (var i = 0; i < layers.length; i++) {
+	var layer = layers[i];
+	if (layer.name.indexOf("Color") === 0) {
+		// Por exemplo, seleciona a camada atual
+		layer.selected = true;
+	}
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myQuery.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="ck01" value="Opção 1" class="m3GOrGP"><label for="ck01" class="txtck">opção1</label> <br>
+    <input type="checkbox" id="ck02" value="Opção 2" class="m3GOrGP"><label for="ck02" class="txtck">opção2</label> <br>
+    <input type="checkbox" id="ck03" value="Opção 3" class="m3GOrGP"><label for="ck03" class="txtck">opção3</label> <br>
+    <input type="checkbox" id="ck04" value="Opção 4" class="m3GOrGP"><label for="ck04" class="txtck">opção4</label> <br>
+    <button id="btn">Verificar</button>
+</body>
+
+
+<script>
+ produtos=[]
+ es1.on('#btn', 'click', () =>{
+      orçamentoServices();
+
+        itensADD.forEach((item, index)=> {
+        produtos.push({nome: item.name, Qtd: item.Qtd, valor:item.valor})
+    });
+
+      console.log(produtos)
+    });
+
+
+s2('.m3GOrGP').forEach( (element , index)=> {
+    element.checked=true
+    element.addEventListener('click', ()=>{
+        if(s2('.m3GOrGP')[index].checked==true){s2('.txtck')[index].style.opacity=1}
+        else(s2('.txtck')[index].style.opacity=0.3)
+    })
+    
+});
+
+
+
+
+function orçamentoServices(){
+    itensADD=[]
+    s2('.m3GOrGP').forEach((element, index)=>{
+        if(index==0){
+            if(element.checked==true){
+                itensADD.push({nome:"Opção 1", Qtd: 1, valor:"R$ 1,00 "});
+            }
+        }
+        if(index==1){
+            if(element.checked==true){
+                itensADD.push({nome:"Opção 2", Qtd: 2, valor:"R$ 2,00 "});
+            }
+        }
+        if(index==2){
+            if(element.checked==true){
+                itensADD.push({nome:"Opção 3", Qtd: 3, valor:"R$ 3,00 "});
+            }
+        }
+        if(index==3){
+            if(element.checked==true){
+                itensADD.push({nome:"Opção 4", Qtd: 4, valor:"R$ 4,00 "});
+            }
+        }
+
+    });
+    // console.log(itensADD)
+};
+
+
+</script>
+
+
+</html>
+
+<!-- s1('#').value = 'string';
+s1('#').selectedIndex= Number(index);
+s1('#').textContent= 'Text';
+s1('#').innerHTML =`string`;
+s1('#').checked = true;
+s1('#').disabled = true;
+s2('.elemento').forEach(element =>{alert(element.textContent)});
+es1.css('#elemento5', { transform:'translateX(4px)'})
+es1.on('#elemento', 'click', () =>{ funcao();}); -->

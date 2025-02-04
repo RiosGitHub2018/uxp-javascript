@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar a cor da Div clicada</title>
+</head>
+
+<style>
+    .myDivs {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    .selecionado {
+          background-color: blue;
+    }
+    </style>
+
+<body> 
+    <div id="div1" class="myDivs">Div 01</div>
+    <div id="div2" class="myDivs">Div 02</div>
+    <div id="div3" class="myDivs">Div 03</div>
+  </body>
+
+  <script>
+    // Seleciona todas as divs com a classe "myDivs"
+    const divs = document.querySelectorAll('.myDivs');
+    document.querySelector("#div1").classList.add('selecionado');
+    // Adiciona um ouvinte de evento de clique para cada div
+    divs.forEach(div => {
+        div.addEventListener('click', () => {
+        // Remove a classe "selecionado" de todas as divs
+        divs.forEach(d => d.classList.remove('selecionado'));
+        // Adiciona a classe "selecionado" à div clicada
+        div.classList.add('selecionado');
+        alert(div.textContent)
+        });
+    });
+
+    
+  </script>
+</html>

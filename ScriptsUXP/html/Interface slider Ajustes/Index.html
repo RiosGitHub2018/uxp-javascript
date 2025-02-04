@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizar Elementos</title>
+</head>
+
+<style>
+ 	@charset "UTF-8";
+	*{margin: 0; }
+	body{cursor: Default;  padding:20px; background-color: rgb(71, 71, 71);}
+
+    .painel_Principal{
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        border:  1px solid rgb(49, 49, 49); 
+        border-radius: 10px;
+        margin: auto;
+        padding: 20px;
+    }
+    .coln1{
+        width: 20%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: beige;
+        text-align: right;
+        justify-content: flex-start;
+        padding: 5px;
+    }
+
+    .coln1 :p{ margin: 10px; }
+
+    .coln2{
+        width: 60%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .coln3{
+        width: 20%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        color: #c2c2c2;
+        text-align: center;
+        justify-content: flex-start;
+        padding: 5px;
+      
+    }
+
+    .cores{ padding: 3px; }
+    .slider{ padding: 2px; }
+    .vallor{ 
+        width: 25px;
+        background-color: #313133;
+        border-radius: 3px;
+        padding: 3px;
+        margin: 1.5px;
+    }
+
+
+
+</style>
+
+<body>
+    <div class="painel_Principal">
+        <div class="coln1"> 
+            <p class="cores">Ciano</p> <p class="cores">Vermelho</p> <p class="cores">Verde</p>
+            <p class="cores">Magenta</p> <p class="cores">Amarelo</p> <p class="cores">Azul</p>
+        </div>
+
+        <div class="coln2">
+            <input class="slider" type="range">
+            <input class="slider" type="range">
+            <input class="slider" type="range">
+            <input class="slider" type="range">
+            <input class="slider" type="range">
+            <input class="slider" type="range">
+        </div>
+        <div class="coln3">
+            <p id="sld1" class="cores vallor">0</p>
+            <p id="sld1" class="cores vallor">0</p>
+            <p id="sld1" class="cores vallor">0</p>
+            <p id="sld1" class="cores vallor">0</p>
+            <p id="sld1" class="cores vallor">0</p>
+            <p id="sld1" class="cores vallor">0</p>
+        </div>
+
+    </div>
+</body>
+</html>

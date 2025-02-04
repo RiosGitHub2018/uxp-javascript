@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Calendário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #calendar {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #calendar th, #calendar td {
+            border: 1px solid #acaaaa;
+            padding: 5px;
+            text-align: center;
+            font-size: 40px;
+        }
+        #calendar th {
+            background-color: #f2f2f2;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+        #calendar td {
+           font-weight: bold;  /* Esta linha torna os dias em negrito */
+        }
+
+        /* Cor para os domingos */
+        #calendar td:nth-child(7) {
+            color: red; /* Você pode escolher qualquer cor */
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <label for="month">Mês:</label>
+        <select id="month"></select>
+        <label for="year">Ano:</label>
+        <input type="number" id="year" min="1900" max="2100">
+        <button onclick="generateAndSaveCalendar()">Gerar e Salvar Calendário</button>
+    </div>
+    <div id="calendar-container"></div>
+
+    <script>
+        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        const dayNames = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
+
+        function populateMonthSelect() {
+            const select = document.getElementById('month');
+            monthNames.forEach((month, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = month;
+                select.appendChild(option);
+            });
+        }
+
+        function generateCalendar() {
+            const month = parseInt(document.getElementById('month').value);
+            const year = parseInt(document.getElementById('year').value);
+
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = new Date(year, month, 1).getDay();
+
+            mesSelecionado = `${monthNames[month]} ${year}`
+            let html = `<table id="calendar">
+                            <caption>${mesSelecionado}</caption>
+                            <tr>${dayNames.map(day => `<th>${day}</th>`).join('')}</tr>`;
+
+            let day = 1;
+            for (let i = 0; i < 6; i++) {
+                html += '<tr>';
+                for (let j = 0; j < 7; j++) {
+                    if (i === 0 && j < (firstDay + 6) % 7) {
+                        html += '<td></td>';
+                    } else if (day > daysInMonth) {
+                        html += '<td></td>';
+                    } else {
+                        html += `<td>${day}</td>`;
+                        day++;
+                    }
+                }
+                html += '</tr>';
+                if (day > daysInMonth) break;
+            }
+
+            html += '</table>';
+            document.getElementById('calendar-container').innerHTML = html;
+        }
+
+        function generateAndSaveCalendar() {
+            generateCalendar();
+
+            const calendarElement = document.getElementById('calendar-container');
+
+            html2canvas(calendarElement).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `${mesSelecionado}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        window.onload = function() {
+            populateMonthSelect();
+            const currentDate = new Date();
+            document.getElementById('month').value = currentDate.getMonth();
+            document.getElementById('year').value = currentDate.getFullYear();
+            generateCalendar();
+        }
+    </script>
+</body>
+</html>

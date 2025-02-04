@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="myQuery.js"></script>
+</head>
+<body>
+    
+    <style>
+        label{
+            font-family: Arial, Helvetica, sans-serif
+        }
+        .itens-Orçamento{
+            border: 1px solid #d1d0d0; 
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            color: #979595;
+            background-color: #f3f3f3;
+            margin: 3px;
+        }
+
+        .btnOrçaSalvar{
+            height: 25px; background-color: #457fec; border: none; color: #ffffff; margin-left: 10px; border-radius: 3px;
+        }
+        .btnOrçaDelete{
+            height: 25px; background-color: #ec4545; border: none; color: #ffffff; margin-left: 10px; border-radius: 3px;
+        }
+
+
+       
+
+
+    </style>
+
+    <div id="main-Orçamento" style=" width: 50%; transform: translateX(50%);  ">
+        <label >Itens do orçamento</label>
+        <div style="border: 1px solid #b8b8b8; padding: 5px; border-radius: 6px; margin-top: 5px;">
+
+            <div  id="itens-OrçamAdd"> </div>
+        </div>
+        <button id="itenOrmtAdd" style="height: 26px; margin-top: 10px;">+ Adicionar item</button>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+
+let porductsServices = [];
+
+function atualizarItensOrçamento() {
+    s1("#itens-OrçamAdd").innerHTML = "";
+    valorIniciar = 0; // Resetamos o valor total aqui
+
+    porductsServices.forEach((product, index) => {
+        ordem=index
+        const novosItens = document.createElement('div');
+        novosItens.innerHTML = `
+            <div class="itens-Orçamento">
+                <!-- PRODUTOS/SERVIÇO -->
+                <label>Produto/Serviço</label>
+                <div style="display: flex;">
+                    <input id="m5et01${index}" type="text" style="width: 100%; border: 1px solid #d1d0d0; padding: 5px; border-radius: 2px" placeholder="Nome do Produto/Serviço">
+                </div>
+
+                <div style="display: flex; margin-top: 10px; align-items: flex-end;"> 
+                    <!-- QUANTIDADE -->
+                    <div style="display: flex; flex-direction: column;">
+                        <label>QTD</label>
+                        <div style="display: flex;">
+                            <input id="m5et02${index}" type="number" style="width: 100%; border: 1px solid #d1d0d0; padding: 5px; border-radius: 2px" placeholder="Quantidade">
+                        </div>
+                    </div>
+
+                    <!-- VALOR UNITÁRIO -->
+                    <div style="display: flex; flex-direction: column;">
+                        <label>Valor unitário (R$)</label>
+                        <div style="display: flex;">
+                            <input id="m5et03${index}" type="text" style="width: 100%; border: 1px solid #d1d0d0; padding: 5px; border-radius: 2px; margin-left: 5px; margin-right: 5px;" placeholder="Valor unitário">
+                        </div>
+                    </div>
+
+                    <!-- TOTAL -->
+                    <div style="display: flex; flex-direction: column;">
+                        <label>Total (R$)</label>
+                        <div style="display: flex;">
+                            <input id="m5et04${index}" type="text" style="width: 100%; border: 1px solid #d1d0d0; padding: 5px; border-radius: 2px;" placeholder="Total" readonly>
+                        </div>
+                    </div>
+                    <!--<button class="btnOrçaSalvar">Atualizar</button>  -->
+                    <button class="btnOrçaDelete">Remover</button>
+                </div>
+            </div>
+        `;
+        document.querySelector("#itens-OrçamAdd").appendChild(novosItens);
+
+        s1(`#m5et01${index}`).value = product.m5vr01;
+        s1(`#m5et02${index}`).value = product.m5vr02;
+        s1(`#m5et03${index}`).value = `R$ ${product.m5vr03}`;
+        s1(`#m5et04${index}`).value = `R$ ${product.m5vr04}`;
+
+        formatarPrecos([`m5et03${index}`, `m5et04${index}`]);
+
+        const listasInputs = [s1(`#m5et02${index}`), s1(`#m5et03${index}`)];
+        listasInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                m5Calcular(index);
+                atualizarValorTotal();
+            });
+        });
+
+        // Adicionamos o valor deste item ao total
+        valorIniciar += parseFloat(product.m5vr04.replace("R$ ", "").replace(",", ".")) || 0;
+    });
+
+    atualizarValorTotal();
+    adicionarEventListeners();
+}
+
+function m5Calcular(index) {
+    const quantidade = Number(s1(`#m5et02${index}`).value);
+    const valorUnitario = Number(s1(`#m5et03${index}`).value.replace("R$ ", "").replace(",", "."));
+    const total = quantidade * valorUnitario;
+    s1(`#m5et04${index}`).value = `R$ ${total.toFixed(2)}`;
+    porductsServices[index].m5vr04 = total.toFixed(2);
+}
+
+function atualizarValorTotal() {
+    valorIniciar = porductsServices.reduce((total, item) => {
+        return total + (parseFloat(item.m5vr04.replace("R$ ", "").replace(",", ".")) || 0);
+    }, 0);
+    console.clear(); // Limpa o console
+    console.log("Total acumulado:", valorIniciar);
+}
+
+function confirmarDadas(index){
+    let m5vr01 = s1(`#m5et01${index}`).value;
+    let m5vr02 = s1(`#m5et02${index}`).value;
+    let m5vr03 = s1(`#m5et03${index}`).value.replace("R$ ", "").replace(",", ".");
+    let m5vr04 = s1(`#m5et04${index}`).value;
+
+    porductsServices[index] = { m5vr01, m5vr02, m5vr03, m5vr04 };
+    atualizarValorTotal();
+    atualizarItensOrçamento();
+};
+
+function adicionarEventListeners() {
+        // SALVAR INTENS
+    //     s2(".btnOrçaSalvar").forEach((element, index) => {
+    //     element.addEventListener('click', function() {
+    //         confirmarDadas(index);
+    //         atualizarItensOrçamento();
+    //     });
+    // });
+    // Remover itens
+    s2(".btnOrçaDelete").forEach((element, index) => {
+        element.addEventListener('click', function() {
+            porductsServices.splice(index, 1);
+            atualizarItensOrçamento();
+        });
+    });
+}
+
+// Adicionar itens
+es1.on('#itenOrmtAdd', 'click', () => {
+    porductsServices.push({ m5vr01: "", m5vr02: "", m5vr03: "", m5vr04: "" });
+    try { confirmarDadas(ordem)} catch (err) {}
+    atualizarItensOrçamento();
+});
+
+// Função para formatar preços (assumindo que esta função já existe no seu código)
+// function formatarPrecos(ids) {
+//     ids.forEach(id => {
+//         const element = s1(`#${id}`);
+//         element.addEventListener('input', function(e) {
+//             let value = e.target.value.replace(/\D/g, "");
+//             value = (value / 100).toFixed(2) + "";
+//             value = value.replace(".", ",");
+//             value = value.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+//             value = value.replace(/(\d)(\d{3}),/g, "$1.$2,");
+//             e.target.value = value === "0,00" ? "" : "R$ " + value;
+//         });
+//     });
+// }
+
+// Inicialização
+atualizarItensOrçamento();
+
+
+
+
+
+
+
+
+
+
+        
+
+</script>
+
+
+</html>
+
+
+
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Divs com Escala, Cálculos e Réguas Interativas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container-sm {
+            position: relative;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .main-sm {
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 1px;
+            background-color: #f1c40f;
+        }
+        .child {
+            background-color: #3498db;
+        }
+        #info {
+            margin-top: 10px;
+        }
+        .ruler-h, .ruler-v {
+            position: absolute;
+            background-color: #ecf0f1;
+            font-size: 10px;
+        }
+        .ruler-h {
+            height: 20px;
+            left: 0;
+            top: -20px;
+        }
+        .ruler-v {
+            width: 20px;
+            left: -20px;
+            top: 0;
+        }
+        .ruler-mark {
+            position: absolute;
+            background-color: #34495e;
+        }
+        .ruler-h .ruler-mark {
+            bottom: 0;
+            width: 1px;
+        }
+        .ruler-v .ruler-mark {
+            right: 0;
+            height: 1px;
+        }
+        .ruler-text {
+            position: absolute;
+            color: #34495e;
+        }
+        .ruler-h .ruler-text {
+            top: 5px;
+            transform: translateX(-50%);
+        }
+        .ruler-v .ruler-text {
+            right: 5px;
+            transform: translateY(-50%);
+        }
+        .controls {
+            margin-bottom: 10px;
+        }
+        .controls label {
+            margin-right: 10px;
+        }
+        .controls input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <label>Largura principal (cm): <input type="number" id="areaSimuTotal" value="120"></label>
+        <label>Largura da div filha (cm): <input type="number" id="larguraref" value="5"></label>
+        <label>Altura da div filha (cm): <input type="number" id="alturaref" value="7"></label>
+        <label>Número de divs filhas: <input type="number" id="quantity" value="4"></label>
+    </div>
+    <div class="container-sm">
+        <div class="ruler-h" id="rulerH"></div>
+        <div class="ruler-v" id="rulerV"></div>
+        <div class="main-sm" id="mainContainer"></div>
+    </div>
+    <div id="info"></div>
+
+    <script>
+        const pixelsPerCm = 5;
+        const mainContainer = document.getElementById('mainContainer');
+        const infoDiv = document.getElementById('info');
+        const rulerH = document.getElementById('rulerH');
+        const rulerV = document.getElementById('rulerV');
+
+        const areaSimuTotal = document.getElementById('areaSimuTotal');
+        const larguraref = document.getElementById('larguraref');
+        const alturaref = document.getElementById('alturaref');
+        const quantity = document.getElementById('quantity');
+
+        const gapPixels = 1;
+        const gapCm = gapPixels / pixelsPerCm;
+
+        function updateLayout() {
+            const mainWidthCm = parseInt(areaSimuTotal.value);
+            const childWidthCm = parseInt(larguraref.value);
+            const childHeightCm = parseInt(alturaref.value);
+            const numChildren = parseInt(quantity.value);
+
+            mainContainer.style.width = `${mainWidthCm * pixelsPerCm}px`;
+            mainContainer.innerHTML = '';
+
+            for (let i = 0; i < numChildren; i++) {
+                const childDiv = document.createElement('div');
+                childDiv.className = 'child';
+                childDiv.style.width = `${childWidthCm * pixelsPerCm}px`;
+                childDiv.style.height = `${childHeightCm * pixelsPerCm}px`;
+                mainContainer.appendChild(childDiv);
+            }
+
+            const maxColunas = Math.floor((mainWidthCm * pixelsPerCm + gapPixels) / (childWidthCm * pixelsPerCm + gapPixels));
+            const linhas = Math.ceil(numChildren / maxColunas);
+            const alturaTotal = (linhas * childHeightCm) + ((linhas - 1) * gapCm);
+
+            // Ajusta a altura mínima para 50cm ou a altura total ocupada, o que for maior
+            const alturaMinima = Math.max(alturaTotal, 50);
+            mainContainer.style.minHeight = `${alturaMinima * pixelsPerCm}px`;
+
+            createRulers(mainWidthCm, alturaMinima);
+            calculateRowsAndColumns();
+        }
+
+        function createRulers(width, height) {
+            // ... (o restante da função permanece o mesmo) ...
+        }
+
+        function calculateRowsAndColumns() {
+            const mainWidthCm = parseInt(areaSimuTotal.value);
+            const childWidthCm = parseInt(larguraref.value);
+            const childHeightCm = parseInt(alturaref.value);
+            const numChildren = parseInt(quantity.value);
+
+            const mainWidth = mainWidthCm * pixelsPerCm;
+            const childWidth = childWidthCm * pixelsPerCm;
+            const childHeight = childHeightCm * pixelsPerCm;
+
+            const maxColunas = Math.floor((mainWidth + gapPixels) / (childWidth + gapPixels));
+            const colunasReais = Math.min(maxColunas, numChildren);
+            const linhas = Math.ceil(numChildren / colunasReais);
+
+            const larguraTotal = (colunasReais * childWidthCm) + ((colunasReais - 1) * gapCm);
+            const alturaTotal = (linhas * childHeightCm) + ((linhas - 1) * gapCm);
+
+            infoDiv.innerHTML = `
+                <p>Número de colunas por linha: ${colunasReais}</p>
+                <p>Número de linhas: ${linhas}</p>
+                <p>Largura total ocupada: ${larguraTotal.toFixed(2)} cm</p>
+                <p>Altura total ocupada: ${alturaTotal.toFixed(2)} cm</p>
+            `;
+
+            // Atualiza a altura da régua vertical se necessário
+            if (alturaTotal > 50) {
+                createRulers(mainWidthCm, alturaTotal);
+                mainContainer.style.minHeight = `${alturaTotal * pixelsPerCm}px`;
+            }
+        }
+
+        function createRulers(width, height) {
+            rulerH.innerHTML = '';
+            rulerV.innerHTML = '';
+            rulerH.style.width = `${width * pixelsPerCm}px`;
+            rulerV.style.height = `${height * pixelsPerCm}px`;
+
+            for (let i = 0; i <= width; i++) {
+                const mark = document.createElement('div');
+                mark.className = 'ruler-mark';
+                mark.style.left = `${i * pixelsPerCm}px`;
+                
+                if (i % 5 === 0) {
+                    mark.style.height = '10px';
+                    const text = document.createElement('div');
+                    text.className = 'ruler-text';
+                    text.textContent = i;
+                    text.style.left = `${i * pixelsPerCm}px`;
+                    rulerH.appendChild(text);
+                } else {
+                    mark.style.height = '5px';
+                }
+                
+                rulerH.appendChild(mark);
+            }
+
+            for (let i = 0; i <= height; i++) {
+                const mark = document.createElement('div');
+                mark.className = 'ruler-mark';
+                mark.style.top = `${i * pixelsPerCm}px`;
+                
+                if (i % 5 === 0) {
+                    mark.style.width = '10px';
+                    const text = document.createElement('div');
+                    text.className = 'ruler-text';
+                    text.textContent = i;
+                    text.style.top = `${i * pixelsPerCm}px`;
+                    rulerV.appendChild(text);
+                } else {
+                    mark.style.width = '5px';
+                }
+                
+                rulerV.appendChild(mark);
+            }
+        }
+
+        function calculateRowsAndColumns() {
+            const mainWidthCm = parseInt(areaSimuTotal.value);
+            const childWidthCm = parseInt(larguraref.value);
+            const childHeightCm = parseInt(alturaref.value);
+            const numChildren = parseInt(quantity.value);
+
+            const mainWidth = mainWidthCm * pixelsPerCm;
+            const childWidth = childWidthCm * pixelsPerCm;
+            const childHeight = childHeightCm * pixelsPerCm;
+
+            const maxColunas = Math.floor((mainWidth + gapPixels) / (childWidth + gapPixels));
+            const colunasReais = Math.min(maxColunas, numChildren);
+            const linhas = Math.ceil(numChildren / colunasReais);
+
+            const larguraTotal = (colunasReais * childWidthCm) + ((colunasReais - 1) * gapCm);
+            const alturaTotal = (linhas * childHeightCm) + ((linhas - 1) * gapCm);
+
+            infoDiv.innerHTML = `
+                <p>Número de colunas por linha: ${colunasReais}</p>
+                <p>Número de linhas: ${linhas}</p>
+                <p>Largura total ocupada: ${larguraTotal.toFixed(2)} cm</p>
+                <p>Altura total ocupada: ${alturaTotal.toFixed(2)} cm</p>
+            `;
+        }
+
+        [areaSimuTotal, larguraref, alturaref, quantity].forEach(input => {
+            input.addEventListener('change', updateLayout);
+        });
+
+        updateLayout();
+    </script>
+</body>
+</html>

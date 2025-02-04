@@ -1,0 +1,45 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const fs = require("uxp").storage.localFileSystem;
+const alert = app.showAlert;
+
+try {
+    const fs = require('uxp').storage.localFileSystem;
+    const file = await fs.getFileForOpening();
+    // Lê o conteúdo do arquivo como texto
+    const text = await file.read();
+    // Converte o texto JSON em um objeto JavaScript
+    const jsonObject = JSON.parse(text);
+    // Atribui o objeto JSON a uma variável (por exemplo, presetCorte)
+    let presetCorte = jsonObject;
+    // Itera sobre os elementos do array
+    presetCorteDados=[]
+    presetCorte.forEach(element => {
+        // alert(element.nome);
+        presetCorteDados.push(`${element.nome}\n`)
+    });
+
+    alert(presetCorteDados)
+
+} catch (error) {alert(error)}
+
+
+
+
+
+
+
+
+
+// ////////// RECONHECER UM ARRAY
+// if (Array.isArray(presetCorte)) {
+//     // Itera sobre os elementos do array
+//     presetCorteDados=[]
+//     presetCorte.forEach(element => {
+//        // alert(element.nome);
+//        presetCorteDados.push(`${element.nome}\n`)
+//     });
+// } else {
+//     alert("presetCorte não é um array.");
+// }

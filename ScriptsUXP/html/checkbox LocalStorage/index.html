@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvar valore</title>
+</head>
+
+<style>
+    .gpBox{
+        width: 80px;
+        margin: auto;
+        border: 1px solid rgb(109, 109, 109);
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        align-items: center;
+    }
+</style>
+
+
+
+<body onload="restoreCheckboxes()">
+    <div class="gpBox">
+        <input type="checkbox" name="bixby1"  onclick="savefunction()" class="products"> Opção 1
+        <input type="checkbox" name="bixby2" onclick="savefunction()" class="products"> Opção 2
+        <input type="checkbox" name="bixby3" onclick="savefunction()" class="products"> Opção 3
+        <hr>
+        <button type="button" onClick="savefunction()">save</button>
+    </div>
+</body>
+
+
+
+
+
+
+<script>
+
+        function savefunction(){
+            var checkboxes = document.querySelectorAll('.products');
+            var checked = {};
+            for (var i = 0; i < checkboxes.length; i += 1) {
+                if (checkboxes[i].checked) {
+                checked[checkboxes[i].name] = checkboxes[i].value;
+                }
+            // <-- no need for else, because we simply override
+            }
+            localStorage.setItem('checked_boxes', JSON.stringify(checked)); // <-- localStorage can only store `String` values
+        }
+
+        function restoreCheckboxes () {
+            var checkbox = document.querySelectorAll('.products');
+            var checkboxStates = localStorage.getItem('checked_boxes');
+            if (checkboxStates) {
+                checkboxStates = JSON.parse(checkboxStates); // <-- parse string to object
+                for (i = 0; i < checkbox.length; i += 1) {
+                    if (checkboxStates.hasOwnProperty(checkbox[i].name)) {
+                    checkbox[i].checked = true;
+                    }
+                }
+            }
+        }
+       
+</script>
+
+
+
+
+</html>
+

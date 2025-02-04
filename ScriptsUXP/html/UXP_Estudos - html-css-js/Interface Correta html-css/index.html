@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<style>
+    .container{
+		width: 600px;
+		/* height: 100%; */
+		margin: auto;
+		/* background-color: rgb(99, 99, 99); */
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content:center;
+		/* align-items: center; */
+	}
+
+	.elemento{
+		width: 300px;
+		/* height: 350px; */
+		background-color: rgb(167, 167, 167);
+		border: 1px solid black;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		margin: 1px;
+		padding: 10px;
+	}
+
+	.coluna_A{
+        /* background-color: rgb(167, 138, 170); */
+		width: 70%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+		margin: 10px;
+	}
+	.coluna_B{
+        /* background-color: rgb(215, 180, 255); */
+		width: 30%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		}
+
+	.coluna_B_elemento{
+		width: 80px;
+		height: 25px;
+		/* background-color: rgb(224, 115, 115); */
+		margin: 2px;
+		border-radius: 20px;
+		color: rgb(0, 0, 0);
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px; 
+		display: flex;
+		align-items: center;
+		justify-content: center; 
+		border: 1px solid black;
+	}
+
+	.paineis{
+		width: 190px;
+		height: 50px;
+		/* background-color: rgb(148, 228, 197); */
+		margin: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center; 
+		border: 1px solid black;
+		position: relative;
+	}
+
+	.painelTitulo {
+		position: absolute;
+		top: -1em;
+		left: 5px;
+		background-color: rgb(167, 167, 167);
+		display: block;
+		padding: 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px; 
+	}
+
+	.painelTitulo2{
+		position: absolute;
+		top: -1em;
+		right: 5px;
+		background-color: rgb(167, 167, 167);
+		display: block;
+		padding: 5px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px; 
+		border: 1px solid black;
+	}
+
+</style>
+
+
+<body >
+
+	<div class="container">
+		<div class="elemento">
+			<div class="coluna_A">
+				<div class="paineis"> <div class="painelTitulo"><dt >Painel item 1</dt ></div>
+					Conteudo Painel item 1
+				</div>
+				
+				<div class="paineis"> <div class="painelTitulo"><dt >Painel item 2</dt ></div> <div class="painelTitulo2"><dt >Painel item 2</dt ></div>
+					Conteudo Painel item 2
+				</div>
+
+				<div class="paineis"> <div class="painelTitulo"><dt >Painel item 3</dt ></div>
+					Conteudo Painel item 3
+				</div>
+			</div>
+			
+			<div class="coluna_B">
+				 <div class="coluna_B_elemento">Button1</div>
+				 <div class="coluna_B_elemento">Button2</div>
+				 
+			</div>	
+		</div>
+
+	</div>
+	
+  
+</body>
+
+
+</html>

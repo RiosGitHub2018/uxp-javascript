@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Classe</title>
+        <style>
+            .borda {
+                background-color: #bd7575;
+                cursor: default;
+                color: aliceblue;
+            }
+        </style>
+</head>
+<body>
+
+    <div id="conteudo"></div>
+    <br>
+    <div  id="result">Tamanho</div>
+
+    <script>
+
+        ////// ARRAY LISTA DE TODOS OS TALHOS
+        tamanhosArray = ["10x15", "15x21", "20x30", "20x25", "30x40"]
+
+        ////// OBTERM TODOS OS ITENS DA LISTA E CRIA ELEMENTOS DIV COM CLASSE DE NOME "ELEMENTO"
+        tamanhosArray.forEach((element, index) =>{
+            document.querySelector("#conteudo").insertAdjacentHTML("beforeend",  `<div class="elemento">${element }</div>`)
+            console.log(element)
+        });
+        
+         ////// EXECUTA ALGUMA AÇÃO AO ELEMENTO SELECIONADO
+        var elementos = document.querySelectorAll('.elemento');
+        elementos.forEach(function(elemento, indice) {
+            elemento.addEventListener('click', function() {
+            var dataOriginalValue = this.getAttribute('data-original');
+            var textoBotao = this.textContent;
+
+            var swDoc = textoBotao.split("x")[0];
+            var shDoc = textoBotao.split("x")[1];
+            
+            //console.clear();
+            console.log(swDoc);
+            console.log(shDoc);
+            // console.log(textoBotao);
+            // console.log('Índice do item clicado:', indice);
+    
+            elementos.forEach(function(el) { el.classList.remove('borda');  });
+            this.classList.add('borda');
+
+            document.querySelector("#result").textContent=`Tamanho: ${swDoc}x${shDoc}`
+            });
+        });
+    </script>
+    
+</body>
+
+
+
+
+</html>

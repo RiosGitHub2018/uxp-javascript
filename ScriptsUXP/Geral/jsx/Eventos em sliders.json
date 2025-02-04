@@ -1,0 +1,47 @@
+document.getElementById("midtoneSlider").addEventListener("change", setMidtoneOpacity);
+
+
+async function setMidtoneOpacity() {
+   var sliderValue = document.querySelector("#midtoneSlider").value
+   const result = await customFunction1(sliderValue);
+}
+
+async function customFunction1(layerOpacity) {
+   const result = await batchPlay(
+   [
+      {
+         "_obj": "select",
+         "_target": [
+            {
+               "_ref": "layer",
+               "_name": "MidtoneColour"
+            }
+         ],
+
+      },
+      {
+         "_obj": "set",
+         "_target": [
+            {
+               "_ref": "layer",
+               "_enum": "ordinal",
+               "_value": "targetEnum"
+            }
+         ],
+         "to": {
+            "_obj": "layer",
+            "opacity": {
+               "_unit": "percentUnit",
+               "_value": layerOpacity
+            }
+         },
+         "_isCommand": true,
+         "_options": {
+            "dialogOptions": "dontDisplay"
+         }
+      }
+   ],{
+      "synchronousExecution": false,
+      "modalBehavior": "fail"
+   });
+   }

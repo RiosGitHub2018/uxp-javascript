@@ -1,0 +1,2 @@
+{"plugins":[{"hostMinVersion":"22.3.0","name":"Retoques mágicos","path":"$localPlugins\\External\\@ancelmoa_2.0.1","pluginId":"@ancelmoa","status":"enabled","type":"uxp","versionString":"2.0.1"},{"hostMinVersion":"23.4","name":"Eleições 2024","path":"$localPlugins\\External\\ancelmoAlves_1.0.0","pluginId":"ancelmoAlves","status":"enabled","type":"uxp","versionString":"1.0.0"},
+{"hostMinVersion":"23.4","name":"King Retouch","path":"$localPlugins\\External\\King Retouch_2.0.1","pluginId":"King Retouch","status":"enabled","type":"uxp","versionString":"1.0.0"}]}

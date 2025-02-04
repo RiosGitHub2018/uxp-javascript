@@ -1,0 +1,1 @@
+app.showAlert(app.activeDocument.saved)

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body style="text-align:center;">
+	
+	<select id="listMD"></select>
+	<button onclick="GFG_Fun();">	click here</button>
+	
+	<script>
+		var select = document.getElementById("listMD");
+		var conteudo = ["Delecione", "HTML", "CSS", "JS", "PHP", "jQuery"];
+
+		// Main function
+		function GFG_Fun() {
+			for (var i = 0; i < conteudo.length; i++) {
+				var optn = conteudo[i];
+				var el = document.createElement("option");
+				el.textContent = optn;
+				el.value = optn;
+				select.appendChild(el);
+			}
+			alert(el.value)
+		}
+		
+		GFG_Fun();
+		
+		
+		document.querySelector("#listMD").addEventListener("change", async evt => {
+				var nomePreset = document.getElementById("listMD").value;
+                alert(nomePreset)
+		})
+		
+		
+	</script>
+</body>
+
+</html>
