@@ -1,0 +1,496 @@
+
+@font-face {
+    font-family: Roboto;
+	font-style: normal;
+    src: url(fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: Roboto;
+	font-style: normal;
+    src: url(fonts/Roboto-Thin.ttf);
+    font-weight: 100;
+}
+@font-face {
+    font-family: Roboto;
+	font-style: normal;
+    src: url(fonts/Roboto-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: Roboto;
+	font-style: normal;
+    src: url(fonts/Roboto-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Black.ttf);
+    font-weight: 900;
+}
+
+* {
+	font-family: Roboto;
+	font-weight: 400;
+}
+
+:focus {outline:none;}
+
+p
+{
+background-color:none!important;    
+background:none!important;
+}
+
+body {
+/*	text-align:center;*/
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-before: 0;
+	-webkit-padding-after: 0;
+	-webkit-padding-start: 0;
+	-webkit-padding-end: 0;
+	padding: 0;
+	margin: 0;
+	-webkit-user-select: none;
+	cursor: default;
+	overflow:hidden;
+
+    
+	font-family: sans-serif;
+	font-weight: normal;
+    
+    width:278px;
+    height:228px;
+	
+
+	
+}
+
+
+
+@media (prefers-color-scheme:dark)
+{
+	sp-action-button
+	{
+		background-color:#3b3b3b;
+	}
+}
+
+@media (prefers-color-scheme: darkest)
+{
+	sp-action-button
+	{
+		background-color:#2c2c2c;
+	}
+}
+
+.main_background
+{
+	width:258px;
+	height:208px;
+	background-color:rgba(255,255,255,0.1);
+	border-radius:8px;
+}
+
+#panel_hub .main_background
+{
+	background-image:url('back.png');
+
+	background-position: 15px 98px;
+}
+
+
+.eye
+{
+	background-size:60% auto;
+	background-position:center;
+	background-image:url('eye_off.svg');
+	
+}
+
+.eye.on
+{
+	background-image:url('eye.svg');
+	
+}
+@media (prefers-color-scheme:dark), (prefers-color-scheme: darkest)
+{
+	#panel_hub .main_background
+	{
+		background-image:url('dark_back.png');
+	}
+}
+
+#panel_cc .main_background
+{
+	width:250px;
+	height:336px;
+}
+
+#panel_ff .main_background
+{
+	width:624px;
+	height:196px;
+}
+
+#panel_db .main_background
+{
+	width:258px;
+	height:396px;
+}
+
+#panel_im .main_background
+{
+	width:250px;
+	height:600px;
+}
+
+#panel_pm .main_background
+{
+	width:180px;
+	height:260px;
+}
+
+#panel_qb .main_background
+{
+	width:250px;
+	height:440px;
+}
+
+
+#panel_ze .main_background
+{
+	width:258px;
+	height:505px;
+}
+
+.container > * {
+	position: absolute;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-before: 0;
+	-webkit-padding-after: 0;
+	-webkit-padding-start: 0;
+	-webkit-padding-end: 0;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	
+}
+
+p {
+	display: inline-block;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	-webkit-padding-before: 0;
+	-webkit-padding-after: 0;
+	-webkit-padding-start: 0;
+	-webkit-padding-end: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+}
+
+hr {
+	border-color: gray;
+	color:#444444;
+	position: absolute;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+}
+
+ul {
+	padding:0px;
+}
+
+
+
+select {
+	font-size:11px!important;
+}
+
+
+sp-action-button
+{
+	font-size:11px;
+
+	min-width:12px;
+
+}
+
+sp-button
+{
+	border-radius:4px;
+	font-size:11px;
+}
+
+ .tooltip sp-tooltip {
+   display: none;
+position: absolute;
+top:24px;
+font-size:10px;
+ }
+
+ .tooltipped .tooltip:hover sp-tooltip {
+   display: block;
+ }
+ 
+sp-tooltip span
+{
+	display:none;
+} 
+
+.default .tooltip:hover sp-tooltip span.default,
+.it_IT .tooltip:hover sp-tooltip span.it_IT,
+.de_DE .tooltip:hover sp-tooltip span.de_DE,
+.fr_FR .tooltip:hover sp-tooltip span.fr_FR,
+.es_ES .tooltip:hover sp-tooltip span.es_ES
+{
+	 display:inline;
+}
+
+
+#switch
+{
+ 	cursor: pointer;
+ 	width: 24px;
+ 	height: 14px;
+ 	background: grey;
+ 	display: block;
+ 	border-radius: 7px;
+ 	position: relative;
+ }
+
+#switch #toggle {
+ 	position: absolute;
+ 	top: 2px;
+ 	left: 2px;
+ 	width: 10px;
+ 	height: 10px;
+ 	background: #fff;
+ 	border-radius: 5px;
+ }
+
+#switch.checked {
+ 	background: #2680eb;
+ }
+
+#switch.checked #toggle {
+ 	left: 12px;
+ 	
+ }
+
+ .whiteButton
+ {
+     background-image:url('white.png');
+ }
+
+ .whiteButton:hover 
+ {
+     background-image:url('white ov.png');
+ }
+
+ .blackButton
+ {
+     background-image:url('black.png');
+ }
+
+ .blackButton:hover 
+ {
+     background-image:url('black ov.png');
+ }
+
+ .orangeButton
+ {
+     background-image:url('orange.png');
+ }
+
+ .orangeButton:hover 
+ {
+     background-image:url('orange ov.png');
+ }
+
+ .orange1Button
+ {
+     background-image:url('orange1.png');
+ }
+
+ .orange1Button:hover 
+ {
+     background-image:url('orange1 ov.png');
+ }
+
+ .pinkButton
+ {
+     background-image:url('pink.png');
+ }
+
+ .pinkButton:hover 
+ {
+     background-image:url('pink ov.png');
+ }
+
+
+ .blueButton
+ {
+     background-image:url('blue.png');
+ }
+
+ .blueButton:hover 
+ {
+     background-image:url('blue ov.png');
+ }
+
+ .cyanButton
+ {
+     background-image:url('cyan.png');
+ }
+
+ .cyanButton:hover 
+ {
+     background-image:url('cyan ov.png');
+ }
+
+ .greenButton
+ {
+     background-image:url('green.png');
+ }
+
+ .greenButton:hover 
+ {
+     background-image:url('green ov.png');
+ }
+
+ .magButton
+ {
+     background-image:url('mag.png');
+ }
+
+ .magButton:hover 
+ {
+     background-image:url('mag ov.png');
+ }
+
+ .redButton
+ {
+     background-image:url('red.png');
+ }
+
+ .redButton:hover 
+ {
+     background-image:url('red ov.png');
+ }
+
+ .yelButton
+ {
+     background-image:url('yel.png');
+ }
+
+ .yelButton:hover 
+ {
+     background-image:url('yel ov.png');
+ }
+ 
+ div.radio
+ {
+  	cursor: pointer;
+  	width: 20px;
+  	height: 20px;
+  	display: inline-block;
+  	border-radius: 10px;
+  	position: relative;
+ 	margin-right:14px;
+  }
+
+  #selectiveColorRadio div.radio
+  {
+ 	 margin-right:24px;
+  }
+ div.radio .toggle {
+  	position: absolute;
+  	top: 4px;
+  	left: 4px;
+  	width: 12px;
+  	height: 12px;
+  	background: grey;
+  	border-radius: 7px;
+  }
+
+ div.radio.checked .toggle {
+ 
+  	top: 8px;
+  	left: 8px;
+  	width: 4px;
+  	height: 4px;
+  	background: white;
+  	border-radius: 2px;
+ 	
+ 	
+  }
+ 
+  .redRadio
+  {
+ 	 background-color:red;
+  }
+
+  .orangeRadio
+  {
+ 	 background-color:orange;
+  }
+ 
+  .yellowRadio
+  {
+ 	 background-color:yellow;
+  }
+ 
+  .greenRadio
+  {
+ 	 background-color:green;
+  }
+ 
+ 
+  .cyanRadio
+  {
+ 	 background-color:cyan;
+  }
+ 
+  .blueRadio
+  {
+ 	 background-color:blue;
+  } 
+
+  .magentaRadio
+  {
+ 	 background-color:magenta;
+  }
+
+  .purpleRadio
+  {
+ 	 background-color:purple;
+  }
+ 
+  .blackRadio
+  {
+ 	 background-color:black;
+  }
+  
+  .rgbRadio
+  {
+	  background: gray;
+	  background-image: linear-gradient(217deg, transparent 99%, #f00 0), linear-gradient(127deg, transparent 99%, #0f0 0), linear-gradient(336deg, transparent 99%, #00f 0);
+  }
+  

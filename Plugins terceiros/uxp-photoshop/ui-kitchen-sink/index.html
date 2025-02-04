@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./styles.css" rel="stylesheet"/>
+    <link href="./accordion.css" rel="stylesheet"/>
+    <link href="./bezier.css" rel="stylesheet"/>
+    <link href="./table.css" rel="stylesheet"/>
+    <link href="./sidebar.css" rel="stylesheet"/>
+    <link href="./dialogs.css" rel="stylesheet"/>
+    <link href="./popover.css" rel="stylesheet"/>
+    <link href="./eventlog.css" rel="stylesheet"/>
+    <link href="./dragdrop.css" rel="stylesheet"/>
+    <link href="./tabs.css" rel="stylesheet"/>
+    <link href="./webview.css" rel="stylesheet"/>
+    <script src="index.js"></script>    
+</head>
+<body>
+  <div class="wrapper">
+    <div class="split-section">
+      <div class="left-section">
+        <!-- *************************************************************** -->
+        <!-- * MENU                                                        * -->
+        <!-- *************************************************************** -->
+        <sp-dropdown id="size" style="width: 158px; position: fixed;" size="s" class="fixedSize">
+          <sp-menu slot="options">
+            <sp-menu-item value="s">Small</sp-menu-item>
+            <sp-menu-item value="m" selected>Medium</sp-menu-item>
+            <sp-menu-item value="l">Large</sp-menu-item>
+            <sp-menu-item value="xl">Extra Large</sp-menu-item>
+          </sp-menu>
+        </sp-dropdown>
+        <sp-menu size="s" class="fixedSize" id="selectedPage">
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">OPTIONS</sp-detail>
+            <sp-menu-item>Events</sp-menu-item>
+          </sp-menu-group>
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">TYPOGRAPHY</sp-detail>
+            <sp-menu-item>sp-heading</sp-menu-item>
+            <sp-menu-item>sp-body</sp-menu-item>
+            <sp-menu-item>sp-detail</sp-menu-item>
+            <sp-menu-item>sp-label</sp-menu-item>
+            <sp-divider></sp-divider>
+            <sp-menu-item>div</sp-menu-item>
+            <sp-menu-item>h1-h6</sp-menu-item>
+            <sp-menu-item>hr</sp-menu-item>
+            <sp-menu-item>span</sp-menu-item>
+            <sp-menu-item>p</sp-menu-item>
+            <sp-menu-item>title</sp-menu-item>
+          </sp-menu-group>
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">WIDGETS</sp-detail>
+            <sp-menu-item>sp-action-button</sp-menu-item>
+            <sp-menu-item>sp-button</sp-menu-item>
+            <sp-menu-item>sp-button-group</sp-menu-item>
+            <sp-menu-item>sp-checkbox</sp-menu-item>
+            <sp-menu-item>sp-divider</sp-menu-item>
+            <sp-menu-item>sp-dropdown</sp-menu-item>
+            <sp-menu-item>sp-icon</sp-menu-item>
+            <sp-menu-item>sp-link</sp-menu-item>
+            <sp-menu-item>sp-menu</sp-menu-item>
+            <sp-menu-item>sp-meter</sp-menu-item>
+            <sp-menu-item>sp-overlay</sp-menu-item>
+            <sp-menu-item>sp-progress</sp-menu-item>
+            <sp-menu-item>sp-radio</sp-menu-item>
+            <sp-menu-item>sp-slider</sp-menu-item>
+            <sp-menu-item>sp-switch</sp-menu-item>
+            <sp-menu-item>sp-textarea</sp-menu-item>
+            <sp-menu-item>sp-textfield</sp-menu-item>
+            <sp-menu-item>sp-tooltip</sp-menu-item>
+          </sp-menu-group>
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">CONTAINERS</sp-detail>
+            <sp-menu-item>dialog</sp-menu-item>
+            <sp-menu-item>sp-dialog</sp-menu-item>
+          </sp-menu-group>
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">EXAMPLES</sp-detail>
+            <sp-menu-item>table</sp-menu-item>
+            <sp-menu-item>webview</sp-menu-item>
+            <sp-menu-item>video</sp-menu-item>
+            <sp-menu-item>drag-and-drop</sp-menu-item>
+            <sp-menu-item>tabs</sp-menu-item>
+            <sp-menu-item>bezier</sp-menu-item>
+            <sp-menu-item>launch</sp-menu-item>
+          </sp-menu-group>
+          <sp-menu-group>
+            <sp-detail class="fixedSize" slot="header">DEPRECATED</sp-detail>
+            <sp-menu-item>button</sp-menu-item>
+            <sp-menu-item>select</sp-menu-item>
+            <sp-menu-item>input</sp-menu-item>
+            <sp-menu-item>textarea</sp-menu-item>
+          </sp-menu-group>
+        </sp-menu>
+      </div>
+      <div class="right-section">
+        <sp-heading id="pageTitle"></sp-heading>
+        <!-- *************************************************************** -->
+        <!-- * SP-HEADING                                                  * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-heading">
+          <div style="display: flex; width: 100%;">
+            <div style="flex: 1 1 auto">
+              <sp-detail>HEADING</sp-detail>
+              <sp-heading>Sans-Serif (default)</sp-heading>
+              <sp-heading strong>Strong Sans-Serif</sp-heading>
+              <sp-heading emphasis>Emphasized Sans-Serif</sp-heading>
+              <sp-heading strong emphasis>Strongly Emphasized Sans-Serif</sp-heading>
+            </div>
+            <div style="flex: 1 1 auto">
+              <sp-detail>HEADING, SERIF</sp-detail>
+              <sp-heading classification="serif">Serif (default)</sp-heading>
+              <sp-heading classification="serif" strong>Strong Serif</sp-heading>
+              <sp-heading classification="serif" emphasis>Emphasized Serif</sp-heading>
+              <sp-heading classification="serif" strong emphasis>Strongly Emphasized Serif</sp-heading>
+            </div>
+          </div>
+
+          <div style="display: flex">
+            <div style="flex: 1 1 auto">
+              <sp-detail>HEADING SIZES</sp-detail>
+              <sp-heading class="fixedSize" size="XXXL">Heading XXXL</sp-heading>
+              <sp-heading class="fixedSize" size="XXL">Heading XXL</sp-heading>
+              <sp-heading class="fixedSize" size="XL">Heading XL</sp-heading>
+              <sp-heading class="fixedSize" size="L">Heading L</sp-heading>
+              <sp-heading class="fixedSize" size="M">Heading M</sp-heading>
+              <sp-heading class="fixedSize" size="S">Heading S</sp-heading>
+              <sp-heading class="fixedSize" size="XS">Heading XS</sp-heading>
+              <sp-heading class="fixedSize" size="XXS">Heading XXS</sp-heading>
+            </div>
+            <div style="flex: 1 1 auto">
+              <sp-detail>HEADING SIZES, SERIF</sp-detail>
+              <sp-heading classification="serif" class="fixedSize" size="XXXL">Heading XXXL</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="XXL">Heading XXL</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="XL">Heading XL</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="L">Heading L</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="M">Heading M</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="S">Heading S</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="XS">Heading XS</sp-heading>
+              <sp-heading classification="serif" class="fixedSize" size="XXS">Heading XXS</sp-heading>
+
+            </div>
+          </div>
+        </div>
+        <!-- *************************************************************** -->
+        <!-- * SP-BODY                                                     * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-body">
+          <sp-detail>BODY TEXT</sp-detail>
+          <sp-body>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+
+          <sp-detail>BODY TEXT (SERIF)</sp-detail>
+          <sp-body classification="serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+
+          <sp-detail>BODY TEXT, STRONG</sp-detail>
+          <sp-body strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+
+          <sp-detail>BODY TEXT, EMPHASIS</sp-detail>
+          <sp-body emphasis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+
+          <sp-detail>BODY TEXT, EMPHASIZED &amp; STRONG</sp-detail>
+          <sp-body strong emphasis>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+
+          <sp-detail>BODY SIZES</sp-detail>
+          <sp-body class="fixedSize" size="XXXL">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="XXL">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="XL">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="L">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="M">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="S">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+          <sp-body class="fixedSize" size="XS">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend est mollis ligula lobortis, tempus ultricies sapien lacinia.</sp-body>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-DETAIL                                                   * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-detail">
+          <sp-detail>DEFAULT DETAIL</sp-detail>
+          <sp-detail class="safe">SOME DETAIL INFO</sp-detail>
+
+          <sp-detail>SERIF DETAIL</sp-detail>
+          <sp-detail classification="serif" class="safe">SOME DETAIL INFO</sp-detail>
+
+          <sp-detail>EMPHASIZED DETAIL</sp-detail>
+          <sp-detail emphasis class="safe">SOME DETAIL INFO</sp-detail>
+
+          <sp-detail>LIGHT DETAIL</sp-detail>
+          <sp-detail weight="light" class="safe">SOME DETAIL INFO</sp-detail>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-LABEL                                                    * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-label">
+          <sp-detail>DEFAULT LABEL</sp-detail>
+          <sp-label class="safe">Label</sp-label>
+
+          <sp-detail>DISABLED LABEL</sp-detail>
+          <sp-label class="safe" disabled>Label</sp-label>
+
+          <sp-detail>REQUIRED w/ NECESSITY INDICATOR </sp-detail>
+          <sp-label class="safe" necessityindicator="icon" isrequired>Name</sp-label>
+          <br/>
+          <sp-label class="safe" necessityindicator="label" isrequired>Name</sp-label>
+
+          <sp-detail>OVER BACKGROUND</sp-detail>
+          <div style="background-color: blue">
+            <sp-label variant="overBackground" class="safe">Label, overBackground</sp-label>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * DIV                                                         * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="div">
+          <sp-body class="warning">The elements on this tab are not theme-aware.</sp-body>
+          <div>This is a div!</div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * H1-H6                                                       * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="h1-h6">
+          <sp-body class="warning">The elements on this tab are not theme-aware.</sp-body>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * HR                                                          * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="hr">
+          <sp-body class="warning">The elements on this tab are not theme-aware.</sp-body>
+          <hr/>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SPAN                                                        * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="span">
+          <sp-body class="warning">The elements on this tab are not theme-aware.</sp-body>
+          <span>This is a span. They are not theme-aware.</span>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * P                                                           * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="p">
+          <sp-body class="warning">The elements on this tab are not theme-aware.</sp-body>
+          <p>This is a paragraph. Note that they are not theme-aware.</p>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * TITLE                                                       * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="title">
+          <sp-button href="#" title="This will do something">Hover over me</sp-button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-ACTION-BUTTON                                            * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-action-button">
+          <sp-detail>NO ICON</sp-detail>
+          <sp-action-button> Do action </sp-action-button>
+          <sp-action-button selected> Do action </sp-action-button>
+          <sp-action-button disabled> Do action </sp-action-button>
+
+          <sp-detail>HOLD AFFORDANCE</sp-detail>
+          <sp-action-button hold-affordance>Mask</sp-action-button>
+
+          <sp-detail>TOGGLE</sp-detail>
+          <sp-action-button variant="toggle">Strong</sp-action-button>
+          <sp-action-button variant="toggle">Emphasis</sp-action-button>
+
+          <sp-detail>WITH UI ICON</sp-detail>
+          <sp-action-button>More
+            <sp-icon name="ui:More" size="s" slot="icon"></sp-icon>
+          </sp-action-button>
+
+          <sp-detail>WITH CUSTOM ICON</sp-detail>
+          <sp-action-button>
+            <div slot="icon" class="icon">
+              <svg id="spectrum-icon-18-Edit" viewBox="0 0 36 36">
+                  <path
+                      d="M33.567 8.2L27.8 2.432a1.215 1.215 0 0 0-.866-.353H26.9a1.371 1.371 0 0 0-.927.406L5.084 23.372a.99.99 0 0 0-.251.422L2.055 33.1c-.114.377.459.851.783.851a.251.251 0 0 0 .062-.007c.276-.063 7.866-2.344 9.311-2.778a.972.972 0 0 0 .414-.249l20.888-20.889a1.372 1.372 0 0 0 .4-.883 1.221 1.221 0 0 0-.346-.945zM11.4 29.316c-2.161.649-4.862 1.465-6.729 2.022l2.009-6.73z"
+                  ></path>
+              </svg>
+            </div>
+            This is an action button
+          </sp-action-button>
+
+          <sp-detail>ICON ONLY</sp-detail>
+          <sp-action-button>
+            <sp-icon name="ui:More" size="s" slot="icon"></sp-icon>
+          </sp-action-button>
+          <sp-action-button label="Edit"><div slot="icon" class="icon"><svg id="spectrum-icon-18-Edit" viewBox="0 0 36 36"><path d="M33.567 8.2L27.8 2.432a1.215 1.215 0 0 0-.866-.353H26.9a1.371 1.371 0 0 0-.927.406L5.084 23.372a.99.99 0 0 0-.251.422L2.055 33.1c-.114.377.459.851.783.851a.251.251 0 0 0 .062-.007c.276-.063 7.866-2.344 9.311-2.778a.972.972 0 0 0 .414-.249l20.888-20.889a1.372 1.372 0 0 0 .4-.883 1.221 1.221 0 0 0-.346-.945zM11.4 29.316c-2.161.649-4.862 1.465-6.729 2.022l2.009-6.73z" ></path></svg></div></sp-action-button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-BUTTON                                                   * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-button">
+          <sp-detail>NORMAL VARIANTS</sp-detail>
+          <sp-button-group>
+            <sp-button variant="cta">Apply</sp-button>
+            <sp-button variant="primary">Okay</sp-button>
+            <sp-button variant="secondary">Cancel</sp-button>
+            <sp-button variant="warning">Warning</sp-button>
+          </sp-button-group>
+
+          <sp-detail>QUIET VARIANTS</sp-detail>
+          <sp-button-group>
+            <sp-button quiet variant="primary">Okay</sp-button>
+            <sp-button quiet variant="secondary">Cancel</sp-button>
+            <sp-button quiet variant="warning">Warning</sp-button>
+          </sp-button-group>
+
+          <sp-detail>WITH ICONS</sp-detail>
+          <sp-button-group>
+          <sp-button variant="primary">Help
+              <sp-icon slot="icon" size="s" name="ui:HelpMedium"></sp-icon>
+          </sp-button>
+          <sp-button variant="primary" icon-right>Help
+              <sp-icon slot="icon" size="s" name="ui:HelpMedium"></sp-icon>
+          </sp-button>
+          <sp-button variant="primary">Ring
+            <div slot="icon" class="icon">
+              <svg
+                  slot="icon"
+                  viewBox="0 0 36 36"
+                  focusable="false"
+                  aria-hidden="true"
+                  role="img"
+              >
+                  <path
+                      d="M16 36a4.407 4.407 0 0 0 4-4h-8a4.407 4.407 0 0 0 4 4zm9.143-24.615c0-3.437-3.206-4.891-7.143-5.268V3a1.079 1.079 0 0 0-1.143-1h-1.714A1.079 1.079 0 0 0 14 3v3.117c-3.937.377-7.143 1.831-7.143 5.268C6.857 26.8 2 26.111 2 28.154V30h28v-1.846C30 26 25.143 26.8 25.143 11.385z"
+                  ></path>
+              </svg>
+            </div>
+          </sp-button>
+          </sp-button-group>
+
+          <sp-detail>STATES</sp-detail>
+            <sp-button variant="primary">Normal</sp-button>
+            <sp-button variant="primary" disabled>Disabled</sp-button>
+            <sp-button quiet variant="primary">Normal</sp-button>
+            <sp-button quiet variant="primary" disabled>Disabled</sp-button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-BUTTON-GROUP                                             * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-button-group">
+          <sp-detail>DEFAULT (HORIZONTAL) BUTTON GROUP</sp-detail>
+          <sp-button-group>
+            <sp-button variant="secondary">Cancel</sp-button>
+            <sp-button variant="cta">Apply</sp-button>
+          </sp-button-group>
+
+          <sp-detail>DISABLED HORIZONTAL BUTTON GROUP</sp-detail>
+          <sp-button-group disabled>
+            <sp-button variant="secondary">Cancel</sp-button>
+            <sp-button variant="cta">Apply</sp-button>
+          </sp-button-group>
+
+          <sp-detail>VERTICAL BUTTON GROUP</sp-detail>
+          <sp-button-group variant="vertical">
+            <sp-button variant="secondary">Cancel</sp-button>
+            <sp-button variant="cta">Apply</sp-button>
+          </sp-button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-CHECKBOX                                                 * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-checkbox">
+          <sp-detail>REGULAR CHECKBOX</sp-detail>
+          <sp-checkbox>Web component</sp-checkbox>
+
+          <sp-detail>STATES</sp-detail>
+          <sp-checkbox checked>Web component</sp-checkbox>
+          <sp-checkbox indeterminate>Web component</sp-checkbox>
+          <sp-checkbox disabled>Web component</sp-checkbox>
+          <sp-checkbox invalid>Web component</sp-checkbox>
+
+          <sp-detail>STATES, VERTICAL</sp-detail>
+          <div style="display: flex; flex-direction: column">
+            <sp-checkbox checked>Web component</sp-checkbox>
+            <sp-checkbox indeterminate>Web component</sp-checkbox>
+            <sp-checkbox disabled>Web component</sp-checkbox>
+            <sp-checkbox invalid>Web component</sp-checkbox>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-DIVIDER                                                  * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-divider">
+          <sp-body class="warning">Note: for UXP below 5.2, the single-character "l", "s", and "m" sizes are ignored. Use "large", "small", and "medium". For convenience,
+            UXP 5.2 will understand "large" as "l", and so on.</sp-body>
+          <sp-detail>LARGE</sp-detail>
+          <sp-divider size="l"></sp-divider>
+
+          <sp-detail>MEDIUM</sp-detail>
+          <sp-divider size="m"></sp-divider>
+
+          <sp-detail>SMALL</sp-detail>
+          <sp-divider size="s"></sp-divider>
+
+          <div style="display: flex; flex-direction: row; height: 100px">
+            <div style="flex: 1 1 auto">
+              <sp-detail>VERTICAL LARGE</sp-detail>
+              <sp-divider orientation="vertical" size="l"></sp-divider>
+            </div>
+
+            <div style="flex: 1 1 auto">
+              <sp-detail>MEDIUM</sp-detail>
+              <sp-divider orientation="vertical" size="m"></sp-divider>
+            </div>
+
+            <div style="flex: 1 1 auto">
+              <sp-detail>SMALL</sp-detail>
+              <sp-divider orientation="vertical" size="s"></sp-divider>
+            </div>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-DROPDOWN                                                 * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-dropdown">
+          <sp-detail>NORMAL</sp-detail>
+          <sp-dropdown placeholder="Make a selection...">
+              <sp-menu slot="options">
+                  <sp-menu-item> Deselect </sp-menu-item>
+                  <sp-menu-item> Select inverse </sp-menu-item>
+                  <sp-menu-item> Feather... </sp-menu-item>
+                  <sp-menu-item> Select and mask... </sp-menu-item>
+                  <sp-menu-divider></sp-menu-divider>
+                  <sp-menu-item> Save selection </sp-menu-item>
+                  <sp-menu-item disabled> Make work path </sp-menu-item>
+              </sp-menu>
+          </sp-dropdown>
+
+          <sp-detail>DISABLED</sp-detail>
+          <sp-dropdown disabled placeholder="Make a selection...">
+              <sp-menu slot="options">
+                  <sp-menu-item> Deselect </sp-menu-item>
+                  <sp-menu-item> Select inverse </sp-menu-item>
+                  <sp-menu-item> Feather... </sp-menu-item>
+                  <sp-menu-item> Select and mask... </sp-menu-item>
+                  <sp-menu-divider></sp-menu-divider>
+                  <sp-menu-item> Save selection </sp-menu-item>
+                  <sp-menu-item disabled> Make work path </sp-menu-item>
+              </sp-menu>
+          </sp-dropdown>
+
+          <sp-detail>INVALID</sp-detail>
+          <sp-dropdown invalid placeholder="Make a selection...">
+              <sp-menu slot="options">
+                  <sp-menu-item> Deselect </sp-menu-item>
+                  <sp-menu-item> Select inverse </sp-menu-item>
+                  <sp-menu-item> Feather... </sp-menu-item>
+                  <sp-menu-item> Select and mask... </sp-menu-item>
+                  <sp-menu-divider></sp-menu-divider>
+                  <sp-menu-item> Save selection </sp-menu-item>
+                  <sp-menu-item disabled> Make work path </sp-menu-item>
+              </sp-menu>
+          </sp-dropdown>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-ICON                                                     * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-icon">
+          <sp-detail>UI ICON</sp-detail>
+          <sp-body>
+            <sp-icon name="ui:Magnifier"></sp-icon>
+          </sp-body>
+
+          <sp-detail>ALL THE ICONS</sp-detail>
+          <sp-body>
+            <sp-icon name="ui:AlertMedium"></sp-icon>
+            <sp-icon name="ui:AlertSmall"></sp-icon>
+            <sp-icon name="ui:ArrowDownSmall"></sp-icon>
+            <sp-icon name="ui:ArrowLeftMedium"></sp-icon>
+            <sp-icon name="ui:ArrowUpSmall"></sp-icon>
+            <sp-icon name="ui:Asterisk"></sp-icon>
+            <sp-icon name="ui:CheckmarkMedium"></sp-icon>
+            <sp-icon name="ui:CheckmarkSmall"></sp-icon>
+            <sp-icon name="ui:ChevronDownMedium"></sp-icon>
+            <sp-icon name="ui:ChevronDownSmall"></sp-icon>
+            <sp-icon name="ui:ChevronLeftLarge"></sp-icon>
+            <sp-icon name="ui:ChevronLeftMedium"></sp-icon>
+            <sp-icon name="ui:ChevronRightLarge"></sp-icon>
+            <sp-icon name="ui:ChevronRightMedium"></sp-icon>
+            <sp-icon name="ui:ChevronRightSmall"></sp-icon>
+            <sp-icon name="ui:ChevronUpSmall"></sp-icon>
+            <sp-icon name="ui:CornerTriangle"></sp-icon>
+            <sp-icon name="ui:CrossLarge"></sp-icon>
+            <sp-icon name="ui:CrossMedium"></sp-icon>
+            <sp-icon name="ui:CrossSmall"></sp-icon>
+            <sp-icon name="ui:DashSmall"></sp-icon>
+            <sp-icon name="ui:DoubleGripper"></sp-icon>
+            <sp-icon name="ui:FolderBreadcrumb"></sp-icon>
+            <sp-icon name="ui:HelpMedium"></sp-icon>
+            <sp-icon name="ui:HelpSmall"></sp-icon>
+            <sp-icon name="ui:InfoMedium"></sp-icon>
+            <sp-icon name="ui:InfoSmall"></sp-icon>
+            <sp-icon name="ui:Magnifier"></sp-icon>
+            <sp-icon name="ui:More"></sp-icon>
+            <sp-icon name="ui:SkipLeft"></sp-icon>
+            <sp-icon name="ui:SkipRight"></sp-icon>
+            <sp-icon name="ui:Star"></sp-icon>
+            <sp-icon name="ui:StarOutline"></sp-icon>
+            <sp-icon name="ui:SuccessMedium"></sp-icon>
+            <sp-icon name="ui:SuccessSmall"></sp-icon>
+            <sp-icon name="ui:TripleGripper"></sp-icon>
+          </sp-body>
+
+          <sp-detail>SIZE VARIANTS</sp-detail>
+          <sp-body>
+            <sp-icon class="fixedSize" size="s" name="ui:Magnifier"></sp-icon>
+            <sp-icon class="fixedSize" size="m" name="ui:Magnifier"></sp-icon>
+            <sp-icon class="fixedSize" size="l" name="ui:Magnifier"></sp-icon>
+            <sp-icon class="fixedSize" size="xl" name="ui:Magnifier"></sp-icon>
+          </sp-body>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-LINK                                                     * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-link">
+          <sp-body class="warning">Links will require permissions to be specified in the manifest.</sp-body>
+          <sp-detail>STANDARD LINK</sp-detail>
+          <sp-body>
+            This is a <sp-link href="https://www.adobe.com">standard link that opens Adobe's homepage</sp-link>.
+          </sp-body>
+
+          <sp-detail>QUIET LINK</sp-detail>
+          <sp-body>
+            This is a <sp-link quiet href="https://www.example.com">standard link that opens an example page</sp-link>.
+            This <sp-link quiet href="mailto:support@adobe.com">link will launch your email client</sp-link>.
+          </sp-body>
+
+          <sp-detail>OVERBACKGROUND LINK</sp-detail>
+          <sp-body style="background-color: blue">
+            This is an <sp-link variant="overBackground" href="https://www.adobeprerelease.com">over-background link</sp-link> (which opens Adobe's prerelease website).
+          </sp-body>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-MENU                                                     * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-menu">
+          <sp-detail>MENU</sp-detail>
+          <sp-menu>
+            <sp-menu-item> Deselect </sp-menu-item>
+            <sp-menu-item> Select inverse </sp-menu-item>
+            <sp-menu-item> Feather... </sp-menu-item>
+            <sp-menu-item> Select and mask... </sp-menu-item>
+            <sp-menu-item> Save selection </sp-menu-item>
+            <sp-menu-item disabled> Make work path </sp-menu-item>
+          </sp-menu>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-METER                                                    * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-meter">
+          <sp-detail>DEFAULT METER</sp-detail>
+          <sp-meter min="0" max="100" value="80">
+            <sp-label slot="label">Electric Charge</sp-label>
+          </sp-meter>
+
+          <sp-detail>METER, HIDE VALUE</sp-detail>
+          <sp-meter min="0" max="100" value="80" show-value="false">
+            <sp-label slot="label">Electric Charge</sp-label>
+          </sp-meter>
+
+          <sp-detail>METER, NO LABEL</sp-detail>
+          <sp-meter min="0" max="100" value="80" show-value="false"></sp-meter>
+
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+            <div style="flex: 1 1 auto">
+              <sp-detail>POSITIVE METER</sp-detail>
+              <sp-meter min="0" max="500" value="250" variant="positive">
+                <sp-label slot="label">Electric Charge</sp-label>
+              </sp-meter>
+            </div>
+            <div style="flex: 1 1 auto">
+              <sp-detail>NOTICE METER</sp-detail>
+              <sp-meter min="0" max="100" value="20" variant="notice">
+                <sp-label slot="label">Electric Charge</sp-label>
+              </sp-meter>
+            </div>
+            <div style="flex: 1 1 auto">
+              <sp-detail>NEGATIVE METER</sp-detail>
+              <sp-meter min="0" max="100" value="10" variant="negative">
+                <sp-label slot="label">Electric Charge</sp-label>
+              </sp-meter>
+            </div>
+            <div style="flex: 1 1 auto">
+              <sp-detail>OVER BACKGROUND METER</sp-detail>
+              <div style="background-color: blue">
+                <sp-meter min="0" max="100" value="80" variant="positive" overbackground="true">
+                  <sp-label slot="label">Electric Charge</sp-label>
+                </sp-meter>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-OVERLAY                                                  * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-overlay">
+          <sp-detail>CLICK OVERLAYS</sp-detail>
+          <sp-overlay >
+            <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+            <sp-popover offset="8" placement="right" alignment="right" appearance="none" slot="click">
+              <sp-heading>Click Trigger</sp-heading>
+              <sp-body>This popover is triggered by clicking the associated button. It will dismiss when the user clicks outside or triggers another popover.</sp-body>
+            </sp-popover>
+          </sp-overlay>
+          <sp-overlay >
+            <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+            <sp-popover offset="8" placement="right" alignment="right" appearance="none" slot="context-menu">
+              <sp-heading>Context Menu Trigger</sp-heading>
+              <sp-body>This popover is triggered by right-clicking the associated button. It will dismiss when the user clicks outside or triggers another popover.</sp-body>
+            </sp-popover>
+          </sp-overlay>
+
+          <sp-detail>HOVER OVERLAY</sp-detail>
+          <sp-overlay >
+            <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+            <sp-popover offset="8" placement="right" alignment="right" appearance="none" slot="hover">
+              <sp-heading>Hover Trigger</sp-heading>
+              <sp-body >This popover is triggered by the user hovering over the associated button. It will dismiss when the user moves away from the button.</sp-body>
+            </sp-popover>
+          </sp-overlay>
+
+          <sp-detail>PLACEMENT (click)</sp-detail>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; width: 100%; height: 150px;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="top" alignment="left" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="top" alignment="center" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="top" alignment="right" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="right" alignment="center" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="auto" alignment="center" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="left" alignment="center" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="bottom" alignment="left" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="bottom" alignment="center" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+              <sp-overlay >
+                <sp-action-button slot="trigger"><sp-icon size="s" name="ui:InfoMedium" slot="icon"></sp-icon></sp-action-button>
+                <sp-popover offset="8" placement="bottom" alignment="right" appearance="none" slot="click">
+                  <sp-heading >The Info Button</sp-heading>
+                  <sp-body >"Info" buttons are placed in the user interface to indicate to users that more information is available about a given element.</sp-body>
+                </sp-popover>
+              </sp-overlay>
+            </div>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-PROGRESS                                                 * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-progress">
+          <sp-detail>DEFAULT PROGRESS BAR</sp-detail>
+          <sp-progressbar max="100" value="80"></sp-progressbar>
+
+          <sp-detail>PROGRESS BAR W/ LABEL</sp-detail>
+          <sp-progressbar max="100" value="80">
+            <sp-label slot="label">Exporting images...</sp-label>
+          </sp-progressbar>
+
+          <sp-detail>PROGRESS BAR W/ LABEL, HIDE VALUE</sp-detail>
+          <sp-progressbar max="100" value="80" show-value="false">
+            <sp-label slot="label">Exporting images...</sp-label>
+          </sp-progressbar>
+
+          <sp-detail>OVERBACKGROUND PROGRESS BAR W/ LABEL</sp-detail>
+          <div style="background-color: blue">
+            <sp-progressbar max="100" value="80" variant="overBackground">
+              <sp-label slot="label">Exporting images...</sp-label>
+            </sp-progressbar>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-RADIO                                                    * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-radio">
+          <sp-detail>STANDARD RADIO BUTTON GROUP</sp-detail>
+          <sp-radio-group selected="first" name="example">
+              <sp-label slot="label">Select an option</sp-label>
+              <sp-radio value="first">Option 1</sp-radio>
+              <sp-radio value="second">Option 2</sp-radio>
+              <sp-radio value="third">Option 3</sp-radio>
+              <sp-radio value="fourth">Option 4</sp-radio>
+          </sp-radio-group>
+
+          <sp-detail>STATES</sp-detail>
+          <sp-radio-group name="example2">
+            <sp-radio checked>Checked radio button</sp-radio>
+            <sp-radio emphasized>Emphatic radio button</sp-radio>
+            <sp-radio invalid>Invalid radio button</sp-radio>
+            <sp-radio disabled>Disabled radio button</sp-radio>
+            <sp-radio readonly>Read-only radio button</sp-radio>
+          </sp-radio-group>
+
+          <sp-detail>STATES, VERTICAL</sp-detail>
+          <sp-radio-group name="example3" column>
+            <sp-radio checked>Checked radio button</sp-radio>
+            <sp-radio emphasized>Emphatic radio button</sp-radio>
+            <sp-radio invalid>Invalid radio button</sp-radio>
+            <sp-radio disabled>Disabled radio button</sp-radio>
+            <sp-radio readonly>Read-only radio button</sp-radio>
+          </sp-radio-group>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-SLIDER                                                   * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-slider">
+          <sp-detail>SLIDER</sp-detail>
+          <sp-slider min="0" max="100" value="50"></sp-slider>
+          <sp-slider min="0" max="100" value="50" disabled></sp-slider>
+
+          <sp-detail>WITH LABEL</sp-detail>
+          <sp-slider min="0" max="100" value="50"><sp-label slot="label">Width</sp-label></sp-slider>
+          <sp-slider min="0" max="100" value="50" disabled><sp-label slot="label">Width - Disabled</sp-label></sp-slider>
+
+          <sp-detail>WITH LABEL & UNITS</sp-detail>
+          <sp-slider min="0" max="100" value="50" value-label="px"><sp-label slot="label">Width</sp-label></sp-slider>
+
+          <sp-detail>WITH LABEL & UNITS & STEPS</sp-detail>
+          <sp-slider min="0" max="500" value="100" value-label="px" step="50"><sp-label slot="label">Width</sp-label></sp-slider>
+
+          <sp-detail>FILLED</sp-detail>
+          <sp-slider min="0" max="100" value="50" variant="filled"></sp-slider>
+          <sp-slider min="0" max="100" value="50" variant="filled" fill-offset="right"></sp-slider>
+          <sp-slider min="0" max="100" value="50" variant="filled" disabled ></sp-slider>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-SWITCH                                                   * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-switch">
+          <sp-detail>DEFAULT SWITCH</sp-detail>
+          <sp-switch>I'm off</sp-switch>
+          <br/>
+          <sp-switch checked>I'm on</sp-switch>
+
+          <sp-detail>SWITCH STATES</sp-detail>
+          <sp-switch emphasized checked>I'm an emphatic switch</sp-switch>
+          <br/>
+          <sp-switch disabled>Grayed out</sp-switch>
+          <br/>
+          <sp-switch readonly>Can't change me</sp-switch>
+          <br/>
+
+          <sp-detail>NO LABEL</sp-detail>
+          <sp-switch></sp-switch>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-TEXTAREA                                                 * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-textarea">
+          <sp-detail>TEXT AREA</sp-detail>
+          <sp-textarea placeholder="Enter your name" multiline></sp-textarea>
+
+          <sp-detail>QUIET TEXT AREA</sp-detail>
+          <sp-body class="fixedSize warning" size="s">Note: In most apps, you'll want to assign a background color behind quiet inputs, as otherwise the quiet background will be obvious.</sp-body>
+          <div class="match-background">
+            <sp-textarea quiet placeholder="Enter your name" multiline></sp-textarea>
+          </div>
+
+          <sp-detail>INVALID TEXT AREA</sp-detail>
+          <sp-textarea invalid placeholder="Enter your name" multiline></sp-textarea>
+
+          <sp-detail>VALID TEXT AREA</sp-detail>
+          <sp-textarea valid placeholder="Enter your name" multiline></sp-textarea>
+
+          <sp-detail>READONLY TEXT AREA</sp-detail>
+          <sp-textarea readonly placeholder="Enter your name" multiline></sp-textarea>
+
+          <sp-detail>DISABLED TEXT AREA</sp-detail>
+          <sp-textarea disabled placeholder="Enter your name" multiline></sp-textarea>
+
+          <sp-detail>TEXT AREA WITH LABEL</sp-detail>
+          <sp-textarea placeholder="Add a comment" multiline>
+            <sp-label slot="label">Feedback</sp-label>
+          </sp-textarea>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-TEXTFIELD                                                * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-textfield">
+          <sp-detail>TEXT FIELD</sp-detail>
+          <sp-textfield placeholder="Type Something."></sp-textfield>
+          <sp-textfield placeholder="Type Something." value="Some text"></sp-textfield>
+
+          <sp-detail>QUIET TEXT FIELD</sp-detail>
+          <sp-body class="fixedSize warning" size="s">Note: In most apps, you'll want to assign a background color behind quiet inputs, as otherwise the "background" will be obvious.</sp-body>
+          <div class="match-background">
+          <sp-textfield quiet placeholder="Type Something."></sp-textfield>
+          <sp-textfield quiet placeholder="Type Something." value="Some text"></sp-textfield>
+          </div>
+
+          <sp-detail>TEXT VALIDITY</sp-detail>
+          <sp-body class="fixedSize" size="s">Don't change these while the user is editing; wait until focus changes.</sp-body>
+          <sp-textfield valid placeholder="Type Something."></sp-textfield>
+          <sp-textfield invalid placeholder="Type Something."></sp-textfield>
+
+          <sp-detail>TEXT FIELD WITH LABELS</sp-detail>
+          <sp-textfield placeholder="Phone Number" style="width: 300px"><sp-label isrequired="true" slot="label">Phone Number</sp-label></sp-textfield>
+          <br/>
+          <sp-textfield placeholder="Phone Number" style="display: flex; flex-direction: row; align-items: baseline; width: 300px">
+            <sp-label style="padding-right: 16px" isrequired="true" slot="label">Phone Number</sp-label>
+          </sp-textfield>
+
+          <sp-detail>NUMBER FIELD</sp-detail>
+          <sp-textfield type="number" placeholder="Width of element" value="0">
+            <sp-label slot="label">Width (px)</sp-label>
+          </sp-textfield>
+
+          <sp-detail>PASSWORD FIELD</sp-detail>
+          <sp-textfield type="password" placeholder="Password" value="password">
+            <sp-label slot="label">API Key</sp-label>
+          </sp-textfield>
+
+          <sp-detail>SEARCH FIELD</sp-detail>
+          <sp-textfield type="search" placeholder="Stock Search..."></sp-textfield>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-TOOLTIP                                                  * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-tooltip">
+          <sp-detail>NORMAL TOOLTIP</sp-detail>
+          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <sp-tooltip open placement="top">Label</sp-tooltip>
+            <sp-tooltip open placement="bottom">Label</sp-tooltip>
+            <sp-tooltip open placement="left">Label</sp-tooltip>
+            <sp-tooltip open placement="right">Label</sp-tooltip>
+          </div>
+
+          <sp-detail>NORMAL TOOLTIP, NO TIP</sp-detail>
+          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <sp-tooltip open placement="top" tip="false">Label</sp-tooltip>
+            <sp-tooltip open placement="bottom" tip="false">Label</sp-tooltip>
+            <sp-tooltip open placement="left" tip="false">Label</sp-tooltip>
+            <sp-tooltip open placement="right" tip="false">Label</sp-tooltip>
+          </div>
+
+          <sp-detail>CONTROL WITH TOOLTIP</sp-detail>
+          <sp-overlay>
+            <sp-button slot="trigger">Hover over me</sp-button>
+            <sp-popover offset="0" placement="top" alignment="center" appearance="none" slot="hover">
+              <sp-tooltip open placement="top" variant="info">I'm a tooltip!</sp-tooltip>
+            </sp-popover>
+          </sp-overlay>
+
+          <div style="display: flex; flex-direction: row; justify-content: stretch;">
+            <div>
+              <sp-detail>INFORMATIVE TOOLTIP</sp-detail>
+              <sp-tooltip open placement="top" variant="info">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="info" icon>Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="info" tip="false">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit</sp-tooltip>
+            </div>
+            <div>
+              <sp-detail>POSITIVE TOOLTIP</sp-detail>
+              <sp-tooltip open placement="top" variant="positive">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="positive" icon>Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="positive" tip="false">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="positive"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </sp-tooltip>
+            </div>
+            <div>
+              <sp-detail>NEGATIVE TOOLTIP</sp-detail>
+              <sp-tooltip open placement="top" variant="negative">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="negative" icon>Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="negative" tip="false">Label</sp-tooltip>
+              <sp-tooltip open placement="top" variant="negative"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </sp-tooltip>
+            </div>
+          </div>
+        
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * DIALOG                                                      * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="dialog">
+          <sp-detail>DIALOG EXAMPLE</sp-detail>
+          <button id="btnOpenDialog">Open Dialog</button>
+          <dialog id="dlgExample">
+            <form method="dialog">
+              <sp-heading>Vectorize Images?</sp-heading>
+              <sp-divider size="large"></sp-divider>
+              <sp-body>Are you sure you want to vectorize the images? This might take some time.</sp-body>
+              <footer>
+                <sp-button variant="secondary" quiet>Don't Vectorize</sp-button>
+                <sp-button variant="cta">Vectorize</sp-button>
+              </footer>
+            </form>
+          </dialog>
+          <button id="btnOpenPDialog">Open Programmatic Dialog</button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SP-DIALOG                                                   * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="sp-dialog">
+          <sp-detail>SP-DIALOG EXAMPLES</sp-detail>
+          <sp-button-group>
+            <sp-button id="showInfoSpDialog" variant="primary">Information</sp-button>
+            <sp-button id="showErrorSpDialog" variant="primary">Error</sp-button>
+            <sp-button id="showDestructiveSpDialog" variant="warning">Destructive</sp-button>
+            <sp-button id="showConfirmSpDialog" variant="primary">Confirmation</sp-button>
+            <sp-button id="showCustomSpDialog" variant="primary">Custom</sp-button>
+
+            <sp-dialog id="infoSpDialog">
+              <sp-heading slot="title" style="margin: 0">Connect to WiFi</sp-heading>
+              <sp-body slot="description">In order to complete this operation, you need to be connected to the internet.</sp-body>
+              <sp-button-group slot="buttongroup">
+                <sp-button variant="primary">Okay</sp-button>
+              </sp-button-group>
+            </sp-dialog>
+
+            <sp-dialog id="errorSpDialog">
+              <sp-heading slot="title" style="margin: 0;">Unable to compute result.</sp-heading>
+              <sp-body slot="description">Dividing by zero is not defined. Please try another expression.</sp-body>
+              <sp-icon slot="icon" style="color: #ec5b62; margin-top:7px" name="ui:AlertSmall"></sp-icon>
+              <sp-button-group slot="buttongroup">
+                <sp-button variant="primary">Okay</sp-button>
+              </sp-button-group>
+            </sp-dialog>
+
+            <sp-dialog id="destructiveSpDialog">
+              <sp-heading slot="title" style="margin: 0">Delete 3 documents</sp-heading>
+              <sp-body slot="description">The selected documents will be deleted. This action cannot be undone.</sp-body>
+              <sp-button-group slot="buttongroup">
+                <sp-button variant="secondary" quiet>Cancel</sp-button>
+                <sp-button variant="warning">Delete</sp-button>
+              </sp-button-group>
+            </sp-dialog>
+
+            <sp-dialog id="confirmSpDialog">
+              <sp-heading slot="title" style="margin: 0">Flatten selected layers?</sp-heading>
+              <sp-body slot="description">The selected layers will be flattened into a single layer.</sp-body>
+              <sp-button-group slot="buttongroup">
+                <sp-button variant="secondary" quiet>Cancel</sp-button>
+                <sp-button variant="primary">Flatten</sp-button>
+              </sp-button-group>
+            </sp-dialog>
+
+            <sp-dialog id="customSpDialog">
+              <div style="width: 480px; height: 300px; display: flex; flex-direction: column;">
+                <sp-heading style="color: white; border-bottom: 1px solid black; width: 100%; height: 100px; line-height: 150px; margin: 0; padding: 0 40px; background-size: cover; background-color: #204080; background-image: url('https://images.unsplash.com/photo-1527018210973-93186d405e38?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2096&q=80');">
+                  Texturization
+                </sp-heading>
+                <sp-body style="padding: 16px 40px; flex: 1 1 auto; ">Texturizing will apply a subtle texture to your selected layers. You can control the type and intensity of the texture using the property inspector.</sp-body>
+                <sp-button-group style="padding: 16px 40px 32px 40px; justify-content: flex-end; display: flex;" >
+                  <sp-button variant="secondary" quiet>Cancel</sp-button>
+                  <sp-button variant="primary">Texturize</sp-button>
+                </sp-button-group>
+              </div>
+            </sp-dialog>
+          </sp-button-group>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * TABLE                                                       * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="table">
+          <sp-detail>TABLE LAYOUT</sp-detail>
+          <sp-body class="warning">Note: the table will only render on UXP versions 5.2 and better.</sp-body>
+
+          <table class="pricing">
+            <thead>
+              <tr><th></th><th>Free Plan</th><th>Paid Plan</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Feature #1</th><td><sp-icon name="ui:SuccessMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+              <tr><th>Feature #2</th><td><sp-icon name="ui:SuccessMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+              <tr><th>Feature #3</th><td><sp-icon name="ui:SuccessMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+              <tr><th>Feature #4</th><td><sp-icon name="ui:CrossMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+              <tr><th>Feature #5</th><td><sp-icon name="ui:CrossMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+              <tr><th>Feature #6</th><td><sp-icon name="ui:CrossMedium"></sp-icon></td><td><sp-icon name="ui:SuccessMedium"></sp-icon></td></tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * WEBVIEW                                                     * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="webview">
+          <sp-detail>WEBVIEW IN A MODAL DIALOG</sp-detail>
+          <sp-body class="warning">
+            Webviews function only within a modal dialog, and can currently only load content from domains. Content from the filesystem is not currently supported.
+          </sp-body>
+          <sp-button id="showWebview">Open</sp-button>
+          <dialog id="webviewModal">
+              <div class="header">
+                <sp-textfield placeholder="URL" id="url" value="https://www.adobe.com"></sp-textfield>
+                <sp-action-button id="navigate">Go</sp-action-button>
+              </div>
+              <webview tabindex="0" id="webviewFrame" src="https://www.adobe.com"></webview>
+              <sp-label id="webviewStatus">
+                No status
+              </sp-label>
+          </dialog>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * VIDEO                                                       * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="video">
+          <sp-detail>VIDEO</sp-detail>
+          <video src="./assets/video/loop.mp4" width="480" height="320"></video>
+          <sp-button id="playVideo">Play</sp-button>
+          <sp-button id="stopVideo">Stop</sp-button>
+          <sp-body id="currentTime"></sp-body>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * DRAG AND DROP                                               * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="drag-and-drop">
+          <sp-body class="warning">
+            Bugged on Intel versions of Photoshop.
+          </sp-body>
+          <sp-detail>RE-ORDERING A LIST</sp-detail>
+          <sp-menu class="reorderable" style="width: 150px">
+            <sp-menu-item draggable="true" data-key="0">Chicago</sp-menu-item>
+            <sp-menu-item draggable="true" data-key="1">New York City</sp-menu-item>
+            <sp-menu-item draggable="true" data-key="2">San Francisco</sp-menu-item>
+            <sp-menu-item draggable="true" data-key="3">San Jose</sp-menu-item>
+          </sp-menu>
+          <sp-detail>DRAG AND DROP</sp-detail>
+          <sp-body class="warning">Drag and drop between canvas may be limited or custom to each hosting application.</sp-body>
+          <img class="draggable-image" draggable="true" src="plugin:///icons/plugin.png"/>
+          <img class="draggable-image" draggable="true" src="data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7"/>
+          <!-- image from https://css-tricks.com/data-uris/ -->
+          <img class="draggable-image" draggable="true" width="100px" src="https://images.unsplash.com/photo-1623660131351-253fc8850f18?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"/>
+          <div class="drop-zone">
+
+          </div> 
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * VANILLA TABS                                                * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="tabs">
+          <sp-detail>VANILLA TABS</sp-detail>
+
+          <div class="sp-tabs">
+            <div class="sp-tab selected" id="sp-page-1-tab"><sp-label>Page 1</sp-label></div>
+            <div class="sp-tab" id="sp-page-2-tab"><sp-label>Page 2</sp-label></div>
+            <div class="sp-tab" id="sp-page-3-tab"><sp-label>Page 3</sp-label></div>
+            <div class="sp-tab" id="sp-page-4-tab"><sp-label>Page 4</sp-label></div>
+            <div class="sp-tab" id="sp-page-5-tab"><sp-label>Page 5</sp-label></div>
+          </div>
+          <div class="sp-tab-page visible" id="sp-page-1-tab-page">
+            <sp-body>Page 1</sp-body>
+          </div>
+          <div class="sp-tab-page" id="sp-page-2-tab-page">
+            <sp-body>Page 2</sp-body>
+          </div>
+          <div class="sp-tab-page" id="sp-page-3-tab-page">
+            <sp-body>Page 3</sp-body>
+          </div>
+          <div class="sp-tab-page" id="sp-page-4-tab-page">
+            <sp-body>Page 4</sp-body>
+          </div>
+          <div class="sp-tab-page" id="sp-page-5-tab-page">
+            <sp-body>Page 5</sp-body>
+          </div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * BEZIER CURVE EDITOR                                         * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="bezier">
+          <sp-detail>BEZIER CURVE EDITOR</sp-detail>
+          <div id="bezier1" style="border:1px solid white; width:500px; height: 500px"></div>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * LAUNCH EXAMPLES                                             * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="launch">
+          <sp-detail>openExternal</sp-detail>
+          <sp-body class="warning">
+            To use openExternal, you must specify the URI schemes in the manifest.
+          </sp-body>
+          <sp-button variant="secondary" id="btnLaunchInBrowser">Open Adobe website</sp-button>
+          <sp-button variant="secondary" id="btnLaunchEmail">Open your email</sp-button>
+          <sp-detail>openPath</sp-detail>
+          <sp-body class="warning">
+            To use openPath, you must include the associated extensions in the manifest.
+          </sp-body>
+          <sp-button variant="secondary" id="btnOpenIconInEditor">Open a PNG file</sp-button>
+          <sp-button variant="secondary" id="btnOpenPluginFolder">Open Plugin Folder</sp-button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * BUTTON                                                      * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="button">
+          <sp-body class="warning">HTML Form Elements will be deprecated in a future release. You should begin to use the Spectrum UXP correlates 
+            or build your own custom widgets using DIVs and SPANs. (Don't forget to set aria-role!)
+          </sp-body>
+          <button>Hi</button>
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * SELECT                                                      * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="select">
+          <sp-body class="warning">HTML Form Elements will be deprecated in a future release. You should begin to use the Spectrum UXP correlates 
+            or build your own custom widgets using DIVs and SPANs. (Don't forget to set aria-role!)
+          </sp-body>
+          <label>City:
+            <select>
+              <option value="Amsterdam" selected>Amsterdam</option>
+              <option value="New York" >New York</option>
+              <option value="New Jersey">New Jersey</option>
+            </select>
+          </label>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * INPUT                                                       * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="input">
+          <sp-body class="warning">HTML Form Elements will be deprecated in a future release. You should begin to use the Spectrum UXP correlates 
+            or build your own custom widgets using DIVs and SPANs. (Don't forget to set aria-role!)
+          </sp-body>
+          <label><input type="checkbox" >Check me</label>
+          <label><input type="checkbox" checked>Check me</label>
+          <label><input type="checkbox" disabled>Check me</label>
+          <br/>
+          <label><input type="radio" name="radioGroup">Click me</label>
+          <label><input type="radio" name="radioGroup" checked>Click me</label>
+          <label><input type="radio" name="radioGroup" disabled>Click me</label>
+          <br/>
+
+          <label>Opacity: <input type="range" min="0" max="100" value="50"></label>
+          <br/>
+
+          <label>Text Input <input type="text" placeholder="Enter your text"> </label>
+          <label>Number Input <input type="number" placeholder="Enter your text"> </label>
+          <label>Password Input <input type="password" placeholder="Enter your text"> </label>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * TEXTAREA                                                    * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="textarea">
+          <sp-body class="warning">HTML Form Elements will be deprecated in a future release. You should begin to use the Spectrum UXP correlates 
+            or build your own custom widgets using DIVs and SPANs. (Don't forget to set aria-role!)
+          </sp-body>
+          <label>Text Area
+            <textarea style="width:240px; height:60px"></textarea>
+          </label>
+
+        </div>
+
+        <!-- *************************************************************** -->
+        <!-- * EVENTS                                                      * -->
+        <!-- *************************************************************** -->
+        <div class="page" id="Events">
+          <sp-detail>CONSOLE</sp-detail>
+          <sp-checkbox id="toggleConsole">Toggle Events Console</sp-checkbox>
+          <sp-detail>SUPPORTED</sp-detail>
+          <div id="eventToggles"></div>
+          <sp-detail>UNSUPPORTED</sp-detail>
+          <sp-body>auxclick, keypress, mousewheel, wheel, focusin, focusout</sp-body>
+        </div>
+
+        <div class="code-section">
+          <label class="accordion">
+            <sp-detail>Code</sp-detail>
+            <input type="checkbox" checked />
+              <svg data-down xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18">
+                <path class="a" d="M4,7.01a1,1,0,0,1,1.7055-.7055l3.289,3.286,3.289-3.286a1,1,0,0,1,1.437,1.3865l-.0245.0245L9.7,11.7075a1,1,0,0,1-1.4125,0L4.293,7.716A.9945.9945,0,0,1,4,7.01Z" />
+              </svg>
+              <svg data-up xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18">
+                <path class="a" d="M14,10.99a1,1,0,0,1-1.7055.7055l-3.289-3.286-3.289,3.286a1,1,0,0,1-1.437-1.3865l.0245-.0245L8.3,6.2925a1,1,0,0,1,1.4125,0L13.707,10.284A.9945.9945,0,0,1,14,10.99Z" />
+              </svg>
+            <div class="accordion-content">
+              <pre id="code"></pre>
+            </div>
+          </label>
+        </div>
+        
+        <div id="console" class="console">
+          <sp-body id="logs"></sp-body>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel" id="secondPanel">
+    <sp-body>This is the second panel. See index.js, index.html, styles.css, and manifest.json for how this works.</sp-body>
+  </div>
+</body>
+</html>

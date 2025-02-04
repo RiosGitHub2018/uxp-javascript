@@ -1,0 +1,134 @@
+{
+  "id": "00000000",
+  "name": "Meu painel",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24"
+    }
+  ],
+	"requiredPermissions": {
+	"localFileSystem": "fullAccess"
+	}
+  ,
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "network": {
+      "domains": [
+        "https://source.unsplash.com"
+      ]
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "request",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "Starter Panel",
+        "en-US": "Starter Panel",
+        "es-ES": "Starter Panel"
+      },
+      "minimumSize": {
+        "width": 265,
+        "height": 550
+      },
+      "maximumSize": {
+        "width": 265,
+        "height": 550
+      },
+      "preferredDockedSize": {
+        "width": 265,
+        "height": 550
+      },
+      "preferredFloatingSize": {
+        "width": 265,
+        "height": 550
+      },
+      "commands": [
+        {
+          "id": "show_alert",
+          "label": {
+            "default": "Show Alert",
+            "en-US": "Show Alert (US)",
+            "es-ES": "Show Alert (ES)"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_D.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "dark",
+            "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_N.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "lightest",
+            "light"
+          ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_D.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_N.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}

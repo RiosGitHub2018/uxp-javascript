@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--  CRIA UMA JANELA MODAL!--->
+	<dialog id="testDialog"> 
+		<select id="select">
+		<option selected>Default</option>
+		<option value="Rotacionar 90 Graus">Rotacionar 90 Graus </option>
+		<option value="Rotacionar -90 Graus">Rotacionar -90 Graus </option>
+		<option value="Rotacionar 180Graus" >Rotacionar 180 Graus</option>
+		</select>
+		
+		<button onclick="document.querySelector('#testDialog').close()">Cancelar</button>]
+		<button id="confirma" onclick="document.querySelector('#testDialog').close()">OK</button>
+	</dialog>
+	
+	<!--  BOTÃO CHAMA A JANELA MODAL!--->
+	<div class="row" style="justify-content: flex-end; margin-top:0px">
+		<button id="dialogButton">Open</button>
+		<button id="botao">Duplicar</button>
+	</div>
+	
+	
+	 <!--  CRIA UMA JANELA MODAL!--->
+	<dialog id="renCamadas"  style='cursor: pointer'> 
+		<div   style= "border: 1px solid #3a3a3a; padding:10px;">
+			<sp-radio-group >
+			<sp-label slot="label">Selecione uma Opção:</sp-label>
+			<sp-radio value="ps">Phoroshop</sp-radio>
+			<sp-radio value="xd">Illustrator</sp-radio>
+			</sp-radio-group>
+		</div>
+		<sp-textarea size = " s " id = "txt_camada"  placeholder="Digite o nome" ><sp-label slot="label">Camada</sp-label></sp-textarea>
+		
+<button id="btn_select">Selecione</button>
+<button id="btn_renomear">Renomear</button>
+
+	</dialog>
+	 <!--  ******************!--->
+	
+    <div id="opendoclist"></div>
+		<sp-action-button  onClick='runScript("Carregar imagem");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Carregar imagem</sp-action-button>
+		<sp-action-button  onClick='runScript("Remove saturation");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Remove saturation</sp-action-button>
+		<sp-action-button  onClick='runScript("Copy Layer");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Copy Layer</sp-action-button>
+		<sp-action-button  onClick='runScript("Flip horizontal");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Flip layer horizontal</sp-action-button>
+		<sp-action-button  onClick='runScript("Ajuste Niveis");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Ajuste Niveis</sp-action-button>
+		<sp-action-button  onClick='runScript("Remover Camada");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Remover Camada</sp-action-button>
+		<sp-action-button  onClick='runScript("Desfazer Tudo");'  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Desfazer Tudo</sp-action-button>
+		<sp-action-button  id="btn_renCam"  style='left:20px;top:20px;width:150px;height:24px; font-size: 12px; ' >Renomear Camada</sp-action-button>
+    <div id="opendoclist"></div>
+</body>
+</html>
+
+
+
+
+
+

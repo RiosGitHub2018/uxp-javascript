@@ -1,0 +1,107 @@
+{
+  "id": "Alpaca",
+  "name": "Alpaca",
+  "version": "2.9.2",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "host": {
+    "app": "PS",
+    "minVersion": "23.4.0"
+  },
+  "requiredPermissions": {
+    "clipboard": "readAndWrite",
+    "network": {
+      "domains": [
+        "https://alpaca-out.s3.amazonaws.com",
+        "https://alpaca-artifacts.s3.amazonaws.com",
+        "https://alpaca-in.s3.us-east-1.amazonaws.com",
+        "https://clerk.alpacaml.com/",
+        "https://api.alpacaml.com/",
+        "https://upload.imagedelivery.net/",
+        "https://imagedelivery.net/",
+        "https://docs.alpacaml.com",
+        "https://o4505195127111680.ingest.sentry.io/",
+        "https://ef4807c634684d6cafd812574e89f26b@o4505195127111680.ingest.sentry.io/",
+        "https://*.ingest.sentry.io/",
+        "https://*.alpacaml.com/",
+        "https://*.s3.us-east-1.amazonaws.com/",
+        "https://*.s3.amazonaws.com/"
+      ]
+    },
+    "allowCodeGenerationFromStrings": true,
+    "launchProcess": {
+      "schemes": [
+        "http",
+        "https"
+      ],
+      "extensions": [
+        ".svg",
+        ".png"
+      ]
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "main",
+      "label": {
+        "default": "Alpaca"
+      },
+      "minimumSize": {
+        "width": 275,
+        "height": 500
+      },
+      "maximumSize": {
+        "width": 350,
+        "height": 2000
+      },
+      "preferredDockedSize": {
+        "width": 310,
+        "height": 750
+      },
+      "preferredFloatingSize": {
+        "width": 310,
+        "height": 780
+      },
+      "icons": [
+        {
+          "width": 23,
+          "height": 23,
+          "path": "icons/panel.png",
+          "scale": [
+            1,
+            2
+          ],
+          "theme": [
+            "darkest",
+            "dark",
+            "medium",
+            "lightest",
+            "light"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 24,
+      "height": 24,
+      "path": "icons/plugin.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "darkest",
+        "dark",
+        "medium",
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "pluginList"
+      ]
+    }
+  ]
+}

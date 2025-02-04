@@ -1,0 +1,1195 @@
+﻿<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<link id="ppstyle" rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script src="index.js"></script> 
+<script src="lib/jquery-3.5.1.min.js"></script>
+<title></title>
+</head>
+
+<body>
+	<div style="display:none;">
+		
+	
+	
+	
+		<div id="panel_hub">
+		<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+<div class="container" style="position:absolute;top:10px;left:10px;">
+    
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("align");'  style='left:14px;top:15px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Align all layers</span>
+<span class="fr_FR">Aligne les calques</span>
+<span class="it_IT">Allinea tutti i livelli</span>
+<span class="es_ES">Alinear todas las capas</span>
+<span class="de_DE">Alle Ebenen ausrichten</span></sp-tooltip>Align</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("stackAll");'  style='left:92px;top:15px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Stack multiple windows into one</span>
+<span class="fr_FR">Empile plusieurs fenêtres en une seule</span>
+<span class="it_IT">Sovrappone il contenuto di diverse finestre in un unica finestra </span>
+<span class="es_ES">Apilar varias ventanas en una</span>
+<span class="de_DE">Stapelt mehrere Fenster in Eines</span></sp-tooltip>Stack</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Delete Layer");'  style='left:170px;top:15px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Delete layer</span>
+<span class="fr_FR">Supprime la couche</span>
+<span class="it_IT">Elimina livello</span>
+<span class="es_ES">Eliminar la capa</span>
+<span class="de_DE">Ebene löschen</span></sp-tooltip>Del Layer</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Apply to highlights");'  style='left:14px;top:40px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add a mask that targets bright areas</span>
+<span class="fr_FR">Ajoute un masque qui cible les zones claires</span>
+<span class="it_IT">Aggiunge una maschera per le aree chiare</span>
+<span class="es_ES">Añadir una máscara sobre las zonas de luces</span>
+<span class="de_DE">Erzeuge eine Maske für die hellen Bereiche</span></sp-tooltip>Highlights</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Apply to shadows");'  style='left:92px;top:40px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add a mask that targets dark areas</span>
+<span class="fr_FR">Ajoute un masque qui cible les zones sombres</span>
+<span class="it_IT">Aggiunge una maschera per le aree scure</span>
+<span class="es_ES">Añadir una máscara sobre las zonas de sombras</span>
+<span class="de_DE">Erzeuge eine Maske für die dunklen Bereiche</span></sp-tooltip>Shadows</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Adjust");'  style='left:170px;top:40px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adjust the mask</span>
+<span class="fr_FR">Ajuste le masque</span>
+<span class="it_IT">Regola la maschera</span>
+<span class="es_ES">Ajustar la máscara</span>
+<span class="de_DE">Passe die Maske an</span></sp-tooltip>Adjust</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Undo");'  style='left:14px;top:65px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Undo last action</span>
+<span class="fr_FR">Annule la dernière action</span>
+<span class="it_IT">Annulla l’ultima azione</span>
+<span class="es_ES">Deshacer la última acción</span>
+<span class="de_DE">Letzte Aktion rückgängig machen</span></sp-tooltip>Undo</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Del Layer Mask");'  style='left:92px;top:65px;width:75px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Delete mask on selected layer</span>
+<span class="fr_FR">Supprime le masque de la couche sélectionnée</span>
+<span class="it_IT">Cancella la maschera nel livello selezionato</span>
+<span class="es_ES">Borrar la máscara en la capa seleccionada</span>
+<span class="de_DE">Entferne die Maske auf der ausgewählten Ebene</span></sp-tooltip>Del Mask</sp-action-button>
+<sp-action-button size="s" class="tooltip"  onClick='runScript_hub("Merge ND");'  style='left:170px;top:65px;width:75px;height:23px;'  title=""><sp-tooltip open placement="bottom" ><span class="default">Merge all layers non destructively</span>
+<span class="fr_FR">Fusionne tous les calques de manière non destructive</span>
+<span class="it_IT">Unisce tutti i livelli in maniera non distruttiva</span>
+<span class="es_ES">Fusionar todas las capas de forma no destructiva</span>
+<span class="de_DE">Alle Ebenen nicht-destruktiv zusammenführen</span></sp-tooltip>Merge</sp-action-button>
+
+
+
+<div style='left:215px;top:188px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_hub .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+<sp-detail size="s" style='left:165px;top:185px;'>Tooltips</sp-detail>
+<!--
+<sp-tooltip open placement="bottom" ><span class="default">Turn on/off tooltips</span>
+<span class="fr_FR">Active/désactive les info-bulles</span>
+<span class="it_IT">Abilita/Disabilita il pannello degli strumenti</span>
+<span class="es_ES">Activar o desactivar la información emergente de las herramientas</span>
+<span class="de_DE">Ein-/Ausschalten der Tooltipps</span></sp-tooltip>
+-->
+
+ <sp-dropdown size="s" id="tutorialDD" style='position:absolute;left:14px;top:150px;width:228px;height:42px;' placeholder="Tutorials" onChange="openTutorial();"><sp-menu slot="options">
+<sp-menu-item>Getting Started</sp-menu-item>
+<sp-menu-item>Luminosity Masks</sp-menu-item>
+<sp-menu-item>Exposure Blending Masterclass</sp-menu-item>
+<sp-menu-item>Dodge and Burn</sp-menu-item>
+<sp-menu-item>Colour Centre</sp-menu-item>
+<sp-menu-item>Quick Blending</sp-menu-item>
+<sp-menu-item>Precision Masks</sp-menu-item>
+<sp-menu-item>Filter and Finish</sp-menu-item>
+<sp-menu-item>Sign Up</sp-menu-item>
+</sp-menu></sp-dropdown>
+    
+    
+
+		</div>
+	</div>
+		
+		
+		<div id="panel_ze">
+			<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+			<div class="container" style="position:absolute;top:10px;left:10px;">
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Apply Zone Editor");'  style='left:10px;top:10px;width:240px;height:24px;'  >Apply Zone Editor</sp-action-button>
+			
+				<sp-detail size="s" style='left:10px;top:50px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Vignette</sp-detail>
+				     <sp-slider size="s" id="vignetteSlider" style='left:70px;top:45px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('vignette');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Vignette");'  style='left:190px;top:45px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="vignetteVis" onClick='toggleZeVisibility("vignette");'  style='left:225px;top:45px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:80px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Cool</sp-detail>
+				     <sp-slider size="s" id="coolSlider" style='left:70px;top:75px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('cool');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Cool");'  style='left:190px;top:75px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on"  id="coolVis" onClick='toggleZeVisibility("cool")'  style='left:225px;top:75px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:110px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Warm</sp-detail>
+				     <sp-slider size="s" id="warmSlider" style='left:70px;top:105px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('warm');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Warm");'  style='left:190px;top:105px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="warmVis" onClick='toggleZeVisibility("warm");'  style='left:225px;top:105px;width:24px;height:24px;'  ></div>
+			
+			
+				<sp-detail size="s" style='left:10px;top:140px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Orton</sp-detail>
+				     <sp-slider size="s" id="ortonSlider" style='left:70px;top:135px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('orton');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Orton");'  style='left:190px;top:135px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="ortonVis" size="s" class="tooltip" onClick='toggleZeVisibility("orton");'  style='left:225px;top:135px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:170px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Saturate</sp-detail>
+				     <sp-slider size="s" id="saturateSlider" style='left:70px;top:165px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('saturate');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Saturate");'  style='left:190px;top:165px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="saturateVis" onClick='toggleZeVisibility("saturate");'  style='left:225px;top:165px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:200px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Desaturate</sp-detail>
+				     <sp-slider size="s" id="desaturateSlider" style='left:70px;top:195px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('desaturate');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Desaturate");'  style='left:190px;top:195px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="desaturateVis" onClick='toggleZeVisibility("desaturate");'  style='left:225px;top:195px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:230px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Vibrance</sp-detail>
+				     <sp-slider size="s" id="vibranceSlider" style='left:70px;top:225px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('vibrance');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Vibrance");'  style='left:190px;top:225px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="vibranceVis" onClick='toggleZeVisibility("vibrance");'  style='left:225px;top:225px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:260px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Darken</sp-detail>
+				     <sp-slider size="s" id="darkenSlider" style='left:70px;top:255px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('darken');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Darken");'  style='left:190px;top:255px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="darkenVis" onClick='toggleZeVisibility("darken");'  style='left:225px;top:255px;width:24px;height:24px;'  ></div>
+				 
+				<sp-detail size="s" style='left:10px;top:290px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Brighten</sp-detail>
+				     <sp-slider size="s" id="brightenSlider" style='left:70px;top:285px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('brighten');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Brighten");'  style='left:190px;top:285px;width:34px;height:24px;'  >Del</sp-action-button>
+					<div class="eye on" id="brightenVis"  onClick='toggleZeVisibility("brighten");'  style='left:225px;top:285px;width:24px;height:24px;'  ></div>
+				 
+				 
+				 
+				<sp-detail size="s" style='left:10px;top:320px;width:54px;height:24px;font-size:9px;font-weight:normal;font-style:normal;text-align:right;' >Detail</sp-detail>
+				     <sp-slider size="s" id="detailsSlider" style='left:70px;top:315px;width:105px;height:5px;' min="0" max="100" step="1" value="0" onchange="applyZESlider('details');" ></sp-slider>
+					 <sp-action-button size="s" class="tooltip" onClick='runScript_ze("Del Details");'  style='left:190px;top:315px;width:34px;height:24px;'  >Del</sp-action-button>
+					 <div class="eye on" id="detailsVis" onClick='toggleZeVisibility("details");'  style='left:225px;top:315px;width:24px;height:24px;'  ></div>
+				 
+
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Undo");'  style='left:10px;top:350px;width:75px;height:24px;'  >Undo</sp-action-button>
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Redo");'  style='left:90px;top:350px;width:75px;height:24px;'  >Redo</sp-action-button>
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Reset");'  style='left:170px;top:350px;width:75px;height:24px;'  >Reset</sp-action-button>
+			
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Target Whites");'  style='left:10px;top:380px;width:114px;height:24px;'  >Target Whites</sp-action-button>
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Target Highlights");'  style='left:130px;top:380px;width:114px;height:24px;'  >Target Highlights</sp-action-button>
+		
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Target Midtones");'  style='left:10px;top:410px;width:114px;height:24px;'  >Target Midtones</sp-action-button>
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Target Shadows");'  style='left:130px;top:410px;width:114px;height:24px;'  >Target Shadows</sp-action-button>
+			
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Target Blacks");'  style='left:10px;top:440px;width:114px;height:24px;'  >Target Blacks</sp-action-button>
+				<sp-action-button size="s" class="tooltip" onClick='runScript_ze("Delete Target Mask");'  style='left:130px;top:440px;width:114px;height:24px;'  >Delete Target Mask</sp-action-button>
+			
+				<sp-button style='left:10px;top:470px;width:114px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/zone-editor-uxp/");'>Tutorials</sp-button>
+			
+			</div>
+		</div>
+		
+		
+		<div id="panel_cc">
+					<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+				<div class="container" style="position:absolute;top:6px;left:10px;">
+   
+ 
+ 
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Colour Correct 1");'  style='left:15px;top:23px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Automatically correct colour</span>
+			<span class="fr_FR">Correction automatique de la couleur</span>
+			<span class="it_IT">Correggi automaticamente il colore</span>
+			<span class="es_ES">Corregir automáticamente el color</span>
+			<span class="de_DE">Automatische Farbkorrektur</span></sp-tooltip>Correct 1</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Correct 2");'  style='left:89px;top:23px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Automatically correct colour</span>
+			<span class="fr_FR">Correction automatique de la couleur</span>
+			<span class="it_IT">Correggi automaticamente il colore</span>
+			<span class="es_ES">Corregir automáticamente el color</span>
+			<span class="de_DE">Automatische Farbkorrektur</span></sp-tooltip>Correct 2</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Correct 3");'  style='left:163px;top:23px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Automatically correct colour</span>
+			<span class="fr_FR">Correction automatique de la couleur</span>
+			<span class="it_IT">Correggi automaticamente il colore</span>
+			<span class="es_ES">Corregir automáticamente el color</span>
+			<span class="de_DE">Automatische Farbkorrektur</span></sp-tooltip>Correct 3</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Colour Brightness Tool");'  style='left:15px;top:49px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adjust brightness of individual tones</span>
+			<span class="fr_FR">Ajuste la luminosité des tons individuels</span>
+			<span class="it_IT">Regola la luminosità dei singoli toni</span>
+			<span class="es_ES">Ajustar el brillo de los tonos individuales de color</span>
+			<span class="de_DE">Anpassen der Helligkeit einzelner Farbtöne</span></sp-tooltip>Colour Adj</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Black White");'  style='left:89px;top:49px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Black and white layer</span>
+			<span class="fr_FR">Calque noir et blanc</span>
+			<span class="it_IT">Livello bianco e nero</span>
+			<span class="es_ES">Generar una capa en blanco y negro</span>
+			<span class="de_DE">Schwarz-Weiß Ebene</span></sp-tooltip>B&amp;W</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Manual Correct");'  style='left:163px;top:49px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Manually correct colour</span>
+			<span class="fr_FR">Correction manuelle de la couleur</span>
+			<span class="it_IT">Correggi manualmente il colore</span>
+			<span class="es_ES">Corregir manualmente el color</span>
+			<span class="de_DE">Manuelle Farbkorrektur</span></sp-tooltip>Manual Cor</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Cold");'  style='left:15px;top:75px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds cold temperature</span>
+			<span class="fr_FR">Ajoute une température froide</span>
+			<span class="it_IT">Aggiunge filtro colore freddo</span>
+			<span class="es_ES">Añadir un tono frío a la imagen</span>
+			<span class="de_DE">Fügt kalte Temperatur hinzu</span></sp-tooltip>Cold</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Colder");'  style='left:89px;top:75px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds colder temperature</span>
+			<span class="fr_FR">Ajoute une température plus froide</span>
+			<span class="it_IT">Aggiunge filtro colore più freddo</span>
+			<span class="es_ES">Añade un tono aún más frío a la imagen</span>
+			<span class="de_DE">Fügt kältere Temperatur hinzu</span></sp-tooltip>Colder</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Coldest");'  style='left:163px;top:75px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds extreme cold</span>
+			<span class="fr_FR">Ajoute une température extrèmement froide</span>
+			<span class="it_IT">Aggiunge filtro colore estremamente freddo</span>
+			<span class="es_ES">Añade un tono de frío intenso a la imagen</span>
+			<span class="de_DE">Fügt extreme Kälte hinzu</span></sp-tooltip>Coldest</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Warm");'  style='left:15px;top:101px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds warm temperature</span>
+			<span class="fr_FR">Ajoute une température chaude</span>
+			<span class="it_IT">Aggiunge filtro colore caldo</span>
+			<span class="es_ES">Añadir un tono cálido a la imagen</span>
+			<span class="de_DE">Fügt warme Temperatur hinzu</span></sp-tooltip>Warm</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Warmer");'  style='left:89px;top:101px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds warmer temperature</span>
+			<span class="fr_FR">Ajoute une température plus chaude</span>
+			<span class="it_IT">Aggiunge filtro colore più caldo</span>
+			<span class="es_ES">Añadir un tono aún más cálido a la imagen</span>
+			<span class="de_DE">Fügt wärmere Temperatur hinzu</span></sp-tooltip>Warmer</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Warmest");'  style='left:163px;top:101px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Adds extreme warmth</span>
+			<span class="fr_FR">Ajoute une température extrèmement chaude</span>
+			<span class="it_IT">Aggiunge filtro colore estremamente caldo</span>
+			<span class="es_ES">Añadir un tono cálido intenso a la imagen</span>
+			<span class="de_DE">Fügt extreme Wärme hinzu</span></sp-tooltip>Warmest</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Vivid Colours");'  style='left:18px;top:129px;width:212px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Increase saturation of all colours</span>
+			<span class="fr_FR">Augmente la saturation de toutes les couleurs</span>
+			<span class="it_IT">Aumenta la saturazione di tutti i colori</span>
+			<span class="es_ES">Aumentar la saturación de todos los colores</span>
+			<span class="de_DE">Sättigung aller Farben erhöhen</span></sp-tooltip>Saturate All</sp-action-button>
+ 
+			 <sp-action-button size="s" class="tooltip greenButton" onClick='runScript_cc("Vivid Greens");'  style='left:18px;top:156px;width:34px;height:24px;'  >G</sp-action-button>
+			 <sp-action-button size="s" class="tooltip cyanButton" onClick='runScript_cc("Vivid Cyans");'  style='left:54px;top:156px;width:34px;height:24px;'  >C</sp-action-button>
+			 <sp-action-button size="s" class="tooltip redButton" onClick='runScript_cc("Vivid Reds");'  style='left:90px;top:156px;width:34px;height:24px;'  >R</sp-action-button>
+			 <sp-action-button size="s" class="tooltip yelButton" onClick='runScript_cc("Vivid Yellows");'  style='left:126px;top:156px;width:34px;height:24px;'  >Y</sp-action-button>
+			 <sp-action-button size="s" class="tooltip magButton" onClick='runScript_cc("Vivid Mag");'  style='left:162px;top:156px;width:34px;height:24px;'  >M</sp-action-button>
+			 <sp-action-button size="s" class="tooltip blueButton" onClick='runScript_cc("Vivid Blues");'  style='left:198px;top:156px;width:34px;height:24px;'  >B</sp-action-button>
+ 
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Less Colour");'  style='left:18px;top:184px;width:214px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Decrease saturation of all colours</span>
+			<span class="fr_FR">Diminue la saturation de toutes les couleurs</span>
+			<span class="it_IT">Diminuisce la saturazione di tutti i colori</span>
+			<span class="es_ES">Disminuir la saturación de todos los colores</span>
+			<span class="de_DE">Sättigung aller Farben vermindern</span></sp-tooltip>Desaturate All</sp-action-button>
+ 
+			 <sp-action-button size="s" class="tooltip greenButton" onClick='runScript_cc("Less Green");'  style='left:18px;top:211px;width:34px;height:24px;'  >G</sp-action-button>
+			 <sp-action-button size="s" class="tooltip cyanButton" onClick='runScript_cc("Less Cyan");'  style='left:54px;top:211px;width:34px;height:24px;'  >C</sp-action-button>
+			 <sp-action-button size="s" class="tooltip redButton" onClick='runScript_cc("Less Red");'  style='left:90px;top:211px;width:34px;height:24px;'  >R</sp-action-button>
+			 <sp-action-button size="s" class="tooltip yelButton" onClick='runScript_cc("Less Yellow");'  style='left:126px;top:211px;width:34px;height:24px;'  >Y</sp-action-button>
+			 <sp-action-button size="s" class="tooltip magButton" onClick='runScript_cc("Less Magenta");'  style='left:162px;top:211px;width:34px;height:24px;'  >M</sp-action-button>
+			 <sp-action-button size="s" class="tooltip blueButton" onClick='runScript_cc("Desat Blues(1)");'  style='left:198px;top:211px;width:34px;height:24px;'  >B</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Shadows");'  style='left:16px;top:239px;width:107px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add cold to darker tones</span>
+			<span class="fr_FR">Augmente le froid des tons les plus foncés</span>
+			<span class="it_IT">Aggiunge filtro colore freddo ai toni scuri</span>
+			<span class="es_ES">Añadir un tono frío sobre las zonas de sombra</span>
+			<span class="de_DE">Kälte zu dunkleren Tönen hinzufügen</span></sp-tooltip>Cold Shadows</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Highlights");'  style='left:127px;top:239px;width:107px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add cold to brighter tones</span>
+			<span class="fr_FR">Augmente le froid des tons les plus clairs</span>
+			<span class="it_IT">Aggiunge filtro colore freddo ai toni chiari</span>
+			<span class="es_ES">Añadir un tono frío sobre las zonas de luz</span>
+			<span class="de_DE">Kälte zu helleren Tönen hinzufügen</span></sp-tooltip>Cold Highlights</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Warm Shadows");'  style='left:16px;top:266px;width:107px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add warmth to darker tones</span>
+			<span class="fr_FR">Augmente la chaleur des tons les plus foncés</span>
+			<span class="it_IT">Aggiunge filtro colore caldo ai toni scuri</span>
+			<span class="es_ES">Añadir un tono cálido sobre las zonas de sombra</span>
+			<span class="de_DE">Wärme zu dunkleren Tönen hinzufügen</span></sp-tooltip>Warm Shadows</sp-action-button>
+			 <sp-action-button size="s" class="tooltip" onClick='runScript_cc("Warm Highlights");'  style='left:127px;top:266px;width:107px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add warmth to brighter tones</span>
+			<span class="fr_FR">Augmente la chaleur des tons les plus clairs</span>
+			<span class="it_IT">Aggiunge filtro colore caldo ai toni chiari</span>
+			<span class="es_ES">Añadir un tono cálido sobre las zonas de luz</span>
+			<span class="de_DE">Wärme zu helleren Tönen hinzufügen</span></sp-tooltip>Warm Highlights</sp-action-button>
+
+
+			   <div style='left:210px;top:303px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_cc .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+			   <sp-detail size="s" style='left:160px;top:300px;'>Tooltips</sp-detail>
+
+			     <sp-button style='left:15px;top:297px;width:80px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/colour-centre-uxp/");'>Tutorial</sp-button>
+
+
+
+			</div>
+		</div>
+
+		<div id="panel_db">
+					<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+				<div class="container" style="position:absolute;top:6px;left:10px;">
+ 
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Dodge Highlights");'  style='left:20px;top:20px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >DB specific tonal range</sp-tooltip>Highlights</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Midtones DB");'  style='left:94px;top:20px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >DB specific tonal range</sp-tooltip>Midtones</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Burn Shadows");'  style='left:168px;top:20px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >DB specific tonal range</sp-tooltip>Shadows</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Merge ND");'  style='left:20px;top:46px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Merge layers non destructively</span>
+			<span class="fr_FR">Fusionne les calques sans destruction</span>
+			<span class="it_IT">Unisci i livelli in maniera non distruttiva</span>
+			<span class="es_ES">Fusionar capas de forma no destructiva</span>
+			<span class="de_DE">Ebenen nicht-destruktiv zusammenführen</span></sp-tooltip>Merge</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("50 grey");'  style='left:94px;top:46px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Dodge & burn with 50% grey layer</span>
+			<span class="fr_FR">Dodge & Burn avec un calque 50% gris (Outil densité)</span>
+			<span class="it_IT">Scherma e brucia con un livello grigio al 50%</span>
+			<span class="es_ES">Subexponer y sobrexponer con una capa gris al 50%</span>
+			<span class="de_DE">Abwedeln und Nachbelichten (Dodge & Burn) mit einer 50%-Grau Ebene</span></sp-tooltip>50% Grey</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Curves");'  style='left:168px;top:46px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Dodge & burn with Curves layer</span>
+			<span class="fr_FR">Dodge & Burn avec un calque de courbes</span>
+			<span class="it_IT">Scherma e brucia con un livello Curve</span>
+			<span class="es_ES">Subexponer y sobrexponer con una capa de Curvas</span>
+			<span class="de_DE">Abwedeln und Nachbelichten (Dodge & Burn) mithilfe einer Gradationskurve</span></sp-tooltip>Curves</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Dodge");'  style='left:20px;top:72px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select the Dodge tool</span>
+			<span class="fr_FR">Sélectionne l'outil Densité + (Dodge)</span>
+			<span class="it_IT">Seleziona lo strumento Scherma</span>
+			<span class="es_ES">Seleccionar la herramienta Sobrexponer</span>
+			<span class="de_DE">Wählt das Werkzeug "Abwedeln" (Dodge) aus</span></sp-tooltip>Dodge</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Burn");'  style='left:94px;top:72px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select the Burn tool</span>
+			<span class="fr_FR">Sélectionne l'outil Densité - (Burn)</span>
+			<span class="it_IT">Seleziona lo strumento Brucia</span>
+			<span class="es_ES">Seleccionar la herramienta Subexponer</span>
+			<span class="de_DE">Wählt das Werkzeug "Nachbelichten" (Burn) aus</span></sp-tooltip>Burn</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Sponge");'  style='left:168px;top:72px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select the Sponge tool</span>
+			<span class="fr_FR">Sélectionne l'outil Eponge</span>
+			<span class="it_IT">Seleziona lo strumento Spugna</span>
+			<span class="es_ES">Seleccionar la herramienta Esponja</span>
+			<span class="de_DE">Wählt das Werkzeug "Schwamm" aus</span></sp-tooltip>Sponge</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Overlay");'  style='left:20px;top:98px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Change layer blend mode to Overlay</span>
+			<span class="fr_FR">Change le mode de mélange des calques en mode Superposition</span>
+			<span class="it_IT">Modifica l'opzione di unione livelli in Sovrapponi</span>
+			<span class="es_ES">Cambiar el modo de fusión de capas a Superposición</span>
+			<span class="de_DE">Ebenenmischmodus auf "Überlagern" ("Ineinanderkopieren") ändern</span></sp-tooltip>Overlay</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Soft Light");'  style='left:94px;top:98px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Change layer blend mode to Soft Light</span>
+			<span class="fr_FR">Change le mode de mélange des calques en mode Lumière Tamisée</span>
+			<span class="it_IT">Modifica l'opzione di unione livelli in Luce Soffusa</span>
+			<span class="es_ES">Cambiar el modo de fusión de capas a Luz Suave</span>
+			<span class="de_DE">Ebenenmischmodus auf "Weiches Licht" ändern</span></sp-tooltip>Soft light</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Vivid Light");'  style='left:168px;top:98px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Change layer blend mode to Vivid Light</span>
+			<span class="fr_FR">Change le mode de mélange des calques en mode Lumière Intense</span>
+			<span class="it_IT">Modifica l'opzione di unione livelli in Luce Vivida</span>
+			<span class="es_ES">Cambiar el modo de fusión de capas a Luz Intensa</span>
+			<span class="de_DE">Ebenenmischmodus auf "Strahlendes Licht" ändern</span></sp-tooltip>Vivid Light</sp-action-button>
+	
+				<div style='position:absolute;left:28px;top:129px;width:200px;height:1px;border-top:1px solid #888888;'></div>
+	
+ 
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Brush");'  style='left:20px;top:136px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select the Brush tool</span>
+			<span class="fr_FR">Sélectionne l'outil Brosse</span>
+			<span class="it_IT">Seleziona lo strumento Pennello</span>
+			<span class="es_ES">Seleccionar la herramienta Pincel</span>
+			<span class="de_DE">Wählt das Werkzeug "Pinsel" aus</span></sp-tooltip>Brush</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Small Brush");'  style='left:94px;top:136px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Makes a small brush</sp-tooltip>Sma</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Large Brush");'  style='left:131px;top:136px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Make Brush 2000px</sp-tooltip>Lar</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("decreaseBrush250");'  style='left:168px;top:136px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Make brush size smaller</sp-tooltip>-</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("increaseBrush250");'  style='left:204px;top:136px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Make brush size bigger</sp-tooltip>+</sp-action-button>
+    
+    
+			    <sp-action-button size="s" class="tooltip whiteButton" onClick='runScript_db("White Brush");'  style='left:21px;top:162px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Choose a white brush</sp-tooltip></sp-action-button>
+			    <sp-action-button size="s" class="tooltip blackButton" onClick='runScript_db("Black Brush");'  style='left:57px;top:162px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Choose a black brush</sp-tooltip></sp-action-button>
+			    <sp-action-button size="s" class="tooltip pinkButton" onClick='runScript_db("Pink Brush");'  style='left:94px;top:162px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Choose a pink brush</sp-tooltip></sp-action-button>
+			    <sp-action-button size="s" class="tooltip orange1Button" onClick='runScript_db("Orange Brush");'  style='left:131px;top:162px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Choose an orange brush</sp-tooltip></sp-action-button>
+			    <sp-action-button size="s" class="tooltip orangeButton" onClick='runScript_db("Beige Brush");'  style='left:168px;top:162px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Choose a beige brush</sp-tooltip></sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("eye dropper manual");'  style='left:204px;top:161px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >Eyedropper tool</sp-tooltip>Eye</sp-action-button>
+	
+	
+	
+				<div style='position:absolute;left:28px;top:194px;width:200px;height:1px;border-top:1px solid #888888;'></div>
+	
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Detail Shadows");'  style='left:20px;top:204px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Enhance details in shadows</span>
+			<span class="fr_FR">Améliore les détails dans les ombres</span>
+			<span class="it_IT">Aumenta i dettagli nelle ombre</span>
+			<span class="es_ES">Mejorar el detalle en las zonas de sombra</span>
+			<span class="de_DE">Details in Schatten verbessern</span></sp-tooltip>Detail Shad</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Detail Highlights");'  style='left:94px;top:204px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Enhance details in highlights</span>
+			<span class="fr_FR">Améliore les détails dans les lumières hautes</span>
+			<span class="it_IT">Aumenta i dettagli nelle luci</span>
+			<span class="es_ES">Mejorar el detalle en las zonas luz</span>
+			<span class="de_DE">Details in Lichtern verbessern</span></sp-tooltip>Detail Lights</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Glow Free");'  style='left:168px;top:204px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add a soft glow</span>
+			<span class="fr_FR">Ajoute une lueur douce</span>
+			<span class="it_IT">Aggiungi bagliore soffuso</span>
+			<span class="es_ES">Añadir un brillo suave</span>
+			<span class="de_DE">Ein sanftes Glühen hinzufügen</span></sp-tooltip>Glow Free</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Contrast Zones");'  style='left:20px;top:231px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Add targeted contrast layers</span>
+			<span class="fr_FR">Ajoute  des calques de contraste ciblés</span>
+			<span class="it_IT">Aggiungi livelli di contrasto selettivo</span>
+			<span class="es_ES">Añadir capas de contraste zonal</span>
+			<span class="de_DE">Gezielte Kontrast-Ebenen hinzufügen</span></sp-tooltip>Zone Cont</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("S-Curve");'  style='left:94px;top:231px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Create an S-Curve</span>
+			<span class="fr_FR">Crée une courbe en S</span>
+			<span class="it_IT">Crea una curva ad S</span>
+			<span class="es_ES">Crear una curva de contraste en S</span>
+			<span class="de_DE">Erstellen einer S-Kurve</span></sp-tooltip>S-Curve</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Darken Sky");'  style='left:168px;top:231px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Darken brighter tones</span>
+			<span class="fr_FR">Assombrit les tons plus clairs</span>
+			<span class="it_IT">Scurisci i toni chiari</span>
+			<span class="es_ES">Oscurecer y saturar color en las altas luces</span>
+			<span class="de_DE">Hellere Töne abdunkeln</span></sp-tooltip>Dark Sky</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Bright Highlights");'  style='left:20px;top:257px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Brighten lighter tones</span>
+			<span class="fr_FR">Eclaircit les tons lumineux</span>
+			<span class="it_IT">Schiarisci i toni più chiari</span>
+			<span class="es_ES">Aclarar los tonos de las altas luces</span>
+			<span class="de_DE">Hellere Töne aufhellen</span></sp-tooltip>Bright Highlights</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Protect Shadows");'  style='left:131px;top:257px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Avoid clipped shadows</span>
+			<span class="fr_FR">Evite les ombres coupées</span>
+			<span class="it_IT">Evita di perdere informazioni nelle ombre</span>
+			<span class="es_ES">Corregir las sombras</span>
+			<span class="de_DE">Abgeschnittene Schatten vermeiden</span></sp-tooltip>Protect Shadows</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Brighten Shadows");'  style='left:20px;top:282px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Brighten darker tones</span>
+			<span class="fr_FR">Eclaircit les ombres</span>
+			<span class="it_IT">Schiarisci i toni più scuri</span>
+			<span class="es_ES">Aclarar los tonos más oscuros</span>
+			<span class="de_DE">Dunklere Töne aufhellen</span></sp-tooltip>Lighten Shadows</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Fake HDR");'  style='left:131px;top:282px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Create a fake HDR effect</span>
+			<span class="fr_FR">Crée un faux effet HDR</span>
+			<span class="it_IT">Crea un finto effetto HDR</span>
+			<span class="es_ES">Crear un falso efecto HDR</span>
+			<span class="de_DE">Erzeugt einen künstlichen HDR-Effekt</span></sp-tooltip>Fake HDR</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Orton Effect");'  style='left:20px;top:308px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Soft dreamy effect</span>
+			<span class="fr_FR">Produit un effet réveur Orton</span>
+			<span class="it_IT">Aggiunge un leggero effetto da sogno</span>
+			<span class="es_ES">Añadir efecto Orton suave</span>
+			<span class="de_DE">Weicher verträumter Effekt</span></sp-tooltip>Orton Effect</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("OE Bright");'  style='left:131px;top:308px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Brighter dreamy effect</span>
+			<span class="fr_FR">Produit un effet réveur Orton plus lumineux</span>
+			<span class="it_IT">Aggiunge un effetto da sogno più chiaro</span>
+			<span class="es_ES">Añadir efecto Orton brillante</span>
+			<span class="de_DE">Hellerer verträumter Effekt</span></sp-tooltip>Orton Effect Bright</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("Orton Effect Warm");'  style='left:20px;top:334px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Warm dreamy effect</span>
+			<span class="fr_FR">Produit un effet réveur Orton chaud</span>
+			<span class="it_IT">Aggiunge un effetto da sogno più caldo</span>
+			<span class="es_ES">Añadir efecto Orton cálido</span>
+			<span class="de_DE">Warmer verträumter Effekt</span>></sp-tooltip>Orton Effect Warm</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_db("OE Cold");'  style='left:131px;top:334px;width:109px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Cold dreamy effect</span>
+			<span class="fr_FR">Produit un effet réveur Orton froid</span>
+			<span class="it_IT">Aggiunge un effetto da sogno più freddo</span>
+			<span class="es_ES">Añadir efecto Orton frío</span>
+			<span class="de_DE">Kalter verträumter Effekt</span></sp-tooltip>Orton Effect Cold</sp-action-button>
+	
+			   <div style='left:210px;top:368px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_db .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+			   <sp-detail size="s" style='left:160px;top:365px;'>Tooltips</sp-detail>
+
+			     <sp-button style='left:18px;top:363px;width:80px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/dodge-and-burn-uxp/");'>Tutorial</sp-button>
+
+			    </div>
+
+ 
+	   
+	   
+		 
+		 
+			</div>
+		</div>
+		
+		<div id="panel_ff">
+					<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+				<div class="container" style="position:absolute;top:10px;left:10px;">
+
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Colour Pop");'  style='left:15px;top:23px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom" >
+				<span class="default">Press to add a filter to your image</span>
+				<span class="fr_FR">Ajoute un filtre à l'image</span>
+				<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+				<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+				<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			   </sp-tooltip>Something Different</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Cinematic Green");'  style='left:130px;top:23px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom" >
+			<span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+					</sp-tooltip>Cinematic Green</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Reduce Noise");'  style='left:267px;top:23px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom" >
+			<span class="default">Reduces grain in your image</span>
+			<span class="fr_FR">Réduit le grain de l'image</span>
+			<span class="it_IT">Riduce il rumore nell'immagine</span>
+			<span class="es_ES">Reducir el ruido de la imagen</span>
+			<span class="de_DE">Verringert das Rauschen im Bild</span>
+					</sp-tooltip>Reduce Noise</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Remove CA");'  style='left:352px;top:23px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom" >
+			<span class="default">Automatically cleans chromatic aberration</span>
+			<span class="fr_FR">Nettoie automatiquement les aberrations chromatiques</span>
+			<span class="it_IT">Elimina automaticamente l'aberrazione cromatica</span>
+			<span class="es_ES">Limpiar automáticamente la aberración cromática</span>
+			<span class="de_DE">Entferne CA (Chromatische Aberration)</span>
+					</sp-tooltip>Clean CA</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Reveal Sensor Dust");'  style='left:440px;top:23px;width:82px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Reveals dust spots</span>
+			<span class="fr_FR">Révèle les taches de poussière</span>
+			<span class="it_IT">Rivela la polvere e lo sporco</span>
+			<span class="es_ES">Visualizar las manchas de polvo del sensor</span>
+			<span class="de_DE">Sensorstaub sichtbar machen</span></sp-tooltip>Reveal Dust</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Enhance Details");'  style='left:523px;top:23px;width:82px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Enhances details using surafce blur</span>
+			<span class="fr_FR">Améliore les détails par flou de surface</span>
+			<span class="it_IT">Aumenta i dettagli usando la sfocatura della superficie</span>
+			<span class="es_ES">Realzar los detalles usando desenfoque de superficie</span>
+			<span class="de_DE">"Verbessert Details durch Anwendung von ""Matter machen"""</span></sp-tooltip>Detail Enhance</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Autumn Colours");'  style='left:15px;top:48px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom" >
+			<span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+					</sp-tooltip>Autumn Colours</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Cold City");'  style='left:130px;top:48px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			</sp-tooltip>Cold City</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Soft Vignette");'  style='left:267px;top:48px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">A dark border around your image</span>
+			<span class="fr_FR">Bordure noire autour de l'image</span>
+			<span class="it_IT">Un bordo scuro attorno all'immagine</span>
+			<span class="es_ES">Añadir un viñeteado oscuro alrededor de la imagen</span>
+			<span class="de_DE">Erzeugt einen dunklen Rand um dein Bild</span>
+			</sp-tooltip>Light Vignette</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Man Vignette");'  style='left:352px;top:48px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Manually mask in your vignette</span>
+			<span class="fr_FR">Vignette manuelle par masque</span>
+			<span class="it_IT">Maschera manualmente la vignettatura</span>
+			<span class="es_ES">Viñetear manualmente mediante máscara y pincel</span>
+			<span class="de_DE">Manuelle Vignette</span>
+			</sp-tooltip>Man Vignette</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("sRGB");'  style='left:440px;top:48px;width:55px;height:24px;'  title="">sRGB</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Adobe");'  style='left:495px;top:48px;width:55px;height:24px;'  title="">Ado RGB</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("ProPhoto");'  style='left:550px;top:48px;width:55px;height:24px;'  title="">ProPhoto</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Magic Green");'  style='left:15px;top:74px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			</sp-tooltip>Magic Green Lands</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("BW Drama");'  style='left:130px;top:74px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			</sp-tooltip>BW Drama</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Sharpen Full");'  style='left:267px;top:74px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Sharpen full size image</span>
+			<span class="fr_FR">Accentue l'image en pleine taille</span>
+			<span class="it_IT">Contrasta l'immagine a piena risoluzione</span>
+			<span class="es_ES">Aumentar la nitidez de toda la imagen</span>
+			<span class="de_DE">Bild in voller Größe schärfen</span>
+			</sp-tooltip>Sharpen Full</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Edge Dodge");'  style='left:352px;top:74px;width:82px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Sharpen without white edging</span>
+			<span class="fr_FR">Accentue sans effet de bord blanc</span>
+			<span class="it_IT">Contrasta senza bordi bianchi</span>
+			<span class="es_ES">Aumentar la nitidez de la imagen sin afectar a los bordes</span>
+			<span class="de_DE">Schärfen ohne weiße Ränder</span></sp-tooltip>Sharp No Edge</sp-action-button>
+			   <sp-detail size="s"   style='left:432px;top:78px;width:173px;height:20px;font-size:10px;font-weight:bold;font-style:normal;text-align:center;' >Save As...</sp-detail>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("save_psd");'  style='left:440px;top:97px;width:82px;height:24px;'  title="">PSD</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("save_jpg");'  style='left:525px;top:97px;width:82px;height:24px;'  title="">JPG</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Infrared");'  style='left:15px;top:100px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			</sp-tooltip>Infrared</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Ancient Photo");'  style='left:130px;top:100px;width:112px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Press to add a filter to your image</span>
+			<span class="fr_FR">Ajoute un filtre à l'image</span>
+			<span class="it_IT">Premi per aggiungere un filtro all'immagine</span>
+			<span class="es_ES">Añadir un filtro de acabado diferente a la imagen</span>
+			<span class="de_DE">Klicken, um einen Filter zum Bild hinzuzufügen</span>
+			</sp-tooltip>Ancient Photo</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("freq sep 16");'  style='left:267px;top:100px;width:82px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">16 bit frequency separation layer</span>
+			<span class="fr_FR">Calque de séparation de fréquence  16 bits</span>
+			<span class="it_IT">Livello separazione di frequenza 16 8bit</span>
+			<span class="es_ES">Generar una capa de separación de frecuencias de 16 bits</span>
+			<span class="de_DE">16 Bit Frequenztrennungs-Ebene</span></sp-tooltip>Freq Sep 16</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("Jm Frequency Sep");'  style='left:352px;top:100px;width:82px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">8bit Frequency separation layer </span>
+			<span class="fr_FR">Calque de séparation de fréquence 8 bits</span>
+			<span class="it_IT">Livello separazione di frequenza a 8bit</span>
+			<span class="es_ES">Generar una capa de separación de frecuencias de 8 bits</span>
+			<span class="de_DE">8 Bit Frequenztrennungs-Ebene</span></sp-tooltip>Freq Sep 8</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("save_psb");'  style='left:440px;top:123px;width:82px;height:24px;'  title="">PSB</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("save_tiff");'  style='left:525px;top:123px;width:82px;height:24px;'  title="">TIFF</sp-action-button>
+			   <sp-detail size="s"   style='left:52px;top:131px;width:151px;height:20px;font-size:10px;font-weight:bold;font-style:normal;text-align:center;' >Your Actions</sp-detail>
+			   <sp-detail size="s"  style='left:264px;top:132px;width:175px;height:20px;font-size:9px;font-weight:bold;font-style:normal;text-align:center;' >Sharpen And Resize For The Web</sp-detail>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 1");'  style='left:15px;top:153px;width:37px;height:24px;'  title="">1</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 2");'  style='left:54px;top:153px;width:37px;height:24px;'  title="">2</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 3");'  style='left:91px;top:153px;width:37px;height:24px;'  title="">3</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 4");'  style='left:131px;top:153px;width:37px;height:24px;'  title="">4</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 5");'  style='left:169px;top:153px;width:37px;height:24px;'  title="">5</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runAction("Your Action", "Your Action 6");'  style='left:207px;top:153px;width:37px;height:24px;'  title="">6</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("JM (c) Width");'  style='left:267px;top:153px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Sharpen by width</span>
+			<span class="fr_FR">Accentue par largeur</span>
+			<span class="it_IT">Contrasta per larghezza</span>
+			<span class="es_ES">Redimensionar y enfocar estableciendo la anchura de la imagen</span>
+			<span class="de_DE">Schärfen ausgehend von der Breite</span>
+			</sp-tooltip>By Width</sp-action-button>
+			   <sp-action-button size="s" class="tooltip"  onClick='runScript_ff("JM (c) Height");'  style='left:352px;top:153px;width:82px;height:24px;'  title=""><sp-tooltip open placement="bottom"><span class="default">Sharpen by height</span>
+			<span class="fr_FR">Accentue par hauteur</span>
+			<span class="it_IT">Contrasta per altezza</span>
+			<span class="es_ES">Redimensionar y enfocar estableciendo la altura de la imagen</span>
+			<span class="de_DE">Schärfen ausgehend von der Höhe</span>
+			</sp-tooltip>By Height</sp-action-button>
+
+       
+
+    
+			   <div style='left:580px;top:160px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_ff .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+			   <sp-detail size="s" style='left:532px;top:157px;'>Tooltips</sp-detail>
+
+			     <sp-button style='left:440px;top:153px;width:80px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/filters-and-finish-uxp/");'>Tutorial</sp-button>
+   
+   
+    
+    
+			</div>
+		</div>
+		
+		<div id="panel_im">
+				<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+			<div class="container" style="position:absolute;top:-7px;left:10px;">
+	
+	
+    
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("View Live");'  style='left:15px;top:32px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">See the colour image</span>
+				<span class="fr_FR">Voir les couleurs de l’image</span>
+				<span class="it_IT">Guarda l’immagine a colori</span>
+				<span class="es_ES">Ver la imagen en color</span>
+				<span class="de_DE">Zeige das Farbbild</span></sp-tooltip>See RGB</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("View Mask");'  style='left:70px;top:32px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">See the InstaMask mask</span>
+				<span class="fr_FR">Voir le masque InstaMask</span>
+				<span class="it_IT">Guarda la maschera InstaMask</span>
+				<span class="es_ES">Ver la máscara InstaMask</span>
+				<span class="de_DE">Zeige die InstaMask Maske</span></sp-tooltip>See Mask</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Auto Align All Layers");'  style='left:126px;top:32px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >Align Layers</sp-tooltip>Align</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Cancel");'  style='left:181px;top:32px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Delete the InstaMask layer and group</span>
+				<span class="fr_FR">Supprime la couche et le groupe InstaMask</span>
+				<span class="it_IT">Cancella il livello ed il gruppo InstaMask</span>
+				<span class="es_ES">Eliminar la capa de máscara InstaMask y agrupar</span>
+				<span class="de_DE">Lösche die InstaMask Ebene und Gruppe</span></sp-tooltip>Delete IM</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("White");'  style='left:15px;top:57px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create a white mask</span>
+				<span class="fr_FR">Crée un masque blanc</span>
+				<span class="it_IT">Crea una maschera bianca</span>
+				<span class="es_ES">Crear una máscara blanca</span>
+				<span class="de_DE">Erzeuge eine weiße Maske</span></sp-tooltip>White M</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Black");'  style='left:70px;top:57px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create a black mask</span>
+				<span class="fr_FR">Crée un masque noir</span>
+				<span class="it_IT">Crea una maschera nera</span>
+				<span class="es_ES">Crear una máscara negra</span>
+				<span class="de_DE">Erzeuge eine schwarze Maske</span></sp-tooltip>Black M</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Show Layer");'  style='left:126px;top:57px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Show layer</span>
+				<span class="fr_FR">Voir la couche</span>
+				<span class="it_IT">Mostra il livello</span>
+				<span class="es_ES">Mostrar capa</span>
+				<span class="de_DE">Zeige Ebene an</span></sp-tooltip>Show La</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Hide Layer");'  style='left:181px;top:57px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Hide layer</span>
+				<span class="fr_FR">Cache la couche</span>
+				<span class="it_IT">Nascondi il livello</span>
+				<span class="es_ES">Ocultar capa</span>
+				<span class="de_DE">Blende Ebene aus</span></sp-tooltip>Hide La</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Hide Ants");'  style='left:15px;top:82px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Hide the marching ants</span>
+				<span class="fr_FR">Cache les fourmis</span>
+				<span class="it_IT">Nascondi la selezione (marching ants)</span>
+				<span class="es_ES">Ocultar la línea discontinua de la selección</span>
+				<span class="de_DE">Blende die Auswahlumrandung aus</span></sp-tooltip>Hide Ants</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Deselect");'  style='left:70px;top:82px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Deselect the active selection</span>
+				<span class="fr_FR">Désélecte la selection active</span>
+				<span class="it_IT">Deseleziona la selezione attiva</span>
+				<span class="es_ES">Deseleccionar la selección activa</span>
+				<span class="de_DE">Entferne die aktive Auswahl</span></sp-tooltip>Deselect</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Open ACR");'  style='left:126px;top:82px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Opens Adobe Camera RAW</span>
+				<span class="fr_FR">Ouvre Adobe Camera Raw</span>
+				<span class="it_IT">Apri Adobe Camera RAW</span>
+				<span class="es_ES">Abrir en Adobe Camera RAW</span>
+				<span class="de_DE">Öffne Adobe Camera RAW</span></sp-tooltip>ACR</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Undo");'  style='left:181px;top:82px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Undo last action</span>
+			<span class="fr_FR">Annule la dernière action</span>
+			<span class="it_IT">Annulla l’ultima azione</span>
+			<span class="es_ES">Deshacer la última acción</span>
+			<span class="de_DE">Letzte Aktion rückgängig machen</span></sp-tooltip>Undo</sp-action-button>
+
+			<div style='position:absolute;left:23px;top:112px;width:200px;height:1px;border-top:1px solid #888888;'></div>
+
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();createLuminosityMask();'  style='left:15px;top:120px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create mask based on brightness</span>
+				<span class="fr_FR">Crée un masque sur luminosité</span>
+				<span class="it_IT">Crea una maschera basata sulla luminosità</span>
+				<span class="es_ES">Crear una máscara basada en la luminosidad</span>
+				<span class="de_DE">Maske basierend auf Helligkeit erstellen</span></sp-tooltip>Lumin</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  id="decreaseLumButton" onClick='resetImSliders();decreaseLuminosityMaskFuzziness();'  style='left:71px;top:120px;width:27px;height:24px;'  >-</sp-action-button>
+			<sp-action-button size="s" class="tooltip" id="increaseLumButton" onClick='resetImSliders();increaseLuminosityMaskFuzziness();'  style='left:98px;top:120px;width:27px;height:24px;'  >+</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();createColorRangeMask();'  style='left:126px;top:120px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create mask based on colour</span>
+				<span class="fr_FR">Crée un masque sur couleur</span>
+				<span class="it_IT">Crea una maschera basata sul colore</span>
+				<span class="es_ES">Crear una máscara basada en el color</span>
+				<span class="de_DE">Maske basierend auf Farbe erstellen</span></sp-tooltip>Colour</sp-action-button>
+			<sp-action-button size="s" class="tooltip" id="decreaseColButton" onClick='resetImSliders();decreaseColorMaskFuzziness();'  style='left:181px;top:120px;width:27px;height:24px;'  >-</sp-action-button>
+			<sp-action-button size="s" class="tooltip" id="increaseColButton" onClick='resetImSliders();increaseColorMaskFuzziness();'  style='left:208px;top:120px;width:27px;height:24px;'  >+</sp-action-button>
+
+
+		<div id="imMaskChannel" style='left:60px;top:156px;width:200px;height:40px;z-index:100;' >
+			 <div class="radio rgbRadio checked" value="RGB" name="RGB" onclick="uncheckAll('imMaskChannel'); $(this).addClass('checked');" id="colorRGB"><div class="toggle"></div></div>
+		    <div class="radio redRadio" value="R" name="Red" id="colorR" onclick="uncheckAll('imMaskChannel'); $(this).addClass('checked');"><div class="toggle"></div></div>
+		    <div class="radio greenRadio" value="G" name="Green" onclick="uncheckAll('imMaskChannel'); $(this).addClass('checked');" id="colorG"><div class="toggle"></div></div>
+		    <div class="radio blueRadio" value="B" name="Blue" onclick="uncheckAll('imMaskChannel'); $(this).addClass('checked');" id="colorB"><div class="toggle"></div></div>
+		   
+		</div>
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 1");'  style='left:29px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>1</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 2");'  style='left:54px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>2</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 3");'  style='left:79px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>3</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 4");'  style='left:105px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>4</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 5");'  style='left:130px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>5</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Bright 6");'  style='left:155px;top:190px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create bright masks</span>
+				<span class="fr_FR">Crée un masque sur zones lumineuses</span>
+				<span class="it_IT">Crea maschere chiare</span>
+				<span class="es_ES">Crear máscaras de luces</span>
+				<span class="de_DE">Erzeuge Masken für Lichter</span></sp-tooltip>6</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Colour Mask");'  style='left:181px;top:190px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Make a selection with colour</span>
+				<span class="fr_FR">Réalise une sélection à partir de couleurs</span>
+				<span class="it_IT">Crea una selezione con il colore</span>
+				<span class="es_ES">Hacer una selección basada en una gama de color</span>
+				<span class="de_DE">Erzeuge eine Auswahl über Farben</span></sp-tooltip>Manual</sp-action-button>
+
+			<sp-detail size="s" style='left:10px;top:195px;width:16px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:center;'>B</sp-detail>
+
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 1");'  style='left:29px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>1</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 2");'  style='left:54px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>2</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 3");'  style='left:79px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>3</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 4");'  style='left:105px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>4</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 5");'  style='left:130px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>5</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Dark 6");'  style='left:155px;top:216px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create dark masks</span>
+				<span class="fr_FR">Crée un masque sur zones sombres</span>
+				<span class="it_IT">Crea maschere scure</span>
+				<span class="es_ES">Crear máscaras de sombras</span>
+				<span class="de_DE">Erzeuge Masken für Schatten</span></sp-tooltip>6</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Saturation Mask");'  style='left:181px;top:216px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Creates a saturation mask</span>
+				<span class="fr_FR">Crée un masque de saturation</span>
+				<span class="it_IT">Crea una maschera di saturazione</span>
+				<span class="es_ES">Crear una máscara de saturación</span>
+				<span class="de_DE">Erzeugt eine Sättigungs Maske</span></sp-tooltip>Sat M</sp-action-button>
+
+			<sp-detail size="s" style='left:9px;top:221px;width:19px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:center;' >D</sp-detail>
+
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Midtone 2");'  style='left:29px;top:242px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create midtone masks</span>
+				<span class="fr_FR">Crée un masque sur zones médiums</span>
+				<span class="it_IT">Crea maschere per I mezzi toni</span>
+				<span class="es_ES">Crear máscaras de medios tonos</span>
+				<span class="de_DE">Erzeuge Masken für Mitteltöne</span></sp-tooltip>1</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Midtone 3");'  style='left:54px;top:242px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create midtone masks</span>
+				<span class="fr_FR">Crée un masque sur zones médiums</span>
+				<span class="it_IT">Crea maschere per I mezzi toni</span>
+				<span class="es_ES">Crear máscaras de medios tonos</span>
+				<span class="de_DE">Erzeuge Masken für Mitteltöne</span></sp-tooltip>2</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Midtone 4");'  style='left:79px;top:242px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create midtone masks</span>
+				<span class="fr_FR">Crée un masque sur zones médiums</span>
+				<span class="it_IT">Crea maschere per I mezzi toni</span>
+				<span class="es_ES">Crear máscaras de medios tonos</span>
+				<span class="de_DE">Erzeuge Masken für Mitteltöne</span></sp-tooltip>3</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();runScript_im("Midtone 5");'  style='left:105px;top:242px;width:25px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Create midtone masks</span>
+				<span class="fr_FR">Crée un masque sur zones médiums</span>
+				<span class="it_IT">Crea maschere per I mezzi toni</span>
+				<span class="es_ES">Crear máscaras de medios tonos</span>
+				<span class="de_DE">Erzeuge Masken für Mitteltöne</span></sp-tooltip>4</sp-action-button>
+			<!--<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Open RGB Masks");'  style='left:130px;top:242px;width:48px;height:24px;'  ><sp-tooltip open placement="bottom" >Select via colour</sp-tooltip>RGB</sp-action-button>-->
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Edge Mask");'  style='left:181px;top:242px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Creates a mask that selects edges</span>
+				<span class="fr_FR">Crée un masque de sélection sur les bords</span>
+				<span class="it_IT">Crea una maschera che seleziona i bordi</span>
+				<span class="es_ES">Crear una máscara de bordes</span>
+				<span class="de_DE">Erzeugt eine Maske für die Kanten</span></sp-tooltip>Edge M</sp-action-button>
+
+			<sp-detail size="s"   style='left:7px;top:249px;width:27px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:center;' >M</sp-detail>
+
+
+			<div style='position:absolute;left:23px;top:273px;width:200px;height:1px;border-top:1px solid #888888;'></div>
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Keep");'  style='left:15px;top:280px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Used to add or subtract masks</span>
+				<span class="fr_FR">Ajoute ou soustrait des masques</span>
+				<span class="it_IT">Serve per aggiungere o sottrarre le maschere</span>
+				<span class="es_ES">Añadir o restar máscaras a la máscara actual</span>
+				<span class="de_DE">Für das Kombinieren (Hinzufügen oder Abziehen) von Masken</span></sp-tooltip>Combi</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add To Mask 16");'  style='left:59px;top:280px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Add a mask</span>
+				<span class="fr_FR">Ajoute un masque</span>
+				<span class="it_IT">Aggiunge una maschera</span>
+				<span class="es_ES">Añadir una máscara</span>
+				<span class="de_DE">Füge eine Maske hinzu</span></sp-tooltip>Add</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Subtract To Mask 16");'  style='left:103px;top:280px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Subtract a mask</span>
+				<span class="fr_FR">Soustrait un masque</span>
+				<span class="it_IT">Sottrae una maschera</span>
+				<span class="es_ES">Sustraer una máscara</span>
+				<span class="de_DE">Ziehe eine Maske ab</span></sp-tooltip>Subt</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Refine Mask");'  style='left:147px;top:280px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Refine a mask</span>
+				<span class="fr_FR">Affine un masque</span>
+				<span class="it_IT">Migliora una maschera</span>
+				<span class="es_ES">Refinar una máscara</span>
+				<span class="de_DE">Verfeinere eine Maske</span></sp-tooltip>Refine</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Blur Mask");'  style='left:191px;top:280px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Add blur to a mask</span>
+				<span class="fr_FR">Ajoute du flou à un masque</span>
+				<span class="it_IT">Aggiunge la sfocatura alla maschera</span>
+				<span class="es_ES">Desenfocar la máscara</span>
+				<span class="de_DE">Füge Unschärfe zu einer Maske hinzu</span></sp-tooltip>Blur</sp-action-button>
+				
+				
+
+			<sp-detail size="s" style='left:16px;top:316px;width:54px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >S</sp-detail>
+
+    
+			     <sp-slider id="shadowsSlider" style='left:45px;top:306px;width:140px;height:5px;' min="0" max="253" step="1" value="0" onchange="updateImSliderValues();" ></sp-slider>
+
+			        <sp-detail size="s" id="shadowsSliderValue" style='left:206px;top:316px;width:24px;height:18px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >0</sp-detail>
+     
+     
+			<sp-detail size="s" style='left:16px;top:335px;width:54px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >M</sp-detail>
+
+			    <sp-detail size="s" id="midtoneSliderValue" style='left:206px;top:335px;width:24px;height:18px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >50</sp-detail>
+	
+			       <sp-slider id="midtoneSlider" style='left:45px;top:326px;width:140px;height:5px;' min="0" max="100" step="1" value="50" onchange="updateImSliderValues();" ></sp-slider>
+ 
+       
+       
+			<sp-detail size="s" style='left:16px;top:354px;width:54px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >H</sp-detail>
+       
+   
+			    <sp-slider  id="highlightsSlider" style='left:45px;top:346px;width:140px;height:5px;' value="255" min="2" max="255" step="1" onchange="updateImSliderValues();"  ></sp-slider>
+	
+				    <sp-detail size="s" id="highlightsSliderValue" style='left:206px;top:354px;width:24px;height:18px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >255</sp-detail>
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='resetImSliders();updateImSliderValues();'  style='left:191px;top:375px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Resets sliders</span>
+				<span class="fr_FR">Réinitialise les curseurs</span>
+				<span class="it_IT">Reimposta i cursori</span>
+				<span class="es_ES">Resetear los deslizadores</span>
+				<span class="de_DE">Regler zurücksetzen</span></sp-tooltip>Reset</sp-action-button>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Map");'  style='left:15px;top:375px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Map your selection via red</span>
+				<span class="fr_FR">Mappe la sélection par le rouge</span>
+				<span class="it_IT">Mappa la selezione con il rosso</span>
+				<span class="es_ES">Generar un mapa de la selección en rojo</span>
+				<span class="de_DE">Mappe die Auswahl über Rot</span></sp-tooltip>Map</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("X");'  style='left:59px;top:375px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >X</sp-tooltip>X</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Image");'  style='left:103px;top:375px;width:44px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Creates a black and white image from your mask</span>
+				<span class="fr_FR">Crée une image en noir et blanc à partir du masque</span>
+				<span class="it_IT">Crea una foto in bianco e nero dalla maschera</span>
+				<span class="es_ES">Crear una imagen en blanco y negro a partir de la máscara</span>
+				<span class="de_DE">Erzeuge ein Schwarzweiss-Bild aus der Maske</span></sp-tooltip>Image</sp-action-button>
+
+
+			<div style='position:absolute;left:23px;top:405px;width:200px;height:1px;border-top:1px solid #888888;'></div>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Selection");'  style='left:15px;top:413px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Make selection</span>
+				<span class="fr_FR">Fait une sélection</span>
+				<span class="it_IT">Fai una selezione</span>
+				<span class="es_ES">Seleccionar</span>
+				<span class="de_DE">Erstelle die Auswahl</span></sp-tooltip>Select</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Select White");'  style='left:89px;top:413px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Make selection and add black mask on layer</span>
+				<span class="fr_FR">Faire une sélection et ajouter un masque noir sur la couche</span>
+				<span class="it_IT">Seleziona e aggiunge una maschera nera al livello</span>
+				<span class="es_ES">Seleccionar y añadir una máscara negra sobre la capa</span>
+				<span class="de_DE">Erstelle die Auswahl und eine schwarze Maske auf der Ebene</span></sp-tooltip>Select White</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Select Black");'  style='left:163px;top:413px;width:72px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Make selection and add white mask on layer</span>
+				<span class="fr_FR">Faire une sélection et ajouter un masque blanc sur la couche</span>
+				<span class="it_IT">Seleziona e aggiunge una maschera bianca al livello</span>
+				<span class="es_ES">Seleccionar y añadir una máscara blanca sobre la capa</span>
+				<span class="de_DE">Erstelle die Auswahl und eine weiße Maske auf der Ebene</span></sp-tooltip>Select Black</sp-action-button>
+
+
+		
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Test Blend");'  style='left:15px;top:438px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Test mask on exposure</span>
+				<span class="fr_FR">Masque de test sur exposition</span>
+				<span class="it_IT">Prova la maschera sull’esposizione</span>
+				<span class="es_ES">Probar la máscara sobre la la capa de destino</span>
+				<span class="de_DE">Teste die Maske auf der Ebene</span></sp-tooltip>Test</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Cancel test");'  style='left:70px;top:438px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default"></span>
+				<span class="fr_FR">Termine le test</span>
+				<span class="it_IT"></span>
+				<span class="es_ES">Finalizar la prueba</span>
+				<span class="de_DE">Test beenden</span></sp-tooltip>End Test</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Live");'  style='left:126px;top:438px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">View your mask on the layer in real time</span>
+				<span class="fr_FR">Visualisez votre masque sur la couche en temps réel</span>
+				<span class="it_IT">Guarda la maschera in tempo reale</span>
+				<span class="es_ES">Visualizar en tiempo real las modificaciones sobre la máscara</span>
+				<span class="de_DE">Lass dir deine Maske auf der Ebene in Echtzeit anzeigen</span></sp-tooltip>Live</sp-action-button>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("End Live");'  style='left:181px;top:438px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">End Live</span>
+				<span class="fr_FR">Fin du temps réel</span>
+				<span class="it_IT">End Live</span>
+				<span class="es_ES">Finalizar la visualización en tiempo real</span>
+				<span class="de_DE">Live-Modus beenden</span></sp-tooltip>End Live</sp-action-button>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Apply Mask");'  style='left:15px;top:463px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to a layer</span>
+				<span class="fr_FR">Applique le masque sur une couche</span>
+				<span class="it_IT">Applica la maschera ad un nuovo livello</span>
+				<span class="es_ES">Aplicar la máscara sobre la capa</span>
+				<span class="de_DE">Wende die Maske auf einer Ebene an</span></sp-tooltip>Apply</sp-action-button>
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("DB");'  style='left:70px;top:463px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Apply mask to dodge and burn layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche « Dodge and Burn » (Eclaircir / Assombrir)</span>
+				<span class="it_IT">Applica la maschera ad un livello Scherma e Brucia</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de sobrexposición y subexposición</span>
+				<span class="de_DE">Wende die Maske auf einer „Abwedeln Nachbelichten“-Ebene an</span></sp-tooltip>DB</sp-action-button>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Sharpen");'  style='left:126px;top:463px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to sharpen layer</span>
+				<span class="fr_FR">Applique le masque sur la couche d’amélioration</span>
+				<span class="it_IT">Applica la maschera ad un livello per aumentare la nitidezza</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de enfoque</span>
+				<span class="de_DE">Wende die Maske auf einer „Schärfen“-Ebene an</span></sp-tooltip>Sharpen</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Noise");'  style='left:181px;top:463px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to noise reduction layer</span>
+				<span class="fr_FR">Applique un masque sur la couche de réduction du bruit</span>
+				<span class="it_IT">Applica la maschera ad un livello di riduzione del rumore</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de reducción de ruido</span>
+				<span class="de_DE">Wende die Maske auf einer „Rauschen“-Ebene an</span></sp-tooltip>Noise</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Curves");'  style='left:15px;top:488px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to curves layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche des courbes</span>
+				<span class="it_IT">Applica la maschera ad un livello curve</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de ajuste de curvas</span>
+				<span class="de_DE">Wende die Maske auf einer „Kurven“-Ebene an</span></sp-tooltip>Curves</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Levels");'  style='left:70px;top:488px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to Levels layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche Niveaux</span>
+				<span class="it_IT">Applica la maschera ad un livello Livelli</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de ajuste de niveles</span>
+				<span class="de_DE">Wende die Maske auf einer „Tonwertkorrektur“-Ebene an</span></sp-tooltip>Levels</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Saturation");'  style='left:126px;top:488px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to Saturation/Hue layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche de saturation/teinte</span>
+				<span class="it_IT">Applica la maschera ad un livello Saturazione/Tonalità</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de ajuste de Tono y Saturación</span>
+				<span class="de_DE">Wende die Maske auf einer „Farbton/Sättigung“-Ebene an</span></sp-tooltip>Sat Hue</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Orton");'  style='left:181px;top:488px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to Orton effect layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche à effet Orton</span>
+				<span class="it_IT">Applica la maschera ad un livello effetto Orton</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de efecto Orton</span>
+				<span class="de_DE">Wende die Maske auf einer „Orton“-Ebene an</span></sp-tooltip>Orton</sp-action-button>
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Detail");'  style='left:15px;top:513px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to detail enhance layer</span>
+				<span class="fr_FR">Appliquer un masque pour améliorer la couche de détails</span>
+				<span class="it_IT">Applica la maschera ad un livello per aumentare i dettagli</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de realce de los detalles</span>
+				<span class="de_DE">Wende die Maske auf einer „Detail“-Ebene an</span></sp-tooltip>Detail</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Vibrancy");'  style='left:70px;top:513px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to Vibrance layer</span>
+				<span class="fr_FR">Appliquer le masque sur la couche de Vibrance</span>
+				<span class="it_IT">Applica la maschera ad un livello Vividezza</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de ajuste de Intensidad</span>
+				<span class="de_DE">Wende die Maske auf einer „Dynamik“-Ebene an</span></sp-tooltip>Vibra</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Add Filter");'  style='left:126px;top:513px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Apply mask to a photo filter layer</span>
+				<span class="fr_FR">Appliquer un masque sur une couche de filtre photo</span>
+				<span class="it_IT">Applica la maschera ad un livello Filtro fotografico</span>
+				<span class="es_ES">Aplicar la máscara sobre una capa de ajuste de Filtro de Fotografía</span>
+				<span class="de_DE">Wende die Maske auf einer „Fotofilter“-Ebene an</span></sp-tooltip>Ph Filt</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Save Channel");'  style='left:181px;top:513px;width:54px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Save the mask as a layer</span>
+				<span class="fr_FR">Sauvegarder le masque comme une couche</span>
+				<span class="it_IT">Salva la maschera come nuovo livello</span>
+				<span class="es_ES">Guardar la máscara como una capa</span>
+				<span class="de_DE">Speichere die Maske als Ebene</span></sp-tooltip>Save</sp-action-button>
+
+
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Brush IM White");'  style='left:15px;top:538px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Select a white brush</span>
+				<span class="fr_FR">Sélectionne un pinceau blanc</span>
+				<span class="it_IT">Seleziona un pennello bianco</span>
+				<span class="es_ES">Seleccionar un pincel blanco</span>
+				<span class="de_DE">Wähle einen weißen Pinsel</span></sp-tooltip>Wh</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Brush IM Black");'  style='left:52px;top:538px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Select a black brush</span>
+				<span class="fr_FR">Sélectionne un pinceau noir</span>
+				<span class="it_IT">Seleziona un pennello nero</span>
+				<span class="es_ES">Seleccionar un pincel negro</span>
+				<span class="de_DE">Wähle einen schwarzen Pinsel</span></sp-tooltip>Bl</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Small Brush");'  style='left:89px;top:538px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" >	<span class="default">Select a small brush</span>
+				<span class="fr_FR">Sélectionne une petite brosse</span>
+				<span class="it_IT">Seleziona un pennello piccolo</span>
+				<span class="es_ES">Seleccionar un pincel pequeño</span>
+				<span class="de_DE">Wähle einen kleinen Pinsel</span></sp-tooltip>Sm</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("Large Brush");'  style='left:126px;top:538px;width:36px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select a large brush</span>
+				<span class="fr_FR">Sélectionne une grande brosse</span>
+				<span class="it_IT">Seleziona un pennello grande</span>
+				<span class="es_ES">Seleccionar un pincel grande</span>
+				<span class="de_DE">Wähle einen großen Pinsel</span></sp-tooltip>La</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("increaseBrush250");'  style='left:163px;top:538px;width:36px;height:24px;'  >+</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_im("decreaseBrush250");'  style='left:200px;top:538px;width:36px;height:24px;'  >-</sp-action-button>
+
+
+			<div style='left:210px;top:583px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_im .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+			<sp-detail size="s" style='left:160px;top:580px;'>Tooltips</sp-detail>
+
+			  <sp-button style='left:15px;top:577px;width:80px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/luminosity-masks-uxp/");'>Tutorial</sp-button>
+  
+
+			</div>
+		</div>
+
+		<div id="panel_pm">
+					<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+				<div class="container" style="position:absolute;top:10px;left:10px;">
+
+
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Auto Dark");'  style='left:17px;top:20px;width:63px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Blend dark exposure</span>
+			<span class="fr_FR">Mélange d'exposition noire</span>
+			<span class="it_IT">Fondi  l’esposizione scura</span>
+			<span class="es_ES">Fusionar la exposición oscura</span>
+			<span class="de_DE">Überblende die dunkle Belichtung</span></sp-tooltip>Auto Dark</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 1");'  style='left:81px;top:20px;width:27px;height:24px;'  title="">1</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 2");'  style='left:108px;top:20px;width:27px;height:24px;'  title="">2</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 3");'  style='left:135px;top:20px;width:27px;height:24px;'  title="">3</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Auto Bright");'  style='left:17px;top:45px;width:63px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Blend bright exposure. Make bright layer visible first.</span>
+			<span class="fr_FR">Mélange l'exposition lumineuse. Rend la couche brillante visible en premier.</span>
+			<span class="it_IT">Fondi l’esposizione chiara. Devi rendere il livello chiaro visibile</span>
+			<span class="es_ES">Fusionar la exposición brillante. Primero haga visible la capa brillante.</span>
+			<span class="de_DE">Überblende die helle Belichtung. Mach zuerst die helle Ebene sichtbar.</span></sp-tooltip>Auto Bright</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 4");'  style='left:81px;top:44px;width:27px;height:24px;'  title="">4</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 5");'  style='left:108px;top:44px;width:27px;height:24px;'  title="">5</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("PM 6");'  style='left:135px;top:44px;width:27px;height:24px;'  title="">6</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Select");'  style='left:17px;top:70px;width:47px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Select current mask</span>
+			<span class="fr_FR">Sélectionne le masque courant</span>
+			<span class="it_IT">Seleziona la maschera attuale</span>
+			<span class="es_ES">Seleccionar la máscara actual</span>
+			<span class="de_DE">Aktuelle Maske auswählen</span></sp-tooltip>Select</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Adjust");'  style='left:66px;top:70px;width:47px;height:24px;'  ><sp-tooltip open placement="bottom" >Manually edit mask</sp-tooltip>Edit</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Cancel Blend");'  style='left:116px;top:70px;width:47px;height:24px;'  title=""><sp-tooltip open placement="bottom" ><span class="default">Cancel operation</span>
+			<span class="fr_FR">Annule l'opération</span>
+			<span class="it_IT">Cancella operazione</span>
+			<span class="es_ES">Cancelar la operación</span>
+			<span class="de_DE">Vorgang abbrechen</span></sp-tooltip>Cancel</sp-action-button>
+	
+				<!--
+			    <sp-detail size="s"   style='left:17px;top:104px;width:144px;height:21px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >Colour Zones</sp-detail>
+	
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Add colour");'  style='left:17px;top:121px;width:63px;height:24px;'  ><sp-tooltip open placement="bottom" >Add colour to selection</sp-tooltip>Add</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 1");'  style='left:81px;top:121px;width:27px;height:24px;'  title="">1</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 2");'  style='left:108px;top:121px;width:27px;height:24px;'  title="">2</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 3");'  style='left:135px;top:121px;width:27px;height:24px;'  title="">3</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Subtract Colour");'  style='left:17px;top:146px;width:63px;height:24px;'  ><sp-tooltip open placement="bottom" >Subtract colour from selection</sp-tooltip>Subtract</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 4");'  style='left:81px;top:145px;width:27px;height:24px;'  title="">4</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 5");'  style='left:108px;top:145px;width:27px;height:24px;'  title="">5</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("colour 6");'  style='left:135px;top:145px;width:27px;height:24px;'  title="">6</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Select Colours");'  style='left:17px;top:171px;width:70px;height:24px;'  title="">Select</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Cancel Colours");'  style='left:90px;top:171px;width:70px;height:24px;'  title="">Cancel</sp-action-button>
+					-->
+	
+			    <sp-detail size="s"   style='left:17px;top:104px;width:143px;height:21px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >Fix Dark Blend</sp-detail>
+	
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark Blend 2");'  style='left:17px;top:121px;width:63px;height:24px;'  ><sp-tooltip open placement="bottom" ><span class="default">Fix a badly blended image</span>
+			<span class="fr_FR">Réparer une image mal mélangée</span>
+			<span class="it_IT">Aggiusta un'immagine fusa male</span>
+			<span class="es_ES">Reparar una imagen mal fusionada</span>
+			<span class="de_DE">Korrigiere ein schlecht überblendetes Bild</span></sp-tooltip>Fix</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 1");'  style='left:81px;top:121px;width:27px;height:24px;'  title="">1</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 2");'  style='left:108px;top:121px;width:27px;height:24px;'  title="">2</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 3");'  style='left:135px;top:121px;width:27px;height:24px;'  title="">3</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Select Dark 2");'  style='left:17px;top:146px;width:63px;height:24px;'  title=""><sp-tooltip open placement="bottom" ><span class="default">Select current mask</span>
+			<span class="fr_FR">Sélectionne le masque courant</span>
+			<span class="it_IT">Seleziona la maschera attuale</span>
+			<span class="es_ES">Seleccionar la máscara actual</span>
+			<span class="de_DE">Aktuelle Maske auswählen</span></sp-tooltip>Select</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 4");'  style='left:81px;top:146px;width:27px;height:24px;'  title="">4</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 5");'  style='left:108px;top:146px;width:27px;height:24px;'  title="">5</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 6");'  style='left:135px;top:146px;width:27px;height:24px;'  title="">6</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Cancel Dark");'  style='left:17px;top:171px;width:63px;height:24px;'  title=""><sp-tooltip open placement="bottom" ><span class="default">Cancel operation</span>
+			<span class="fr_FR">Annule l'opération</span>
+			<span class="it_IT">Cancella operazione</span>
+			<span class="es_ES">Cancelar la operación</span>
+			<span class="de_DE">Vorgang abbrechen</span></sp-tooltip>Cancel</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 7");'  style='left:81px;top:171px;width:27px;height:24px;'  title="">7</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 8");'  style='left:108px;top:171px;width:27px;height:24px;'  title="">8</sp-action-button>
+			    <sp-action-button size="s" class="tooltip"  onClick='runScript_pm("Dark 9");'  style='left:135px;top:171px;width:27px;height:24px;'  title="">9</sp-action-button>
+
+    
+			      <sp-button style='left:17px;top:204px;width:88px;height:24px;' onClick='urlClick("https://www.shutterevolve.com/precision-masks-uxp/");'>Tutorial</sp-button>
+	 
+				  <div style='left:143px;top:233px;' id="switch" onClick="$(this).toggleClass('checked');$('#panel_pm .container').toggleClass('tooltipped');"><div id="toggle"></div></div>
+				  <sp-detail size="s" style='left:93px;top:230px;'>Tooltips</sp-detail>
+    
+			</div>
+		</div>
+		
+		<div id="panel_qb">
+					<div class="main_background" style="position:absolute;top:10px;left:10px;"></div>
+				<div class="container" style="position:absolute;top:10px;left:10px;width:250px;height:440px;">
+		
+			<sp-detail size="s" style='left:16px;top:18px;width:54px;height:23px;font-size:16px;line-height:23px;font-weight:normal;font-style:normal;text-align:left;' >Dark</sp-detail>
+			<sp-action-button size="s" class="tooltip"  onClick='resetDarkSliders();'  style='right:16px;top:18px;width:97px;height:23px;' >Reset</sp-action-button>
+
+    
+			     <sp-slider id="darkGreySlider" style='left:16px;top:50px;width:169px;height:12px;' min="0" max="255" step="1" value="0" onchange="updateDarkSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="darkGreySliderMax" style='right:20px;top:55px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;' onClick='maxValue("darkGreySlider");'>Max</sp-detail>
+     
+			     <sp-slider class="red"  id="darkRedSlider" style='left:16px;top:80px;width:169px;height:12px;' min="0" max="255" step="1" value="0" onchange="updateDarkSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="darkRedSliderValue" style='right:20px;top:85px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:red;' onClick='maxValue("darkRedSlider");'>Max</sp-detail>
+     
+			     <sp-slider class="green"  id="darkGreenSlider" style='left:16px;top:110px;width:169px;height:12px;' min="0" max="255" step="1" value="0" onchange="updateDarkSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="darkGreenSliderValue" style='right:20px;top:115px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:green;' onClick='maxValue("darkGreenSlider");'>Max</sp-detail>
+     
+			     <sp-slider class="blue"  id="darkBlueSlider" style='left:16px;top:140px;width:169px;height:12px;' min="0" max="255" step="1" value="0" onchange="updateDarkSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="darkBlueSliderValue" style='right:20px;top:145px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:blue;' onClick='maxValue("darkBlueSlider");'>Max</sp-detail>
+    
+
+
+
+			<sp-detail size="s"  style='left:16px;top:190px;width:54px;height:23px;font-size:16px;line-height:23px;font-weight:normal;font-style:normal;text-align:left;' >Bright</sp-detail>
+			    <sp-action-button size="s" class="tooltip"  onClick='resetBrightSliders();'  style='right:16px;top:190px;width:97px;height:23px;' >Reset</sp-action-button>
+    
+    
+			     <sp-slider id="brightGreySlider" style='left:16px;top:220px;width:169px;height:12px;' min="0" max="255" step="1" value="255" onchange="updateBrightSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="brightGreySliderValue" style='right:20px;top:225px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;' onClick='minValue("brightGreySlider");'>Max</sp-detail>
+     
+			     <sp-slider class="red"  id="brightRedSlider" style='left:16px;top:250px;width:169px;height:12px;' min="0" max="255" step="1" value="255" onchange="updateBrightSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="brightRedSliderValue" style='right:20px;top:255px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:red;' onClick='minValue("brightRedSlider");'>Max</sp-detail>
+     
+			     <sp-slider class="green"  id="brightGreenSlider" style='left:16px;top:280px;width:169px;height:12px;' min="0" max="255" step="1" value="255" onchange="updateBrightSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="brightGreenSliderValue" style='right:20px;top:285px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:green;' onClick='minValue("brightGreenSlider");'>Max</sp-detail>
+     
+			     <sp-slider class="blue"  id="brightBlueSlider" style='left:16px;top:310px;width:169px;height:12px;' min="0" max="255" step="1" value="255" onchange="updateBrightSliderValues();" ></sp-slider>
+			     <sp-detail size="s"  id="brightBlueSliderValue" style='right:20px;top:315px;width:20px;height:12px;line-height:12px;font-size:12px;font-weight:normal;font-style:normal;text-align:right;color:blue;' onClick='minValue("brightBlueSlider");'>Max</sp-detail>
+    
+
+ 
+
+
+
+
+			 <sp-action-button size="s" class="tooltip"  onClick='cancel();'  style='right:16px;top:350px;width:97px;height:23px;' >Cancel</sp-action-button>
+ 
+			  <sp-button style='left:16px;top:350px;width:88px;height:26px;' onClick='urlClick("https://www.shutterevolve.com/quick-blending-uxp/");'>Tutorial</sp-button>
+  
+
+
+			<sp-detail size="s"   style='left:16px;top:410px;width:82px;height:24px;font-size:10px;font-weight:normal;font-style:normal;text-align:left;' >Gradient Masks</sp-detail>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_qb("Gradient Mask Soft");'  style='left:106px;top:403px;width:60px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Create a gradient mask</span>
+			<span class="fr_FR">Crée un masque de gradient</span>
+			<span class="it_IT">Crea una maschera sfumata</span>
+			<span class="es_ES">Crear una máscara de degradado</span>
+			<span class="de_DE">Erstellen einer Verlaufsmaske</span></sp-tooltip>Mask</sp-action-button>
+			<sp-action-button size="s" class="tooltip"  onClick='runScript_qb("Refine Mask");'  style='right:16px;top:403px;width:60px;height:23px;'  ><sp-tooltip open placement="bottom" ><span class="default">Refine gradient mask</span>
+			<span class="fr_FR">Affine un masque de gradient</span>
+			<span class="it_IT">Regola la maschera sfumata</span>
+			<span class="es_ES">Refinar la máscara de degradado</span>
+			<span class="de_DE">Verlaufsmaske verfeinern</span></sp-tooltip>Refine</sp-action-button>
+
+
+
+  
+			</div>
+		</div>
+
+	</div>
+</div>
+</body>
+<script>
+	$(function() {
+		onLoaded();
+	});
+</script>
+
+</html>

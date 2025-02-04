@@ -1,0 +1,165 @@
+.Inspector{
+	color:var(--text);
+	fill:var(--text);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 100vw;
+	height: 100vh;
+	flex-shrink: 0;
+	background: var(--bg);
+
+	.filterContent{
+		margin-left: auto;
+	}
+
+
+	
+	&.size-tiny{
+		font-size: 10px;
+	}
+	&.size-small{
+		font-size: 10.5px;
+	}
+	&.size-default{
+		font-size: 11px;
+	}
+	&.size-bigger{
+		font-size: 12px;
+	}
+	&.size-big{
+		font-size: 13px;
+	}
+	&.size-youMustBeJoking{
+		font-size: 24px;
+	}
+	
+	.Resizer.vertical {
+		flex-shrink: 0;
+		width: 4px;
+		background: var(--divider);
+		border: 1px solid var(--divider);
+		cursor: ew-resize;
+
+		&:hover{
+			border: 1px solid var(--divider);
+			background: var(--hover);
+		}
+	}
+
+	.leftPane{
+		position: absolute !important;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.rightPane{
+		position: absolute !important;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: flex;
+	}
+
+	.messageStrip{
+		border-top:1px solid var(--divider);
+		padding:0.5em;
+		display: inline-flex;
+		align-items: center;
+		font-size: 1.05em;
+
+		.link{
+			text-decoration: none;
+			color:var(--autoActive);
+
+			&:hover{
+				color:var(--hover);
+				text-decoration: underline;
+			}
+		}
+
+		.close{
+			fill:var(--text);
+			margin-left: auto;
+			text-decoration: none;
+			cursor: pointer;
+
+			&:hover{
+				fill:var(--hover);
+			}
+		}
+	}
+
+	.Raw{
+		position: relative;
+	}
+
+	.Tree{
+		position: relative;
+		overflow: visible;
+
+		.TreeContent{
+			overflow: scroll;
+		}
+	}
+	
+	.descriptorsColumns{
+		display: flex;
+		flex-grow: 1;
+		position: relative;
+
+		> .SplitPane{
+			display: flex;
+			position: absolute;
+			top:0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+	}
+
+	.FilterButton.settings{
+		margin-right: 0.5em;
+	}
+	
+	
+	> .TabList{
+		flex-grow: 1;
+	}
+
+	.tabsDescriptor{
+
+		> .tabContent{
+			position: relative;
+
+			.tabsView{
+				position: absolute;
+				top:0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				> .tabContent{
+					display: flex;
+					flex-direction: column;
+					flex-grow: 1;
+					//overflow: scroll;
+				}
+
+				> .raw,.generated{
+					padding: 0;
+				}
+			}
+		}
+	}
+
+
+
+
+}
+

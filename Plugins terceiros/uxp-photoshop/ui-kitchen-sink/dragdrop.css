@@ -1,0 +1,21 @@
+.drop-zone {
+    border: 1px solid var(--uxp-host-border-color);
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.reorderable {
+    width: 150px;
+}
+
+.reorderable .target {
+    height:2px;
+    background-color: transparent;
+}
+
+.reorderable .target.active {
+    background-color: blue;
+}

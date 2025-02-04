@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="index.js"></script>
+</head>
+
+<style>
+  body {
+    margin: 10px;
+	cursor: pointer;
+  }
+  .wide-text {
+    width: 100%;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+  }
+ 
+</style>
+
+<body>
+    <sp-heading size="M">Adicionar uma Camada de Texto</sp-heading>
+    <sp-textfield id="textName" placeholder="Nome" ><sp-label isrequired="true" slot="label">Digite o nome</sp-label></sp-textfield>
+    <br/><br/>
+ 
+<footer>
+  <sp-button id="getForecastBtn" onClick="camadaText_add()">Adicionar</sp-button>
+</footer>
+
+</body>
+
+</html>
