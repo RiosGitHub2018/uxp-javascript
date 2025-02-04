@@ -1,0 +1,36 @@
+@charset "UTF-8";
+*{margin: 0; }
+body{cursor: Default;  padding:10px}
+
+label{
+    color: aliceblue;
+    font-size: 12px;
+}
+input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+    transform: translateY(-2px);
+}
+
+.container{
+    width: 200px;
+    height: 250px;
+    border: 1px solid #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+
+.small {
+    width: 170px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -1,0 +1,5401 @@
+{
+  "hash": "c97c03e050b3c0c8fb93",
+  "version": "5.95.0",
+  "time": 815,
+  "builtAt": 1734985945218,
+  "publicPath": "",
+  "outputPath": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\dist",
+  "assetsByChunkName": {
+    "main": [
+      "main.bundle.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "main.bundle.js",
+      "size": 89475,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "javascriptModule": false,
+        "minimized": true,
+        "size": 89475
+      },
+      "chunkNames": [
+        "main"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [
+        792
+      ],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-dropdowlist.js",
+      "size": 14067,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-dropdowlist.js",
+        "minimized": true,
+        "size": 14067
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-dropdowlist copy.js",
+      "size": 13155,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-dropdowlist copy.js",
+        "minimized": true,
+        "size": 13155
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ps-combobox.js",
+      "size": 13121,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ps-combobox.js",
+        "minimized": true,
+        "size": 13121
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-combobox copy.js",
+      "size": 13073,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-combobox copy.js",
+        "minimized": true,
+        "size": 13073
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-slider.js",
+      "size": 9813,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-slider.js",
+        "minimized": true,
+        "size": 9813
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "index.html",
+      "size": 8931,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/index.html",
+        "size": 8931
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-color-seletor.js",
+      "size": 8502,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-color-seletor.js",
+        "minimized": true,
+        "size": 8502
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ms-color-seletor copy.js",
+      "size": 8100,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ms-color-seletor copy.js",
+        "minimized": true,
+        "size": 8100
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-box-number.js",
+      "size": 7692,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-box-number.js",
+        "minimized": true,
+        "size": 7692
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-buttonIcon copy.js",
+      "size": 7570,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-buttonIcon copy.js",
+        "minimized": true,
+        "size": 7570
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-slider-circular.js",
+      "size": 6613,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-slider-circular.js",
+        "minimized": true,
+        "size": 6613
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-numberfield copy.js",
+      "size": 5893,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-numberfield copy.js",
+        "minimized": true,
+        "size": 5893
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-slider-circular copy.js",
+      "size": 5634,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-slider-circular copy.js",
+        "minimized": true,
+        "size": 5634
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-painel.js",
+      "size": 5423,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-painel.js",
+        "minimized": true,
+        "size": 5423
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "css/index.css",
+      "size": 5213,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/css/index.css",
+        "size": 5213
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-tabsgroup copy.js",
+      "size": 4491,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-tabsgroup copy.js",
+        "minimized": true,
+        "size": 4491
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-busca.js",
+      "size": 4402,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-busca.js",
+        "minimized": true,
+        "size": 4402
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-buttom.js",
+      "size": 3939,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-buttom.js",
+        "minimized": true,
+        "size": 3939
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-radio-group.js",
+      "size": 3815,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-radio-group.js",
+        "minimized": true,
+        "size": 3815
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon075.svg",
+      "size": 3402,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon075.svg",
+        "size": 3402
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-button copy.js",
+      "size": 3201,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-button copy.js",
+        "minimized": true,
+        "size": 3201
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon060.svg",
+      "size": 3147,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon060.svg",
+        "size": 3147
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "html/modal.html",
+      "size": 2829,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/html/modal.html",
+        "size": 2829
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon_32@1x.png",
+      "size": 2803,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon_32@1x.png",
+        "size": 2803
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "js/dlgTeste01.js",
+      "size": 2781,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/js/dlgTeste01.js",
+        "minimized": true,
+        "size": 2781
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-tabsgroup.js",
+      "size": 2715,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-tabsgroup.js",
+        "minimized": true,
+        "size": 2715
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-icon.js",
+      "size": 2655,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-icon.js",
+        "minimized": true,
+        "size": 2655
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon_23@1x.png",
+      "size": 2588,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon_23@1x.png",
+        "size": 2588
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/ms-checkbox.js",
+      "size": 2576,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/ms-checkbox.js",
+        "minimized": true,
+        "size": 2576
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon061.svg",
+      "size": 2508,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon061.svg",
+        "size": 2508
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon050.svg",
+      "size": 2466,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon050.svg",
+        "size": 2466
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon065.svg",
+      "size": 2457,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon065.svg",
+        "size": 2457
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon068.svg",
+      "size": 2449,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon068.svg",
+        "size": 2449
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-radio-group.js",
+      "size": 2434,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-radio-group.js",
+        "minimized": true,
+        "size": 2434
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon010.svg",
+      "size": 2357,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon010.svg",
+        "size": 2357
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "componentes/backups/ps-radio.js",
+      "size": 2296,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/componentes/backups/ps-radio.js",
+        "minimized": true,
+        "size": 2296
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon026.svg",
+      "size": 2178,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon026.svg",
+        "size": 2178
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "manifest.json",
+      "size": 2077,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "manifest.json",
+        "size": 2077
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon039.svg",
+      "size": 2029,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon039.svg",
+        "size": 2029
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon049.svg",
+      "size": 1791,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon049.svg",
+        "size": 1791
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon067.svg",
+      "size": 1743,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon067.svg",
+        "size": 1743
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon093.svg",
+      "size": 1691,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon093.svg",
+        "size": 1691
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon035.svg",
+      "size": 1608,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon035.svg",
+        "size": 1608
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon074.svg",
+      "size": 1581,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon074.svg",
+        "size": 1581
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon030.svg",
+      "size": 1576,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon030.svg",
+        "size": 1576
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon033.svg",
+      "size": 1576,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon033.svg",
+        "size": 1576
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon091.svg",
+      "size": 1510,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon091.svg",
+        "size": 1510
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon021.svg",
+      "size": 1495,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon021.svg",
+        "size": 1495
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon023.svg",
+      "size": 1488,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon023.svg",
+        "size": 1488
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon025.svg",
+      "size": 1482,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon025.svg",
+        "size": 1482
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon041.svg",
+      "size": 1457,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon041.svg",
+        "size": 1457
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon072.svg",
+      "size": 1445,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon072.svg",
+        "size": 1445
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon062.svg",
+      "size": 1441,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon062.svg",
+        "size": 1441
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon034.svg",
+      "size": 1416,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon034.svg",
+        "size": 1416
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon052.svg",
+      "size": 1396,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon052.svg",
+        "size": 1396
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon088.svg",
+      "size": 1377,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon088.svg",
+        "size": 1377
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon040.svg",
+      "size": 1321,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon040.svg",
+        "size": 1321
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon073.svg",
+      "size": 1297,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon073.svg",
+        "size": 1297
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon048.svg",
+      "size": 1288,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon048.svg",
+        "size": 1288
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon057.svg",
+      "size": 1267,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon057.svg",
+        "size": 1267
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon092.svg",
+      "size": 1260,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon092.svg",
+        "size": 1260
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon013.svg",
+      "size": 1257,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon013.svg",
+        "size": 1257
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon032.svg",
+      "size": 1228,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon032.svg",
+        "size": 1228
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon064.svg",
+      "size": 1228,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon064.svg",
+        "size": 1228
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon001.svg",
+      "size": 1185,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon001.svg",
+        "size": 1185
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon080.svg",
+      "size": 1184,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon080.svg",
+        "size": 1184
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon066.svg",
+      "size": 1183,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon066.svg",
+        "size": 1183
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon076.svg",
+      "size": 1178,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon076.svg",
+        "size": 1178
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon090.svg",
+      "size": 1153,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon090.svg",
+        "size": 1153
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon063.svg",
+      "size": 1147,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon063.svg",
+        "size": 1147
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon024.svg",
+      "size": 1117,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon024.svg",
+        "size": 1117
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon097.svg",
+      "size": 1082,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon097.svg",
+        "size": 1082
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon022.svg",
+      "size": 1044,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon022.svg",
+        "size": 1044
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon031.svg",
+      "size": 1011,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon031.svg",
+        "size": 1011
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon096.svg",
+      "size": 1011,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon096.svg",
+        "size": 1011
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon053.svg",
+      "size": 1008,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon053.svg",
+        "size": 1008
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon070.svg",
+      "size": 1004,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon070.svg",
+        "size": 1004
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon002.svg",
+      "size": 1001,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon002.svg",
+        "size": 1001
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon046.svg",
+      "size": 994,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon046.svg",
+        "size": 994
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon084.svg",
+      "size": 994,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon084.svg",
+        "size": 994
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon094.svg",
+      "size": 988,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon094.svg",
+        "size": 988
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon009.svg",
+      "size": 982,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon009.svg",
+        "size": 982
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon045.svg",
+      "size": 960,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon045.svg",
+        "size": 960
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon087.svg",
+      "size": 958,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon087.svg",
+        "size": 958
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon077.svg",
+      "size": 945,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon077.svg",
+        "size": 945
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon012.svg",
+      "size": 942,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon012.svg",
+        "size": 942
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon011.svg",
+      "size": 917,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon011.svg",
+        "size": 917
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon043.svg",
+      "size": 909,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon043.svg",
+        "size": 909
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon051.svg",
+      "size": 898,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon051.svg",
+        "size": 898
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon015.svg",
+      "size": 892,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon015.svg",
+        "size": 892
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon044.svg",
+      "size": 871,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon044.svg",
+        "size": 871
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon085.svg",
+      "size": 859,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon085.svg",
+        "size": 859
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon029.svg",
+      "size": 853,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon029.svg",
+        "size": 853
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon079.svg",
+      "size": 850,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon079.svg",
+        "size": 850
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon020.svg",
+      "size": 843,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon020.svg",
+        "size": 843
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon054.svg",
+      "size": 840,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon054.svg",
+        "size": 840
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon055.svg",
+      "size": 838,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon055.svg",
+        "size": 838
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon059.svg",
+      "size": 838,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon059.svg",
+        "size": 838
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon086.svg",
+      "size": 831,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon086.svg",
+        "size": 831
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon095.svg",
+      "size": 821,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon095.svg",
+        "size": 821
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon036.svg",
+      "size": 808,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon036.svg",
+        "size": 808
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon018.svg",
+      "size": 801,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon018.svg",
+        "size": 801
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon058.svg",
+      "size": 773,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon058.svg",
+        "size": 773
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon056.svg",
+      "size": 764,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon056.svg",
+        "size": 764
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon017.svg",
+      "size": 758,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon017.svg",
+        "size": 758
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon089.svg",
+      "size": 757,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon089.svg",
+        "size": 757
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon019.svg",
+      "size": 751,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon019.svg",
+        "size": 751
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon016.svg",
+      "size": 741,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon016.svg",
+        "size": 741
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon078.svg",
+      "size": 739,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon078.svg",
+        "size": 739
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon069.svg",
+      "size": 718,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon069.svg",
+        "size": 718
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon042.svg",
+      "size": 709,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon042.svg",
+        "size": 709
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon071.svg",
+      "size": 693,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon071.svg",
+        "size": 693
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon082.svg",
+      "size": 641,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon082.svg",
+        "size": 641
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon083.svg",
+      "size": 615,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon083.svg",
+        "size": 615
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon027.svg",
+      "size": 610,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon027.svg",
+        "size": 610
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon038.svg",
+      "size": 610,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon038.svg",
+        "size": 610
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon028.svg",
+      "size": 608,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon028.svg",
+        "size": 608
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon037.svg",
+      "size": 576,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon037.svg",
+        "size": 576
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon014.svg",
+      "size": 557,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon014.svg",
+        "size": 557
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon081.svg",
+      "size": 554,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon081.svg",
+        "size": 554
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon047.svg",
+      "size": 547,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon047.svg",
+        "size": 547
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon004.svg",
+      "size": 522,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon004.svg",
+        "size": 522
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon003.svg",
+      "size": 514,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon003.svg",
+        "size": 514
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon006.svg",
+      "size": 461,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon006.svg",
+        "size": 461
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon005.svg",
+      "size": 459,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon005.svg",
+        "size": 459
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon007.svg",
+      "size": 459,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon007.svg",
+        "size": 459
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    },
+    {
+      "type": "asset",
+      "name": "icons/icon008.svg",
+      "size": 457,
+      "emitted": true,
+      "comparedForEmit": false,
+      "cached": false,
+      "info": {
+        "copied": true,
+        "sourceFilename": "src/icons/icon008.svg",
+        "size": 457
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "related": [],
+      "chunks": [],
+      "auxiliaryChunks": [],
+      "isOverSizeLimit": false
+    }
+  ],
+  "chunks": [
+    {
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "recorded": false,
+      "size": 162212,
+      "sizes": {
+        "javascript": 162212
+      },
+      "names": [
+        "main"
+      ],
+      "idHints": [],
+      "runtime": [
+        "main"
+      ],
+      "files": [
+        "main.bundle.js"
+      ],
+      "auxiliaryFiles": [],
+      "hash": "7fe2f1e6ec35a2c6996b",
+      "childrenByOrder": {},
+      "id": 792,
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 162212,
+          "sizes": {
+            "javascript": 162212
+          },
+          "built": true,
+          "codeGenerated": true,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js|76f6c32e02c51e36e1436bccdd682f63",
+          "name": "./src/index.js + 13 modules",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 13,
+          "postOrderIndex": 13,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "dependent": false,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": 474,
+          "chunks": [
+            792
+          ],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "resolvedModuleIdentifier": null,
+              "resolvedModule": null,
+              "type": "entry",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./src/index.js",
+              "loc": "main",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [],
+          "depth": 0,
+          "modules": [
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 25242,
+              "sizes": {
+                "javascript": 25242
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "index": 0,
+              "preOrderIndex": 0,
+              "index2": 13,
+              "postOrderIndex": 13,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": null,
+              "issuerName": null,
+              "issuerPath": null,
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (VariableDeclaration) with side effects in source code at 1:0-37"
+              ],
+              "depth": 0
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 9680,
+              "sizes": {
+                "javascript": 9680
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+              "name": "./src/componentes/ms-painel.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+              "index": 1,
+              "preOrderIndex": 1,
+              "index2": 0,
+              "postOrderIndex": 0,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-painel.js",
+                  "loc": "7:0-36",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-257:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 10062,
+              "sizes": {
+                "javascript": 10062
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+              "name": "./src/componentes/ms-box-number.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+              "index": 2,
+              "preOrderIndex": 2,
+              "index2": 1,
+              "postOrderIndex": 1,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-box-number.js",
+                  "loc": "8:0-40",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-329:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 5179,
+              "sizes": {
+                "javascript": 5179
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+              "name": "./src/componentes/ms-checkbox.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+              "index": 3,
+              "preOrderIndex": 3,
+              "index2": 2,
+              "postOrderIndex": 2,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-checkbox.js",
+                  "loc": "9:0-38",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-134:4"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 3425,
+              "sizes": {
+                "javascript": 3425
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+              "name": "./src/componentes/ms-icon.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+              "index": 4,
+              "preOrderIndex": 4,
+              "index2": 3,
+              "postOrderIndex": 3,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-icon.js",
+                  "loc": "10:0-34",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-130:2"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 5601,
+              "sizes": {
+                "javascript": 5601
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+              "name": "./src/componentes/ms-buttom.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+              "index": 5,
+              "preOrderIndex": 5,
+              "index2": 4,
+              "postOrderIndex": 4,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-buttom.js",
+                  "loc": "11:0-36",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (VariableDeclaration) with side effects in source code at 1:0-50"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 12593,
+              "sizes": {
+                "javascript": 12593
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+              "name": "./src/componentes/ms-slider.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+              "index": 6,
+              "preOrderIndex": 6,
+              "index2": 5,
+              "postOrderIndex": 5,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-slider.js",
+                  "loc": "12:0-36",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-328:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 3442,
+              "sizes": {
+                "javascript": 3442
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+              "name": "./src/componentes/ms-tabsgroup.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+              "index": 7,
+              "preOrderIndex": 7,
+              "index2": 6,
+              "postOrderIndex": 6,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-tabsgroup.js",
+                  "loc": "13:0-39",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-112:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 23934,
+              "sizes": {
+                "javascript": 23934
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+              "name": "./src/componentes/ps-combobox.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+              "index": 8,
+              "preOrderIndex": 8,
+              "index2": 7,
+              "postOrderIndex": 7,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ps-combobox.js",
+                  "loc": "14:0-38",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-514:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 21428,
+              "sizes": {
+                "javascript": 21428
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+              "name": "./src/componentes/ms-dropdowlist.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+              "index": 9,
+              "preOrderIndex": 9,
+              "index2": 8,
+              "postOrderIndex": 8,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-dropdowlist.js",
+                  "loc": "15:0-41",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-516:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 10117,
+              "sizes": {
+                "javascript": 10117
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+              "name": "./src/componentes/ms-radio-group.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+              "index": 10,
+              "preOrderIndex": 10,
+              "index2": 9,
+              "postOrderIndex": 9,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-radio-group.js",
+                  "loc": "16:0-41",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-85:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 5885,
+              "sizes": {
+                "javascript": 5885
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+              "name": "./src/componentes/ms-busca.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+              "index": 11,
+              "preOrderIndex": 11,
+              "index2": 10,
+              "postOrderIndex": 10,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-busca.js",
+                  "loc": "17:0-35",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-191:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 10151,
+              "sizes": {
+                "javascript": 10151
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+              "name": "./src/componentes/ms-slider-circular.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+              "index": 12,
+              "preOrderIndex": 12,
+              "index2": 11,
+              "postOrderIndex": 11,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-slider-circular.js",
+                  "loc": "18:0-45",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-284:1"
+              ],
+              "depth": 1
+            },
+            {
+              "type": "module",
+              "moduleType": "javascript/esm",
+              "layer": null,
+              "size": 15473,
+              "sizes": {
+                "javascript": 15473
+              },
+              "built": true,
+              "codeGenerated": false,
+              "buildTimeExecuted": false,
+              "cached": false,
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+              "name": "./src/componentes/ms-color-seletor.js",
+              "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+              "index": 13,
+              "preOrderIndex": 13,
+              "index2": 12,
+              "postOrderIndex": 12,
+              "cacheable": true,
+              "optional": false,
+              "orphan": false,
+              "dependent": true,
+              "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "issuerName": "./src/index.js",
+              "issuerPath": [
+                {
+                  "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "name": "./src/index.js",
+                  "id": null
+                }
+              ],
+              "failed": false,
+              "errors": 0,
+              "warnings": 0,
+              "id": null,
+              "issuerId": null,
+              "chunks": [],
+              "assets": [],
+              "reasons": [
+                {
+                  "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "module": "./src/index.js",
+                  "moduleName": "./src/index.js",
+                  "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+                  "resolvedModule": "./src/index.js",
+                  "type": "harmony side effect evaluation",
+                  "active": true,
+                  "explanation": "",
+                  "userRequest": "./componentes/ms-color-seletor.js",
+                  "loc": "19:0-43",
+                  "moduleId": null,
+                  "resolvedModuleId": null
+                }
+              ],
+              "usedExports": [],
+              "providedExports": [],
+              "optimizationBailout": [
+                "Statement (ClassDeclaration) with side effects in source code at 1:0-433:1"
+              ],
+              "depth": 1
+            }
+          ]
+        }
+      ],
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "./src/index.js"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 162212,
+      "sizes": {
+        "javascript": 162212
+      },
+      "built": true,
+      "codeGenerated": true,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js|76f6c32e02c51e36e1436bccdd682f63",
+      "name": "./src/index.js + 13 modules",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "index": 0,
+      "preOrderIndex": 0,
+      "index2": 13,
+      "postOrderIndex": 13,
+      "cacheable": true,
+      "optional": false,
+      "orphan": false,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": 474,
+      "chunks": [
+        792
+      ],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "resolvedModuleIdentifier": null,
+          "resolvedModule": null,
+          "type": "entry",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./src/index.js",
+          "loc": "main",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [],
+      "depth": 0,
+      "modules": [
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 25242,
+          "sizes": {
+            "javascript": 25242
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "index": 0,
+          "preOrderIndex": 0,
+          "index2": 13,
+          "postOrderIndex": 13,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (VariableDeclaration) with side effects in source code at 1:0-37"
+          ],
+          "depth": 0
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 9680,
+          "sizes": {
+            "javascript": 9680
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+          "name": "./src/componentes/ms-painel.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+          "index": 1,
+          "preOrderIndex": 1,
+          "index2": 0,
+          "postOrderIndex": 0,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-painel.js",
+              "loc": "7:0-36",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-257:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 10062,
+          "sizes": {
+            "javascript": 10062
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+          "name": "./src/componentes/ms-box-number.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+          "index": 2,
+          "preOrderIndex": 2,
+          "index2": 1,
+          "postOrderIndex": 1,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-box-number.js",
+              "loc": "8:0-40",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-329:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 5179,
+          "sizes": {
+            "javascript": 5179
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+          "name": "./src/componentes/ms-checkbox.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+          "index": 3,
+          "preOrderIndex": 3,
+          "index2": 2,
+          "postOrderIndex": 2,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-checkbox.js",
+              "loc": "9:0-38",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-134:4"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 3425,
+          "sizes": {
+            "javascript": 3425
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+          "name": "./src/componentes/ms-icon.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+          "index": 4,
+          "preOrderIndex": 4,
+          "index2": 3,
+          "postOrderIndex": 3,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-icon.js",
+              "loc": "10:0-34",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-130:2"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 5601,
+          "sizes": {
+            "javascript": 5601
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+          "name": "./src/componentes/ms-buttom.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+          "index": 5,
+          "preOrderIndex": 5,
+          "index2": 4,
+          "postOrderIndex": 4,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-buttom.js",
+              "loc": "11:0-36",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (VariableDeclaration) with side effects in source code at 1:0-50"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 12593,
+          "sizes": {
+            "javascript": 12593
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+          "name": "./src/componentes/ms-slider.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+          "index": 6,
+          "preOrderIndex": 6,
+          "index2": 5,
+          "postOrderIndex": 5,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-slider.js",
+              "loc": "12:0-36",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-328:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 3442,
+          "sizes": {
+            "javascript": 3442
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+          "name": "./src/componentes/ms-tabsgroup.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+          "index": 7,
+          "preOrderIndex": 7,
+          "index2": 6,
+          "postOrderIndex": 6,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-tabsgroup.js",
+              "loc": "13:0-39",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-112:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 23934,
+          "sizes": {
+            "javascript": 23934
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+          "name": "./src/componentes/ps-combobox.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+          "index": 8,
+          "preOrderIndex": 8,
+          "index2": 7,
+          "postOrderIndex": 7,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ps-combobox.js",
+              "loc": "14:0-38",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-514:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 21428,
+          "sizes": {
+            "javascript": 21428
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+          "name": "./src/componentes/ms-dropdowlist.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+          "index": 9,
+          "preOrderIndex": 9,
+          "index2": 8,
+          "postOrderIndex": 8,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-dropdowlist.js",
+              "loc": "15:0-41",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-516:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 10117,
+          "sizes": {
+            "javascript": 10117
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+          "name": "./src/componentes/ms-radio-group.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+          "index": 10,
+          "preOrderIndex": 10,
+          "index2": 9,
+          "postOrderIndex": 9,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-radio-group.js",
+              "loc": "16:0-41",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-85:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 5885,
+          "sizes": {
+            "javascript": 5885
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+          "name": "./src/componentes/ms-busca.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+          "index": 11,
+          "preOrderIndex": 11,
+          "index2": 10,
+          "postOrderIndex": 10,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-busca.js",
+              "loc": "17:0-35",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-191:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 10151,
+          "sizes": {
+            "javascript": 10151
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+          "name": "./src/componentes/ms-slider-circular.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+          "index": 12,
+          "preOrderIndex": 12,
+          "index2": 11,
+          "postOrderIndex": 11,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-slider-circular.js",
+              "loc": "18:0-45",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-284:1"
+          ],
+          "depth": 1
+        },
+        {
+          "type": "module",
+          "moduleType": "javascript/esm",
+          "layer": null,
+          "size": 15473,
+          "sizes": {
+            "javascript": 15473
+          },
+          "built": true,
+          "codeGenerated": false,
+          "buildTimeExecuted": false,
+          "cached": false,
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+          "name": "./src/componentes/ms-color-seletor.js",
+          "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+          "index": 13,
+          "preOrderIndex": 13,
+          "index2": 12,
+          "postOrderIndex": 12,
+          "cacheable": true,
+          "optional": false,
+          "orphan": false,
+          "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "name": "./src/index.js",
+              "id": null
+            }
+          ],
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "id": null,
+          "issuerId": null,
+          "chunks": [],
+          "assets": [],
+          "reasons": [
+            {
+              "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+              "resolvedModule": "./src/index.js",
+              "type": "harmony side effect evaluation",
+              "active": true,
+              "explanation": "",
+              "userRequest": "./componentes/ms-color-seletor.js",
+              "loc": "19:0-43",
+              "moduleId": null,
+              "resolvedModuleId": null
+            }
+          ],
+          "usedExports": [],
+          "providedExports": [],
+          "optimizationBailout": [
+            "Statement (ClassDeclaration) with side effects in source code at 1:0-433:1"
+          ],
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 9680,
+      "sizes": {
+        "javascript": 9680
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+      "name": "./src/componentes/ms-painel.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-painel.js",
+      "index": 1,
+      "preOrderIndex": 1,
+      "index2": 0,
+      "postOrderIndex": 0,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-painel.js",
+          "loc": "7:0-36",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-257:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 10062,
+      "sizes": {
+        "javascript": 10062
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+      "name": "./src/componentes/ms-box-number.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-box-number.js",
+      "index": 2,
+      "preOrderIndex": 2,
+      "index2": 1,
+      "postOrderIndex": 1,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-box-number.js",
+          "loc": "8:0-40",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-329:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 5179,
+      "sizes": {
+        "javascript": 5179
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+      "name": "./src/componentes/ms-checkbox.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-checkbox.js",
+      "index": 3,
+      "preOrderIndex": 3,
+      "index2": 2,
+      "postOrderIndex": 2,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-checkbox.js",
+          "loc": "9:0-38",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-134:4"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 3425,
+      "sizes": {
+        "javascript": 3425
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+      "name": "./src/componentes/ms-icon.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-icon.js",
+      "index": 4,
+      "preOrderIndex": 4,
+      "index2": 3,
+      "postOrderIndex": 3,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-icon.js",
+          "loc": "10:0-34",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-130:2"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 5601,
+      "sizes": {
+        "javascript": 5601
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+      "name": "./src/componentes/ms-buttom.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-buttom.js",
+      "index": 5,
+      "preOrderIndex": 5,
+      "index2": 4,
+      "postOrderIndex": 4,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-buttom.js",
+          "loc": "11:0-36",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (VariableDeclaration) with side effects in source code at 1:0-50"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 12593,
+      "sizes": {
+        "javascript": 12593
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+      "name": "./src/componentes/ms-slider.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider.js",
+      "index": 6,
+      "preOrderIndex": 6,
+      "index2": 5,
+      "postOrderIndex": 5,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-slider.js",
+          "loc": "12:0-36",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-328:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 3442,
+      "sizes": {
+        "javascript": 3442
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+      "name": "./src/componentes/ms-tabsgroup.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-tabsgroup.js",
+      "index": 7,
+      "preOrderIndex": 7,
+      "index2": 6,
+      "postOrderIndex": 6,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-tabsgroup.js",
+          "loc": "13:0-39",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-112:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 23934,
+      "sizes": {
+        "javascript": 23934
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+      "name": "./src/componentes/ps-combobox.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ps-combobox.js",
+      "index": 8,
+      "preOrderIndex": 8,
+      "index2": 7,
+      "postOrderIndex": 7,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ps-combobox.js",
+          "loc": "14:0-38",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-514:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 21428,
+      "sizes": {
+        "javascript": 21428
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+      "name": "./src/componentes/ms-dropdowlist.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-dropdowlist.js",
+      "index": 9,
+      "preOrderIndex": 9,
+      "index2": 8,
+      "postOrderIndex": 8,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-dropdowlist.js",
+          "loc": "15:0-41",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-516:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 10117,
+      "sizes": {
+        "javascript": 10117
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+      "name": "./src/componentes/ms-radio-group.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-radio-group.js",
+      "index": 10,
+      "preOrderIndex": 10,
+      "index2": 9,
+      "postOrderIndex": 9,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-radio-group.js",
+          "loc": "16:0-41",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-85:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 5885,
+      "sizes": {
+        "javascript": 5885
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+      "name": "./src/componentes/ms-busca.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-busca.js",
+      "index": 11,
+      "preOrderIndex": 11,
+      "index2": 10,
+      "postOrderIndex": 10,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-busca.js",
+          "loc": "17:0-35",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-191:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 10151,
+      "sizes": {
+        "javascript": 10151
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+      "name": "./src/componentes/ms-slider-circular.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-slider-circular.js",
+      "index": 12,
+      "preOrderIndex": 12,
+      "index2": 11,
+      "postOrderIndex": 11,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-slider-circular.js",
+          "loc": "18:0-45",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-284:1"
+      ],
+      "depth": 1
+    },
+    {
+      "type": "module",
+      "moduleType": "javascript/esm",
+      "layer": null,
+      "size": 15473,
+      "sizes": {
+        "javascript": 15473
+      },
+      "built": true,
+      "codeGenerated": false,
+      "buildTimeExecuted": false,
+      "cached": false,
+      "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+      "name": "./src/componentes/ms-color-seletor.js",
+      "nameForCondition": "C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\componentes\\ms-color-seletor.js",
+      "index": 13,
+      "preOrderIndex": 13,
+      "index2": 12,
+      "postOrderIndex": 12,
+      "cacheable": true,
+      "optional": false,
+      "orphan": true,
+      "issuer": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "identifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "name": "./src/index.js",
+          "id": null
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "id": null,
+      "issuerId": null,
+      "chunks": [],
+      "assets": [],
+      "reasons": [
+        {
+          "moduleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "resolvedModuleIdentifier": "javascript/esm|C:\\Users\\Pichau\\Meu Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\Estudos avançados\\Testes lab\\Plugin-UXP_teste\\src\\index.js",
+          "resolvedModule": "./src/index.js",
+          "type": "harmony side effect evaluation",
+          "active": true,
+          "explanation": "",
+          "userRequest": "./componentes/ms-color-seletor.js",
+          "loc": "19:0-43",
+          "moduleId": null,
+          "resolvedModuleId": null
+        }
+      ],
+      "usedExports": [],
+      "providedExports": [],
+      "optimizationBailout": [
+        "Statement (ClassDeclaration) with side effects in source code at 1:0-433:1"
+      ],
+      "depth": 1
+    }
+  ],
+  "entrypoints": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        792
+      ],
+      "assets": [
+        {
+          "name": "main.bundle.js",
+          "size": 89475
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 89475,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "name": "main",
+      "chunks": [
+        792
+      ],
+      "assets": [
+        {
+          "name": "main.bundle.js",
+          "size": 89475
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 89475,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "warnings": [],
+  "warningsCount": 0
+}

@@ -1,0 +1,52 @@
+<div style="display: flex; flex-direction: column;">
+ <ms-painel class="small" legend="Icones SVG" id="pn5" style="width: 100%; height: 70px" >
+  <div style="height:130px; display: flex; flex-direction: row; align-items: center;  justify-content: center;">
+        <ms-icon   icon="icon063" size="40px" color="#94d5fb"></ms-icon>
+        <ms-color-seletor size="50" initial-color="#f962be"  codigo-hex="true"></ms-color-seletor>  
+  </div>
+ </ms-painel>
+
+ <ms-painel class="small" legend="Navegação com abas" id="pn6" style="width: 100%; height: 100%" >
+  <div style="width: 100%; height:100%; display: flex; flex-direction: column; align-items: center;  justify-content: center;">
+   <ms-tabgroup style="width: 100%; margin-top: 10px;">
+    <ms-tab   title="DropDow">  
+        <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <ms-dropdownlist id="dropdownlist2" style="width: 120px; margin-top: 10px; "> <!--  data-selected-index="2" -->     <!-- <ps-divider></ps-divider> -->
+                <!-- <ms-item>Papel</ms-item>
+                <ms-item subitem='["Banner", "Chaxis"]'>Lona</ms-item>
+                <ms-item>Canvas</ms-item>
+                 <ms-item>Adesivo</ms-item>
+                <ms-item>Outro</ms-item> -->
+            </ms-dropdownlist>
+         </div>
+    </ms-tab>
+
+    <ms-tab  title="Campo Numero" style="width: 100%"  ativa>
+        <div style="height: 80px; display: flex; align-items: center; justify-content: center">
+                <ms-box-number id="textBox01"  txtlabel="Tamanho:" value="50" size="110px" style=" margin-top: 10px;"></ms-box-number>
+        </div>
+    </ms-tab>
+
+  </ms-tabgroup>
+  </div>
+ </ms-painel>
+
+  <ms-painel class="small" legend="Slider Circular" id="pn5" style="width: 100%; height:100%" >
+    <div style="display: flex; align-items: center;  justify-content: center; color: var(--psfx-texto-color); font-size: 11px;">
+        <ms-checkbox id="ck3" data-label="Desabilitar" style="margin-right: 10px;">Desabilitar</ms-checkbox>
+        <ms-slider-circular id="sliderCirc" size="70" value="0" min="0" max="360"></ms-slider-circular>
+        <ms-icon id="iconeRotate"  icon="icon050" size="70px" style="margin-left: 15px;"></ms-icon>
+    </div>
+   </ms-painel>
+
+   <ms-painel class="small" legend="Slider Circular" id="pn6" style="width: 100%; height:100%" >
+    <div style="display: flex; align-items: center;  justify-content: center; color: var(--psfx-texto-color); font-size: 11px;">
+        <ms-icon id="iconeTeste" icon="icon040"  color="#fff"  hover-color="#ff6666" style="margin: 10px;"></ms-icon>
+        <ms-color-seletor id="sletorB" size="70" codigo-hex="true"></ms-color-seletor>  <!-- initial-color="#FF5733" -->
+    </div>
+   </ms-painel>
+
+
+  
+ 
+</div>

@@ -1,0 +1,73 @@
+{
+  "name": "swc-uxp-starter",
+  "id": "swc-uxp-starter",
+  "version": "1.0.0",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "featureFlags": {
+    "enableSWCSupport": true
+  },
+  "icons": [
+    {
+      "width": 23,
+      "height": 23,
+      "path": "icons/icon_23.png",
+      "scale": [1, 2],
+      "theme": ["dark", "light"]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_32.png",
+      "scale": [1, 2],
+      "theme": ["dark", "light"]
+    }
+  ],
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "SWC-UXP Starter"
+      },
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_23.png",
+          "scale": [1, 2],
+          "theme": ["dark", "light"]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/icon_32.png",
+          "scale": [1, 2],
+          "theme": ["dark", "light"]
+        }
+      ],
+      "minimumSize": {
+        "width": 230,
+        "height": 200
+      },
+      "maximumSize": {
+        "width": 2000,
+        "height": 2000
+      },
+      "preferredDockedSize": {
+        "width": 230,
+        "height": 300
+      },
+      "preferredFloatingSize": {
+        "width": 230,
+        "height": 300
+      }
+    }
+  ],
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.4.0"
+    }
+  ]
+}

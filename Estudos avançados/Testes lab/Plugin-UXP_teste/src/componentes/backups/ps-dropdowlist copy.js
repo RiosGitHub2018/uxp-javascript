@@ -1,0 +1,497 @@
+class PSDropdownlist extends HTMLElement {
+    constructor() {
+        super();
+        this.options = [];
+        this._selectedIndex = -1;
+        this._originalObjects = [];
+        this._submenus = [];
+    }
+  
+    get selectedObject() {
+        return this._originalObjects[this._selectedIndex];
+    }
+  
+    connectedCallback() {
+        try {
+            const itemElements = this.querySelectorAll('ps-item, ps-divider');
+            if (itemElements.length > 0) {
+                // Limpar arrays antes de popular
+                this.options = [];
+                this._originalObjects = [];
+                this._submenus = [];
+    
+                itemElements.forEach((item) => {
+                    if (item.tagName === 'PS-ITEM') {
+                        const text = item.textContent.trim();
+                        this.options.push(text);
+                        this._originalObjects.push(item.dataset.object ? JSON.parse(item.dataset.object) : null);
+                        
+                        const subitensAttr = item.getAttribute('subitem');
+                        if (subitensAttr) {
+                            try {
+                                const subitens = JSON.parse(subitensAttr.replace(/'/g, '"'));
+                                this._submenus.push(subitens);
+                            } catch (error) {
+                                console.error('Erro ao processar subitens', error);
+                                this._submenus.push(null);
+                            }
+                        } else {
+                            this._submenus.push(null);
+                        }
+                    }
+                });
+            }
+    
+            this.render();
+            this.attachEventListeners();
+    
+            const initialIndex = parseInt(this.getAttribute('data-selected-index'), 10);
+            if (!isNaN(initialIndex) && initialIndex >= 0 && initialIndex < this.options.length) {
+                this.selectedIndex = initialIndex;
+            } else {
+                // Encontrar o primeiro índice não-nulo
+                const firstValidIndex = this.options.findIndex(option => option !== null);
+                this.selectedIndex = firstValidIndex !== -1 ? firstValidIndex : 0;
+            }
+    
+            if (this.hasAttribute('disabled')) {
+                this.disable();
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+  
+    render() {
+        this.innerHTML = `
+        <style>
+        ps-dropdownlist {
+            display: inline-block;
+            position: relative;
+            font-family: Arial, sans-serif;
+            width: 300px;
+            height: 20px;
+        }
+
+        .ps-dropdownlist-container {
+            display: flex;
+            align-items: center;
+            user-select: none;
+            height: 24px;
+            border: 1px solid var(--psfx-borda-elemento-color);
+            padding-left: 1px;
+            background-color: var(--psfx-bg-detalhes-color); 
+            cursor: pointer;
+        }
+
+        .ps-dropdownlist-container:hover {
+            border: 1px solid var(--psfx-borda-elemento-color-2);
+        }
+
+        .ps-dropdownlist-text {
+            width: 100%;
+            height: 20px;
+            flex-grow: 1;
+            border: 0px;
+            font-size: 12px;
+            padding: 1px;
+            margin: 0px;
+            padding-left: 9px;
+            font-family: Arial, sans-serif;
+            background: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        .ps-dropdownlist-arrow {
+            cursor: pointer;
+            padding: 0 2px;
+            background-color: var(--psfx-bg-detalhes-claro-color);
+            margin-right: 2px;
+            fill: var(--psfx-texto-color);
+        }
+
+        .ps-dropdownlist-indicador {
+            cursor: pointer;
+            fill: var(--psfx-texto-color);
+        }
+
+        .ps-dropdownlist-options {
+            display: none;
+            position: relative;
+            top:-2px;
+            left: 0;
+            right: 0;
+            background-color: var(--psfx-bg-detalhes-color);
+            border: 1px solid var(--psfx-borda-elemento-color);
+            box-shadow: var(--psfx-box-shadow:);
+            max-height: 244px;
+            overflow-y: auto;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+
+        .ps-dropdownlist-options.show {
+            display: block;
+        }
+
+        .ps-dropdownlist-option {
+            padding: 3px;
+            padding-left: 10px;
+            cursor: pointer;
+            color: var(--psfx-texto-color);
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .ps-dropdownlist-option:hover {
+            background-color: #60adf5;
+            color: #ffffff;
+        }
+
+        .ps-dropdownlist-option.selected {
+            background-color: var(--psfx-borda-elemento-color);
+            color: var(--psfx-texto-color:);
+        }
+
+        .ps-dropdownlist-option-svg {
+            display: none;
+            color: var(--psfx-texto-color)
+        }
+
+        .ps-dropdownlist-option.selected .ps-dropdownlist-option-svg {
+            display: block;
+            margin-right: 5px;
+        }
+
+        .ps-dropdownlist-submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--psfx-borda-elemento-color);
+            z-index: 9999;
+            min-width: 150px; 
+        }
+        
+        .ps-dropdownlist-submenu.show {
+            display: block;
+        }
+        
+        .ps-dropdownlist-submenu-option {
+            padding: 3px;
+            padding-left: 10px;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .ps-dropdownlist-submenu-option:hover {
+            background-color: #60adf5;
+            color: white;
+        }
+
+        .ps-dropdownlist-divider {
+            height: 1px;
+            background-color: var(--psfx-borda-elemento-color);
+            margin: 5px 0;
+            pointer-events: none;
+        }
+        </style>
+        
+        <div class="ps-dropdownlist-container">
+            <div class="ps-dropdownlist-text">${this.options[this._selectedIndex] || ''}</div>
+            <span class="ps-dropdownlist-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="12">
+                    <path d="M4,7.01a1,1,0,0,1,1.7055-.7055l3.289,3.286,3.289-3.286a1,1,0,0,1,1.437,1.3865l-.0245.0245L9.7,11.7075a1,1,0,0,1-1.414,0L4.7055,7.7155A1,1,0,0,1,4,7.01Z"></path>
+                </svg>
+            </span>
+        </div>
+        <div class="ps-dropdownlist-options">
+            ${Array.from(this.children).map((child) => {
+                if (child.tagName === 'PS-DIVIDER') {
+                    return `<div class="ps-dropdownlist-divider"></div>`;
+                }
+                
+                if (child.tagName === 'PS-ITEM') {
+                    const text = child.textContent.trim();
+                    const subitensAttr = child.getAttribute('subitem');
+                    const subitens = subitensAttr ? JSON.parse(subitensAttr.replace(/'/g, '"')) : null;
+                    
+                    return `
+                        <div class="ps-dropdownlist-option${this._selectedIndex === this.options.indexOf(text) ? ' selected' : ''}" data-index="${this.options.indexOf(text)}">
+                            <span>${text}</span>
+                            ${subitens ? `
+                              <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18">
+                              <rect opacity="0" width="18" height="18" /><path class="ps-dropdownlist-indicador" d="M12,9a.994.994,0,0,1-.2925.7045l-3.9915,3.99a1,1,0,1,1-1.4355-1.386l.0245-.0245L9.5905,9,6.3045,5.715A1,1,0,0,1,7.691,4.28l.0245.0245,3.9915,3.99A.994.994,0,0,1,12,9Z" />
+                             </svg>
+                            ` : ''}
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ps-dropdownlist-option-svg" height="12" width="12" viewBox="0 0 16 16" fill="none">
+                                <path class="fill" d="M15.656,3.8625l-.7275-.5665a.5.5,0,0,0-.7.0875L7.411,12.1415,4.0875,8.8355a.5.5,0,0,0-.707,0L2.718,9.5a.5.5,0,0,0,0,.707l4.463,4.45a.5.5,0,0,0,.75-.0465L15.7435,4.564A.5.5,0=0,15.656,3.8625Z"  fill="#60adf5"/>
+                            </svg>
+                            ${subitens ? `
+                                <div class="ps-dropdownlist-submenu">
+                                    ${subitens.map((subitem, subindex) => `
+                                        <div class="ps-dropdownlist-submenu-option" data-subindex="${subindex}">• ${subitem}</div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+                return '';
+            }).join('')}
+        </div>
+    `;
+     
+        // Resto do método render anterior (código de eventos de submenu)
+        this.querySelectorAll('.ps-dropdownlist-submenu-option').forEach(submenuOption => {
+            submenuOption.addEventListener('click', (e) => {
+                e.stopPropagation();
+                console.log('Subitem clicado:', submenuOption.textContent);
+                
+                const parentOption = submenuOption.closest('.ps-dropdownlist-option');
+                const parentIndex = parseInt(parentOption.getAttribute('data-index'));
+                const subitemIndex = parseInt(submenuOption.getAttribute('data-subindex'));
+        
+                const textDiv = this.querySelector('.ps-dropdownlist-text');
+                textDiv.textContent = submenuOption.textContent.replace(/•/g, '');
+        
+                this.dispatchEvent(new CustomEvent('optionSelected', {
+                    detail: {
+                        selectedIndex: parentIndex,
+                        value: this.options[parentIndex],
+                        subitem: submenuOption.textContent.replace(/•/g, ''),
+                        subitemIndex: subitemIndex,
+                        originalObject: this._originalObjects[parentIndex]
+                    }
+                }));
+        
+                const optionsContainer = this.querySelector('.ps-dropdownlist-options');
+                optionsContainer.style.display = 'none';
+                this.querySelectorAll('.ps-dropdownlist-submenu').forEach(sm => sm.classList.remove('show'));
+            });
+        });
+        
+        // Resto do código de eventos de opções com submenu
+        this.querySelectorAll('.ps-dropdownlist-option').forEach((optionEl, index) => {
+            if (this._submenus[index]) {
+                optionEl.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const submenu = optionEl.querySelector('.ps-dropdownlist-submenu');
+                    
+                    console.log('Submenu encontrado:', submenu);
+        
+                    if (!submenu) {
+                        console.warn('Nenhum submenu encontrado para este item:', optionEl);
+                        return;
+                    }
+        
+                    const isVisible = submenu.classList.contains('show');
+                    this.querySelectorAll('.ps-dropdownlist-submenu').forEach(sm => sm.classList.remove('show'));
+                    if (!isVisible) submenu.classList.add('show');
+                });
+            }
+        });
+    }
+  
+    attachEventListeners() {
+        const container = this.querySelector('.ps-dropdownlist-container');
+        const textDiv = this.querySelector('.ps-dropdownlist-text');
+        const arrow = this.querySelector('.ps-dropdownlist-arrow');
+        const optionsContainer = this.querySelector('.ps-dropdownlist-options');
+     
+        const toggleOptions = () => {
+            if (this.hasAttribute('disabled')) return;
+            optionsContainer.style.display = 
+                optionsContainer.style.display === 'block' ? 'none' : 'block';
+        };
+     
+        arrow.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleOptions();
+        });
+     
+        textDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleOptions();
+        });
+     
+        this.addEventListener('click', (e) => {
+            console.log('Evento de clique recebido');
+            e.stopPropagation();
+     
+            const submenuOptionElement = e.target.closest('.ps-dropdownlist-submenu-option');
+            const optionElement = e.target.closest('.ps-dropdownlist-option');
+     
+            console.log('Submenu Option Element:', submenuOptionElement);
+            console.log('Option Element:', optionElement);
+     
+            if (submenuOptionElement) {
+                console.log('Subitem clicado!');
+     
+                const parentOption = submenuOptionElement.closest('.ps-dropdownlist-option');
+                console.log('Parent Option:', parentOption);
+     
+                const parentIndex = parseInt(parentOption.getAttribute('data-index'));
+                const subitemIndex = Array.from(parentOption.querySelectorAll('.ps-dropdownlist-submenu-option')).indexOf(submenuOptionElement);
+     
+                console.log('Parent Index:', parentIndex);
+                console.log('Subitem Index:', subitemIndex);
+     
+                const selectedSubitem = submenuOptionElement.textContent.trim();
+                console.log('Selected Subitem:', selectedSubitem);
+     
+                textDiv.textContent = selectedSubitem;
+     
+                this.dispatchEvent(new CustomEvent('optionSelected', {
+                    detail: {
+                        selectedIndex: parentIndex,
+                        value: this.options[parentIndex],
+                        subitem: selectedSubitem,
+                        subitemIndex: subitemIndex,
+                        originalObject: this._originalObjects[parentIndex]
+                    }
+                }));
+     
+                optionsContainer.style.display = 'none';
+            } 
+            else if (optionElement && !submenuOptionElement) {
+                const options = this.querySelectorAll('.ps-dropdownlist-option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                optionElement.classList.add('selected');
+     
+                const index = parseInt(optionElement.getAttribute('data-index'));
+                this.selectedIndex = index;
+     
+                this.dispatchEvent(new CustomEvent('optionSelected', {
+                    detail: {
+                        selectedIndex: index,
+                        value: this.value,
+                        originalObject: this._originalObjects[index]
+                    }
+                }));
+     
+                optionsContainer.style.display = 'none';
+            }
+        });
+     
+        document.addEventListener('click', (e) => {
+            if (!this.contains(e.target)) {
+                optionsContainer.style.display = 'none';
+            }
+        });
+    }
+ 
+    addOption(item, originalObject = null) {
+        this._originalObjects.push(originalObject || item);
+        this.options.push(item);
+        
+        const optionsContainer = this.querySelector('.ps-dropdownlist-options');
+        const newOptionIndex = this.options.length - 1;
+        const newOptionElement = document.createElement('div');
+        newOptionElement.className = 'ps-dropdownlist-option';
+        newOptionElement.setAttribute('data-index', newOptionIndex);
+        newOptionElement.innerHTML = `
+            ${item}
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps-dropdownlist-option-svg" height="12" width="12" viewBox="0 0 16 16" fill="none">
+                <path class="fill" d="M15.656,3.8625l-.7275-.5665a.5.5,0,0,0-.7.0875L7.411,12.1415,4.0875,8.8355a.5.5,0,0,0-.707,0L2.718,9.5a.5.5,0,0,0,0,.707l4.463,4.45a.5.5,0,0,0,.75-.0465L15.7435,4.564A.5.5,0=0,15.656,3.8625Z"  fill="#60adf5"/>
+            </svg>
+        `;
+  
+        optionsContainer.appendChild(newOptionElement);
+    }
+  
+    updateSelected() {
+        const textDiv = this.querySelector('.ps-dropdownlist-text');
+        const options = this.querySelectorAll('.ps-dropdownlist-option');
+    
+        options.forEach((option) => {
+            option.classList.remove('selected');
+        });
+    
+        if (this._selectedIndex !== -1) {
+            const selectedOption = options[this._selectedIndex];
+            selectedOption.classList.add('selected');
+    
+            const selectedValue = this.options[this._selectedIndex];
+            textDiv.textContent = selectedValue;
+        } else {
+           textDiv.textContent = '';
+        }
+    }
+  
+    get selectedIndex() {
+        return this._selectedIndex;
+    }
+    
+    set selectedIndex(value) {
+        console.log('Tentando definir índice:', value);
+        console.log('Número de opções:', this.options.length);
+        
+        if (value >= 0 && value < this.options.length) {
+            this._selectedIndex = value;
+            this.updateSelected();
+        } else {
+            console.warn('selectedIndex fora do intervalo.');
+        }
+    }
+  
+    get value() {
+        return this._selectedIndex !== -1 ? this.options[this._selectedIndex] : '';
+    }
+  
+    disable() {
+        this.setAttribute('disabled', 'true');
+        const textDiv = this.querySelector('.ps-dropdownlist-text');
+        const setasvg = this.querySelector('#seta');
+        const bgseta = this.querySelector('#bgSeta');
+        const arrow = this.querySelector('.ps-dropdownlist-arrow');
+        const container = this.querySelector('.ps-dropdownlist-container');
+    
+        if (textDiv) {
+            textDiv.style.color = '#7b7b7b';
+            textDiv.style.backgroundColor = "var(--psfx-bg-detalhes-color)";
+            textDiv.style.cursor = 'default';
+        }
+    
+        if (setasvg) setasvg.classList.add('desabilitar');
+        if (bgseta) bgseta.classList.add('desabilitar');
+        if (arrow) {
+            arrow.style.pointerEvents = 'none';
+            arrow.classList.add('desabilitar');
+        }
+        if (container) container.classList.add('desabilitar');
+    }
+    
+    enable() {
+        this.removeAttribute('disabled');
+        const textDiv = this.querySelector('.ps-dropdownlist-text');
+        const setasvg = this.querySelector('#seta');
+        const bgseta = this.querySelector('#bgSeta');
+        const arrow = this.querySelector('.ps-dropdownlist-arrow');
+        const container = this.querySelector('.ps-dropdownlist-container');
+    
+        if (textDiv) {
+            textDiv.style.color = '';
+            textDiv.style.backgroundColor= '';
+            textDiv.style.cursor = 'pointer';
+        }
+    
+        if (setasvg) setasvg.classList.remove('desabilitar');
+        if (bgseta) bgseta.classList.remove('desabilitar');
+        if (arrow) {
+            arrow.style.pointerEvents = 'auto';
+            arrow.classList.remove('desabilitar');
+        }
+        if (container) container.classList.remove('desabilitar');
+    }
+}
+  
+customElements.define('ps-dropdownlist', PSDropdownlist);
+

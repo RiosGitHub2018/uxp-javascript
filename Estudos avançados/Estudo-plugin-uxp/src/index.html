@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="main.bundle.js"></script>
+
+</head>
+
+<style>
+   .small {
+        width: 190px;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+</style>
+
+<body >
+   
+    <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div  ><img src="../icons/logoFxrios.svg" ></div>
+
+        <field-set class="small" legend="Conigs painel" id="pn1"  bcground="#5b5a5a" >
+            <number-field id="teste_nf" style="width: 50px; height: 23px; margin: 10px;" txtLabel="Largura:" value="10"></number-field>
+            <div style="display: flex; align-items: center; justify-content: center; ">
+                <h1 id="texto" style="width: 40%; color: aliceblue; text-align: center;">1</h1> 
+            </div>
+        </field-set>
+        <!-- <button id="disableButton">Desabilitar</button>
+        <button id="enableButton">Habilitar</button> -->
+    </div>
+</body>
+
+</html>

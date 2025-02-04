@@ -1,0 +1,18 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build and Start UXP Plugin",
+            "type": "node",
+            "request": "launch",
+            "preLaunchTask": "yarn-build",
+            "postDebugTask": "yarn-start",
+            "presentation": {
+                "hidden": false,
+                "group": "",
+                "order": 1
+            }
+        }
+    ]
+}
