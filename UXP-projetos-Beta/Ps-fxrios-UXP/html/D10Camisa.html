@@ -1,0 +1,309 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .D10colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .D10colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .D10selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .D10altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .actionsPN3{
+        width: 228px; height: 100px;border-left: 1px solid rgb(73, 73, 73); border-right: 1px solid rgb(73, 73, 73);
+        background-color: #5c5b5b; position: absolute; display:none; top:130px; left: 25px; border-radius:4px; padding: 5px;
+    }
+
+    .D10btn1 {
+        width: 15px;
+        height: 108px;
+        border-radius: 7px 0 0 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #3d3d3d;
+        font-size: 8px;
+        background: #706f6f;
+        color: #e7e4e4;
+        font-family: Arial, sans-serif;
+    }
+    .D10btn2 {
+        width: 15px;
+        height: 108px;
+        border-radius: 0 7px 7px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #3d3d3d;
+        font-size: 8px;
+        background: #706f6f;
+        color: #e7e4e4;
+        font-family: Arial, sans-serif;
+    }
+
+    .D10-Desabilitado{
+        color: #a5a4a4;
+        pointer-events: none; 
+        background-color: #5c5c5c;
+    }
+
+    .D10-Ativado{
+        background: #aca8a8;
+	    color: rgb(0, 0, 0);
+    }
+
+    .D10SP-itens{
+        width:96px; height: 110px;
+         border: 1px solid #424141; 
+         margin: 1.5px; display: flex; 
+         align-items: center; 
+         justify-content: left;
+       }
+
+       .radiobtn{
+		margin: -5px;
+	}
+	.sp-radio-txt{
+		font-size: 11px;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		transform: translate(-5px,2px);
+	}
+
+    .txtPainel{
+        position: absolute; 
+        top: -1em; 
+        background-color: #5c5b5b; 
+        padding: 5px; font-size: 12px; 
+        transform: translateY(3px);
+    }
+
+    .D10labelDisable{
+        color: #707070;
+    }
+    .trancarJanela{pointer-events: none; }
+
+ </style>
+ 
+ <div class="janelaBase" id="janelaBase">
+       <div class="D10colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 250px; display: flex; justify-content: center; margin: 10px;">
+                <img id="D10imgBase64" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- /////////PAINEL ABAS -->
+             <div style="width: 250px; height: 247px; border: 1px solid rgb(58, 57, 57); background-color: #424242;">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                    <div class="btnAbas  D10-btAbas " id="D10-btn1" style="width: 71px; margin: 0px;">Estampa</div>
+                    <div class="btnAbas  D10-btAbas " id="D10-btn2" style="width: 71px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Ajustes</div>
+            </div>
+
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="D10-Abas" id="D10ID-Aba1" style="width: 248px; height: 223px; background-color:#5c5b5b; padding: 10px; padding-top: 10px; ">
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                   <div style="width: 236; height: 108px; display: flex; margin-left: -7px; margin-right: -8px; margin-top: -10px; transform: translateY(5px);">
+                        <div class="D10btn1 D10-Desabilitado" id="D10leftButton" style="position: absolute; left: 25px; top: 114px">◄</div>
+                        <div class="D10btn2 " id="D10rightButton" style="position: absolute; left: 238px; top:114px;">►</div>
+
+                       
+                             
+                             <!-- ///////// AREA PAINEIS ADULTOS  -->
+                              <div id="adultoRD" style="width: 198px; display: flex; position: relative; transform: translate(23px,-2px);">
+                                <!-- ///////// PAINEL RADIO MASCULINO  -->
+                                <div class="D10SP-itens" >
+                                    <label id="txtPainel1" class="sp-radio-txt txtPainel" style="left: 7px; top: -13px;">Masculino</label>
+                                        <sp-radio-group column style="padding: 10px; margin: 10px; transform: translateY(3px);">
+                                        <sp-radio data-tm="31x22"    data-txt="P Maculina"   class="radiobtn" checked><label class="sp-radio-txt" >Pequena</label></sp-radio>
+                                        <sp-radio data-tm="32x23"    data-txt="M Maculina"  class="radiobtn" ><label class="sp-radio-txt" >Média</label></sp-radio>
+                                        <sp-radio data-tm="36.5x26" data-txt="G Maculina"   class="radiobtn" ><label class="sp-radio-txt" >Grande</label></sp-radio>
+                                        <sp-radio data-tm="40x28.2" data-txt="GG Maculina" class="radiobtn" ><label class="sp-radio-txt" >Tam GG</label></sp-radio>
+                                        </sp-radio-group>
+                                </div>
+                                 <!-- ///////// PAINEL RADIO FEMINIO  -->     
+                                <div class="D10SP-itens">
+                                         <label id="txtPainel1" class="sp-radio-txt txtPainel" style="left: 107px; top: -13px;">Feminino</label>
+                                        <sp-radio-group column style="padding: 10px; margin: 10px; transform: translateY(3px);">
+                                        <sp-radio data-tm="26.5x19" data-txt="P Feminina"    class="radiobtn" ><label class="sp-radio-txt" >Pequena</label></sp-radio>
+                                        <sp-radio data-tm="28x20"    data-txt="M Feminina"   class="radiobtn" ><label class="sp-radio-txt" >Média</label></sp-radio>
+                                        <sp-radio data-tm="29x20.5" data-txt="G  Feminina"   class="radiobtn" ><label class="sp-radio-txt" >Grande</label></sp-radio>
+                                        <sp-radio data-tm="30x21"    data-txt="GG Feminina" class="radiobtn" ><label class="sp-radio-txt" >Tam GG</label></sp-radio>
+                                        </sp-radio-group>
+                                </div> 
+                              </div>
+
+                               <!-- ///////// AREA PAINEIS INFANTIL  -->
+                        <div id="infatilRD" style="width: 198px; display: none; position: relative; transform: translate(23px,-2px);">
+                            <!-- ///////// PAINEL RADIO BODY  -->
+                             <div class="D10SP-itens">
+                                <label id="txtPainel1" class="sp-radio-txt txtPainel" style="left: 7px; top: -13px;">Body</label>
+                                     <sp-radio-group column style="padding: 10px; margin: 10px; transform: translateY(3px);">
+                                     <sp-radio data-tm="15x10.5" data-txt="Body P"  class="radiobtn" ><label class="sp-radio-txt" >Pequena</label></sp-radio>
+                                     <sp-radio data-tm="16x11.3" data-txt="Body M"  class="radiobtn" ><label class="sp-radio-txt" >Média</label></sp-radio>
+                                     <sp-radio data-tm="17x12"    data-txt="Body G" class="radiobtn" ><label class="sp-radio-txt" >Grande</label></sp-radio>
+                                     <sp-radio data-tm="18x12.5" data-txt="Body GG"  class="radiobtn" ><label class="sp-radio-txt" >Tam GG</label></sp-radio>
+                                     </sp-radio-group>
+                             </div> 
+                            <!-- ///////// PAINEL RADIO CRIANÇA  -->   
+                             <div class="D10SP-itens" >
+                                <label id="txtPainel1" class="sp-radio-txt txtPainel" style="left: 107px; top: -13px;">Criança</label>
+                                 <sp-radio-group id="cr1" column style="padding: 10px; margin: 10px; transform: translateY(3px); ">
+                                     <div class="btnMedio " id="D10btn-PC2" style="width: 20px;  position: absolute; left:170px; top: -2px">+</div>
+                                     <sp-radio data-tm="17x12"    data-txt="1 Ano"    class="radiobtn" ><label class="sp-radio-txt" >1 Ano</label></sp-radio>
+                                     <sp-radio data-tm="18x12.5" data-txt="2 Anos"   class="radiobtn" ><label class="sp-radio-txt" >2 Anos</label></sp-radio>
+                                     <sp-radio data-tm="19x13"    data-txt="3 Anos"   class="radiobtn" ><label class="sp-radio-txt" >3 Anos</label></sp-radio>
+                                     <sp-radio data-tm="20x14"    data-txt="4 Anos"   class="radiobtn" ><label class="sp-radio-txt" >4 Anos</label></sp-radio>
+                                 </sp-radio-group>
+                                 <sp-radio-group  id="cr2" column style="padding: 10px; margin: 10px; transform: translateY(3px); display: none;">
+                                     <div class="btnMedio " id="D10btn-PC1" style="width: 20px;  position: absolute; left:170px; top: -2px">-</div>
+                                     <sp-radio data-tm="21x15"    data-txt="6 Anos"   class="radiobtn" ><label class="sp-radio-txt" >6 Ano</label></sp-radio>
+                                     <sp-radio data-tm="22x15.5" data-txt="8 Anos"   class="radiobtn" ><label class="sp-radio-txt" >8 Anos</label></sp-radio>
+                                     <sp-radio data-tm="23x16"    data-txt="10 Anos" class="radiobtn" ><label class="sp-radio-txt" >10 Anos</label></sp-radio>
+                                     <sp-radio data-tm="24x17"    data-txt="12 Anos" class="radiobtn" ><label class="sp-radio-txt" >12 Anos</label></sp-radio>
+                                 </sp-radio-group>
+                             </div> 
+                            </div> 
+                    
+                      </div>
+
+                      <!-- ///////// PAINEL MEDIDAS EDIT  -->
+                      <div style="width: 100%; height:31px;  border: 1px solid rgb(128, 126, 126); display: flex; align-items: center; padding: 5px; background-color: #424141; border-radius: 4px; position: relative; transform: translateY(10px);">
+                        <div class="btnMedio " id="D10btn-medidas" style="width: 35%;"></div>
+                        <label  id="result-md" style="font-family: Arial, sans-serif; color: #e6e9e6; font-size: 11px; margin-left: 0px; width: 59%; display: flex; align-items: center; padding: 5px;">Medidas: 31x22</label>
+                        <label  id="estpLocal" style="font-family: Arial, sans-serif; color: #e6e9e6; font-size: 11px; margin-left: 0px; width: 10%; display: flex; align-items: center; justify-content: center; padding: 5px; background-color: #706f6f;">D</label>
+                        </div>
+
+                    <!-- ///////// PAINEL PREFERNCIAS  -->
+                    <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(20px);">
+                        <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                        <sp-checkbox checked  id="D10-ck2" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Backup Documento</label></sp-checkbox >
+                        <sp-checkbox  id="D10-ck3" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Auto Imprimir</label></sp-checkbox >
+                     </div>
+            </div> 
+
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="D10-Abas" id="D10ID-Aba2" style="width: 248px; height: 223px; background-color:#5c5b5b;  padding: 10px; padding-top: 15px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações da Estampa</label>
+                    <div id="gpAJST" style="width: 100%; display: flex; margin-top: 10px;">
+                        <div class="btnIcons iconFont" id="D10AJPose1">!</div>
+                        <div class="btnIcons iconFont" id="D10AJPose2">"</div>
+                        <div class="btnIcons" id="D10AJPose3">'</div>
+                        <div class="btnIcons" id="D10AJPose4">%</div>
+                        <div class="btnIcons" id="D10AJPose5">&</div>
+                        <div class="btnIcons" id="D10AJPose6">(</div>
+                        <div class="btnIcons " id="D10AJPose7">#</div>
+                        <div class="btnIcons " id="D10AJPose8">$</div>
+                        <div class="btnIcons " id="D10AJPose9">Z</div>
+                    </div>
+                   </div>
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 45px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; margin-top: 2px;">
+                    <div style="width: 100%; display: flex; margin-top: 3px;">
+                        <div class="btnMedio " id="D10btn-Cores" style="width: 100%; margin: 1px;">Correção de Cores</div>
+                        <div class="btnMedio " id="D10btn-resetar" style="width: 71px; margin: 1px;">Resetar</div>
+                    </div>
+                </div>
+                
+                <sp-checkbox checked  id="D10-ck4" size="s" style="position: absolute; left: 110px; top: 212px;"><label class="sp-checkbox-txt" >Preview</label></sp-checkbox >
+
+            <div style="width: 100%; display: flex; transform: translate(0px, 11px);">
+                <!-- ///////// PAINEL PREFERNCIAS  -->
+                <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 2px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(20px);">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Local Estampa</label>
+                    <select id="listLEstampa" style="width:90%;  height: 25px; transform: translate(-2px, -10px); ">
+                        <option>Default</option>
+                        <option>Frente</option>
+                        <option>Verso</option>
+                        <option>Bolso</option>
+                        <option>Mangas</option>
+                        </select>
+                </div>
+
+                <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(20px);">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Cor do Body</label>
+                    <select id="listBCor" style="width:90%; height: 25px; transform: translate(-2px, -13px); ">
+                        <option>Branco</option>
+                        <option>Rosa</option>
+                        <option>Amarelo</option>
+                       </select>
+                </div>
+                
+                </div>
+            </div> 
+            </div> <!-- /////////PAINEL ABAS FINAL -->
+        </div>
+
+          <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+       <div class="D10colunaB">
+            <div class="btnMedio D10altura btn-Executar" id="D10Btn1" style="width: 71px; margin: 1px;">Enter</div>
+            <div class="btnMedio D10altura" id="D10Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
+            <sp-checkbox  id="D10-ck5" size="s" ><label class="sp-checkbox-txt" id="D10txtMaquet" >Maquete</label></sp-checkbox >
+            <sp-checkbox  id="D10focus" size="s" style="position: absolute; top: -50px;" ></sp-checkbox >
+       </div>
+ </div> 
+ 
+<!-- ///////////////////////////////////////////////////////////////////-->
+	<!-- JANELA ADD NOVO PRESSET 	///////////// INÍCIO /////////	-->
+	<dialog id="dlgEditMedidas" style= "padding: 20px; display: flex; justify-content: center; align-items: center;"  >	
+		<div style=' width: 100%; height: 181px;  display: flex; align-items: center;  flex-direction: column; justify-content: center; padding: 20px; padding-top: 10px;  border: 1px solid #3d3d3d; border-radius:7px; position: relative; '>
+            <img id="imgBase6" style="width: 250px;" src="icons/bgCamisMed.svg">
+            <!-- ///////// MINIATURA DA ESTAMPA ATUA NA JANELA -->
+            <img id="thumbIMG" style=" position: absolute; top: 30px; color: #cac8c8; display: flex; align-items: center;justify-content: center; border-radius:4px; border: 1px solid #d36969"/>
+            <!-- ///////// :::::::::::::::::::::: -->
+            <div style="display: flex; width: 100%; justify-content: center;">
+                <!-- ///////// INPUT LARGURA -->
+                <label style="color: #d5d2d2; font-size: 11px; margin-right: 1px;">Largura</label>
+                <div style="display: flex; position: relative; align-items: center;  margin: 1px;">
+                        <input  type="number"  id="D10-Larg" value="9.5" style="width:40px; height: 21px; padding: 2px; margin: 0px;">
+                        <div style="margin: 0; display: flex; flex-direction: column;  border: 1px solid #777777; height:19px;">
+                        <div  class="btnsetas setas-input-cima"></div><div  class="btnsetas setas-input-baixo"></div>
+                        </div>
+                        <label style="color: #d5d2d2; font-size: 11px; margin-right: 0px; margin-left: 5px;">X</label>
+                </div>
+               <!-- ///////// INPUT ALTURA -->
+                <div style="display: flex; position: relative; align-items: center; transform: translateY(2px); ">
+                        <input  type="number"  id="D10-Alt" value="9.5" style="width:40px; height: 21px; padding: 2px; margin: 0px;">
+                        <div style="margin: 0; display: flex; flex-direction: column;  border: 1px solid #777777; height:19px;">
+                        <div  class="btnsetas setas-input-cima"></div><div  class="btnsetas setas-input-baixo"></div>
+                        </div>
+                </div>
+                <label style="color: #d5d2d2; font-size: 11px; margin-left: 4px;">Altura</label>
+            </div>
+   		</div>
+        <div style="display: flex; margin: 10px;">
+            <div class="btnMedio" id="D10-EP-RE" style="width:20px; height: 19px; ">R</div>
+            <div class="btnMedio" id="D10-EP-FE" style="width:90px; height: 19px; ">Fechar</div>
+            <div class="btnMedio" id="D10-EP-OK" style="width:90px; height: 19px; ">OK</div>
+        </div>
+       
+	</dialog>
+	<!-- JANELA ADD NOVO PRESSET 	///////////// FINAL ///////// -->
+
+ 

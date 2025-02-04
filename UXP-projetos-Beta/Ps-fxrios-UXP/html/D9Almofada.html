@@ -1,0 +1,300 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .D9colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .D9colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .D9selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .D9altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+    .btnMChecadox{	
+        background: #aca8a8;
+        color: rgb(0, 0, 0);
+    }
+
+    .labelDisable{
+        color: #707070;
+    }
+
+    .outer-container {
+        width: 200px; /* Largura do contêiner visível */
+        overflow: hidden; /* Esconde a barra de rolagem */
+        position: absolute;
+    }
+
+    .container {
+        width: fit-content; /* Largura do contêiner */
+        white-space: nowrap; /* Impede quebrar o conteúdo */
+        height: 80px;
+    }
+
+    .content {
+        width: 600px; /* Largura do conteúdo */
+        display: flex; /* Para permitir o deslocamento */
+     }
+
+    .btn1 {
+        width: 20px;
+        height: 20px;
+        border-radius: 12px 0 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn2 {
+        width: 20px;
+        height: 20px;
+        border-radius: 0 12px 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .D9-Desabilitado{
+        color: #a5a4a4;
+        pointer-events: none; 
+        background: #706f6f;
+    }
+
+    .D9-Ativado{
+        background: #aca8a8;
+	    color: rgb(0, 0, 0);
+    }
+
+    .SP-itens{
+        width:63px; height: 64px; border: 1px solid #424141; margin: 1.5px; display: flex; align-items: center; justify-content: center;
+        background-color: #ffffff;
+       }
+
+       .SP-itens:hover{	
+        border: 2px solid #1a8efa; 
+    }
+    .SP-itens:active{	
+        border: 3px solid #1a8efa; 
+    }
+
+    .shepSel{
+        border: 3px solid #1a8efa; 
+    }
+
+    .btnTxtIcon { 
+        width: 59px;
+        height: 20px;
+        display: flex;
+        align-items: flex-start;
+        background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+        border: 1px solid #232323;   
+        outline: none;
+        color: #d5d2d2;  
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        margin: 1px;
+        padding: 2px;
+        border-radius: 2px;
+        line-height: 14px; /*Alina o texto verticalmente*/
+    }
+
+ </style>
+ 
+ <div class="janelaBase">
+    
+       <div class="D9colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 250px; display: flex; justify-content: center; margin: 10px;">
+                <img id="D9imgBase64" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- /////////PAINEL ABAS -->
+             <div style="width: 250px; height: 191px; border: 1px solid rgb(58, 57, 57); background-color: #424242;">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                    <div class="btnAbas  D9-btAbas " id="D9-btn1" style="width: 71px; margin: 0px;">Estampa</div>
+                    <div class="btnAbas  D9-btAbas " id="D9-btn2" style="width: 71px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Ajustes</div>
+            </div>
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="D9-Abas" id="D9ID-Aba1" style="width: 248px; height: 167px; background-color:#5c5b5b; padding: 10px; padding-top: 15px;">
+               
+                 <!-- //////////////////////////////////////// -->
+                 <!-- ///////// PAINEL LISTA PRESSETS ///////////////////////////////////////////////////////  -->
+                <div style='width: 100%; height: 65px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding:2px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translate(0px, 5px) '> 
+                <div  style='background-color:#5c5b5b; width: 100%; transform: translate(10px, -8px); ' class="sp-radio-txt">Referência da estampa </div>
+                    <div style=' background-color:#5c5b5b;; width:81px; height: 20px;  color: #d5d2d2;  transform: translate(130px, -25px);display: flex;'>
+
+                            <div class="btnPeqn" id="D9AddPresets">
+                            <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+                                <svg viewBox="0 2 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 1px)">
+                                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M14.5,8H10V3.5A.5.5,0,0,0,9.5,3h-1a.5.5,0,0,0-.5.5V8H3.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H8v4.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V10h4.5a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,14.5,8Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="btnPeqn" id="D9btnRemover">
+                            <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+                                <svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 0px)">
+                                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M15.75,3H12V2a1,1,0,0,0-1-1H6A1,1,0,0,0,5,2V3H1.25A.25.25,0,0,0,1,3.25v.5A.25.25,0,0,0,1.25,4h1L3.4565,16.55a.5.5,0,0,0,.5.45H13.046a.5.5,0,0,0,.5-.45L14.75,4h1A.25.25,0,0,0,16,3.75v-.5A.25.25,0,0,0,15.75,3ZM5.5325,14.5a.5.5,0,0,1-.53245-.46529L5,14.034l-.5355-8a.50112.50112,0,0,1,1-.067l.5355,8a.5.5,0,0,1-.46486.53283ZM9,14a.5.5,0,0,1-1,0V6A.5.5,0,0,1,9,6ZM11,3H6V2h5Zm1,11.034a.50112.50112,0,0,1-1-.067l.5355-8a.50112.50112,0,1,1,1,.067Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="btnPeqn" id="D9btnEdit">
+                            <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+                                <svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, -1px)">
+                                <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" />
+                                <path class="fill" d="M10.227,4,2.542,11.686a.496.496,0,0,0-.1255.2105L1.0275,16.55c-.057.188.2295.425.3915.425a.15587.15587,0,0,0,.031-.003c.138-.032,3.9335-1.172,4.6555-1.389a.492.492,0,0,0,.2075-.125L14,7.772ZM5.7,14.658c-1.0805.3245-2.431.7325-3.3645,1.011L3.34,12.304Z" />
+                                <path class="fill" d="M16.7835,4.1,13.9,1.216a.60751.60751,0,0,0-.433-.1765H13.45a.686.686,0,0,0-.4635.2035l-2.05,2.05L14.708,7.0645l2.05-2.05a.686.686,0,0,0,.2-.4415A.612.612,0,0,0,16.7835,4.1Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="btnPeqn" id="D9btnDesfault">
+                            <div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, -1px); "> 
+                                <svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 1px)">
+                                    <rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M9,1A8.015,8.015,0,0,0,2.322,4.614L.5,3.7605A.345.345,0,0,0,.2345,3.747a.35.35,0,0,0-.21318.44671L.0225,4.197,1.5265,8.35a.25.25,0,0,0,.2945.138L5.9765,6.984a.35.35,0,0,0,.21078-.44785L6.1865,6.534a.343.343,0,0,0-.1805-.195l-1.8385-.86a5.98551,5.98551,0,1,1-.0805,6.9585,1.00028,1.00028,0,0,0-1.637,1.15A8,8,0,1,0,9,1Z" />
+                                </svg>
+                            </div>
+                         </div>
+                        
+                        </div>
+                   <!--IIIIII LISTA LEIALT DE IMPRESSÃOIIII-->
+                    <form> <select id="D9list_MD"  style="width: 210px; transform: translate(-2px, -28px)"></select></form>
+                     <label id="statusPresset" class="sp-radio-txt" style="  font-size: 11px;  transform: translate(20px, -30px)" >Circunferência:19,5cm | Altura: 9,8cm</label>
+                    </div>
+                <!-- ///////// PAINEL LISTA PRESSETS ///////////////////////////////////////////////////////  -->
+                <!-- //////////////////////////////////////// -->
+
+                 <!-- ///////// PAINEL PREFERÊNCIAS  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(20px);">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                    <sp-checkbox checked  id="D9-ck2" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Backup Documento</label></sp-checkbox >
+                    <sp-checkbox  id="D9-ck3" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Auto Imprimir</label></sp-checkbox >
+                </div>"
+
+            </div> 
+
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="D9-Abas" id="D9ID-Aba2" style="width: 248px; height: 167px; background-color:#5c5b5b;  padding: 10px; padding-top: 15px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 30px; display: flex;  align-items: center; padding: 0px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(-10px);">
+                    <div class="btnMedio " id="D9btn-frente" style="width: 100%; margin: 1px;">Secionar Frente</div>
+                    <div class="btnMedio " id="D9btn-Verso" style="width: 100%; margin: 1px;">Secionar Verso</div>
+                </div>
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(0px);">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações da Estampa</label>
+                    <div style="width: 100%; display: flex; margin-top: 10px;">
+                        <div class="btnIcons iconFont" id="D9AJPose1">!</div>
+                        <div class="btnIcons iconFont" id="D9AJPose2">"</div>
+                        <div class="btnIcons" id="D9AJPose3">'</div>
+                        <div class="btnIcons" id="D9AJPose4">%</div>
+                        <div class="btnIcons" id="D9AJPose5">&</div>
+                        <div class="btnIcons" id="D9AJPose6">(</div>
+                        <div class="btnIcons " id="D9AJPose7">#</div>
+                        <div class="btnIcons " id="D9AJPose8">$</div>
+                    </div>
+                   </div>
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 40px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; margin-top: 4px;">
+                    <div style="width: 100%; display: flex; margin-top: 3px;">
+                        <div class="btnMedio " id="D9btn-Cores" style="width: 100%; margin: 1px;">Correção de Cores</div>
+                        <div class="btnMedio " id="D9btn-resetar" style="width: 71px; margin: 1px;">Resetar</div>
+                    </div>
+                </div>
+                <sp-checkbox checked=""  id="D9-ck4" size="s" style="transform: translate(90px,0px);"><label class="sp-checkbox-txt" >Preview</label></sp-checkbox >
+            </div> 
+            </div> <!-- /////////PAINEL ABAS FINAL -->
+        </div>
+
+      <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+       <div class="D9colunaB">
+            <div class="btnMedio D9altura btn-Executar" id="D9Btn1" style="width: 71px; margin: 1px;">Enter</div>
+            <div class="btnMedio D9altura" id="D9Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
+            <sp-checkbox  id="D9-ck5" size="s" ><label class="sp-checkbox-txt"  id="txtMauet">Maquete</label></sp-checkbox >
+            <div id="areaFocus" style="width:70px; height: 70px;">ffdf</div>
+       </div>
+ </div>
+
+ <!-- ///////////////////////////////////////////////////////////////////-->
+	<!-- JANELA ADD NOVO PRESSET 	///////////// INÍCIO /////////	-->
+	<dialog id="dlgPresetsAlmof" style= "padding: 20px;"  >	
+		<div style=' height: 170px;  display: flex; align-items: center; justify-content: center; padding: 20px; padding-top: 10px;  border: 1px solid #3d3d3d; flex-direction: column; border-radius:7px '>
+            <img id="imgBase6" style="width: 250px;" src="icons/bgAlmPresets.svg">
+            
+            <div style="display: flex; transform: translate(5px, 15px); align-items: center; padding: 10px; ">
+                <label style="color: #d5d2d2; font-size: 11px; margin-right: 1px;">Altu</label>
+                <input  type="number"  id="D9preEt1" value="9.5" style="width:40px; height: 21px; padding: 2px; margin: 2px;">
+                <label style="color: #d5d2d2; font-size: 11px; margin-right: 1px;">Larg</label>
+                <input  type="number"  id="D9preEt2" value="8.2" style="width:40px; height: 21px; padding: 2px; margin: 0px;">
+                <span id="iconSP"  style="height: 15px; width: 20px; background-image: url(icons/Shapes/sp_df.svg); transform: translateX(2px) "></span>
+                <div class="btnMedio" id="addSPButton" style="width:82px; height: 19px; transform: translateX(-4px); ">Add Moldura</div>
+               </div>
+		</div>
+
+        <sp-checkbox  id="D9-ckOM" size="s" style="transform: translate(10px,2px);" ><label class="sp-checkbox-txt">Adiciona opção de Maquete</label></sp-checkbox >
+        <div style="display: flex; transform: translateY(5px);">
+            <input  type="text"  id="D9PresetNome"  style="width: 120px; height: 21px; padding: 2px; margin: 2px;">
+            <label style="color: #d5d2d2; font-size: 11px; margin-right: 1px;">Cor</label>
+            <div class="colorBtn"  id= "D9btnColor"  style="width: 30px; height: 20px; border: 1px solid #474747; margin: 2px;" ></div>
+            <div class="btnMedio" id="D9btnClose" style=" height: 20px; width: 60px" >Fechar</div>
+            <div class="btnMedio" id="D9btnOK" style=" height: 20px;  width: 60px ">OK</div>
+        </div>
+        <label style="display: flex; font-size: 11px; color: #aca8a8; position: absolute; top: 250px; left: 80px;" >© Copyright Ps-fxrios2024</label>
+         
+        <!-- //////////////GALERIA DE SHAPES PERSONALIZADOS /////////////////// -->
+        <div id="painelShapes" style="width: 250px; height: 127px; background-color: #666464; position: absolute; top:25px; left: 25px;  display:none; flex-direction: column; padding: 2px; align-items: center; border-radius:5px; border: 1px solid #2b2a2a; " class="painelShapes">
+            <h3 style="color: #fffefe;">Pedefinições de Molduras</h3>
+            
+             
+            <div class="btnMedio btn1 D9-Desabilitado" id="leftButton" style="position: absolute; left: 70px; top: 100px">◄</div>
+            <div class="btnMedio" id="fecharButton" style="position: absolute; left: 89px; top: 100px; width: 70px;">Fechar</div>
+            <div class="btnMedio btn2 " id="rightButton" style="position: absolute; left: 158px; top:100px;">►</div>
+            <div style="width: 202px; height: 72px; border: 1px solid #b8b6b6;  transform: translate(0px, -1px); "></div>
+
+            <div class="outer-container"  style="height: 70px; transform: translateY(25px); ">
+                <div class="container" id="scrollContainer" >
+                    <div class="content" id="scrollContent"  style="padding: 2px; display: flex; transform: translatex(-396px);  ">
+                    <div class="SP-itens" data-value="SP-Elípse" data-value2="sp_02i.svg"><img src="icons/Shapes/sp_02.svg" style=" width: 200%;  object-fit: contain;" ></div> 
+                    <div class="SP-itens" data-value="SP-CA Quad" data-value2="sp_03i.svg"><img src="icons/Shapes/sp_03.svg" style=" width: 200%;  object-fit: contain;" ></div>  
+                    <div class="SP-itens" data-value="SP-N Quad" data-value2="sp_07i.svg"><img src="icons/Shapes/sp_07.svg" style=" width: 200%;  object-fit: contain;" ></div>            
+                    <div class="SP-itens" data-value="SP-S Elípse" data-value2="sp_04i.svg"><img src="icons/Shapes/sp_04.svg" style=" width: 200%;  object-fit: contain; " ></div>  
+                    <div class="SP-itens" data-value="SP-Coração4" data-value2="sp_09i.svg"><img src="icons/Shapes/sp_09.svg" style=" width: 200%;  object-fit: contain;" ></div> 
+                    <div class="SP-itens" data-value="SP-Coração3" data-value2="sp_01i.svg"><img src="icons/Shapes/sp_01.svg" style=" width: 200%;  object-fit: contain; " ></div>  
+                    <div class="SP-itens" data-value="SP-Coração1" data-value2="sp_05i.svg"><img src="icons/Shapes/sp_05.svg" style=" width: 200%;  object-fit: contain;" ></div> 
+                    <div class="SP-itens" data-value="SP-Coração2" data-value2="sp_06i.svg"><img src="icons/Shapes/sp_06.svg" style=" width: 200%;  object-fit: contain;" ></div> 
+                    <div class="SP-itens" data-value="SP-SL Quad" data-value2="sp_08i.svg"><img src="icons/Shapes/sp_08.svg" style=" width: 200%;  object-fit: contain;" ></div> 
+                  </div>
+                </div>
+              </div>
+       </div>
+       
+	</dialog>
+	<!-- JANELA ADD NOVO PRESSET 	///////////// FINAL /////////	-->
+
+
+
+

@@ -1,0 +1,120 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .d3colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .d3colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .d3selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .d3altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+   
+ </style>
+ 
+ <div class="janelaBase">
+       <div class="d3colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 250px; display: flex; justify-content: center; margin: 10px;">
+                <img id="imgBase4" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- /////////PAINEL ABAS -->
+             <div style="width: 250px; height: 169px; border: 1px solid rgb(58, 57, 57); background-color: #424242;">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                    <div class="btnAbas  d3-btAbas " id="d3-btn1" style="width: 71px; margin: 0px;">Estampa</div>
+                    <div class="btnAbas  d3-btAbas " id="d3-btn2" style="width: 71px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Ajustes</div>
+            </div>
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="d3-Abas" id="d3ID-Aba1" style="width: 248px; height: 145px; background-color:#5c5b5b; padding: 10px; padding-top: 15px;">
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                    <sp-radio-group style="margin-left: 5px;">
+                    <sp-radio id="D3-r1" checked><label class="sp-radio-txt" >10x15</label></sp-radio>
+                    <sp-radio id="D3-r2" ><label class="sp-radio-txt" >20x20</label></sp-radio>
+                    </sp-radio-group>
+                    <sp-checkbox id="D3-ck1" size="s" style="transform: translateY(4px);" ><label class="sp-checkbox-txt" >Material Vidro</label></sp-checkbox >
+                </div>
+
+                <div style="display: flex; margin-top: 15px;">
+                    <!-- ///////// PAINEL BACKUP ESTAMPA -->
+                    <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative; ">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Backup Doc</label>
+                    <sp-checkbox checked  id="D3-ck2" size="s" style="transform: translateY(4px);" ><label class="sp-checkbox-txt" >Backup Doc</label></sp-checkbox >
+                    </div> 
+                    <!-- ///////// PAINEL IMPRESSÃO ESTAMPA -->
+                    <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative; ">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Impressão</label>
+                    <sp-checkbox  id="D3-ck3" size="s" style="transform: translateY(4px);" ><label class="sp-checkbox-txt" >Auto Impressão</label></sp-checkbox >
+                    </div> 
+                </div>"
+            </div> 
+
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="d3-Abas" id="d3ID-Aba2" style="width: 248px; height: 145px; background-color:#5c5b5b;  padding: 10px; padding-top: 15px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações da Estampa</label>
+                    <div style="width: 100%; display: flex; margin-top: 10px;">
+                        <div class="btnIcons iconFont" id="D3AJPose1">!</div>
+                        <div class="btnIcons iconFont" id="D3AJPose2">"</div>
+                        <div class="btnIcons" id="D3AJPose3">'</div>
+                        <div class="btnIcons" id="D3AJPose4">%</div>
+                        <div class="btnIcons" id="D3AJPose5">&</div>
+                        <div class="btnIcons" id="D3AJPose6">(</div>
+                        <div class="btnIcons " id="D3AJPose7">#</div>
+                        <div class="btnIcons " id="D3AJPose8">$</div>
+                    </div>
+                   </div>
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 45px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; margin-top: 2px;">
+                    <div style="width: 100%; display: flex; margin-top: 3px;">
+                        <div class="d3btnMedio " id="btn-Cores" style="width: 100%; margin: 1px;">Correção de Cores</div>
+                        <div class="d3btnMedio " id="D3btn-resetar" style="width: 71px; margin: 1px;">Resetar</div>
+                    </div>
+                </div>
+                <sp-checkbox checked=""  id="D3-ck4" size="s" style="transform: translateX(90px);"><label class="sp-checkbox-txt" >Preview</label></sp-checkbox >
+            </div> 
+            </div> <!-- /////////PAINEL ABAS FINAL -->
+        </div>
+
+        <!-- /////////PAINEL PREDEFINIÇÃO DE CORES -->
+        <div id="ajustConfig" style="width: 253px; height: 255px; background-color: #817f7f; position: absolute; display: none; top:8px; left: 13px; border-radius:15px; ">
+        <div class="main-Ajuste">
+        </div><!-- /////////PAINEL PREDEFINIÇÃO DE CORES -->
+        
+        </div>
+          <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+       <div class="d3colunaB">
+            <div class="d3btnMedio d3altura btn-Executar" id="d3Btn1" style="width: 71px; margin: 1px;">Enter</div>
+            <div class="d3btnMedio d3altura" id="d3Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
+            <sp-checkbox  id="D3-ck5" size="s" ><label class="sp-checkbox-txt" >Maquete</label></sp-checkbox >
+       </div>
+ </div>
+ 

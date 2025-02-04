@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>
+	<script src="js/PuginUI.js"></script>
+	<script src="js/menu/myQuery.js"></script>
+	<link  href="css/index.css" rel="stylesheet" type="text/css"> 
+	<link  href="css/Componentes.css" rel="stylesheet" type="text/css">  
+	<link  href="css/ajustes.css" rel="stylesheet" type="text/css">       
+</head>
+
+<style>
+
+:root {
+	--fonte-principal: Arial, sans-serif;
+	--font-principal-cor: #c9c7c7;
+	--font-azul-cor: #85b7e0;
+	--font-Icons: UXPSfxIcon;
+	--cor-normal-btn: linear-gradient(to bottom,#919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+	--cor-hover-btn:#aca8a8;
+	--cor-active-btn:#3e6c92;
+	--cor-borda-btn: 1px solid #232323;
+	--cor-bordaClara: 1px solid #6e6d6d; 
+	--cor-bordaDefalu: 1px solid #404040;
+	--cor-borda-setas: 1px solid #6e6d6d;
+	--cor-borda-aba: 1px solid #3a3939;
+	--cor-bg-janela: #535353;
+
+	--cor-bg-escuro: #424242;
+	--cor-bg-default: #535353;
+	--cor-bg-medio: #4a4a4a;
+
+	--cor-bg-btn-ativo-aba:#5c5b5b;
+	--cor-bg-conteudo-aba: #5c5b5b;
+}
+
+	.container-Instal{
+	width: 130px;
+	height: 620px; 
+	display: none;
+	flex-direction: column;
+	border: 1px solid #636363;
+	padding: 5px;
+	cursor: default;
+	margin-top: 0px;
+	margin-left: -5px;
+	margin-bottom: 10px;
+	background: url(../icons/BGInstall.svg);
+	background-position: 10px 50px;
+	background-size: 110px 400px
+}
+.binstall{
+	width: 80px; height: 25px;
+	background: linear-gradient(to bottom,  #a4b3da 1%, #7896db 5%, #396be0 5%,#396be0 44%, #396be0 100%);
+	border: 1px solid #232323;   
+	outline: none;
+	color: #d5d2d2;  
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	margin: 1px;
+	padding: 2px;
+	border-radius: 5px;
+	line-height: 20px; /*Alina o texto verticalmente*/
+    position: absolute;
+	top: 306px;
+	left: 30px;
+}
+.progress-bar {
+	width: 0px;
+	height: 5px;
+	background-color: #396be0;
+	transition: width 1s linear;
+	border-radius: 3px;
+	position: absolute;
+	top: 465px;
+	left: 20px;
+}
+</style>
+
+<body >
+	<!--//////////// TELA DE INSTALAÇÃO -->
+
+	<div class="container-Instal" >
+			<div class="btnMedio binstall" id="btn-Install" style="transform: translateY(-126px); width: 80px; height: 25px;">Instalar</div>
+			<div class="progress-bar" id="progressBar">
+			<label  id="txtInstall" style="color: #c7d3f1; transform: translate(20px, -15px); display:none;">Processing...</label>
+			</div>
+	</div>
+	<div class="container-index" >
+		<!--//////////// LOGO PLUGIN -->
+
+		<sp-checkbox  id="pluginFocus" size="s" style="position: absolute; top: -50px;" ></sp-checkbox >
+
+		<div style="position: absolute; transform: translate(-10px, 34px); color: rgb(195, 197, 199);">@xmbcrios</div>
+		<div  ><img src="icons/logoFxrios.svg" ></div>
+		<div style="background-color: rgb(59, 58, 58); width: 130px; height: 2px; margin-top: 3px;"></div>
+		<!--//////////// MENU SUPERIO -->
+		<div class="menu_supeior">
+			<div class="btnIcons" id="ms_func1">K</div>
+			<div class="btnIcons" id="ms_func2">g</div>
+			<div class="btnIcons" id="ms_func3">H</div>
+			<div class="btnIcons" id="ms_func4">I</div>
+			<div class="btnIcons" id="ms_func5">R</div>
+			<div class="btnIcons" id="ms_func6">t</div>
+			<div class="btnIcons" id="ms_func7">O</div>
+			<div class="btnIcons" id="ms_func8" title="Scanner">s</div>
+			<div  ><img src="icons/bra_dv.png"  style="margin: 3px; transform: translateX(-3px);"></div> 
+			<!-- <div style="background-color: rgb(59, 58, 58); width: 100%; height: 3px; margin-top: 3px;"></div> -->
+			<div class="btnPeqn" id="ms_func9">RGB</div>
+			<div class="btnPeqn" id="ms_func10">GRAY</div>
+			<div class="btnPeqn" id="ms_func11">CMYK</div>
+			<div  ><img src="icons/bra_dv.png"  style="margin: 3px; transform: translateX(-3px);"></div>
+		</div>
+		
+		<!--//////////// ABA SERVIÇOS/DGM -->
+		<div class="abas_servDgm">
+			<div class="TabbedPanelsTab" id="btn-Tab1" style= "border-top-left-radius:  4px;" >DIAGRAM+</div>
+			<div class="TabbedPanelsTab" id="btn-Tab2" style= "border-top-right-radius: 4px;">SERVIÇOS</div>
+			<div  id="Tab1" class="GP-Dgm">
+				<div  ><img src="icons/dgm.png" style="margin-top: 2px;"></div>
+				<!--//////////// BOTÕES ICONS SUPERIOT ABA DGM-->
+				<div style="width: 122px ;height: 23px; display: flex; border-bottom: 1px solid #6e6e6e; margin-top: 3px;">
+					<div id="dgm-btn1" class="btnPeqn icon-Fonte  icon-Fonte-color" style="height: 22px; border-radius: 0px" title="Capa Fotobook" >]</div>
+					<div id="dgm-btn2" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px; font-size: 20px;" title="Renomear Arquivos">r</div>
+					<div id="dgm-btn3" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px">v</div>
+					<div id="dgm-btn4" class="btnPeqn icon-Fonte icon-Fonte-color" style="height: 22px; border-radius: 0px;" title="Capa, luvas Configs" >w</div>
+				</div>
+                <!--//////////// BOTÕES MEDIOS DA ABA DGM-->
+				<div style="width: 122px ;height: 44px; display: flex; flex-wrap: wrap; border-bottom: 1px solid #6e6e6e; margin-top: 3px;">
+					<div class="btnMedio" id="dgm-btn5">BG.remove</div>
+					<div class="btnMedio" id="dgm-btn6">ShadowFX</div>
+					<div class="btnMedio" id="dgm-btn7">Tranf.Layer</div>
+					<div class="btnMedio" id="dgm-btn8">RotatScala</div>
+				</div>
+				<div style="width: 122px ;height: 23px; display: flex; border-bottom: 1px solid #6e6e6e; margin-top: 3px;">
+					<div class="btnMedio" id="dgm-btn16">Calc</div>
+					<div class="btnMedio" id="dgm-btn17">Grid</div>
+					<div class="btnMedio" id="dgm-btn18">BRD</div>
+					<div class="btnMedio" id="dgm-btn19">PIC</div>
+				</div>
+				<!--//////////// BOTÕES ICONS INFERIOR ABA DGM-->
+				<div style="width: 122px ;height: 23px; display: flex; flex-wrap: wrap; border-bottom: 1px solid #6e6e6e; margin-top: 3px;">
+					<div id="dgm-btn9" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; font-size: 20px;">y</div>
+					<div id="dgm-btn12" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; font-size: 18px;">[</div>
+					<div id="dgm-btn10" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; font-size: 18px;">z</div>
+					<div id="dgm-btn11" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; font-size: 20px;">4</div>
+					<div id="dgm-btn8" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; font-size: 20px;">x</div>
+					<div id="dgm-btn13" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; border-radius: 0px; font-size: 20px;">5</div>
+					<div id="dgm-btn14" class="btnPeqn icon-Fonte" style="width: 30.5px; height: 22px; border-radius: 0px">]</div>
+					<div id="dgm-btn15" class="btnPeqn icon-Fonte  icon-Fonte-color" style="width: 30.5px; height: 22px; border-radius: 0px;  font-size: 18px;">{</div>
+				</div>
+
+			</div>
+			<div  id="Tab2" class="GP-Serv">
+				<div  ><img src="icons/servs.png" style="margin-top: 2px;"></div>
+				 <div style="width: 122px ;height: 44px; display: flex; flex-wrap: wrap; border-bottom: 1px solid #6e6e6e; margin-top: 3px;">
+					<div id="serv-btn1" class="btnMedio btn-GG">Calculos / Metragem</div>
+					<div id="serv-btn2" class="btnMedio">Templates</div>
+					<div id="serv-btn3" class="btnMedio">PortaCopo</div>
+                     <!--//////////// BOTÕES ICONS SERVIÇOS DE ESTAMPA-->
+					<div style="width: 122px ;height: 100px; display: flex; flex-wrap: wrap; border-bottom: 1px solid #6e6e6e; margin-top: 3px; position: relative;">
+						<div id="serv-btn4"   class="icons-Seivico">@</div> <!--//////////// CAMISA---->
+						<div id="serv-btn5"   class="icons-Seivico">A</div>  <!--//////////// QCABEÇA-->
+						<div id="serv-btn6"   class="icons-Seivico">B</div>  <!--//////////// SQUEESE-->
+						<div id="serv-btn7"   class="icons-Seivico">F</div>  <!--//////////// MOUSE PED-->
+						<div id="serv-btn8"   class="icons-Seivico">^</div> <!--//////////// CERAMICA--->
+						<div id="serv-btn9"   class="icons-Seivico">E</div>  <!--//////////// BONÉ--->
+						<div id="serv-btn10" class="icons-Seivico">C</div>  <!--//////////// CANECAS -->
+						<div id="serv-btn11" class="icons-Seivico">n</div>  <!--//////////// CUBOSSSS-->
+						<div id="serv-btn12" class="icons-Seivico">D</div> <!--//////////// ALMOFADA-->
+                        <!-- SUBITENS SERVIÇOS//////////////// -->
+						<div id="serv-btn5SM" style="width: 70px; height: 30px; position: absolute; background-color: #8a98be; 
+						display: none; align-items: center; justify-content: center; border: 0px solid #303030; top: 30px; left:25px;  border-radius: 5px; "> 
+							<div class="btnMedio" id="serv-btn5P" style="width:18px;">P</div>
+							<div class="btnMedio" id="serv-btn5M" style="width: 18px;">M</div>
+							<div class="btnMedio" id="serv-btn5G" style="width: 18px;">G</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--//////////// AREA ACORDION -->
+		<!--//////////// AREA ACORDION MENU 1 -->
+		<div class="area_acordion">
+			<div id="acord-OK"  class="btnAcordion"><span id="icon-acd1" class="icon-tnAcordion">u</span >Imagem </div>
+				<div  id="Acd-M1"  class="area_acordion_M1">
+					<div class="TabbedPanelsTab" id="btn-Tab3" style= " border-top-left-radius:  4px;" >IMAGEM</div>
+					<div class="TabbedPanelsTab" id="btn-Tab4" style= "border-top-right-radius: 4px;">FILTROS</div>
+					<!--//////////// CONTEUDO DA ABA IMAGEM -->
+
+					<div  id="Tab3" class="GP-Imag">
+                        <div style="width: 122px ;height: 23px; display: flex; border-bottom: 1px solid #6e6e6e;">
+							<div id="AMI-btn1" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px; font-size: 19px;line-height: 19px">0</div>
+							<div id="AMI-btn2" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px; font-size: 19px;line-height: 20px">1</div>
+							<div id="AMI-btn3" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px; font-size: 19px;line-height: 20px">2</div>
+							<div id="AMI-btn4" class="btnPeqn icon-Fonte" style="height: 22px; border-radius: 0px; font-size: 19px;line-height: 20px">3</div>
+						</div>
+						
+						<div style="width: 122px ;height: 119px; display: flex; flex-direction: row; flex-wrap: wrap; margin-top: 2px;">
+							<div class="btnMedio" id="btnImg-func1">Img Size</div>
+							<div class="btnMedio" id="btnImg-func2">Canv Size</div>
+							<div class="btnMedio" id="btnImg-func3">Docs Size</div>
+							<div class="btnMedio" id="btnImg-func4">Col.Ranger</div>
+							<div class="btnMedio" id="btnImg-func5">Flat.Imag</div>
+							<div class="btnMedio" id="btnImg-func6">Duplicate</div>
+							<div class="btnMedio" id="btnImg-func7">DocFlip-H</div>
+							<div class="btnMedio" id="btnImg-func8">DocFlip-V</div>
+							<div class="btnMedio" id="btnImg-func9">Sdw•lights </div>
+							<div class="btnMedio" id="btnImg-func10">Gradt•Map</div>
+						</div>
+						<!--//////////// CONTEUDO DO MINE MODAL AJUSTE COLOR -->
+						<div id="mn-Ajuste" class="mine-Modal" style="width: 122px ;height: 71px; display: none; flex-direction: row; flex-wrap: wrap; margin-top:11px;">
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func11"> Levels </div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func12">ColorBalan</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func13">BriContrast</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func14">HueSatura</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func15">Curvas</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func16">Close</div>
+						</div>
+						<!--//////////// CONTEUDO DO MINE MODAL AJUSTE CAMADAS -->
+						<div id="mn-AJCamadas" class="mine-Modal" style="width: 122px ;height: 71px; display: none; flex-direction: row; flex-wrap: wrap; margin-top:11px;">
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func17"> Expand</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func18">Fusão</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func19">Contact</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func20">Renomear</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func21">Rasterize</div>
+							<div class="btnMedio mine-Modal-brn" id="btnImg-func22">Close</div>
+						</div>
+					</div>
+
+					<!--//////////// CONTEUDO DA ABA FILTROS-->
+					<div  id="Tab4" class="GP-Filter">
+						<div class="btnMedio" id="btnFilter-func1" style="margin-top: 7px;">Add.Noise</div>
+						<div class="btnMedio" id="btnFilter-func2" style="margin-top: 7px;">Red.Noise</div>
+						<div class="btnMedio" id="btnFilter-func3">Prof.Blur</div>
+						<div class="btnMedio" id="btnFilter-func4">Liquidify</div>
+						<div class="btnMedio btn-GG " id="btnFilter-func5">► Câmera Raw FX</div>
+						<div class="btnMedio btn-GG " id="btnFilter-func6">► Filter Gallery FX</div>
+						<div class="btnMedio btn-GG " id="btnFilter-func7">Surface Blur</div>
+						<div class="btnMedio" id="btnFilter-func8">Glac.Blur</div>
+						<div class="btnMedio" id="btnFilter-func9">Mot.Blur</div>
+					</div>
+				</div>
+
+           <!--//////////// AREA ACORDION MENU 2 -->
+			<div  class="btnAcordion"><span id="icon-acd2" class="icon-tnAcordion">u</span>Smart Tools </div>
+			<div  id="Acd-M2"  class="area_acordion_M2">
+				<div class="btnMedio btn-GG " id="btnSMT-func1" style="margin-top: 5px;">Convert SmartOBJ</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func2">Reverte SmartOBJ</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func3">Rasterizar Camada</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func4">Copia e Distribue</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func5">Copia e Rotaciona</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func6">Renomear Camadas</div>
+				<div class="btnMedio btn-GG " id="btnSMT-func7">undefined </div>
+			</div>
+
+			<!--//////////// AREA ACORDION MENU 3 -->
+			<div  class="btnAcordion"><span id="icon-acd3" class="icon-tnAcordion">u</span>Documento </div>
+			<div  id="Acd-M3"  class="area_acordion_M3">
+				<div class="btnMedio btn-GG " id="btnDoc-func1" style="margin-top: 5px;">Show Grid</div>
+				<div class="btnMedio"  id="btnDoc-func2">Smat Guid</div>
+				<div class="btnMedio"  id="btnDoc-func3">Refilar</div>
+				<div class="btnMedio"  id="btnDoc-func4">New Guid</div>
+				<div class="btnMedio"  id="btnDoc-func5">SelcGuid</div>
+				<div class="btnMedio btn-GG " id="btnDoc-func6">New Guid Menu</div>
+				<div class="btnMedio btn-GG " id="btnDoc-func7">Clear Guid image</div>
+				<div class="btnMedio btn-GG " id="btnDoc-func8">Clear Guid all images</div>
+				<div class="btnMedio" id="btnDoc-func9">Close All</div>
+				<div class="btnMedio" id="btnDoc-func10">Recente</div>
+			</div>
+		</div>
+    
+		<!--//////////// AREA PARA JANELAS MODAIS -->
+		<dialog id="dlgFotobook"></dialog> 
+		<dialog id="dlgCartconfig" style= "padding: 10px;"  ></dialog>
+  <dialog id="process1DLG" style="background-color: rgb(255, 255, 255);"> </dialog>
+		<dialog id="dlgImprimir" style="padding: 10px;"></dialog> 
+		<dialog id="dlgORecent" style="padding: 10px;"></dialog> 
+		<dialog id="dlgRnameLayer" style="padding: 10px;"></dialog> 
+		<dialog id="dlgDuplicarDoc" style="padding: 10px;"></dialog> 
+		<dialog id="dlgRotateScalar" style="padding: 10px;"></dialog>
+		<dialog id="dlgADDframesr" style="padding: 10px;"></dialog>
+		<dialog id="dlgRenArquivos" style="padding: 20px;"></dialog>
+		<dialog id="dlgInserirImg" style="padding: 10px;"></dialog>
+		<dialog id="dlgDividirIMG" style="padding: 10px;"></dialog> 
+		<dialog id="dlgAlertConfima" style="padding: 10px;"></dialog> 
+		<dialog id="processServic" style="padding: 10px;"></dialog> 
+		<dialog id="dlgCeramica" style="padding: 10px;"></dialog> 
+		<dialog id="dlgMousePd" style="padding: 10px;"></dialog> 
+		<dialog id="dlgBone" style="padding: 10px;"></dialog> 
+		<dialog id="dlgSqueese" style="padding: 10px;"></dialog>
+		<dialog id="dlgQcabeca" style="padding: 10px;"></dialog>
+		<dialog id="dlgCanecas" style="padding: 10px;"></dialog>
+		<dialog id="dlgAlmofada" style="padding: 10px;"></dialog> 
+		<dialog id="dlgCorresores" style="padding: 10px;"></dialog> 
+		<dialog id="dlgCamisa" style="padding: 10px;"></dialog> 
+		<dialog id="dlgSaveDoc" style="padding: 10px;"></dialog> 
+		<dialog id="dlgPrefsD11" style= "padding: 10px;"  ></dialog>
+		<dialog id="dlgCropTool" style= "padding: 10px;"  ></dialog>
+		<dialog id="dlgScanner" style= "padding: 10px;"  ></dialog>
+		
+		<!--//////////// AREA PARA JANELAS MODAIS -->
+
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .d6colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .d6colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .d6selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .d6altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+ </style>
+ 
+ <div class="janelaBase">
+       <div class="d6colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 250px; display: flex; justify-content: center; margin: 10px;">
+                <img id="imgBase3" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- /////////PAINEL ABAS -->
+             <div style="width: 250px; height: 200px; border: 1px solid rgb(58, 57, 57)">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+             </div>
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="d6-Abas" id="d6ID-Aba1" style="width: 248px; height: 198px; background-color:#5c5b5b; padding: 10px; padding-top: 15px;">
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+
+                  <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações da Estampa</label>
+                    <div style="width: 100%; display: flex; margin-top: 10px;">
+                        <div class="btnIcons iconFont" id="D6AJPose1">!</div>
+                        <div class="btnIcons iconFont" id="D6AJPose2">"</div>
+                        <div class="btnIcons" id="D6AJPose3">'</div>
+                        <div class="btnIcons" id="D6AJPose4">%</div>
+                        <div class="btnIcons" id="D6AJPose5">&</div>
+                        <div class="btnIcons" id="D6AJPose6">(</div>
+                        <div class="btnIcons " id="D6AJPose7">#</div>
+                        <div class="btnIcons " id="D6AJPose8">$</div>
+                    </div>
+                   </div>
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 45px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; margin-top: 2px;">
+                    <div style="width: 100%; display: flex; margin-top: 3px;">
+                        <div class="btnMedio " id="D6btn-Cores" style="width: 100%; margin: 1px;">Correção de Cores</div>
+                        <div class="btnMedio " id="D6btn-resetar" style="width: 71px; margin: 1px;">Resetar</div>
+                    </div>
+                </div>
+                <sp-checkbox checked=""  id="D6-ck4" size="s" style="transform: translateX(170px);"><label class="sp-checkbox-txt" >Preview</label></sp-checkbox >
+
+                    <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                        <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                        <sp-checkbox checked  id="D6-ck2" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Backup Doc</label></sp-checkbox >
+                        <sp-checkbox  id="D6-ck3" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Auto Imprimir</label></sp-checkbox >
+                        <div class="btnMedio " id="D6btn-actions" style="width: 30px;  position: absolute; left:185px; top: 15px">+</div>
+                    </div>
+            </div> 
+            </div> <!-- /////////PAINEL ABAS FINAL -->
+        </div>
+
+        <!-- /////////PAINEL PREDEFINIÇÃO DE CORES -->
+        <div id="acrionsPN2" style="width: 228px; height: 100px; border: 1px solid rgb(73, 73, 73); background-color: #5c5b5b; position: absolute; display:none; top:150px; left: 25px; border-radius:4px; padding: 5px;">
+            <sp-checkbox  id="D6-ck6" size="s" style="transform: translate(70px, -5px);" ><label class="sp-checkbox-txt" >Executa Ações</label></sp-checkbox >
+                <div style="width: 100%; display: flex;justify-content: center; padding: 2px; border: 1px solid rgb(121, 118, 118);  border-radius:4px">
+                    <form> <select id="list_AS2" style="width: 100px; margin: 5px; transform: translate(5px, -2px)"></select></form>
+                    <form> <select id="list_AC2"  style="width: 105px; margin: 5px; transform: translate(-5px, -2px)"></select></form>
+                </div>
+            <div class="btnMedio " id="D6btn-voltar" style="width: 100px;  position: absolute; left:60px; top: 70px">Voltar</div>
+       </div><!-- /////////PAINEL PREDEFINIÇÃO DE CORES -->
+ 
+          <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+       <div class="d6colunaB">
+            <div class="btnMedio d6altura btn-Executar" id="d6Btn1" style="width: 71px; margin: 1px;">Enter</div>
+            <div class="btnMedio d6altura" id="d6Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
+            <sp-checkbox  id="D6-ck5" size="s" ><label class="sp-checkbox-txt" >Maquete</label></sp-checkbox >
+       </div>
+ </div>
+ 

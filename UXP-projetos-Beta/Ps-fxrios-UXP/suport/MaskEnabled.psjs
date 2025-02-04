@@ -1,0 +1,34 @@
+const action = require("photoshop").action;
+const core = require("photoshop").core;
+const app = window.require("photoshop").app;
+const fs = require('uxp').storage.localFileSystem;
+const shell=require("uxp").shell;
+const Constants = require('photoshop').constants;
+const alert = app.showAlert;
+const os = require('os') ;
+const Usuario = os.homedir().replace(/\\/g, '/'); 
+const photoshop = require("photoshop");
+const imaging = photoshop.imaging;
+const kSRGBProfile = "sRGB IEC61966-2.1";
+anchorPos = require('photoshop').constants.AnchorPosition
+const cpu = os.cpus()
+const memoria = os.totalmem()
+
+
+await teste();
+async function teste(){
+	const result = await app.batchPlay( [ {_obj: 'get', _target: [{ _property: 'userMaskEnabled' }, { _ref: "layer", _enum: "ordinal", _value: "targetEnum" } ] }], { synchronousExecution: false, });
+	const toggleBordasADD = result[0].userMaskEnabled
+
+	if (toggleBordasADD) {
+		await app.batchPlay([ {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","userMaskEnabled":false}}]);
+	} else {
+		await app.batchPlay([{"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","userMaskEnabled":true}}]);
+	}
+}
+
+
+
+
+
+

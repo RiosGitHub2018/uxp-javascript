@@ -1,0 +1,120 @@
+<style>
+   .janelaBase{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      transform: translate(5px, 0px);
+      align-items: flex-start;
+   }
+   .colBborda{border-radius:6px;}
+   .panborda{
+      border-radius:5px;
+      border: 1px solid #3e3e3e;
+   }
+
+   .txtPnBG{
+      background-color: #535353;
+      padding: 5px;
+   }
+
+   .iconLayout{
+      width: 40.6px; height: 35.6px; 
+      color:#d8d8d8; 
+      font-family: UXPSfxIcon; 
+      font-size: 28px; 
+      border: 1px solid #3a3939; 
+      border-radius: 2px;
+       line-height: 25px; 
+      text-align:center; 
+      padding: 5px; 
+      background-color: #686666;
+   }
+
+   .loadThum{
+      color:#4d4d4d; 
+      font-size:20px; 
+      transform: translate(40px, 120px);
+   }
+
+   .D2altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+</style>
+
+<div class="janelaBase">
+      <div style="border: 1px solid #818181; border-radius:7px;" >
+      <div class="colunaA" style="width: 190px; height: 280px; position: relative; background-color: rgb(255, 255, 255); margin: 5px;">
+
+      <!-- <img id="thumb" src="icons/thumbPrint.jpg" style="max-width: 100%; position: absolute;  z-index: 1; top: 0px; left: 0px;" > -->
+      <img id="thumb"  style="max-width: 100%; position: absolute;  z-index: 1; top: 0px; left: 0px;" >
+      </div>
+      </div>
+
+      <div class="colunaB" style="width: 240px; height: 310px; position: relative;">
+         <img src="icons/printer.svg" style="height: 60px; transform: translate(10px, 5px); ">
+            <label style="color: #dddddd; font-size: 12px; position: absolute; transform: translate(-120px, 82px); z-index: 1;">Preferências</label>
+            <div class="colBborda" style="width: 227px; height: 212px; transform: translate(7px, 20px); border: 1px solid #3e3e3e;  border-top: 19px solid #3e3e3e;">
+
+            <!--//////////////PAINELFOLHA DE PAPEL -->
+            <label class="txtPnBG" style="color: #dddddd; font-size: 12px; position: absolute; transform: translate(15px, 5px); z-index: 1;">Folha Papel</label>
+            <div class="panborda" style="width: 106px; height: 50px; transform: translate(8px, 14px); position: absolute;">
+            <div id="D2rd1" class="radio" style="transform: translate(12px, 14px); position: absolute;" ><span id="D2txt_rd1" class="radio-text">A4</span></div> 
+            <div id="D2rd2" class="radio" style="transform: translate(50px, 14px); position: absolute;"><span id="txt_rd2"  class="radio-text">A3</span></div> 
+            </div>
+
+            <!--//////////////PAINELQUALIDADE -->
+            <label class="txtPnBG" style="color: #dddddd; font-size: 12px; position: absolute; transform: translate(127px, 5px); z-index: 1;">Qualidade</label>
+            <div class="panborda" style="width: 100px; height: 50px; transform: translate(120px, 14px); position: absolute;">
+            <select id="listQualidade" size="8" style="width:85px; transform: translate(-2px, 8px); ">
+            <option>Rascunho</option>
+            <option>Baixa</option>
+            <option>Média</option>
+            <option>Alta</option>
+            </select>
+            </div>
+
+             <!--//////////////PAINEL LAYOUT DE IMPRESSÃO -->
+            <label class="txtPnBG" style="color: #dddddd; font-size: 12px; position: absolute; transform: translate(60px, 65px); z-index: 1; padding: 2px;">Layout de impressão</label>
+            <div class="panborda" style="width: 212px; height: 51px; transform: translate(8px, 73px); position: absolute;">
+            <div style="display: flex; transform: translate(6px, 7px); align-items: center;">
+            <div id="iconMD" class="iconLayout"></div>
+            <div class="btnMedio" id="btn5" style="width: 71px; margin: 5px; margin-right: 2px; transform: translate(0px, 3px);">Paisagem</div>
+            <div class="btnMedio" id="btn6" style="width: 71px; margin: 5px; transform: translate(0px, 3px);">Retrato</div>
+            </div>
+            </div>
+
+            <!--//////////////PAINEL CONFUGURAÇÕES DE SAÍDA -->
+            <label class="txtPnBG" style="color: #dddddd; font-size: 12px; position: absolute; transform: translate(15px, 125px); z-index: 1;">Configurações de saída</label>
+            <div class="panborda" style="width: 212px; height: 51px; transform: translate(8px, 133px); position: absolute;">
+            <!--///////////////////// TEXTBOX COM SETAS -->
+            <div style="width: 100%; position: relative;  transform: translate(5px, 12px)">
+            
+            <label style="color: #dddddd; font-size: 12px;  transform: translate(5px, 10px);">Cópias</label>
+            <input  type="number"  id="copias" value="1"  style="width: 30px; height: 20px; padding: 2px; position: absolute;">
+            <div class="setas-input" style="position: absolute; transform: translate(73px, -8px) ">
+               <div id="D2setaCM" class="setas-input-cima"></div>
+               <div id="D2setaBX" class="setas-input-baixo"></div>
+            </div>
+            </div>
+            <!--/////////////CHECKBOX FECHA ESPAMPA -->
+            <sp-checkbox  id="checkPrint" size="s" style="position: absolute; left:100px; top:18px;"><label class="sp-checkbox-txt">Imprime - Fechar</label></sp-checkbox >
+            </div>
+
+         </div>
+         <label id="statusPrint" style="color: #dddddd; font-size: 10px; position: absolute; transform: translate(25px, 23px); z-index: 1;">Status:</label>
+      </div>
+
+      <div class="colunaC" style="width: 83px; height: 100%; position: relative; margin: 0px;">
+         <div class="btnMedio D2altura btn-Executar" id="btn1" style="width: 71px; margin: 5px;">Imprimir</div>
+         <div class="btnMedio D2altura" id="btn2" style="width: 71px; margin: 5px;">Cancelar</div>
+         <div class="btnMedio D2altura" id="btn3" style="width: 71px; margin: 5px;">Clássico</div>
+         <div class="btnMedio D2altura" id="btnP" style="width: 71px; margin: 5px;">Prefrencias</div>
+         <div class="btnMedio D2altura" id="btn4" style="width: 71px; margin: 5px;">Fila Print</div>
+         <sp-checkbox  id="areaFocus" size="s" style="position: absolute; top: -50px;" ></sp-checkbox >
+      </div>
+</div>
+

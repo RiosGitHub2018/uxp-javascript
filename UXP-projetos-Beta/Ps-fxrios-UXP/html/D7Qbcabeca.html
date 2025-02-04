@@ -1,0 +1,123 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .D7colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .D7colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .D7selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .D7altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .actionsPN3{
+        width: 228px; height: 100px;border-left: 1px solid rgb(73, 73, 73); border-right: 1px solid rgb(73, 73, 73);
+        background-color: #5c5b5b; position: absolute; display:none; top:130px; left: 25px; border-radius:4px; padding: 5px;
+    }
+
+ </style>
+ 
+ <div class="janelaBase">
+       <div class="D7colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 250px; display: flex; justify-content: center; margin: 10px;">
+                <img id="imgBase5" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- /////////PAINEL ABAS -->
+             <div style="width: 250px; height: 169px; border: 1px solid rgb(58, 57, 57); background-color: #424242;">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                    <div class="btnAbas  D7-btAbas " id="D7-btn1" style="width: 71px; margin: 0px;">Estampa</div>
+                    <div class="btnAbas  D7-btAbas " id="D7-btn2" style="width: 71px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Ajustes</div>
+            </div>
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="D7-Abas" id="D7ID-Aba1" style="width: 248px; height: 145px; background-color:#5c5b5b; padding: 10px; padding-top: 15px;">
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding:5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Tamanho da Estampa</label>
+                    <sp-radio-group style="transform: translate(5px, 5px); ">
+                    <sp-radio id="D7-r1" checked><label class="sp-radio-txt" >T Pequeno</label></sp-radio>
+                    <sp-radio id="D7-r2" ><label class="sp-radio-txt enabled" >T Médio</label></sp-radio>
+                    <sp-radio id="D7-r3" ><label class="sp-radio-txt enabled" >T Grande</label></sp-radio>
+                    </sp-radio-group>
+                </div>
+
+                    <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; transform: translateY(20px);">
+                        <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                        <sp-checkbox checked  id="D7-ck2" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Backup Doc</label></sp-checkbox >
+                        <sp-checkbox  id="D7-ck3" size="s" style="transform: translate(7px, 10px);" ><label class="sp-checkbox-txt" >Auto Imprimir</label></sp-checkbox >
+                        <div class="btnMedio " id="D7btn-actions" style="width: 30px;  position: absolute; left:185px; top: 15px">+</div>
+                    </div>
+
+            </div> 
+
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="D7-Abas" id="D7ID-Aba2" style="width: 248px; height: 145px; background-color:#5c5b5b;  padding: 10px; padding-top: 15px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações da Estampa</label>
+                    <div style="width: 100%; display: flex; margin-top: 10px;">
+                        <div class="btnIcons iconFont" id="D7AJPose1">!</div>
+                        <div class="btnIcons iconFont" id="D7AJPose2">"</div>
+                        <div class="btnIcons" id="D7AJPose3">'</div>
+                        <div class="btnIcons" id="D7AJPose4">%</div>
+                        <div class="btnIcons" id="D7AJPose5">&</div>
+                        <div class="btnIcons" id="D7AJPose6">(</div>
+                        <div class="btnIcons " id="D7AJPose7">#</div>
+                        <div class="btnIcons " id="D7AJPose8">$</div>
+                    </div>
+                   </div>
+                   <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; height: 45px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px; position: relative; margin-top: 2px;">
+                    <div style="width: 100%; display: flex; margin-top: 3px;">
+                        <div class="btnMedio " id="D7btn-Cores" style="width: 100%; margin: 1px;">Correção de Cores</div>
+                        <div class="btnMedio " id="D7btn-resetar" style="width: 71px; margin: 1px;">Resetar</div>
+                    </div>
+                </div>
+                <sp-checkbox checked=""  id="D7-ck4" size="s" style="transform: translateX(90px);"><label class="sp-checkbox-txt" >Preview</label></sp-checkbox >
+            </div> 
+            </div> <!-- /////////PAINEL ABAS FINAL -->
+        </div>
+
+        <!-- /////////PAINEL EXECUTAR AÇÕES -->
+        <div id="acrionsPN3" class="actionsPN3">
+            <sp-checkbox  id="D7-ck6" size="s" style="transform: translate(70px, 0px);" ><label class="sp-checkbox-txt" >Executa Ações</label></sp-checkbox >
+                <div style="width: 100%; display: flex;justify-content: center; padding: 2px; border: 1px solid rgb(121, 118, 118);  border-radius:4px">
+                    <form> <select id="list_AS3" style="width: 100px; margin: 5px; transform: translate(5px, -2px)"></select></form>
+                    <form> <select id="list_AC3"  style="width: 105px; margin: 5px; transform: translate(-5px, -2px)"></select></form>
+                </div>
+            <div class="btnMedio " id="D7btn-voltar" style="width: 100px;  position: absolute; left:60px; top: 70px">Voltar</div>
+       </div><!-- /////////PAINEL EXECUTAR AÇÕES -->
+          <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+       <div class="D7colunaB">
+            <div class="btnMedio D7altura btn-Executar" id="D7Btn1" style="width: 71px; margin: 1px;">Enter</div>
+            <div class="btnMedio D7altura" id="D7Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
+            <sp-checkbox  id="D7-ck5" size="s" ><label class="sp-checkbox-txt" >Maquete</label></sp-checkbox >
+       </div>
+ </div>
+ 

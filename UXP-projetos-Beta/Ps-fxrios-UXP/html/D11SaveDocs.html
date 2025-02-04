@@ -1,0 +1,492 @@
+<style>
+    .janelaBase{
+       display: flex;
+       align-items: flex-start;
+    }
+    .D11colunaA{
+        width: 100%; 
+        height: 100%; 
+        margin: 4px; 
+        display: flex; 
+        flex-direction: column;
+        transform: translateY(-10px);
+    }
+    .D11colunaB{
+        width: 83px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-10px);
+    }
+
+    .D11selecionado{
+        background: rgba(48,47,47,1); background: -moz-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,47,47,1)), color-stop(0%, rgba(117,117,117,1)), color-stop(0%, rgba(92,91,91,1)), color-stop(92%, rgba(92,91,91,1)), color-stop(97%, rgba(112,112,112,1)), color-stop(100%, rgba(48,47,47,1))); background: -webkit-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -o-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: -ms-linear-gradient(left, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); background: linear-gradient(to right, rgba(48,47,47,1) 0%, rgba(117,117,117,1) 0%, rgba(92,91,91,1) 0%, rgba(92,91,91,1) 92%, rgba(112,112,112,1) 97%, rgba(48,47,47,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302f2f', endColorstr='#302f2f', GradientType=1 );
+        color: #cac8c8;
+        border: 0px;
+        height: 22px;
+        line-height:19px; /*Alina o texto verticalmente*/
+    }
+
+    .iconFont{font-size: 22px;  line-height:1.4;}
+    .D11altura{
+        width: 85px;
+        height: 25px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .actionsPN3{
+        width: 228px; height: 100px;border-left: 1px solid rgb(73, 73, 73); border-right: 1px solid rgb(73, 73, 73);
+        background-color: #5c5b5b; position: absolute; display:none; top:130px; left: 25px; border-radius:4px; padding: 5px;
+    }
+
+    .D11-Desabilitado{
+        color: #a5a4a4;
+        pointer-events: none; 
+        background: #706f6f;
+    }
+
+    .D11-Ativado{
+        background: #aca8a8;
+	    color: rgb(0, 0, 0);
+    }
+
+    .D11SP-itens{
+        width:96px; height: 110px;
+         border: 1px solid #424141; 
+         margin: 1.5px; display: flex; 
+         align-items: center; 
+         justify-content: left;
+       }
+
+       .radiobtn{
+		margin: -5px;
+	}
+	.sp-radio-txt{
+		font-size: 11px;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		transform: translate(-5px,2px);
+	}
+
+    .txtPainel{
+        position: absolute; 
+        top: -1em; 
+        background-color: #5c5b5b; 
+        padding: 5px; font-size: 12px; 
+        transform: translateY(3px);
+    }
+
+    .D11labelDisable{
+        color: #707070;
+    }
+    .trancarJanela{pointer-events: none; }
+
+    .D11elDesabilitado { 
+        pointer-events: none; 
+        color: #8f8c8c;
+    }
+    .bgDisabled{
+        background-color:#ffffff;  
+    }
+     /* CONTEUDO DA LISTA DOCUMENTOS 
+     /////XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     */
+     .Itens{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: aliceblue;
+        cursor: default;
+        border-bottom: 1px solid #555353;
+      }
+
+      /* //////ADICIONA DE FORMA ALTERNADA UMA COR AO BG EM ITENS DA LISTA DE DOCUMENTOS */
+      /* .Itens:nth-child(even) { background-color: #525151; } */
+      /* ///////////////////////::::::::::: */
+
+      .btnIconsD { 
+        width:22px; 
+        height:22px;
+        /* background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%); */
+        background-color: #525252;
+        border: 1px solid #706f6f;
+        color:#d8d8d8;
+        font-family: UXPSfxIcon;
+        font-size: 15px;
+        text-align:center; /*Alina o texto horizontalmente*/
+        line-height: 22px; /*Alina o texto verticalmente*/
+        border-radius: 2px;
+      }	
+
+      .btnIconsD:hover{	
+        /* background: #aca8a8; */
+        /* border: 1px solid #98b8a5; */
+        /* color: rgb(0, 0, 0); */
+      }
+
+      .btnIconsD:active{	
+        background: #aca8a8;
+        color: rgb(73, 73, 73);
+        transform: translate(0px, 1px);
+        border-top: 1px solid #413f3f;
+      }
+
+      .btnIconsDSel{
+        background: #aca8a8;
+        color: rgb(73, 73, 73);
+        transform: translate(0px, 1px);
+        border-top: 1px solid #413f3f;
+      }
+
+
+      .txtDoc{
+        /* background-color: #474747; */
+        padding: 3px;
+        width: 70%;
+      }
+
+      .btntext{
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 20px; /*Alina o texto verticalmente*/
+      }
+      .corR{color: #ffffff;}
+
+
+      .btnMarg{ margin: 2px; }
+      .btnMargSel{border: 1px solid rgb(155, 243, 202); }
+
+
+      .bordON{
+            background-color: #cac8c8;
+            color:#d8d8d8;
+            font-family: UXPSfxIcon;
+            font-size: 20px;
+      }
+
+      .lista-btns-base{
+        width: 85px;
+        height: 22px;
+        align-items: center;
+        line-height: 20px;
+        color: rgb(255, 255, 255);
+        border:  1px solid rgb(110, 109, 109); 
+        padding-left: 9px ;
+        background-color: #454545;
+        border-radius: 3px; 
+        position: relative;
+        font-size: 12px;
+     }
+
+     .iconSTAB{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+    .lista{
+        width: 100px;
+        display:none;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+     }
+
+   .lista_btns{
+       width: 100px;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(58, 58, 58); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #646464;
+    }
+
+   .btnsMat{
+        width: 100%;
+        height: 18px; 
+        color: rgb(15, 15, 15);
+        text-align: left;
+        line-height: 20px;
+        border-radius: 0px; 
+        font-size: 13px;
+        line-height:8px; /*Alina o texto verticalmente*/
+        padding-left: 5px ;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     }
+
+    .btnsMat:hover{	
+        background: #0078d7;
+        color: rgb(255, 255, 255);
+    }
+
+    .clicado { 
+        background-color:#0078d7;
+        color: rgb(255, 255, 255);
+    }
+
+    /* ////// STYLLOS DA JANELA PREFERENCIAS */
+    .D11aimg_main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        padding: 10px;
+        border: 1px solid rgb(65, 65, 65);
+        border-radius: 10px;
+        background-color: #615f5f;
+    }
+
+    .D11aimg_Container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 1px solid rgb(65, 65, 65);
+        padding: 10px;
+    }
+
+    .selectItemOK{
+        background-color: #525151;
+        width: 100%;
+        height: 25px;
+    }
+
+
+ </style>
+ 
+ <div class="janelaBase" id="janelaBase">
+        <!-- ///////// PAINEL MATGEM CONFIG-->
+        <div id="margeSel" style="width: 170px; height:120px; display: none; align-items: center; justify-content: center;  flex-direction: column; background-color: #797777; z-index: 100; position: absolute; top: 260px; left:80px; border: 1px solid rgb(63, 62, 62);  border-radius: 5px; padding: 5px;">
+            <label class="sp-radio-txt" style="width: 100%; display: flex; justify-content: center; font-size: 12px; padding: 3px;background-color: #424242; margin: 0 0 10px 10px;" >Tipos de Borda</label>
+            <div style="display: flex;  width: 100%; padding: 5px; justify-content: center; align-items: center; border: 1px solid rgb(139, 138, 138);">
+                <div id="idB1" class="btnIcons btnMarg btnMargSel" id="ms_func1">\</div>
+                <div id="idB2" class="btnIcons btnMarg"  id="ms_func2" style="font-size: 25px;">_</div>
+                <div id="idB3" class="btnIcons btnMarg" id="ms_func3">z</div>
+            </div>
+            <div class="btnMedio " id="D11btn-Mrg" style="width: 80px; margin:10px ;">Sair</div>
+        </div>
+
+       <div class="D11colunaA">
+             <!-- ///////// IMAGEM LOGO -->
+             <div style="width: 310px; display: flex; justify-content: center; margin: 5px;">
+                <img id="D11imgBase64"  style="width: 180px; transform: translateY(-2px); margin: 0px;" src=""> <!--IMAGEM BASE64 EM SUPORT/IMGB64-->
+            </div> <!-- ///////// IMAGEM LOGO -->
+            <!-- ///////// PAINEL ABAS  01-->
+             <div style="width: 310px; height: 194px; border: 1px solid rgb(58, 57, 57); background-color: #424242;">
+                    <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                    <div class="btnAbas  D11-btAbas " id="D11-btn1" style="width: 71px; margin: 0px;">Aquivos</div>
+                    <div class="btnAbas  D11-btAbas " id="D11-btn2" style="width: 84px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Documentos</div>
+            </div>
+
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="D11-Abas" id="D11ID-Aba1" style="width: 308px; height: 170px; background-color:#5c5b5b; padding: 10px; padding-top: 10px; ">
+                   <!-- ///////// PAINEL CONFIGUEAÇÕES DE ENTRADA01  -->
+                   <div style="width: 100%; height: 72px;  border: 1px solid rgb(73, 73, 73); display: flex;  flex-direction: column; justify-content: center; align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px 4px 0 0; position: relative; margin-top: 7px;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações de entrada</label>
+
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <sp-checkbox  id="D11CKetd" size="s"  style="margin-right:5px;"></sp-checkbox >
+                        <div class="btnMedio etd" id="D11Entrada" style="width: 100px;">Entrada</div>  
+                         <sp-checkbox checked  class="etd" id="D11CKSbPasta" size="s"  style="margin-left:5px;"><label class="sp-checkbox-txt etd" >Incluir Subpastas</label></sp-checkbox >
+                    </div>
+                    <label id="D11txtEntrada"  class="sp-radio-txt etd" style="font-size: 11px;" >C://Selecione um Diretório.....</label>
+                 </div> 
+                <!-- ///////// PAINEL CONFIGUEAÇÕES DE ENTRADA02  -->
+                 <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); display: flex; align-items: center; justify-content: center; padding: 5px; background-color: #5c5b5b; border-radius: 0 0 4px 4px; position: relative; margin-top: 1px;">
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <sp-checkbox  id="D11CKform" size="s" ><label class="sp-checkbox-txt" >Obeter somente arquivos:</label></sp-checkbox >
+                        <div id="formatos">
+                        <select id="listFormato" style="width:83px;  height: 25px; margin: 4px 0 0 0;">
+                            <option>PSD</option>
+                            <option selected>JPG</option>
+                            <option>PNG</option>
+                            <option>TIF</option>
+                            <option>GIF</option>
+                            <option>PDF</option>
+                            <option>NEF</option>
+                        </select>
+                    </div>
+
+                    </div>
+                </div>
+               <!-- ///////// PAINEL CONFIGUEAÇÕES DE ENTRADA02  -->
+               <div style="width: 100%; padding: 5px; display: flex; justify-content: center;">
+                <label id="totalArquivos" class="sp-radio-txt" style="font-size: 11px; color: #cac8c8;" >Total: 0 documentos</label>
+            </div>
+            </div> 
+
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="D11-Abas" id="D11ID-Aba2" style="width: 308px; height: 170px; background-color:#5c5b5b;  padding: 10px; padding-top: 10px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                    <div style="width: 100%; height: 142px;  border: 1px solid rgb(73, 73, 73); display: flex; justify-content: center; align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px 4px 0 0; position: relative; margin-top: 7px;">
+                    <label id="D11TxtDocItens" class="sp-radio-txt" style="position: absolute; top: -15px; left: 70px; background-color: #5c5b5b; padding: 4px;" >Lista de Documentos: 7 itens</label>
+                    <!-- ///////// INFORMAR TAMANHO COC -->
+                    <div id="InforDoc" style=" width: 70%; display:none; justify-content: center; position: absolute; z-index: 100; color: #ffffff; font-size: 11px; background-color: #4d4b4b; padding: 1px 5px; top: -10px;  border: 1px solid rgb(117, 117, 117);"></div>
+                    <!-- ///////// XXXXXXXXXXXXXX -->
+                    <div id="listaNomes"  style="display: block; width: 100%; flex-direction: column; border: 1px solid #777575; padding: 10px 0 10px 10px;  background-color: #5e5d5d;  overflow-y: scroll; height: 122px; margin-top: 4px;">
+                    </div>
+                 </div> 
+            </div> 
+           
+            </div> <!-- ///////// PAINEL ABAS 01 FINAL -->
+             <!-- ///////// PAINEL ABAS  02-->
+             <div style="width: 310px; height: 74px; border: 1px solid rgb(58, 57, 57); background-color: #424242; margin-top: 2px;">
+                <div style="display: flex; margin: 0px;"><!-- ///////// BOTÕES ABAS -->
+                <div class="btnAbas  D11-btAbas2 " id="D11-btn3" style="width: 83px; margin: 0px;">Preferencias</div>
+                <div class="btnAbas  D11-btAbas2 " id="D11-btn4" style="width: 83px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Ações Config</div>
+                <div class="btnAbas  D11-btAbas2 " id="D11-btn5" style="width: 83px; margin: 0px; border-left: 1px solid #232323; border-right: 1px solid #232323;">Acabamento</div>
+            </div>
+            <!-- /////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+            <!-- ///////// CONTEUDO ABA 1 -->
+            <div class="D11-Abas2" id="D11ID-Aba3" style="width: 308px; height: 50px; background-color:#5c5b5b; display: flex; justify-content: center; align-items: center; ">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 95%; display: flex; justify-content: center; align-items: center; background-color: #535252; padding: 4px; border: 1px solid rgb(102, 100, 100); border-radius: 4px">
+                    <label class="sp-checkbox-txt" style="margin: 0 0 0 8px" >Material:</label>
+        
+                       <!-- //////// LISTA DE MATERIAL -->
+                       <div class="lista-btns-base"><div  id="GrupoListaMT"  >Papel</div><div class="iconSTAB"><img src="icons/iconList.png" ></div></div>
+                        <div id="listMaterial" style="width: 115px; height:115px; display: none; align-items: center;  flex-direction: column; background-color: #ffffff; z-index: 100; position: absolute; top: 338px; left:83px; border: 2px solid rgb(63, 62, 62); ">
+                            <div id="bg" class="btnsMat item" value="Papel"  >Papel</div>
+                            <div id="bg" class="btnsMat item" value="Lona"> Lona<span style="margin-right: 70px;"></span><img src="icons/iconDireita.png" ></div>
+                            <div id="bg" class="btnsMat item" value="Etiquetas"  >Etiquetas</div>
+                            <div id="bg" class="btnsMat item" value="Adesivos"  >Adesivo</div>
+                            <div id="bg" class="btnsMat item" value="Canvas"  >Canvas</div>
+                            <div id="bg" class="btnsMat item" value="Nenhum"  >Nenhum</div>
+                        </div>
+          
+                        <div id="listMaterialLona" style="width: 100px; height:40px; display: none; align-items: center;  flex-direction: column; background-color: #ffffff; z-index: 100; position: absolute; top: 357px; left:197px; border: 2px solid rgb(63, 62, 62); ">
+                            <div class="btnsMat item" value="Banner"  >Banner</div>
+                           <div  class="btnsMat item" value="Chassis"  >Chassis</div>
+                       </div>
+                        <!-- //////// LISTA DE MATERIAL final -->
+
+                        <sp-checkbox  id="D11CKBorda" size="s" style="margin: 0 0 0 8px" title="Add Borda: B" ><label class="sp-checkbox-txt elBorda" >Borda</label></sp-checkbox >
+                       <div class="colorBtn bg bgDisabled  bord  bordON"  id= "D11btnBcolor" style="width: 20px; height: 20px; border: 1px solid #474747;"  >
+                        </div>
+
+                           <div  id="GPBorda"  style="display: flex; justify-content: center; align-items: center; margin: 2px 0 0 5px; ">
+                            <input  type="number" class="bord"  id="D11BdSize" value="6" style="width:40px; height: 23px; padding: 4px; margin: 0px; color: rgb(255, 255, 255);">
+                            <div style="margin: 0; display: flex; flex-direction: column;  border: 1px solid #575555; height:21px; margin: -3px 0 0 0">
+                            <div  id="setaSima" class="btnsetas setas-input-cima bord"></div><div id="setaBaixo"  class="btnsetas setas-input-baixo bord"></div>
+                            </div>
+                       </div>
+                </div> 
+            </div> 
+            <!-- ///////// CONTEUDO ABA 2 -->
+            <div class="D11-Abas2" id="D11ID-Aba4" style="width: 308px; height: 50px; background-color:#5c5b5b;  padding: 10px; padding-top: 10px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 0 0 0 4px; ">
+                    <sp-checkbox  id="D11CKActions" size="s" ><label class="sp-checkbox-txt" >Ações:</label></sp-checkbox >
+                    <select class="usarActions" id="listActionS" style="width:37%;  height: 25px; margin: 4px 0 0 0;">
+                    </select>
+                     <select class="usarActions" id="listActionA" style="width:40%;  height: 25px; margin: 4px 0 0 3px;">
+                     </select>
+                </div> 
+            </div> 
+            <!-- ///////// CONTEUDO ABA 3 -->
+            <div class="D11-Abas2" id="D11ID-Aba4" style="width: 308px; height: 50px; background-color:#5c5b5b;  padding: 10px; padding-top: 10px; display: none;">
+                <!-- ///////// PAINEL CONFIGURAÇÕES  -->
+                <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 0 0 0 4px;">
+                    <div style="display: flex;  align-items: center; margin: 2px 0 0 3px">
+                        <label class="sp-checkbox-txt" style="margin: 0 0 0 15px;" >Pós impressão:</label>
+                        <select id="listAcabamento" style="width:174px;  height: 25px; margin: 1px 0 0 3px;">
+                            <option>Sem Acabamento</option>
+                            <option>Emoldurar</option>
+                            <option>Colocar no Chaxis</option>
+                            <option>Colocar no Chaxis e Emoldurar</option>
+                            <option>Adesivar</option>
+                            <option>Adesivar e Emoldurar</option>
+                            <option>Com varetas</option>
+                            <option>Sem varetas</option>
+                        </select>
+                    </div>
+                </div> 
+            </div> 
+            </div> <!-- ///////// PAINEL ABAS 02 FINAL -->
+            <!-- ///////// PAINEL CONFIGURAÇÕES DE SAÍDA -->
+            <div style="width: 310px; height: 230px; background-color:#5c5b5b;  border: 1px solid rgb(58, 57, 57); padding: 10px; padding-top: 10px; margin-top: 2px ">
+                <!-- ///////// PAINEL CONFIGUEAÇÕES DE ENTRADA01  -->
+                <div style="width: 100%; height: 72px;  border: 1px solid rgb(73, 73, 73); display: flex;  flex-direction: column; justify-content: center; align-items: center; padding: 5px; background-color: #5c5b5b; border-radius: 4px 4px 0 0; position: relative; margin-top: 7px;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Configurações de Saída</label>
+
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <label class="sp-checkbox-txt" style="margin: 0 0 0 15px;" >Destino:</label>
+                    <select id="listSaidaSave" style="width:110px;  height: 25px; margin: 5px 0 0 0">
+                        <option>Subpasta atual</option>
+                        <option>Pasta Principal</option>
+                        <option>Outro local</option>
+                    </select>
+                    <div class="btnMedio sad" id="D11Destino" style="width: 90px;">Saída</div>  
+                    </div>
+                    <label id="D11txtSaida" class="sp-radio-txt sad" style="font-size: 11px;" >C://Selecione um Diretório.....</label>
+                  
+                 </div>  
+
+                <!-- ///////// PAINEL CONFIGUEAÇÕES DE SAIDA  -->
+                <div style="width: 100%; height: 115px;  border: 1px solid rgb(73, 73, 73); display: flex;  flex-direction: column; align-items: center; justify-content: center; padding: 5px; background-color: #5c5b5b; border-radius: 0 0 4px 4px; margin-top: 1px;">
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 15px;">
+                        <label class="sp-checkbox-txt" style="margin: 0 0 0 10px;" >Nome:</label>
+                        <select id="listSaidaNome" style="width:130px;  height: 25px; margin: 4px 0 0 0;">
+                              <option >Atual</option>
+                              <option >Prefixo + Atual</option>
+                              <option >Atual + Sufixo</option>
+                              <option >Dimensões-Doc</option>
+                              <option >Prefixo + Dimensões</option>
+                              <option >Dimensões + Sufixo</option>
+                              <option >Outro</option>
+                         </select>
+                         <input  class="san" type="text"  id="D11SaidaNome" style="width:90px; height: 24px; padding: 4px; margin: 2px 0 0 2px;">
+                    </div>
+
+                    <div style="width: 95%; display: flex; margin: 20px;  border: 1px solid rgb(73, 73, 73); padding: 15px; align-items: center; ">
+                    <sp-checkbox  id="D11CKProgView" size="s" checked="true" ><label class="sp-checkbox-txt" >Exibir Progresso</label></sp-checkbox >
+                    <sp-checkbox  id="D11CkMRetrato" size="s" style="margin-left: 10px;"><label class="sp-checkbox-txt" >Toda em modo Retrato</label></sp-checkbox >
+                    </div>
+
+                    <div style="width: 100%; display: flex; justify-content: flex-end; align-items: center;">
+
+                        <label class="sp-checkbox-txt" style="margin: 0 0 0 10px;" >Modo</label>
+                        <select id="listModo" style="width:90px;  height: 25px; margin: 4px 0 0 0;">
+                             <option>RGB</option>
+                             <option>CMYK</option>
+                             <option>GRAY</option>
+                         </select>
+
+
+                        <label class="sp-checkbox-txt" style="margin: 0 0 0 10px;" >Saida:</label>
+                        <select id="listForm" style="width:90px;  height: 25px; margin: 4px 7px 0 0;">
+                            <option >JPG</option>
+                            <option >PNG</option>
+                            <option >PSD</option>
+                            <option >TIF</option>
+                            <option >PDF</option>
+                        </select>
+                     </div>
+
+                  <div id="statusJanela" style=" width: 93%; display: flex; justify-content: center; align-items: center;  color: aliceblue; font-size: 11px; padding: 10px; border: 0px solid rgb(124, 124, 124); margin: 20px 0px 0 0; "></div>
+                     
+                </div>
+
+            </div>  
+        </div>
+         <!-- /////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+          <!-- ///////// GRUPO DE BOTÕES PRINCIPAIS -->
+          
+       <div class="D11colunaB">
+            <div class="btnMedio D11altura btn-Executar" id="D11Btn1" style="width: 83px; margin: 1px;">Processar</div>
+            <div class="btnMedio D11altura" id="D11Btn2" style="width: 83px; margin: 1px;">Cancelar</div>
+            <div class="btnMedio D11altura" id="D11Btn3" style="width: 83px; margin: 1px;">Preferências</div>
+            <sp-checkbox  id="D11confDLGfocus" size="s" style="position: absolute; top: -50px;" ></sp-checkbox >
+       </div>
+
+ </div> 
+ 

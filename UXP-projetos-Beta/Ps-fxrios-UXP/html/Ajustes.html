@@ -1,0 +1,78 @@
+
+<div class="main-Ajust">
+    <!-- <h1 style="color: #d5d2d2;">CORREÇÃO DE CORES</h1> -->
+    <div style="width: 100%; display: flex; align-items: center; margin-left: 10px;">
+        <div class="btnIcons ajustIcon btnAjustClicado" id="ajbtn1" style="font-size: 15px;">8</div>
+        <div class="btnIcons ajustIcon" id="ajbtn2" >9</div>
+        <div class="btnIcons ajustIcon" id="ajbtn3">0</div>
+        <h6 id="tituloAba" style="margin-left: 5px;">BALANÇO DE CORES</h6>
+    </div>
+
+    <div id="aj1" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Ciano</p> 
+            <p class="cores">Magenta</p> 
+            <p class="cores">Yellow</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld1" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5" ></sp-slider>
+            <sp-slider id="sld2" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld3" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld1" class="cores valoes">0</p> 
+            <p id="vsld2" class="cores valoes">0</p> 
+            <p id="vsld3" class="cores valoes">0</p> 
+        </div>
+    </div>
+
+    <div  id="aj2" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Hue</p> 
+            <p class="cores">Saturar</p> 
+            <p class="cores">Luzes</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld4" variant="filled" fill-offset="left" class="slider" size="s" min="-180" max="180" value="0" step="5"></sp-slider>
+            <sp-slider id="sld5" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld11" variant="filled" fill-offset="left" class="slider" size="s" min="0" max="100" value="0" step="5"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld4" class="cores valoes">0</p> 
+            <p id="vsld5" class="cores valoes">0</p> 
+            <p id="vsld11" class="cores valoes">0</p> 
+        </div>
+    </div>
+    
+    <div id="aj3" class="pnlEQcores ajustOff">
+        <div class="coln1"> 
+            <p class="cores">Brilho</p> 
+            <p class="cores">Contrast</p> 
+             <p class="cores">Niveis</p> 
+        </div>
+
+        <div class="coln2">
+            <sp-slider id="sld7" variant="filled" fill-offset="left" class="slider" size="s" min="-150" max="150" value="0" step="5"></sp-slider>
+            <sp-slider id="sld8" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+            <sp-slider id="sld6" variant="filled" fill-offset="left" class="slider" size="s" min="-100" max="100" value="0" step="5"></sp-slider>
+        </div>
+        <div class="coln3">
+            <p id="vsld7" class="cores valoes">0</p> 
+            <p id="vsld8" class="cores valoes">0</p> 
+            <p id="vsld6" class="cores valoes">0</p> 
+        </div>
+    </div>
+
+        <div style=" display: flex;padding: 3px; align-items: center; border: 1px solid #747373; padding: 5px; background-color: #525151; padding-top: 18px;  border-radius: 4px;transform: translateY(3px);">
+            <!-- <select id="list_MD" style="width: 133px ; margin: 2px;"></select>-->
+            <sp-dropdown  class="sp-dropDowA"  size="s" > <sp-menu  id="list_MD" class="sp-dropDowB" slot="options" > </sp-menu> </sp-dropdown>
+            <div class="btnIcons" id="btnAddPresset" style="height: 26px;  line-height: 25px; transform: translateY(2px);">R</div>
+            <div class="btnIcons" id="btnRemover" style="height: 26px;  line-height: 25px; transform: translateY(2px);">M</div>
+        </div>
+        <label style="font-size: 11px; transform: translate( -64px, -44px); color: #d5d2d2;">Predefinições</label>
+        <div class="d3btnMedio" id="btnCloseAj" style="width: 90px; margin: 1px; transform: translateY(-5px);">Fecha</div>
+    </div>
+    <dialog id="dlgAjuste"style="padding: 10px;"></dialog> 
+</div>
