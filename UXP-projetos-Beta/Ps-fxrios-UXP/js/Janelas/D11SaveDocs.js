@@ -1528,9 +1528,11 @@ async function obterDimensoesDoc(){
 }
 ///////ABRIR A JANELA DE PROCESSADOS
 async function abrirJanelaProcessados(){
-    await exploradorDiretorio(subfolder.nativePath); 
-    shell.openPath(`${dirPlugin}/suport/CloseExplorer.vbs`)
-    shell.openPath(`${Usuario}/AppData/Roaming/tempScripts/explorarDir.vbs`)
+    core.executeAsModal( async() => {
+        await exploradorDiretorio(subfolder.nativePath); 
+        shell.openPath(`${dirPlugin}/suport/CloseExplorer.vbs`)
+        shell.openPath(`${Usuario}/AppData/Roaming/tempScripts/explorarDir.vbs`)
+    },{"interactive": true});
 }
 
 //// PERCORRE SOMENTE OS DOCUMENTOS OBTIDOS NA LISTA PELO ID
