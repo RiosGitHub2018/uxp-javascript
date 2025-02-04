@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>MS Tab Group - Documentação do Componente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        th, td {
+            border: 1px solid #e4e4e4;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e4e4e4;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>MS Tab Group</h1>
+    <p>Um componente de abas personalizável que permite organizar conteúdo em diferentes painéis navegáveis em Plugins UXP - Adobe Photoshop.</p>
+
+        <!-- //////// IMAGEM DO COMPONENTE -->
+        <div class="componente">
+            <div>
+                <img src="data:image/png;base64,
+                iVBORw0KGgoAAAANSUhEUgAAAToAAADFCAIAAABLk6lzAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFu2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMzo0ODo0Ni0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjUtMDEtMDFUMDA6MDQ6MzctMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjUtMDEtMDFUMDA6MDQ6MzctMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmNhOGVhMDM2LWUxMWUtN2U0ZS04YjEyLTQ0MWE5NzVjYWM3OSIgeG1wTU06RG9jdW1lbnRJRD0i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
+                    "alt="Imagem">
+            </div>
+        </div>
+        <!-- //////// IMAGEM DO COMPONENTE -->
+
+    <div class="section">
+    <h2>Index.html</h2>
+    <pre><code>
+&lt;ms-tab-group>
+    &lt;ms-tab titulo="Aba 1">
+    Conteúdo da primeira aba
+    &lt;/ms-tab>
+    &lt;ms-tab titulo="Aba 2">
+    Conteúdo da segunda aba
+    &lt;/ms-tab>
+    &lt;ms-tab titulo="Aba 3" active>&lt;!--deifine a aba ativa -->
+    Conteúdo da terceira aba
+    &lt;/ms-tab>
+&lt;/ms-tab-group>
+    </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Componentes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><code>&lt;ms-tab-group></code></td>
+                    <td>Contenedor principal que gerencia as abas</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;ms-tab></code></td>
+                    <td>Representa uma aba individual e seu conteúdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>ms-tab-group</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>active</td>
+                    <td>Number</td>
+                    <td>Índice da aba que deve estar ativa (base 0)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ms-tab</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>titulo</td>
+                    <td>String</td>
+                    <td>Texto a ser exibido no botão da aba</td>
+                </tr>
+                <tr>
+                    <td>active</td>
+                    <td>Boolean</td>
+                    <td>Define se a aba deve estar ativa inicialmente</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Eventos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Detalhe</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tab-change</td>
+                    <td>{ index: number, text: string }</td>
+                    <td>Disparado quando uma aba é selecionada. Retorna o índice e o texto da aba ativa</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Métodos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>activateTab(index)</td>
+                    <td>Ativa a aba no índice especificado</td>
+                </tr>
+                <tr>
+                    <td>getActiveTabText()</td>
+                    <td>Retorna o texto da aba atualmente ativa</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Integração com JavaScript</h2>
+        <pre><code>
+// Obtendo referência ao componente
+const tabGroup = document.querySelector('ms-tab-group');
+// Escutando mudanças de aba
+tabGroup.addEventListener('tab-change', (event) => {
+    console.log('Aba ativa:', event.detail.index);
+    console.log('Texto da aba:', event.detail.text);
+});
+// Ativando uma aba específica
+tabGroup.activateTab(1); // Ativa a segunda aba
+// Obtendo o texto da aba ativa
+const activeTabText = tabGroup.getActiveTabText();
+</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Exemplos de Uso</h2>
+        <h3>Abas com Conteúdo Dinâmico</h3>
+        <pre><code>
+&lt;ms-tab-group>
+    &lt;ms-tab titulo="Configurações">
+        &lt;div class="settings-panel">
+            &lt;!-- Conteúdo de configurações -->
+        &lt;/div>
+    &lt;/ms-tab>
+    &lt;ms-tab titulo="Dados">
+        &lt;div class="data-grid">
+            &lt;!-- Grid de dados -->
+        &lt;/div>
+    &lt;/ms-tab>
+&lt;/ms-tab-group>
+        </code></pre>
+
+        <h3>Abas com Aba Inicial Específica</h3>
+        <pre><code>&lt;ms-tab-group active="1">
+    &lt;ms-tab titulo="Geral">
+        Configurações gerais
+    &lt;/ms-tab>
+    &lt;ms-tab titulo="Avançado">
+        Configurações avançadas
+    &lt;/ms-tab>
+&lt;/ms-tab-group></code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Estilização</h2>
+        <p>O componente utiliza variáveis CSS personalizadas para estilização:</p>
+        <ul>
+            <li><code>--psfx-ui-borda-forte-color</code>: Cor da borda do container</li>
+            <li><code>--psfx-ui-bg-color</code>: Cor de fundo do container</li>
+            <li><code>--psfx-box-shadow</code>: Sombra do container</li>
+            <li><code>--psfx-bg-detalhes-color</code>: Cor de fundo dos botões</li>
+            <li><code>--psfx-texto-color-2</code>: Cor do texto dos botões</li>
+            <li><code>--psfx-texto-color</code>: Cor do texto no hover</li>
+            <li><code>--psfx-botao-naveg-Abas</code>: Cor de fundo da aba ativa</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Nota!</h2>
+        <ul>
+            <li>O componente suporta um número ilimitado de abas</li>
+            <li>As abas são responsivas e se ajustam ao espaço disponível</li>
+            <li>O conteúdo das abas pode incluir qualquer elemento HTML</li>
+            <li>A navegação pode ser feita via clique ou programaticamente</li>
+        </ul>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MS Tab Group  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Prompts elaborados por Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

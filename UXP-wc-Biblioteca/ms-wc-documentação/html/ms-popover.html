@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação MSPopover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MSPopover</h1>
+        <p>
+            O componente MSPopover é um popover customizado, encapsulado como um Web Component, que permite exibir conteúdos adicionais de forma flutuante,
+             posicionados em relação a um elemento disparador. Ele é projetado com suporte a posicionamento flexível, estilo customizável via CSS, e comportamentos 
+             como habilitar/desabilitar e exibir/esconder dinamicamente.
+        </p>
+
+        <!-- //////// IMAGEM DO COMPONENTE -->
+        <div class="componente">
+            <div>
+                <img src="data:image/png;base64,
+                      iVBORw0KGgoAAAANSUhEUgAAASsAAACjCAIAAABdUq/iAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFu2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMzo0ODo0Ni0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjUtMDEtMDFUMTM6NTc6MjctMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjUtMDEtMDFUMTM6NTc6MjctMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcyMzVlNDJhLWU1ODAtYTM0MS04ZjAxLWI3NjMxNDg0NGNkMCIgeG1wTU06RG9jdW1lbnRJRD0i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
+                  "alt="Imagem">
+            </div>
+        </div>
+          <!-- //////// IMAGEM DO COMPONENTE -->
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O MSPopover funciona como um elemento HTML customizado que exibe um conteúdo flutuante quando disparado por um elemento 
+                configurado via atributo trigger-for. Ele ajusta automaticamente sua posição com base no elemento disparador e pode ser controlado
+                 por atributos como position, seta e disabled.
+            </p>
+        </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>ms-popover</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>size</td>
+                <td>Define a largura do popover.</td>
+                <td>Não definido</td>
+                <td><code>&lt;ms-popover size="200px"&gt;&lt;/ms-popover&gt;</code></td>
+              </tr>
+              <tr>
+                <td>seta</td>
+                <td>Controla a exibição de uma seta indicadora.</td>
+                <td>false</td>
+                <td><code>&lt;ms-popover seta="true"&gt;&lt;/ms-popover&gt;</code></td>
+              </tr>
+              <tr>
+                <td>position</td>
+                <td>Determina a posição do popover em relação ao elemento disparador.</td>
+                <td>center</td>
+                <td><code>&lt;ms-popover position="top"&gt;&lt;/ms-popover&gt;</code></td>
+              </tr>
+              <tr>
+                <td>disabled</td>
+                <td>Desabilita o popover e seu disparador.</td>
+                <td>false</td>
+                <td><code>&lt;ms-popover disabled&gt;&lt;/ms-popover&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+
+    <div class="section">
+        <h2>index.html</h2>
+        <h2>Conteúdo com tamanho definido</h2>
+        <pre><code>
+&lt;ms-popover size="300px" trigger-for="btn-size">
+    &lt;div>conteudo popover&lt;/div>
+&lt;/ms-popover>
+&lt;button id="btn-size">Abrir Popover (size)&lt;/button>
+        </code></pre>
+
+        <h2>Popover com seta de posicionamento</h2>
+        <pre><code>
+&lt;ms-popover seta="true" position="top" trigger-for="btn-seta">
+    &lt;div>conteudo popover&lt;/div>
+&lt;/ms-popover>
+&lt;button id="btn-seta">Abrir Popover (seta)&lt;/button>
+        </code></pre>
+
+        <h2>Popover posicionado na direção atribuida "abaixo"</h2>
+        <pre><code>
+&lt;ms-popover position="bottom" trigger-for="btn-position">
+    &lt;div>conteudo popover&lt;/div>
+&lt;/ms-popover>
+&lt;button id="btn-position">Abrir Popover (position)&lt;/button>
+        </code></pre>
+
+        <h2>Desativando o botão disparador do evento</h2>
+        <pre><code>
+&lt;ms-popover disabled trigger-for="btn-disabled">
+    &lt;div>conteudo popover&lt;/div>
+&lt;/ms-popover>
+&lt;button id="btn-disabled">Popover Desativado&lt;/button>
+        </code></pre>
+
+        <h2>Fechando o popover apartir de elementos filhos</h2>
+        <pre><code>
+&lt;button id="arrowBtn">Abrir com Seta&lt;/button>
+&lt;ms-popover trigger-for="arrowBtn" position="top" seta="true">
+    &lt;div>
+        &lt;h3>Título do Popover&lt;/h3>
+        &lt;p>Algum conteúdo aqui...&lt;/p>
+        &lt; !-- Botão que fecha o popover -->
+        &lt;button data-popover-close>Fechar&lt;/button>
+        &lt; !--Qualquer elemento que deve fechar o popover -->
+        &lt;div data-popover-close>Clique aqui para fechar&lt;/div>
+    &lt;/div>
+&lt;/ms-popover>
+        </code></pre>
+
+    </div>
+
+
+
+
+  
+
+
+
+
+
+ 
+    <div class="section">
+        <h2>Integração com index.js</h2>
+
+        <pre><code>
+const popover = document.querySelector('ms-popover');
+        </code></pre>
+
+    <p>DEFINIR O TAMANHO COM BASE NA LARGURA</p>
+    <pre><code>
+popover.setAttribute('size', "150px");
+    </code></pre>
+
+    <p>DEFINE A POSIÇÃO DE EXIBIÇÃO DO POPOVER</p>
+    <pre><code>
+ popover.setAttribute('position', "right");
+    </code></pre>
+
+    <p>OPÇÃO PARA INCLUIR SETA DE DIRECIONAMENTO</p>
+    <pre><code>
+popover.setAttribute('seta', "true");
+    </code></pre>
+
+    <p>DESABILITANDO E HABILITANDO</p>
+    <pre><code>
+popover.disable(); //Desabilitar
+popover.enable(); //Habilitar
+    </code></pre>
+
+    </div>
+
+    <div class="section">
+        <h2>Nota!</h2>
+        <ul>
+            <li>
+                Relacionamento com o disparador (trigger-for):
+                <br>
+                Certifique-se de que o atributo trigger-for contenha o ID correto de um elemento existente no documento. Caso contrário, o popover não será ativado e um erro será exibido no console
+            </li>
+            <li>
+                Atributo position:
+                <br>
+                 As opções válidas para o atributo position são: top, bottom, left, right e center. Se nenhuma posição for definida ou se um valor inválido for usado, o popover será posicionado no centro do elemento disparador.
+            </li>
+            <li>
+                Estilos Personalizados:
+                <br>
+                Variáveis CSS como --psfx-bg-detalhes-color e --psfx-texto-disbled-color são utilizadas para estilizar o componente. Certifique-se de defini-las em seu CSS global para evitar que o popover apareça sem estilos.
+            </li>
+            <li>
+                Atributo disabled:
+                <br>
+                Quando o popover está desativado (com o atributo disabled), o disparador associado também será desativado automaticamente. Caso precise habilitar novamente,
+                 remova o atributo disabled tanto do popover quanto do botão disparador.
+            </li>
+            <li>
+                Responsividade e Ajustes na Tela:
+                <br>
+                O popover realiza ajustes automáticos para não ultrapassar os limites da janela. No entanto, em telas pequenas, certifique-se de que o conteúdo seja compacto o suficiente para caber no espaço disponível.
+            </li>
+        </ul>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MS-Popover é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Elaboração de prompts: Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

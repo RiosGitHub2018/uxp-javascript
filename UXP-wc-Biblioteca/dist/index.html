@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link href="./css/index.css" rel="stylesheet" type="text/css">   
+</head>
+
+
+
+<body > 
+
+ <div class="container tema">
+
+    <ms-painel class="small" legend="ms-number-box" id="pn1" bcground="">
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;  ">
+            <ms-box-number id="teste_nf" style="margin: 10px;" data-label ="Largura"  value="40" value-suffix="cm"  size="120px"></ms-box-number>
+            <label id="texto" >Ordenação: 10</label>
+        </div>
+    </ms-painel>
+
+
+    <ms-painel class="small" legend="Checkoxes" id="pn2" style="height: 50px;">
+        <div style="display: flex; align-items: center; justify-content: center; ">
+            <!-- <h3 style="color: aliceblue; text-align: center;">Conteudos</h3>  -->
+            <!-- <label> <input type="checkbox">Mauricio </label> -->
+            <ms-checkbox id="ck1">Testar</ms-checkbox>
+            <ms-checkbox id="ck2">Disabled</ms-checkbox>
+        </div>
+    </ms-painel>
+
+
+    <!-- //////////   TESTANDO RADIOS 2 -->
+    <ms-painel class="small" legend="Radio itens" id="pn4" style="height:120px;">
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+            <!-- /////// EXTUTURA PADRÃO OPÇOES RADIOS -->
+            
+              <ms-radio-group id="gpradios" column>
+                <ms-radio class="radio-item" data="data 1" >Photoshop</ms-radio>
+                <ms-radio class="radio-item" data="data 2" >Illustrator</ms-radio>
+                <ms-radio class="radio-item" data="data 3" >3DS Max</ms-radio>
+                <ms-radio class="radio-item" data="data 4" >Blender</ms-radio>
+              </ms-radio-group>
+
+            <!-- /////// EXTUTURA PARA LIDAR COM MAIS DE UM GRUPO -->
+              <!-- <ms-radio-group column>
+                <ms-radio class="radio-item" data="opcao1" >Abacaxi</ms-radio>
+                <ms-radio class="radio-item" data="opcao2">Laranja</ms-radio>
+              </ms-radio-group>
+              
+              <ms-radio-group column>
+                <ms-radio class="radio-item" data="opcao3">Banana</ms-radio>
+                <ms-radio class="radio-item" data="opcao4">Melacia</ms-radio>
+              </ms-radio-group> -->
+
+       </div>
+    </ms-painel>
+
+    <!-- <ms-painel class="small" legend="Botões radio" id="pn3" style="height: 110px;">
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+            
+            <ps-radio-group column >
+                <ps-radio class="btn" id="rd1" data="valor1" checked >Radio 1</ps-radio>
+                <ps-radio class="btn" id="rd2" data="valor2">Radio 2</ps-radio>
+                <ps-radio class="btn" id="rd3" data="valor3">Radio 3</ps-radio>
+            </ps-radio-group>
+
+       </div>
+    </ms-painel> -->
+
+
+    <!-- //////////  ACTIONDS + ICONES BOTÕES -->
+    <ms-painel class="small" legend="ms-buttom" id="pn4" style="height: 90px;">
+
+             <!-- <h1>Conteudo</h1> -->
+             <div style="width: 100%; display: flex; align-items: center; justify-content: center;  flex-wrap: wrap; transform: translateY(15px);">
+
+
+                    <!-- <ps-button id="tmC"  texto="Claro" size="70px" ></ps-button>
+                    <ps-button id="tmE"  texto="Escuro" size="70px"></ps-button> -->
+                
+                  <!-- <ms-buttom  texto="Botão"  size="90-20-12-2-px"  icon="icon040"></ms-buttom> -->
+                  <!-- <ms-buttom id="tmC" texto="Claro"   size="65-20-13-2-px"   icon="icon042" ></ms-buttom>
+                  <ms-buttom id="tmE" texto="Escuro"  size="65-20-13-2-px"   icon="icon042" ></ms-buttom> -->
+                  <!-- <ms-buttom size="30-22-15-2-px"   icon="icon042" ></ms-buttom> -->
+                  <!-- <ms-buttom id="tmE"  size="30-22-15-2-px"   icon="icon084" ></ms-buttom> -->
+                  <!-- <ms-buttom id="tmC" size="30-22-15-2-px"   icon="icon044" ></ms-buttom>-->
+                  <ms-buttom id="tmE"  size="30-22-15-2-px"   icon="icon078" ></ms-buttom> 
+                  <ms-buttom  id="tmC" texto="Thema claro"  size="100-22-15-2-px"  icon="icon021"></ms-buttom>
+            </div>
+
+    </ms-painel>
+
+    
+     <!-- //////////   ICONES BOTÕES -->
+    <ms-painel class="small" legend="Botão icone" id="pn4" style="height: 90px;">
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center;  flex-wrap: wrap; transform: translateY(15px);">
+            <!-- <ms-icon id="btnIcone1"  icon="layers"  largura="90px" disabled></ms-icon> -->
+
+            <ms-buttom  id="btnIcone1" size="30-28-16-4-px"  icon="icon037" style="margin: 3px;"></ms-buttom> 
+            <ms-buttom  id="btnIcone2" size="30-28-20-4-px"  icon="icon087" color="#93c2f7" style="margin: 3px;"></ms-buttom> 
+            <ms-buttom  id="btnIcone3" size="30-28-18-4-px"  icon="icon018" style="margin: 3px;"></ms-buttom> 
+            <!-- <ms-icon id="btnIcone2"  size="30-28-20-4-px"  icon="icon087" color="#93c2f7"></ms-icon> -->
+            <!-- <ms-icon id="btnIcone3"  size="30-28-18-4-px"  icon="icon040"></ms-icon> -->
+       </div>
+    </ms-painel>
+
+
+     <!-- //////////   CONTROLE DESLIZANTE -->
+    <ms-painel class="small" legend="Slinder teste" id="pn4" style="height: 90px;">
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+
+            <!-- <ms-slider id="slider01" texto="Cor Cyano" min="-100" max="100" value="0" colorbg="#60adf5"></ms-slider> -->
+            <!-- <ms-slider id="slider01" texto="Cor Cyano@%" min="-100" max="100" value="0" colorbg="#60adf5"></ms-slider> -->
+            <ms-slider id="slider01" texto="Desfoque@Pixels" min="0" max="150" value="0" colorbg="#60adf5"></ms-slider>
+            <!-- <ms-slider id="slider01" texto="Cyan Color@%" min="0" max="180" value="0" colorbg="#60adf5"></ms-slider> -->
+
+       </div>
+    </ms-painel>
+
+
+    <!-- //////////   NEVEGAÇÃO COM ABAS -->
+    <ms-painel class="small" legend="Navegaão Abas" id="pn4" style="height: 100%">
+        <div class="alingDef">
+
+            <ms-tab-group id="tab-groupA" style="width: 100%; margin-top: 10px;">
+                <ms-tab   titulo="DropDow" >  
+                    <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <ms-dropdownlist id="dropdownlist" style="width: 120px; margin-top: 10px;"> <!--  data-selected-index="2" -->     <!-- <ms-divider></ms-divider> -->
+                            <!-- <ms-item>Papel</ms-item>
+                            <ms-item subitem='["Banner", "Chaxis"]'>Lona</ms-item>
+                            <ms-item>Canvas</ms-item>
+                            <ms-divider></ms-divider>
+                             <ms-item>Adesivo</ms-item>
+                            <ms-item>Outro</ms-item> -->
+                        </ms-dropdownlist>
+                     </div>
+                </ms-tab>
+
+                <ms-tab  titulo="Combobox" active>
+                    <div style="height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <ps-combobox id="listaCB" style="width: 120px; margin-top: 10px;"></ps-combobox>
+                        <!-- <ps-combobox id="listaCB" data-options=
+                         '["Deusa", "Mauro", "Mauricio", "Miguel", "Mg Filho"]' 
+                         data-selected-index="3" style="width: 120px; margin-top: 10px;"> 
+                        </ps-combobox> -->
+                    </div>
+                </ms-tab>
+
+
+              </ms-tab-group>
+
+       </div>
+    </ms-painel>
+
+    <!-- //////////   SISTEMA DE BUSCA -->
+    <ms-painel class="small" legend="ms-busca" id="pn5" style="height: 140px" >
+        <div style="height:130px; display: flex; flex-direction: column; align-items: center; ">
+               <ms-busca  id="buscar" style="margin: 10px;"></ms-busca>
+               <ms-painel class="small" legend="Resultado" id="pn5" style="width: 150px; height:70px" >
+                <div style="height:50px; display: flex; flex-direction: column; align-items: center; justify-content: center; ">
+               <label id="buscaResult">1, 2, 3 ,4 ,5, 6, 7, 8, 9, 10</label>
+            </div>
+             </ms-painel>
+        </div>
+    </ms-painel>
+
+        <!-- //////////   SISTEMA DE BUSCA -->
+        <ms-painel class="small" legend="Icons SVG" id="pn5" style="height: 70px" >
+            <div style="height:130px; display: flex; flex-direction: column; align-items: center;  justify-content: center;">
+                  <ms-icon id="btnIcone1"  icon="icon062" size="40px" hover-color="#ff6666" ></ms-icon>
+            </div>
+        </ms-painel>
+       
+
+        <dialog id="janelaModa01" style="background-color: var(--psfx-ui-bg-color);" disabled></dialog> 
+
+</div>
+
+<script src="main.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação ms-box-number</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>MSBoxNumber</h1>
+        <p>
+            O componente MSBoxNumber é um Web Component customizado que exibe e gerencia um campo numérico estilizado com suporte a personalização de tamanho,
+             sufixos de valor e controle interativo para incrementar ou decrementar valores. Ele utiliza Shadow DOM para encapsular o estilo e comportamentos, garantindo modularidade e reutilização.
+        </p>
+
+        <div class="section  componente">
+            <div>
+                <img src="data:image/png;base64,
+                        iVBORw0KGgoAAAANSUhEUgAAALMAAABbCAIAAAC3YSNLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMjoxNzoxNi0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMTItMzFUMjI6NDg6MjMtMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTItMzFUMjI6NDg6MjMtMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZhMDdkZDJhLTk0NmEtNmE0NC1iOWNlLTYzOTZjNGI2OGZjZSIgeG1wTU06RG9jdW1lbnRJRD0i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
+                        "alt="Imagem">
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O componente MSBoxNumber funciona como um campo numérico interativo que permite definir e alterar valores usando botões de incremento/decremento 
+                ou entrada direta. Ele suporta personalizações, como tamanho ajustável, sufixos de valor e estados habilitado/desabilitado.
+            </p>
+        </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>MSBoxNumber</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>size</td>
+                <td>Define a largura do componente: unidades CSS (px, em, rem, %).</td>
+                <td>100px</td>
+                <td><code>&lt;ms-box-number size="200px"&gt;&lt;/ms-box-number&gt;</code></td>
+              </tr>
+              <tr>
+                <td>data-label</td>
+                <td>Define o texto exibido como rótulo do componente.</td>
+                <td>Vazio</td>
+                <td><code>&lt;ms-box-number data-label="Largura"&gt;&lt;/ms-box-number&gt;</code></td>
+              </tr>
+              <tr>
+                <td>value</td>
+                <td>Define o valor inicial do campo numérico.</td>
+                <td>0</td>
+                <td><code>&lt;ms-box-number value="10"&gt;&lt;/ms-box-number&gt;</code></td>
+              </tr>
+              <tr>
+                <td>value-suffix</td>
+                <td>Adiciona um sufixo ao valor exibido, como uma unidade de medida.</td>
+                <td>Vazio</td>
+                <td><code>&lt;ms-box-number value-suffix="cm"&gt;&lt;/ms-box-number&gt;</code></td>
+              </tr>
+              <tr>
+                <td>disabled</td>
+                <td>Desabilita o componente, tornando-o não interativo.</td>
+                <td>Habilitado</td>
+                <td><code>&lt;ms-box-number disabled&gt;&lt;/ms-box-number&gt;</code></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          
+    </div>
+
+    <div class="section">
+        <h2>index.html</h2>
+        <pre><code>
+&lt!-- Definindo largura do componente -->
+&ltms-box-number size="150px">&lt/ms-box-number>
+&lt!-- Adicionando um rótulo -->
+&ltms-box-number data-label="Largura">&lt/ms-box-number>
+&lt!-- Definindo um valor inicial -->
+&ltms-box-number value="25">&lt/ms-box-number>
+&lt!-- Adicionando um sufixo ao valor -->
+&ltms-box-number value-suffix="cm">&lt/ms-box-number>
+&lt!-- Componente desabilitado -->
+&ltms-box-number disabled>&lt/ms-box-number>
+        </code></pre>
+    </div>
+ 
+
+    <div class="section">
+    <h2>Integração com index.js</h2>
+
+    <pre><code>
+const numberBox = document.querySelector(ms-box-number);
+    </code></pre>
+
+    <p>Desabilitando e habilitando</p>
+    <pre><code>
+setTimeout(() => {
+    numberBox.disable(); // DESABILITA
+    numberBox.enable();  // HABILITA
+}, 30)
+    </code></pre>
+
+    <p>Ouvinte de eventos</p>
+    <pre><code>
+numberBox.addEventListener('change', () => {
+    console.log(`Valor atual: ${numberBox.value}`);
+});
+    </code></pre>
+
+    <p>Manipulação Dinâmica de Atributos com setTimeout</p>
+    <pre><code>
+setTimeout(() => { 
+    numberBox.setAttribute('size', "100px");
+    numberBox.setAttribute('value', "80.5");
+    numberBox.setAttribute('value-suffix', "cm");
+    numberBox.setAttribute("data-label", "Size");
+}, 90); 
+    </code></pre>
+
+
+ </div>
+
+
+   
+
+
+    <div class="section">
+        <h2>Nota!</h2>
+        <ul>
+            <li>
+                <h4 style="margin-bottom: -3px;"> 1. Sincronização de Alterações Dinâmicas:</h4>
+                Ao usar métodos como setTimeout para manipular os atributos do componente, certifique-se de que o componente já está conectado ao DOM antes de modificar seus atributos. Alterações em componentes não montados podem não ser aplicadas corretamente.
+            </li>
+
+            <li>
+                <h4 style="margin-bottom: -3px;">2. Compatibilidade com Atributos Dinâmicos:</h4>
+                Certifique-se de que os valores passados aos atributos são válidos para cada tipo de dado esperado:
+                <br>
+                <ul>
+                    <li>size: Aceita valores numéricos ou com unidades CSS válidas.</li>
+                    <li>value: Deve ser um número válido ou convertível para número.</li>
+                    <li>value-suffix e data-label: Aceitam texto, mas evite caracteres que possam causar problemas de renderização.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h4 style="margin-bottom: -3px;">3. Desempenho e Alterações Simultâneas:</h4>
+                Alterações simultâneas em atributos podem causar eventos repetidos de atualização visual ou funcional. Para otimizar o desempenho, considere agrupar alterações relacionadas dentro de uma única operação.
+            </li>
+
+            <li>
+                <h4 style="margin-bottom: -3px;">4. Acessibilidade:</h4>
+                Ao definir atributos dinamicamente, como data-label, lembre-se de que eles podem impactar a acessibilidade do componente. Certifique-se de que os rótulos e atributos estão claros para ferramentas assistivas.
+            </li>
+            
+        </ul>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MSBoxNumber  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Elaboração de prompts: Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

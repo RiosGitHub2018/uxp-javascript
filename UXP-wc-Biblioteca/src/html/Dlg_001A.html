@@ -1,0 +1,77 @@
+<div style="display: flex; flex-direction: column;">
+ <ms-painel class="small" legend="Icones SVG" id="pn5" style="width: 100%; height: 70px" >
+  <div style="height:130px; display: flex; flex-direction: row; align-items: center;  justify-content: center;">
+        <ms-icon   icon="icon063" size="40px" color="#94d5fb"></ms-icon>
+        <ms-icon   icon="icon041" size="40px" color="#63b865"></ms-icon>
+  </div>
+ </ms-painel>
+
+ <ms-painel class="small" legend="ms-tab-group" id="pn6" style="width: 100%; height: 100%" >
+  <div style="width: 100%; height:100%; display: flex; flex-direction: column; align-items: center;  justify-content: center;">
+
+    <ms-tab-group id="tab-groupB"  style="width: 100%; margin-top: 10px;">
+        <ms-tab    titulo ="DropDow">  
+            <div style="height: 150px; display: flex; align-items: center; justify-content: center;">
+
+                    <ms-dropdownlist id="dropdownlist2" data-selected-index="2"  style="width: 120px; margin: 0 5px"> <!--  data-selected-index="2" -->     <!-- <ms-divider></ms-divider> -->
+                        <!-- <ms-item icon="icon030" >Papel</ms-item>
+                        <ms-item icon="icon035" subitem='["Banner", "Chaxis"]'>Lona</ms-item>
+                        <ms-divider></ms-divider>
+                        <ms-item  icon="icon096" >Canvas</ms-item>
+                        <ms-item  icon="icon032" >Adesivo</ms-item> 
+                        <ms-item  icon="icon034" >Pepel 3D</ms-item> 
+                        <ms-item  icon="icon033" >Outro</ms-item>   -->
+                    </ms-dropdownlist>    
+                   
+                    
+                    <ms-box-number id="textBox01"  data-label ="Largura"   value="50" value-suffix="cm" size="120px"  style="margin-top: 6px;"></ms-box-number>
+            </div>
+        </ms-tab>
+
+        <ms-tab   titulo ="Silider Circular" style="width: 100%" active>
+            <div style="height: 150px; display: flex; align-items: center;  justify-content: center; color: var(--psfx-texto-color); font-size: 11px;">
+                <ms-checkbox id="ck3" data-label="Desabilitar" style="margin-right: 10px;">Desabilitar</ms-checkbox>
+                <ms-slider-circular id="sliderCirc" size="70" value="0" min="0" max="360"></ms-slider-circular>
+                <ms-icon id="iconeRotate"  icon="icon050" size="70px" style="margin-left: 15px;"></ms-icon>
+            </div>        
+        </ms-tab>
+
+        <ms-tab   titulo ="Popover" style="width: 100%" >
+            <div style="height: 150px; display: flex; align-items: center;  justify-content: center; color: var(--psfx-texto-color); font-size: 11px;">
+                
+                        <!-- Elemento trigger -->
+                        <ms-buttom  id="btnTrigger"  texto="Popover" size="100-22-15-2-px" style="font-size: 12px;"></ms-buttom>
+                        <!-- <ms-icon  id="btnTrigger"  icon="icon077" size="40px" color="#63b865"></ms-icon> -->
+
+                        <ms-popover id="popover01" size="200px" position="top"  trigger-for="btnTrigger"  seta="true">  <!-- position="top  seta="true""-->
+                            <div  style=" width: 100%; height: 120px; display: flex;flex-direction: column; padding: 5px; "> 
+                                
+                                <!-- <ms-color-seletor size="50" initial-color="#f962be"  codigo-hex="true"  position="center"  style="transform: translate(50px,0);"></ms-color-seletor>   -->
+                               
+                                <hr>
+                                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit.!</p>
+                                <ms-buttom texto="Fechar"   size="-22-15-2-px"  data-popover-close  style="font-size: 12px;"></ms-buttom>
+                            </div>
+                        </ms-popover>
+
+            </div>        
+        </ms-tab>
+
+    </ms-tab-group>
+  </div>
+ </ms-painel>
+
+   <ms-painel class="small" legend="Seletor de Cores" id="pn6" style="width: 100%; height:100%" >
+    <div style="display: flex; align-items: center;  justify-content: center; color: var(--psfx-texto-color); font-size: 11px;">
+      
+        <ms-icon class="btnSeletor" id="iconGatilho" icon="icon098" size="20px" ></ms-icon>  <!-- hover-color="#ff6666"   color="#fff"  -->
+        <ms-color-seletor id="sletorB" size="80px" position="top" trigger-for="iconGatilho" ></ms-color-seletor>  <!-- disabled -->
+             
+
+    </div>
+   </ms-painel>
+
+
+  
+ 
+</div>

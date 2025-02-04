@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação do Componente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MS-icon</h1>
+        <p>ms-icon é um componente web personalizado para renderizar ícones SVG com atributos personalizáveis, como tamanho,
+        cor e efeitos de hover. Ele suporta carregamento dinâmico de ícones e fornece um ícone de erro como fallback quando o
+        SVG especificado não pode ser carregado.
+        </p>
+
+            <!-- //////// IMAGEM DO COMPONENTE -->
+            <div class="componente">
+                <div>
+                    <img src="data:image/png;base64,
+                    iVBORw0KGgoAAAANSUhEUgAAAUoAAABoCAIAAAAYWC7bAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMzo0ODo0Ni0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMTItMzFUMjM6NTA6MjktMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTItMzFUMjM6NTA6MjktMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0MmRjYmZmLTBlNDktYTI0Ny05YTllLTBmNTliZjczOGY3ZCIgeG1wTU06RG9jdW1lbnRJRD0i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
+                        "alt="Imagem">
+                </div>
+            </div>
+            <!-- //////// IMAGEM DO COMPONENTE -->
+
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O componente busca arquivos SVG dinamicamente com base no atributoicon. Aplica estilos como tamanho, cor e cor de
+                hover usando variáveis CSS ou atributos. Gerencia estados como disabled, renderizando um estilo desativado quando
+                aplicável. Se um ícone não puder ser carregado, um ícone de erro padrão é exibido.
+            </p>
+        </div>
+
+
+    <div class="section">
+        <h2>index.html</h2>
+        <pre><code>
+Exemplo Básico
+&lt;ms-icon icon="home" size="40px" color="black">&lt;/ms-icon>
+Com Efeito de Hover
+&lt;ms-icon icon="settings" size="50px" color="gray" hover-color="blue">&lt;/ms-icon>
+Ícone Desativado
+&lt;ms-icon icon="delete" disabled>&lt;/ms-icon>
+        </code></pre>
+    </div>
+
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>ms-icon</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descrição</th>
+                    <th>Padrão</th>
+                    <th>Exemplo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>icon</td>
+                    <td>Especifica o nome do ícone SVG a ser carregado</td>
+                    <td>Sem atribuir</td>
+                    <td>&lt;ms-icon icon="home">&lt;/ms-icon></td>
+                </tr>
+
+                <tr>
+                    <td>size</td>
+                    <td>Especifica o tamanho do ícone</td>
+                    <td>40px</td>
+                    <td>&lt;ms-icon size="50px">&lt;/msicon></td>
+                </tr>
+
+                <tr>
+                    <td>color </td>
+                    <td>Define a cor do ícone</td>
+                    <td> var(--psfx-texto-color)</td>
+                    <td>&lt;ms-icon color="blue">&lt;/msicon></td>
+                </tr>
+                
+                <tr>
+                    <td>hover-color</td>
+                    <td>Define a cor do ícone quando o cursor está sobre ele</td>
+                    <td>var(--psfx-texto-color)</td>
+                    <td>&lt;ms-icon hover-color="red">&lt;/ms-icon></td>
+                </tr>
+
+                <tr>
+                    <td>disabled</td>
+                    <td>Desativa a interação com o ícone</td>
+                    <td>var(--psfx-ui-slider-circulardisabled-color)</td>
+                    <td>&lt; ms-icon disabled>&lt; /msicon></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+ 
+    <div class="section">
+        <h2>Integração com index.js</h2>
+<p>Você pode manipular o componentems-icon dinamicamente usando JavaScript: Habilitando/Desabilitando Ícones</p>
+
+<pre><code>
+const iconElement = document.querySelector('ms-icon');
+iconElement.disable(); // Desativar o ícone
+iconElement.enable(); // // Habilitar o ícone
+</code></pre>
+
+<p>Ou:</p>
+<pre><code>
+const iconElement = document.querySelector('ms-icon');
+iconElement.setAttribute('disabled', ''); // Desativar o ícone
+iconElement.removeAttribute('disabled'); // Habilitar o ícone
+</code></pre>
+
+<p>Alterando Atributos Dinamicamente</p>
+<pre><code>
+const iconElement = document.querySelector('ms-icon');
+iconElement.setAttribute('icon', 'user'); // Alterar o ícone
+iconElement.setAttribute('color', 'green'); // Alterar a cor
+</code></pre>
+
+<p>Ouvinte de eventos</p>
+<pre><code>
+const iconElement = document.querySelector('ms-icon');
+iconElement.addEventListener('click', () => {
+    console.log("Aqui o evento de click do iconElement!")
+ })
+</code></pre>
+    </div>
+
+
+    <div class="section">
+        <h2>Tratamento de Erros</h2>
+          <p>Se o atributo icon especificado não apontar para um arquivo SVG válido, um ícone de erro será renderizado  automaticamente.</p>
+    <pre><code>
+&lt;ms-icon icon="nonexistent-icon">&lt;/ms-icon>
+    </code></pre>
+   <p> Isso renderizará um ícone de erro padrão com um círculo e um ponto de exclamação.</p>
+    </div>
+
+    <div class="section">
+        <h2>Notas</h2>
+        <p>
+            • Certifique-se de que o diretório icons seja acessível a partir da raiz da sua aplicação.
+        <br>
+        • Use variáveis CSS para manter uma temática consistente em sua aplicação.
+        <br>
+        • O componente é compatível e foi testado em plugins uxp que suportam Custom Elements em Adobe Photoshop.
+        </p>
+    </div>
+   
+    <div class="section">
+        <h2>Conclusão</h2>
+        <p>
+            O componente web ms-icon fornece uma maneira leve e flexível de usar ícones SVG escaláveis em seus plugins uxp.
+            Com recursos como carregamento dinâmico de SVG, estilos personalizáveis e tratamento de erros, ele simplifica o
+            gerenciamento de ícones e melhora a consistência da interface do usuário.
+        </p>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MS-Icon  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Prompts elaborados por Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

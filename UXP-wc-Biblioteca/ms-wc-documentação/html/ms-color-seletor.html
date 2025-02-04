@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação ms-color-seletor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MSColorSelector</h1>
+        <p>
+             O MSColorSelector é um web componente customizado que implementa um seletor de cores interativo e personalizável, permitindo a escolha de tonalidades
+             diretamente por meio de um controle visual. Ele suporta atributos como tamanho, cor inicial e posição, além de disparar eventos de mudança de cor para maior integração com outros sistemas.
+        </p>
+
+        <!-- //////// IMAGEM DO COMPONENTE -->
+        <div class="componente">
+            <div>
+                <img src="data:image/png;base64,
+                    iVBORw0KGgoAAAANSUhEUgAAAL0AAABRCAIAAAAIMzCeAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAF/mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDI0LTEyLTMxVDIyOjE3OjE2LTAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyNC0xMi0zMVQyMzoxNzo1Mi0wMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNC0xMi0zMVQyMzoxNzo1Mi0wMzowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Yjk2ZGExZDAtYTljMy0zZTQ0LWIzMzItMTg4YTI2N2JlNjBiIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOmI5NmRhMWQwLWE5YzMtM2U0NC1iMzMyLTE4OGEyNjdiZTYwYiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmI5NmRhMWQwLWE5YzMtM2U0NC1iMzMyLTE4OGEyNjdiZTYwYiIgdGlmZjpPcmllbnRhdGlvbj0iMSIgdGlmZjpYUmVzb2x1dGlvbj0iOTYwMDAwLzEwMDAwIiB0aWZmOllSZXNvbHV0aW9uPSI5NjAwMDAvMTAwMDAiIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiIGV4aWY6Q29sb3JTcGFjZT0iNjU1MzUiIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSIxODkiIGV4aWY6UGl4ZWxZRGltZW5zaW9uPSI4MSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6Yjk2ZGExZDAtYTljMy0zZTQ0LWIzMzItMTg4YTI2N2JlNjBiIiBzdEV2dDp3aGVuPSIyMDI0LTEyLTMxVDIyOjE3OjE2LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjYuMCAoV2luZG93cykiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+mkZHngAACilJREFUeJztnHtUE1cex38zBXkTyMBJTKqsy6kK7kNkEBeCRo6udWUNuuRoa5FdHxWFqnV7tMcnFXSboigWfNTqitntsYJWXF2qzQpaUCNxdVcMnrVnK4hI8CgVMARYOfvHlSybQBLGDC9/nzN/3Ln3e79zmfnmzoNkqOrqakCQXkL39wCQQckAyo1CoVCr1f09CsQhBlBuHCcpKUmlUlmXkT5jUOYG6Xco514XsyyrVCrz8/MBQKfTyeXy5uZmqVRaWFgI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
+                    "alt="Imagem">
+            </div>
+        </div>
+        <!-- //////// IMAGEM DO COMPONENTE -->
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O componente MSColorSelector funciona como um elemento HTML customizado que exibe um seletor de cores ao ser acionado. Ele utiliza dois 
+                canvas para representar a escala de matiz e o controle de saturação/valor, atualizando a cor selecionada em tempo real.
+            </p>
+        </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>MSColorSelector</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>size</td>
+                <td>Define o tamanho do seletor</td>
+                <td>50</td>
+                <td>&lt;ms-color-seletor size="50"&gt;&lt;/ms-color-seletor&gt;</td>
+              </tr>
+              <tr>
+                <td>initial-color</td>
+                <td>Especifica a cor inicial exibida no seletor, em formato hexadecimal.</td>
+                <td>#FFFFFF</td>
+                <td>&lt;ms-color-seletor initial-color="#FF5733"&gt;&lt;/ms-color-seletor&gt;</td>
+              </tr>
+              <tr>
+                <td>position</td>
+                <td>Determina a posição do seletor em relação ao elemento que o aciona.</td>
+                <td>default</td>
+                <td>&lt;ms-color-seletor position="bottom"&gt;&lt;/ms-color-seletor&gt;</td>
+              </tr>
+              <tr>
+                <td>trigger-for</td>
+                <td>ID do elemento que aciona a abertura do seletor de cores ao ser clicado.</td>
+                <td>null</td>
+                <td>&lt;ms-color-seletor trigger-for="btnOpen"&gt;&lt;/ms-color-seletor&gt;</td>
+              </tr>
+              <tr>
+                <td>disabled</td>
+                <td>Desabilita a interação com o seletor de cores.</td>
+                <td>Vazio</td>
+                <td>&lt;ms-color-seletor disabled="true"&gt;&lt;/ms-color-seletor&gt;</td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+
+    <div class="section">
+        <h2>index.html</h2>
+        <pre><code>
+&lt;!-- Caso de uso do componente com diferentes atributos -->
+&lt;ms-color-seletor size="50">&lt;/ms-color-seletor>
+&lt;ms-color-seletor initial-color="#FF5733">&lt;/ms-color-seletor>
+&lt;ms-color-seletor position="bottom">&lt;/ms-color-seletor>
+&lt;ms-color-seletor trigger-for="btnOpen">&lt;/ms-color-seletor>
+&lt;ms-color-seletor disabled>&lt;/ms-color-seletor>
+
+&lt;!-- Elemento de acionamento usado pelo atributo trigger-for -->
+&lt;button id="btnOpen">Abrir Seletor de Cor&lt;/button>
+        </code></pre>
+    </div>
+ 
+
+    <div class="section">
+        <h2>Integração com index.js</h2>
+
+    <pre><code>
+const inicialCor  = cssColorHex('var(--psfx-texto-color)');
+const colorSelector =  document.querySelector('#sletorB');
+const btnOpen = document.querySelector('#btnOpen');
+    </code></pre>
+
+    <li>DEFINE O TEXTO DO CÓDIGO DA COR HEX INICIAL NO SELETOR</li>
+    <pre><code>
+const colorHexLabel = colorSelector.querySelector('#color-hex');
+colorHexLabel.textContent = inicialCor // Substitua pela cor desejada
+    </code></pre>
+
+    <li>DEFINE A POSIÇÃO DE EXIBIÇÃO DO SELETOR</li>
+    <pre><code>
+ colorSelector.setAttribute('position', "top");
+    </code></pre>
+
+    <li>DEFINE COR INICIAL NO SELETOR</li>
+    <pre><code>
+colorSelector.setAttribute('initial-color', inicialCor);
+    </code></pre>
+
+    <li>DEFINE COR  INICIAL DO COMPONENTE MS-ICON DISPARADOR</li>
+    <pre><code>
+ btnOpen.setAttribute('color', inicialCor);
+    </code></pre>
+
+    <li>DEFINE COR  INICIAL DP PLANO DE FUNDO DE COMPONENTES DISPARADOR QUE RECEBE A PROP.CSS: BACKGROUD-COLOR</li>
+    <pre><code>
+ btnOpen.style.backgroundColor= inicialCor;
+    </code></pre>
+
+
+    <p>O java script não interpreta cores hexa decimais em variaveis css, retorna como string</p>
+    <pre><code>
+
+const inicialCor  = cssColorHex('var(--psfx-texto-color)'); 
+colorHexLabel.textContent = inicialCor 
+
+//AQUI O METODO PARA OBTER O VALOR COMPUTADO DA VARIÁVEL CSS
+function cssColorHex(corCSSvar){
+    const getColorValue = (cssVar) => {
+        const element = document.createElement('div');
+        element.style.color = cssVar;
+        document.body.appendChild(element);
+        const color = window.getComputedStyle(element).color;
+        document.body.removeChild(element);
+        return color;
+        }
+        // Uso:
+        const cssColor = getColorValue(corCSSvar);
+        return cssColor;
+}
+    </code></pre>
+
+
+
+
+
+<p>Desabilitando e habilitando o elemento que aciona a abertura do seletor de cores ao ser clicado</p>
+<pre><code>
+ const colorSelector = document.querySelector('#colorSelector');
+ colorSelector.disable(); //Desabilitar
+ colorSelector.enable(); //Habilitar
+</code></pre>
+
+<p>Ouvinte de eventos</p>
+<pre><code>
+//Capturando todas as informações:
+colorSelector.addEventListener('colorchange', (event) => {
+    const { hex, rgb, rgbValues } = event.detail;
+    btnOpen.setAttribute('color', hex);  //ALTERANDO COR DE UM MS-ICON
+    // btnOpen2.style.backgroundColor= hex;
+});
+</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Nota!</h2>
+        <ul>
+            <li>
+                Tamanho do seletor (size):
+                <br>
+                Certifique-se de usar valores em porcentagem (entre 40 a 100). Valores inválidos podem causar distorções no seletor.
+            </li>
+            <li>
+                Cor inicial (initial-color):
+                <br>
+                A cor inicial deve ser fornecida no formato hexadecimal válido, como #FFFFFF. Fornecer um valor inválido pode causar um 
+                comportamento inesperado ou erro.
+            </li>
+            <li>
+                Atributo de posição (position):
+                <br>
+                Use apenas valores válidos como top, bottom, left, right ou center. Qualquer outro valor será tratado como default, posicionando 
+                o seletor abaixo do elemento acionador.
+            </li>
+            <li>
+                Elemento acionador (trigger-for):
+                <br>
+                O elemento acionador precisa ter um ID válido que coincida com o valor definido no atributo trigger-for. Sem isso, o seletor não será exibido.
+            </li>
+            <li>
+                Estado desabilitado (disabled):
+                <br>
+                Quando o atributo disabled for aplicado, o seletor ficará completamente desabilitado, incluindo a interação com o botão acionador. 
+                Remova o atributo para reativar o componente.
+            </li>
+            <li>
+                Compatibilidade com estilos personalizados:
+                <br>
+                O seletor utiliza variáveis CSS como --psfx-ui-bg-color e --psfx-box-shadow. Certifique-se de definir essas variáveis no seu arquivo de estilos 
+                para garantir uma aparência consistente.
+            </li>
+        </ul>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MSColorSelector  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Elaboração de prompts: Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

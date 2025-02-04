@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação do Componente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MS-busca</h1>
+        <p>
+            O componente MSBusca é uma classe que estende a API HTMLElement, implementando um elemento de busca customizado
+            para a web. Ele utiliza o Shadow DOM para encapsular estilos e lógica, garantindo isolamento. O comportamento do componente
+            inclui a alternância de estados habilitado/desabilitado, manipulação de atributos dinâmicos e disparo de eventos personalizados para capturar interações do usuário.
+        </p>
+
+        <!-- //////// IMAGEM DO COMPONENTE -->
+        <div class="componente">
+            <div>
+                <img src="data:image/png;base64,
+                iVBORw0KGgoAAAANSUhEUgAAALUAAACDCAIAAABEEs1OAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMjoxNzoxNi0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMTItMzFUMjM6MDI6NTktMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTItMzFUMjM6MDI6NTktMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU3MTI0ZDdmLTU4NDEtN2I0Zi1hZDAwLWFlMDY3ZGQwZjhmZiIgeG1wTU06RG9jdW1lbnRJRD0i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
+                  "alt="Imagem">
+            </div>
+        </div>
+          <!-- //////// IMAGEM DO COMPONENTE -->
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O componente MSBusca funciona como uma barra de pesquisa interativa e estilizada. Ele exibe um campo de entrada que permite ao usuário digitar uma busca e dispara eventos para que outras partes da aplicação possa reagir a essas ações. Quando desabilitado, o componente muda sua aparência e bloqueia interações, garantindo uma experiência visual e funcional consistente.
+            </p>
+        </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>ms-busca</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>disabled</td>
+                <td>Desabilita o componente</td>
+                <td>Não</td>
+                <td>&lt; ms-busca  disabled>&lt; /ms-busca></td>
+              </tr>
+    
+            </tbody>
+          </table>
+    </div>
+
+    <div class="section">
+        <h2>index.html</h2>
+        <pre><code>
+&lt;!--Uso padrão-->
+&lt;ms-busca >&lt;/ms-busca>
+&lt;!--Desabilitado-->
+&lt;ms-busca disabled>&lt;/ms-busca>
+        </code></pre>
+    </div>
+ 
+    <div class="section">
+        <h2>Integração com index.js</h2>
+<p>Desabilitando e habilitando o componente usando JavaScript</p>
+
+<pre><code>
+ const busca = document.querySelector('#buscar');
+ busca.disable(); //Desabilitar
+ busca.enable(); //Habilitar
+</code></pre>
+
+<p>Ouvinte de eventos</p>
+<pre><code>
+const items = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ];
+const busca = document.querySelector('#buscar');
+const resultado = document.querySelector('#resultado')
+
+// Evento para capturar enquanto digita
+busca.addEventListener('change', (e) => {
+    const searchTerm = e.detail.searchTerm.toLowerCase();
+    const resultados = items.filter(item => item.toLowerCase().includes(searchTerm));
+    console.log('Resultados da busca enquanto digita:', resultados);
+    ///////RESULTADO DA BUSCA:
+    resultado.textContent=`${resultados}`;
+});
+</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Conclusão</h2>
+        <p>O componente ms-busca oferece uma forma prática de incluir uma busca interativa na aplicação. Ele é altamente personalizável e permite controle sobre seu estado de ativação.</p>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • MS-busca  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Elaboração de prompts: Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação ms-dropdowlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .demo-container {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            /* font-weight: bold; */
+            font-family: Arial;
+            color: #000000;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e2e2e2;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .componente{
+            background-color: #e2e2e2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MSDropdowlist</h1>
+        <p>
+            O componente MSDropdownlist é um elemento customizado que funciona como um menu suspenso interativo. Ele permite selecionar opções de uma lista e suporta
+             submenus dinâmicos, ícones e personalizações visuais como cor de texto e ícones de opções.
+        </p>
+
+        <!-- //////// IMAGEM DO COMPONENTE -->
+        <div class="componente">
+            <div>
+                <img src="data:image/png;base64,
+                    iVBORw0KGgoAAAANSUhEUgAAAXUAAAC8CAIAAAAID6lXAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGiGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMi0zMVQyMzo0ODo0Ni0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjUtMDEtMDFUMjE6MDM6MjctMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjUtMDEtMDFUMjE6MDM6MjctMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhhY2UzYzcxLWFmYWQtZjg0MC05NmIzLTdkNTc5MzNjMjc4MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpjNjViM2JmZC1lMTZhLTkzNDgtYWJkZS02M2U5YjU4MDgyZDUiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjNjViM2JmZC1lMTZhLTkzNDgtYWJkZS02M2U5YjU4MDgyZDUiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmM2NWIzYmZkLWUxNmEtOTM0OC1hYmRlLTYzZTliNTgwODJkNSIgc3RFdnQ6d2hlbj0iMjAyNC0xMi0zMVQyMzo0ODo0Ni0wMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NDI2OGE3MC1kYjYyLTk3NDQtYjQ3Zi1lMWRhYTM0NDYxYTAiIHN0RXZ0OndoZW49IjIwMjUtMDEtMDFUMjA6NTg6MjItMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyNi4wIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGFjZTNjNzEtYWZhZC1mODQwLTk2YjMtN2Q1NzkzM2MyNzgwIiBzdEV2dDp3aGVuPSIyMDI1LTAxLTAxVDIxOjAzOjI3LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjYuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+k5pHVgAAJjNJREFUeJztnXlUVFe2/zc1MVoYHFuiVFgoSUTyxHQgP9EuNOLIMkknDp2UUR9isiSSRF1kaERC9Bdb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
+                 "alt="Imagem">
+            </div>
+        </div>
+          <!-- //////// IMAGEM DO COMPONENTE -->
+
+        <div class="section">
+            <h2>Como Funciona</h2>
+            <p>
+                O componente PSDropdownlist é um menu suspenso personalizado que exibe uma lista de opções, 
+                com suporte para ícones e submenus. Ele permite selecionar itens, interagir com subitens e fornece eventos para manipular a seleção.
+            </p>
+        </div>
+
+    <div class="section">
+        <h2>Atributos</h2>
+        <h3>ms-dropdowlist</h3>
+        <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>data-selected-index</td>
+                <td>Define o índice da opção selecionada no dropdown.</td>
+                <td>0</td>
+                <td>&lt;ms-dropdownlist data-selected-index="2">&lt;/ms-dropdownlist></td>
+              </tr>
+
+              <tr>
+                <td>disabled</td>
+                <td>desabilita o  ms-dropdowlist</td>
+                <td>Vazio</td>
+                <td>&lt;ms-dropdownlist disabled>&lt;/ms-dropdownlist></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <h3>ms-item</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Descrição</th>
+                <th>Padrão</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>icon</td>
+                <td>Define o ícone a ser exibido ao lado do item.</td>
+                <td>Vazio</td>
+                <td>&lt;ms-item icon="icon.005">Item com ícone&lt;/ms-item></td>
+              </tr>
+              <tr>
+                <td>subitem</td>
+                <td>Define um subitem ou uma opção adicional dentro do item.</td>
+                <td>Vazio</td>
+                <td>&lt;ms-item subitem='["Banner", "Chaxis"]'>Item com subitem&lt;/ms-item></td>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>Define a cor do  ícone.</td>
+                <td>Vazio</td>
+                <td> &lt;ms-item color="red">Item com cor&lt;/ms-item></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>ms-divider</h3>
+          <table>
+            <thead>
+              <tr>
+                <th >Padrão</th>
+                <th>Descrição</th>
+                <th>Exemplo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;ms-divider></td>
+                <td>serve para criar uma linha divisória entre itens da lista.</td>
+                <td>
+                        &lt;ms-item >item 01&lt;/ms-item>
+                        <br>
+                        <b>&lt;ms-divider&gt;&lt;/ms-divider&gt;</b>
+                        <br>
+                        &lt;ms-item >item 02&lt;/ms-item>
+                        <br>
+                        &lt;ms-item >item 03&lt;/ms-item>
+                </td>
+              </tr>
+             </tbody>
+          </table>
+
+
+
+    </div>
+    </div>
+
+    <div class="section">
+        <h2>index.html</h2>
+        <p>Uso padrão</p>
+        <pre><code>
+&lt;ms-dropdownlist data-selected-index="2"> 
+    &lt;ms-item >Papel&lt;/ms-item>
+    &lt;ms-item >Lona&lt;/ms-item>
+    &lt;ms-item >Canvas&lt;/ms-item> 
+    &lt;ms-item >Adesivo&lt;/ms-item> 
+&lt;/ms-dropdownlist>    
+        </code></pre>
+
+        <p>Adicionando icones e alterando a cor </p>
+        <pre><code>
+&lt;ms-dropdownlist > 
+    &lt;ms-item icon="icon035" color="#4578a7" >Papel&lt;/ms-item>
+&lt;/ms-dropdownlist>    
+        </code></pre>
+
+        <p>Adicionando subitens e divider</p>
+        <pre><code>
+&lt;ms-dropdownlist data-selected-index="2"> 
+    &lt;ms-item >Papel&lt;/ms-item>
+    &lt;ms-divider&gt;&lt;/ms-divider&gt; &lt;!-- divider -->   
+    &lt;ms-item subitem='["Banner", "Chaxis"]'>Lona&lt;/ms-item> &lt;!-- subitens -->
+    &lt;ms-item >Canvas&lt;/ms-item> 
+    &lt;ms-item >Adesivo&lt;/ms-item> 
+&lt;/ms-dropdownlist>    
+        </code></pre>
+
+
+    </div>
+ 
+    <div class="section">
+       <h2>Integração com index.js</h2>
+      <pre><code class="language-javascript">
+const dropdown = document.querySelector('ms-dropdownlist');
+      </code></pre>
+
+      <p>1: Carregamento dinâmico com array de string</p>
+      <pre><code class="language-javascript">
+const array = ["João", "Maria", "Pedro", "Catia", "Raimundo", "Mauricio"];
+setTimeout(() => {
+    array.forEach(item => {dropdown.addOption(item); });
+    dropdown.selectedIndex = 3;
+}, 90);
+      </code></pre>
+
+      <p>2: Carregamento dinâmico com array de objetos</p>
+      <pre>
+        <code class="language-javascript">
+const arrayOBJ = [
+    {  nome: 'João',   idade: 25,  sexo: "Masculino" },
+    {  nome: 'Maria',  idade: 30,  sexo: "Feminino" },
+    {  nome: 'Pedro',  idade: 28,  sexo: "Masculino" }
+];
+      </code></pre>
+
+      <p>2.1:Suporte a adição das propriedade "icon" e "color" ao array de objetos</p>
+      <pre>
+      <code class="language-javascript">
+const arrayOBJ = [
+    {  nome: 'João',   idade: 25,  sexo: "Masculino",  icon:"icon082", color:  "#c23434" },
+];
+</code></pre>
+    <pre>
+    <code class="language-javascript">
+setTimeout(() => { 
+  arrayOBJ.forEach(item => { dropdown.addOption(item.nome, item); });
+  dropdown.selectedIndex = 4;
+}, 90); 
+    </code></pre>
+
+
+      <h2>Ouvintes de eventos</h2>
+      <p>• Itens com carregamento padrão inline com suporte a subitens</p>
+      <pre><code>
+setTimeout(() => {
+  dropdown.addEventListener('optionSelected', (event) => {
+      const { value, subitem, subitemIndex, } = event.detail;
+      if (subitem) {
+        console.log(`Selecionado: ${value} - Subitem: ${subitem} (Índice do Subitem: ${subitemIndex})`);
+      } else {
+        console.log(document.querySelectorAll('ps-item[subitem]'));
+      }
+  });
+}, 90);
+      </code></pre>
+
+      <p>• Itens com carregamento dinâmico apartir de "array de string"</p>
+      <pre><code class="language-javascript">
+setTimeout(() => {
+  dropdown.addEventListener('optionSelected', (event) => {
+    const { value, originalObject, selectedIndex } = event.detail;
+    console.log(`Nome: ${value}\n${selectedIndex}\n${originalObject}`);
+  });
+}, 90);
+      </code></pre>
+
+      <p>• Itens com carregamento dinâmico apartir de "array de objetos"</p>
+      <pre><code class="language-javascript">
+setTimeout(() => {
+  dropdown.addEventListener('optionSelected', (event) => {
+    const { value, originalObject } = event.detail;
+    if (originalObject) {
+      console.log(`Nome: ${value}`);
+      console.log(`Idade: ${originalObject.idade}`);
+      console.log(`Sexo: ${originalObject.sexo}`);
+      console.log(`Icone: ${originalObject.icon}`);
+      console.log(`Color: ${originalObject.color}`);
+    }
+  });
+}, 90);
+      </code></pre>
+
+      <h2>Adicionando um divider na lista</h2>
+      <pre><code class="language-javascript">
+dropdown.addDividerAt(2); //Adição do divider entre os intens 2 e 3
+      </code></pre>
+
+      <h2>Obtendo a quantidade itens da lista</h2>
+      <pre><code class="language-javascript">
+const itensQTD = dropdown.options;
+console.log(itensQTD.length) /// retorna a quantidade de itens 
+      </code></pre>
+
+
+
+    </div>
+    <div class="section">
+        <h2>Nota!</h2>
+        <p>1. Uso Semântico e Estrutural</p>
+        <ul>
+            <li>Use tags como <code>&lt;ms-item&gt;</code>, <code>&lt;ms-divider&gt;</code>, e <code>&lt;ms-dropdownlist&gt;</code> de forma consistente com seus propósitos.</li>
+            <li>Exemplo: Use <code>&lt;ms-divider&gt;</code> para separar visualmente itens, mas não para criar espaços sem significado semântico.</li>
+        </ul>
+        
+        <p>2. Compatibilidade com plugins uxp Adobe Photoshop</p>
+        <ul>
+            <li>Verifique se o plugin suporta Web Components ou inclua um polyfill necessário para tags customizadas.</li>
+        </ul>
+        
+        <p>3. Atributos Customizados</p>
+        <ul>
+            <li>Use atributos como <code>icon</code>, <code>subitem</code>, e <code>color</code> de forma consistente para evitar comportamentos inesperados.</li>
+            <li>Certifique-se de que os valores atribuídos aos atributos são aceitos pela implementação da tag.</li>
+            <li>Exemplo:
+                <pre><code>&lt;ms-item icon="home" color="blue"&gt;Início&lt;/ms-item&gt;</code></pre>
+            </li>
+        </ul>
+        
+        <p>4. Hierarquia e Organização</p>
+        <ul>
+            <li>Certifique-se de que elementos como <code>&lt;ms-item&gt;</code> e <code>&lt;ms-divider&gt;</code> estejam dentro de contêineres apropriados, como <code>&lt;ms-dropdownlist&gt;</code>.</li>
+        </ul>
+
+        <p>5. Manutenção e Legibilidade</p>
+        <ul>
+            <li>Comente e documente o uso das tags no código para facilitar a manutenção por outros desenvolvedores.</li>
+            <li>Exemplo:
+                <pre><code>&lt;!-- Item principal com ícone e cor personalizada --&gt;
+&lt;ms-item icon="home" color="blue"&gt;Início&lt;/ms-item&gt;</code></pre>
+            </li>
+        </ul>
+    </div>
+
+
+    <div  style="height: 50px;">
+        <h2>Créditos:</h2>
+        <div style=" background-color: #282c30; padding: 10px; color: #cad5dd;">
+        <pre">
+        • ms-dropdowlist  é um web componente  idealizado por Mauricio Rios e desenvolvido por: ChatGPT, Claude e v0.dev.
+        <br>
+        • Elaboração de prompts: Mauricio Rios.
+        <br>
+        • Local: Maranhão-Brasil
+        </code>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Titulo da seção</h2>
+         
+    </div> -->
+
+ </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
