@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+    @charset "UTF-8";
+   *{margin: 0; }
+   body{
+        cursor: Default;  
+        padding:10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+     }
+
+     .lista-btns-base{
+       width: 104px;
+       height: 22px;
+       align-items: center;
+       line-height: 20px;
+       color: rgb(255, 255, 255);
+       border:  1px solid rgb(110, 109, 109); 
+       padding-left: 9px ;
+       background-color: #3b3b3b;
+       border-radius: 3px; 
+       position: relative;
+       font-size: 11px;
+     }
+     .icon{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+     .lista{
+        width: 100px;
+        display:none;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+     }
+
+   .lista_btns{
+       width: 100px;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(58, 58, 58); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #646464;
+       overflow-y: scroll; height: 125px;
+    }
+
+   .btns{
+        width: 100%;
+        height: 20px; 
+        color: rgb(224, 220, 220);
+        text-align: left;
+        line-height: 20px;
+        border-radius: 0px; 
+        font-size: 12px;
+        padding-left: 5px ;
+     }
+
+    .btns:hover{	
+        background: #727272;
+        color: rgb(0, 0, 0);
+    }
+
+    .clicado { 
+        background-color:#474747;
+        color: rgb(255, 255, 255);
+    }
+
+</style>
+
+
+<body>
+    <div class="lista-btns-base"><div  id="result"  >Item 1</div><div class="icon"><img src="icons/iconList.png" ></div></div>
+    <div class="lista">
+         <div class="lista_btns"  id="container"></div> 
+    </div>
+</body>
+</html>  

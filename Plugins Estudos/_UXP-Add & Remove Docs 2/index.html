@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Index.js"></script> 
+    <link rel="stylesheet" href="style.css">   
+	
+	  <style>
+
+
+      .Itens{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: aliceblue;
+        cursor: default;
+      
+      }
+      .Itens:nth-child(even) { background-color: #727272; }
+      
+      .btnIcons { 
+        width:22px; 
+        height:22px;
+        /* background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%); */
+        background-color: #525252;
+        border: 1px solid #706f6f;
+        color:#d8d8d8;
+        font-family: UXPSfxIcon;
+        font-size: 15px;
+        text-align:center; /*Alina o texto horizontalmente*/
+        line-height: 22px; /*Alina o texto verticalmente*/
+        border-radius: 2px;
+      }	
+
+      .btnIcons:hover{	
+        background: #aca8a8;
+        color: rgb(0, 0, 0);
+      }
+
+      .btnIcons:active{	
+        background: #aca8a8;
+        color: rgb(73, 73, 73);
+        transform: translate(0px, 1px);
+        border-top: 1px solid #413f3f;
+      }
+
+      .txtDoc{
+        /* background-color: #474747; */
+        padding: 3px;
+        width: 70%;
+      }
+
+      .btntext{
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 20px; /*Alina o texto verticalmente*/
+      }
+      
+
+  </style>
+</head>
+<body>
+  
+
+  <div style="display: flex; margin: auto; padding: 20px;">
+    <div id="listaNomes"  style="width: 100%; height: 250px; display: flex; flex-direction: column; border: 1px solid #3d3d3d; padding: 10px;   background-color: #5e5d5d; " ></div>
+</div>
+
+<div style="width: 190px;  display: flex; align-items: center; justify-content: center; transform: translate(20px,-10px); background-color: #2f3030; padding: 5px; ">
+  <label id="sizeDos" style="font-size: 12px; color: #d8d8d8;"></label>
+</div>
+
+<div style="display: flex; transform: translate(20px,0px);">
+  <div class="btnIcons btntext" id="exibir" style="width: 90px; ">Listados</div>
+<div  class="btnIcons btntext" id="addDoc" style="width: 90px;  ">Listar Docs</div>
+</div>
+  
+</body>
+</html>
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+
+.container{
+		width: 100%;
+		height: 100%; 
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center; 
+		border:  1px solid rgb(65, 65, 65); 
+		padding: 10px;
+		margin-top: 2px; 
+		position: relative;
+	}
+
+	.ckeckbox {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		font-family: Arial, Helvetica, sans-serif;
+		color: rgb(212, 212, 212);
+		font-size: 10px; 
+		align-items: center; 
+		margin-bottom: 5px;
+	}
+
+	.botoes{
+		width: 100%;
+		height: 25px;
+		justify-content: center;
+		font-family: Arial, Helvetica, sans-serif;
+		color: rgb(212, 212, 212);
+		font-size: 10px; 
+		align-items: center; 
+	}
+
+
+	.container2{
+		width: 100%;
+		height: 100%; 
+		display: flex;
+		justify-content: center;
+		align-items: center; 
+		border:  1px solid rgb(65, 65, 65); 
+		padding: 10px;
+		margin-top: 10px; 
+		position: relative;
+	}
+
+
+
+
+	
+
+	.lista-btns-base{
+       width: 205px;
+       height: 22px;
+       align-items: center;
+       line-height:19px;
+       color: rgb(255, 255, 255);
+       border:  1px solid rgb(110, 109, 109); 
+       padding-left: 9px ;
+       background-color: #2d2e2e;
+       border-radius: 3px; 
+       position: relative;
+       font-size: 11px;
+     }
+     .icon{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+     .lista{
+        width: 100%;
+        display:none;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+     }
+
+   .lista_btns{
+       width: 200px;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(58, 58, 58); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #3e3f3f;
+       overflow-y: scroll; height: 125px;
+    }
+
+   .btns{
+        width: 200px;
+        height: 20px; 
+        color: rgb(224, 220, 220);
+        text-align: left;
+        line-height: 15px;
+        border-radius: 0px; 
+        font-size: 10px;
+        padding-left: 5px ;
+        display: block;
+     }
+
+    .btns:hover{	
+        background: #979797;
+        color: rgb(0, 0, 0);
+    }
+
+    .clicado { 
+        background-color:#979797;
+        color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0); 
+    }
+
+
+
+
+</style>
+
+
+<body>
+	<div class="container">
+	<sp-action-button class="botoes" id="btn0">Debug testes</sp-action-button>
+	<sp-action-button class="botoes" id="btn2">Executar</sp-action-button>
+	<sp-action-button class="botoes" id="btn3">Uxp Webview</sp-action-button>
+	<sp-action-button class="botoes" id="btn1">Save Documento</sp-action-button>
+	<sp-checkbox id="fechar" class="ckeckbox"   checked  size="s">Fachar</sp-checkbox>
+	<sp-action-button class="botoes" id="btn4">Opem Modal</sp-action-button>
+	<sp-action-button class="botoes" id="btn8">Camadas Seleção</sp-action-button>
+	<sp-action-button class="botoes" id="btn9">Camadas de texto</sp-action-button>
+	
+	<sp-textfield size="s" placeholder="Cortes" style="width: 130px; height: 25%; margin-top: 10px;" id="et1"></sp-textfield>
+	<form> <select  id="mostrartxt" size="8" style="width: 130px;"></select></form>
+
+	<!-- <sp-picker>
+		<input type="text"/>
+		<input type="text"/>
+		<input type="text"/>
+	 </sp-picker> -->
+	
+	</div>
+
+	<div id="dialog"></div>
+
+	<dialog id="dlg" width="600px">
+		<div class="container2" >
+			<sp-textfield  placeholder="https://" style="width: 500px;" id="busca"></sp-textfield>
+			<sp-action-button  id="btnSite5">Buscar</sp-action-button>
+		</div>
+		<webview id="sites" style="border: 1px solid rgb(58, 58, 58);" id="webviewSample" width="100%" height="600px" style="margin-top:10px;" src="" uxpAllowInspector="true"></webview>
+		<div class="container2">
+			<sp-action-button class="botoes  largura" id="btnSite1">Enhancer FX</sp-action-button>
+			<sp-action-button class="botoes  largura" id="btnSite2">Remove BG</sp-action-button>
+			<sp-action-button class="botoes  largura" id="btnSite3">PNG Baixar</sp-action-button>
+			<sp-action-button class="botoes  largura" id="btnSite4">BC Imagens</sp-action-button>
+			<sp-action-button class="botoes  largura" id="btnSite6">Suporte</sp-action-button>
+			<sp-action-button class="botoes  largura" id="btnSite7">WatsApp</sp-action-button>
+		</div>
+ 	</dialog> 
+</body>
+
+</html>
+
+

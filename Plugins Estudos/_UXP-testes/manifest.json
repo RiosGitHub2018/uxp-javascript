@@ -1,0 +1,126 @@
+{
+  "id": "UXP-TESTES-LAB",
+  "name": "UXP-testes",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.2.0",
+      "data":{
+        "apiVersion": 2
+      }
+    }
+  ],
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "webview": {
+      "allow": "yes",
+      "domains": "all",
+      "allowLocalRendering": "yes",
+      "enableMessageBridge": "localAndRemote"
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "fullAccess",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "Add Masks Sel",
+        "en-US": "Add Masks Sel",
+        "es-ES": "Add Masks Sel"
+      },
+      "minimumSize": {
+        "width": 160,
+        "height": 350
+      },
+      "maximumSize": {
+        "width": 160,
+        "height": 350
+      },
+      "preferredDockedSize": {
+        "width": 160,
+        "height": 350
+      },
+      "preferredFloatingSize": {
+        "width": 160,
+        "height": 350
+      },
+      "commands": [
+        {
+          "id": "show_alert",
+          "label": {
+            "default": "Show Alert",
+            "en-US": "Show Alert (US)",
+            "es-ES": "Show Alert (ES)"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+           "path": "icons/light.png",
+          "scale": [1,2],
+          "theme": [ "dark", "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/dark.png",
+           "scale": [
+            1,
+            2
+          ],
+          "theme": [ "lightest", "light" ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_D.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_N.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}

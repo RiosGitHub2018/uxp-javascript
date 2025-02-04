@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+		@charset "UTF-8";
+
+		*{margin: 0; }
+		   body{cursor: Default;  padding:8px;}
+
+
+		.main {
+			width: 119px;
+			height:40px;
+			margin:auto;
+			text-decoration:none;
+			border: 1px solid #686868;
+			padding:8px;
+			display: flex;
+			}
+
+		 .btnsM { width: 800px; background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgb(136, 136, 138) 6%, rgba(94,94,94,1) 9%, rgba(55,55,55,1) 100%); }
+	
+		  .btnsM:hover{	background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgb(167, 167, 168) 6%, rgba(94,94,94,1) 9%, rgba(55,55,55,1) 100%); 
+			color: rgb(225, 243, 123);
+			}
+		
+		.btnsM:active{
+			background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgb(167, 167, 168) 6%, rgba(94,94,94,1) 9%, rgba(55,55,55,1) 100%); 
+			 transform: translate(0px, 1px); 
+			}
+	
+			.icon_color:hover{
+				color: rgb(225, 243, 123);
+			}
+	
+	</style>
+
+
+<body>
+	<sp-action-button  class="btnsM" size="s"  style="width: 119px;" id="inicio">Inicial Config</sp-action-button>
+
+	<div class="main">
+	<sp-action-button class="btnsM" size="s"  style="padding: 0; max-width: 32px; max-height: 32px; " id="start">
+		<div class ="icon_color" slot="icon" style="fill: currentColor; ">
+			<svg viewBox="1 1 18 18" style="width: 18px; height: 18px;">
+				<path class="fill" d="M16.5,4H13.475L11.8,2.163A.5.5,0,0,0,11.4295,2H6.5705a.5.5,0,0,0-.3695.163L4.525,4H1.5a.5.5,0,0,0-.5.5v10a.5.5,0,0,0,.5.5h15a.5.5,0,0,0,.5-.5V4.5A.5.5,0,0,0,16.5,4ZM9,13.1A4.1,4.1,0,1,1,13.1,9,4.1,4.1,0,0,1,9,13.1Z" />
+				</svg>
+		</div>
+	</sp-action-button>
+
+
+	<sp-action-button size="s" class="btnsM" id="antes">	
+		<div class ="icon_color"  slot="icon" style="fill: currentColor; "> 
+			<svg viewBox="0 0 18 18" style="width: 18px; height: 18px;">
+				<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M7,7h4.503A.497.497,0,0,1,12,7.497v3.006a.497.497,0,0,1-.497.497H7v4.456a.25.25,0,0,1-.424.1755L0,9,6.576,2.368A.25.25,0,0,1,7,2.544Z" />
+				<rect class="fill" height="14" rx="0.3535" width="2" x="14" y="2" />
+			</svg>
+		</div>Antes
+	</sp-action-button>
+
+
+	<sp-action-button size="s" class="btnsM" id="depois" style="display: none; " >	
+		<div class ="icon_color"  slot="icon" style="fill: currentColor; "> 
+			<svg viewBox="0 0 18 18" style="width: 18px; height: 18px;">
+				<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M11,7H6.497A.497.497,0,0,0,6,7.497v3.006A.497.497,0,0,0,6.497,11H11v4.456a.25.25,0,0,0,.424.1755L18,9,11.424,2.368A.25.25,0,0,0,11,2.544Z" />
+				<rect class="fill" height="14" rx="0.3535" width="2" x="2" y="2" />
+			</svg>
+		</div>Depois
+	</sp-action-button>
+
+</div>
+<sp-checkbox id="ck_limpar" checked size="s" style=" transform: translate(30px, 0px);" >Limpar</sp-checkbox>
+
+</body>
+
+

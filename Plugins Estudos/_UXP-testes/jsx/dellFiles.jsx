@@ -1,0 +1,1 @@
+(fls = File("~/Downloads/").getFiles()).length; while(fls.length)(fle = fls.shift()).remove();

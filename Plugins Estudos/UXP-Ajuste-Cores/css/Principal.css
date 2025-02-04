@@ -1,0 +1,135 @@
+@charset "UTF-8";
+*{margin: 0; }
+body{cursor: Default; padding: 20px;}
+
+.btnMedio { 
+	width: 77px;
+	height: 25px;
+	background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+	border: 1px solid #232323;
+	outline: none;
+	color: #d5d2d2;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	border-radius: 2px;
+}	
+
+.btnMedio:hover{	
+	background: #aca8a8;
+	color: rgb(0, 0, 0);
+}
+
+.btnMedio:active{	
+	background:#3e6c92;
+	color: rgb(0, 0, 0);
+	transform: translate(0px, 1px);
+	border-top: 3px solid #232323;
+}
+
+.btnMedio:hover{	
+	background: #aca8a8;
+	color: rgb(0, 0, 0);
+}
+
+.btnMedio:active{	
+	background:#3e6c92;
+	color: rgb(0, 0, 0);
+	transform: translate(0px, 1px);
+	border-top: 3px solid #232323;
+}
+
+.btnPeqn { 
+	width: 25px;
+	height: 25px;
+	background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%);
+	border: 1px solid #464545;
+	outline: none;
+	color: #d5d2d2;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+	margin: 0px;
+	padding: 2px;
+	border-radius: 2px;
+}	
+
+.btnPeqn:hover{	
+	background: #aca8a8;
+	color: rgb(0, 0, 0);
+}
+
+.btnPeqn:active{	
+	background:#3e6c92;
+	color: rgb(0, 0, 0);
+	transform: translate(0px, 1px);
+	border-top: 3px solid #232323;
+}
+
+.Paneis{
+	width: 90px; 
+	height: 90px;
+	padding: 10px;
+	border: 1px solid #3a3a3a; 
+	margin: auto;
+}
+
+.checkStyle{
+	color: #d5d2d2; 
+	text-align: center; 
+	font-family: Arial, sans-serif; 
+	font-size: 11px; 
+	display: flex;
+	margin: auto;
+}
+
+.radioStilo{
+	color: #d5d2d2; 
+	text-align: center; 
+	font-family: Arial, sans-serif; 
+	font-size: 11px; 
+	display:flex;
+	margin-top: 20px
+}
+
+.btnDialog { 
+	width: 77px;
+	height: 25px;
+	background: #535353;
+	border: 1px solid #7d7d7d;
+	outline: none;
+	color: #d6d6d6;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 18%;
+}
+
+.btnDialog:hover{	
+	background: #979797;
+	color: rgb(24, 24, 24);
+	border: 1px solid #000000;
+}
+
+.btnDialog:active{	
+	background:#3e6c92;
+	color: rgb(0, 0, 0);
+	transform: translate(0px, 1px);
+	border-top: 2px solid #232323;
+}
+
+.colorBtn {
+	background-color: #686868;
+	color: white;
+	cursor: pointer;
+	font-size: 10px;
+	width: 22px;
+	height: 22px;
+	margin:2px; 
+}

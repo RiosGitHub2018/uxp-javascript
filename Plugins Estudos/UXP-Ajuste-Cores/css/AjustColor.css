@@ -1,0 +1,127 @@
+.main{
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+    transform: translate(-15px, -15px); 
+    position: absolute;
+}
+
+.dlg-col1{
+    width: 70%;
+    height: 295px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-Ajust{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    color: rgb(196, 197, 197);
+}
+
+.pnlEQcores{
+    width: 210px;
+    height: 145px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 15px;
+    background-color: #424242;
+    /* border-radius: 5px; */
+    margin-top: 0px;
+}
+
+.coln1{
+    width:29%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: rgb(167, 167, 164);
+    align-items:flex-end;
+    margin-top: 8px;  
+}
+.cores{ margin-top:-7px; } 
+
+.coln2{
+    width: 55%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    }
+.slider{ padding: 0px; margin:-2px; } 
+
+.coln3{
+    width: 5%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #c2c2c2;
+    margin-top: -7px;
+    padding: 5px;
+}
+.valoes{ 
+    width: 30px;
+    background-color: #535353;;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 2px;
+    border-radius: 2px; 
+}
+
+.titulos{
+    color: #c2c2c2;
+}
+
+.dlg-col2{
+    width: 30%;
+    height: 110px;
+    display:flex;
+    flex-direction: column;
+    /* margin-left: 5px; */
+    align-items: center;
+}
+
+.pn-Presets{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1px;
+    border: 1px solid #424242;
+    position: relative;
+}
+
+.pn-Presets-titulo{
+    position: absolute;
+    top: -1em;
+    left: 5px;
+    background-color:#535353;
+    display: block;
+    padding: 5px;
+    color: #c2c2c2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+}
+
+.pn-Presets-elemts{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}

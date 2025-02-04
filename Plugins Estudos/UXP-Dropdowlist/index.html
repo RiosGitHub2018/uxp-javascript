@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="btnMedio" id="btnDlgView">ModalList</div>
+
+	<dialog id="dlg" style='align-items: center; padding:20px;'>
+        <div class="main" style='padding: 10px;'>
+			<div style='cursor: pointer; border: 1px solid #3a3a3a;  width: 230px; height: 70px; '> 
+				<div style='background-color: #535353; width: 70px; color: #d5d2d2;  transform: translate(10px, -10px)'>
+					Lista Itens
+					<div style=' background-color: #424242; width:81px; height: 20px;  color: #d5d2d2;  transform: translate(120px, -20px);display: flex;'>
+
+							<div class="btnPeqn" id="AddPresets">
+							<div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+								<svg viewBox="0 2 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 1px)">
+									<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M14.5,8H10V3.5A.5.5,0,0,0,9.5,3h-1a.5.5,0,0,0-.5.5V8H3.5a.5.5,0,0,0-.5.5v1a.5.5,0,0,0,.5.5H8v4.5a.5.5,0,0,0,.5.5h1a.5.5,0,0,0,.5-.5V10h4.5a.5.5,0,0,0,.5-.5v-1A.5.5,0,0,0,14.5,8Z" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="btnPeqn" id="btnRemover">
+							<div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+								<svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 0px)">
+									<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M15.75,3H12V2a1,1,0,0,0-1-1H6A1,1,0,0,0,5,2V3H1.25A.25.25,0,0,0,1,3.25v.5A.25.25,0,0,0,1.25,4h1L3.4565,16.55a.5.5,0,0,0,.5.45H13.046a.5.5,0,0,0,.5-.45L14.75,4h1A.25.25,0,0,0,16,3.75v-.5A.25.25,0,0,0,15.75,3ZM5.5325,14.5a.5.5,0,0,1-.53245-.46529L5,14.034l-.5355-8a.50112.50112,0,0,1,1-.067l.5355,8a.5.5,0,0,1-.46486.53283ZM9,14a.5.5,0,0,1-1,0V6A.5.5,0,0,1,9,6ZM11,3H6V2h5Zm1,11.034a.50112.50112,0,0,1-1-.067l.5355-8a.50112.50112,0,1,1,1,.067Z" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="btnPeqn" id="btnEdit">
+							<div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, 0px); "> 
+								<svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, -1px)">
+								<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" />
+								<path class="fill" d="M10.227,4,2.542,11.686a.496.496,0,0,0-.1255.2105L1.0275,16.55c-.057.188.2295.425.3915.425a.15587.15587,0,0,0,.031-.003c.138-.032,3.9335-1.172,4.6555-1.389a.492.492,0,0,0,.2075-.125L14,7.772ZM5.7,14.658c-1.0805.3245-2.431.7325-3.3645,1.011L3.34,12.304Z" />
+								<path class="fill" d="M16.7835,4.1,13.9,1.216a.60751.60751,0,0,0-.433-.1765H13.45a.686.686,0,0,0-.4635.2035l-2.05,2.05L14.708,7.0645l2.05-2.05a.686.686,0,0,0,.2-.4415A.612.612,0,0,0,16.7835,4.1Z" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="btnPeqn" id="btnDesfault">
+							<div class ="icon_color"  slot="icon" style="fill: currentColor; transform: translate(5px, -1px); "> 
+								<svg viewBox="0 0 22 22" style="width: 15px; height: 15px; transform: translate(-3px, 1px)">
+									<rect id="Canvas" fill="#ff13dc" opacity="0" width="18" height="18" /><path class="fill" d="M9,1A8.015,8.015,0,0,0,2.322,4.614L.5,3.7605A.345.345,0,0,0,.2345,3.747a.35.35,0,0,0-.21318.44671L.0225,4.197,1.5265,8.35a.25.25,0,0,0,.2945.138L5.9765,6.984a.35.35,0,0,0,.21078-.44785L6.1865,6.534a.343.343,0,0,0-.1805-.195l-1.8385-.86a5.98551,5.98551,0,1,1-.0805,6.9585,1.00028,1.00028,0,0,0-1.637,1.15A8,8,0,1,0,9,1Z" />
+  							</svg>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+
+				<!--IIIIII LISTA LEIALT DE IMPRESSÃOIIII-->
+				<form> <select id="list_MD" size="8" style="width: 200px; transform: translate(5px, -30px)"></select></form>
+				
+				<h3 id="resultlist" style="width: 200px; display: flex;  justify-content: center; transform: translateY(-35px); color: #d5d2d2; ">Result: Default</h3>
+			
+			</div><!--IIIIII lFINAL DIV ABAS ESTAMPA IIII-->
+        </div>
+	</dialog>
+
+     <!-- ///////////////////////////////////////////////////////////////////-->
+	<!-- JANELA ADD NOVO PRESSET 	///////////// INÍCIO /////////	-->
+	<dialog id="dlgPresets" style= "padding: 10px;"  >	
+		<div style='display: flex; align-items: center; justify-content: center; padding: 10px;  border: 1px solid #474747; background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #5d5d5d 100%); '>
+			<sp-textfield id="et_new_preset" size="s"  placeholder="Novo Presset" ></sp-textfield>
+			<dt style="color: #d5d2d2; font-size: 11px; margin-left: 5px;">Cor</dt>
+			<button id= "btnColor" class="colorBtn" style=" border: 1px solid #474747;" ></button>
+			<div class="btnMedio" id="btnClose" style=" height: 22px; width: 50px" >Close</div>
+			<div class="btnMedio" id="btnOK" style=" height: 22px;  width: 50px ">OK</div>
+		</div>
+	</dialog>
+	<!-- JANELA ADD NOVO PRESSET 	///////////// FINAL /////////	-->
+
+
+</body>
+</html>

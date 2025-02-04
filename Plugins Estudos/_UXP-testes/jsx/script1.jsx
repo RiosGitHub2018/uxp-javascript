@@ -1,0 +1,1 @@
+alert("Ola UXP, aqui é um script.jsx!")

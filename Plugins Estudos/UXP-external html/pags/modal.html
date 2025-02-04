@@ -1,0 +1,35 @@
+<style>
+   .mainMD{
+        width: 228px;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        border:  1px solid rgb(65, 65, 65); 
+        border-radius: 10px;
+        transform: translate(-15px, -15px);
+        padding: 10px;
+        margin-bottom: -15%;
+      }
+
+    .txt{
+        color: aliceblue;
+        font-size: 20px;
+    }
+    .txtmp{
+        color: rgb(209, 240, 161);
+        font-size: 12px;
+    }
+
+</style>
+
+<div class="mainMD">
+    <b class="txt">Hello world!</b>
+    <h2 class="txtmp">Here is the modal page</h2>
+    <sp-slider id="opacity" size="s" variant="filled" fill-offset="left" min="0" max="100" value="100" style="width: 160px;"> <sp-label slot="label">Opacidade</sp-label> </sp-slider>
+    <sp-slider id="vermelho" size="s"  min="-100" max="100" value="0" style="width: 160px;"> <sp-label slot="label">Vermelho</sp-label> </sp-slider>
+    <sp-slider id="sature" size="s"  min="-100" max="100" value="0" style="width: 160px;"> <sp-label slot="label">Saturação</sp-label> </sp-slider>
+    <sp-action-button class="botoes" id="btn2">My function</sp-action-button>
+</div>
+
+

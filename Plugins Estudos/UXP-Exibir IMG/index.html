@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>
+	<link  href="css/style.css" rel="stylesheet" type="text/css">    
+</head>
+
+<body>
+      <!-- ///////// MENU SUPESONSO /// -->
+	<ul class="menu">
+		<li><span class="iconServidor"></span>
+		  <a  id="Servidor-add" style="background-color: #b8bbbb; display: flex; justify-content: center; 
+		        border-bottom: 1px solid rgb(0, 0, 0);">Adicionar Servidor
+		  </a>
+		</li>	 
+		<li><a  id="zoomA"> • Ampliar imagens</a></li>	
+		<li><a  id="zoomD"> • Diminuir imagens</a></li>	  
+		<div style="background-color: #ffffff; padding: 5px;">
+			<hr>
+			<div class="btn-radio  btn-radio-checked"  ><span class="btn-radio-text">Importar</span></div>
+			<div class="btn-radio" ><span class="btn-radio-text">Inserir na Imagem</span></div> 
+			<div class="btn-radio" ><span class="btn-radio-text">Inserir na seleção</span></div>
+			<div class="btn-radio" ><span class="btn-radio-text">Substituir</span></div>
+			<hr>
+		</div>
+	   <li><a  id="close" style="background-color: #b8bbbb; display: flex; justify-content: center;" >
+		Close</a></li>	 
+	</ul>
+	<!-- ///////// MENU SUPESONSO /// -->
+	<div class="interface">
+		<div class="containder">
+			<div class="Paineis" style="border:  1px solid rgb(114, 113, 113);  margin-bottom: 5px; ">
+				<select id="categoriaList" size="8" class="main"></select>
+			</div>
+
+			<div class="Servidor"></div>
+			<div class="Paineis" style="border:  1px solid rgb(114, 113, 113); padding: 0px; padding-top: 2px; ">
+			<div id="imagem-galeria" class="conteudo galeria"></div>
+		</div>	
+			<div class="Paineis">
+				<sp-checkbox  disabled id="imge-name" size="s" >Exibir legenda</sp-checkbox>
+			</div>
+	</div>
+	
+</body>
+</html>

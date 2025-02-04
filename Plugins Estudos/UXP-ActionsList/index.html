@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<style>
+	@charset "UTF-8";
+   *{margin: 0; }
+   body{cursor: Default;  }
+
+   .main{
+     width: 150px;
+     transform: translate(10px, -10px);
+    }
+
+    .containder{
+        width: 210px;
+        height: 100%;
+        background: #444444;
+        border: 1px solid #464545;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+
+</style>
+
+<body>
+	
+    <div class="containder">
+    <sp-dropdown size="s" class="main" placeholder="Select Action Set" >
+        <sp-label slot="label">Select Action Set</sp-label>
+        <sp-menu slot="options"  id="list_AS" size="s"></sp-menu>
+    </sp-dropdown>
+     <!-- /////////////// xxxxxxxxxx -->
+    <sp-dropdown size="s" class="main" placeholder="Select Action" >
+        <sp-label  slot="label">Select Action</sp-label>
+        <sp-menu slot="options"  id="list_AC" size="s"></sp-menu>
+    </sp-dropdown>
+    <sp-action-button class="main" id="btnRun" size="s" >Run Action</sp-action-button>
+
+</div>
+
+   
+
+</body>
+</html>

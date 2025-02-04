@@ -1,0 +1,126 @@
+{
+  "id": "COLOR-BTN",
+  "name": "ColorBTN",
+  "version": "1.0.0",
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24"
+    }
+  ],
+	"requiredPermissions": {
+	"localFileSystem": "fullAccess"
+	}
+  ,
+  "main": "index.html",
+  "manifestVersion": 5,
+  "requiredPermissions": {
+    "network": {
+      "domains": [
+        "https://source.unsplash.com"
+      ]
+    },
+    "clipboard": "readAndWrite",
+    "localFileSystem": "request",
+    "ipc": {
+      "enablePluginCommunication": true
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "vanilla",
+      "label": {
+        "default": "ColorBTN",
+        "en-US": "ColorBTN",
+        "es-ES": "ColorBTN"
+      },
+      "minimumSize": {
+        "width": 300,
+        "height": 300
+      },
+      "maximumSize": {
+        "width": 300,
+        "height": 300
+      },
+      "preferredDockedSize": {
+        "width": 300,
+        "height": 300
+      },
+      "preferredFloatingSize": {
+        "width": 300,
+        "height": 300
+      },
+      "commands": [
+        {
+          "id": "show_alert",
+          "label": {
+            "default": "Show Alert",
+            "en-US": "Show Alert (US)",
+            "es-ES": "Show Alert (ES)"
+          }
+        }
+      ],
+      "icons": [
+        {
+          "width": 32,
+          "height": 32,
+           "path": "icons/light.png",
+          "scale": [1,2],
+          "theme": [ "dark", "darkest"
+          ],
+          "species": [
+            "generic"
+          ]
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "path": "icons/dark.png",
+           "scale": [
+            1,
+            2
+          ],
+          "theme": [ "lightest", "light" ],
+          "species": [
+            "generic"
+          ]
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_D.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "dark",
+        "darkest"
+      ],
+      "species": [
+        "generic"
+      ]
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "path": "icons/icon_N.png",
+      "scale": [
+        1,
+        2
+      ],
+      "theme": [
+        "lightest",
+        "light"
+      ],
+      "species": [
+        "generic"
+      ]
+    }
+  ]
+}

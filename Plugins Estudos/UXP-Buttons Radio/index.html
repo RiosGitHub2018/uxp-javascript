@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+	.radiobtn{
+		margin: -5px;
+	}
+	.sp-radio-txt{
+		font-size: 11px;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		transform: translate(-5px,2px);
+	}
+</style>
+
+
+<body>
+	
+<div style="display: flex; align-items: center;">
+	<sp-radio-group column style="padding: 10px; margin: 10px; border: 1px solid rgb(61, 61, 61);">
+		<sp-radio data-tm="10x15"  class="radiobtn" checked><label class="sp-radio-txt" >Pequena</label></sp-radio>
+		<sp-radio data-tm="15x21"  class="radiobtn" ><label class="sp-radio-txt" >Média</label></sp-radio>
+		<sp-radio data-tm="20x25"  class="radiobtn" ><label class="sp-radio-txt" >Grande</label></sp-radio>
+		<sp-radio data-tm="20x30"  class="radiobtn" ><label class="sp-radio-txt" >Tam GG</label></sp-radio>
+	</sp-radio-group>
+
+	<sp-radio-group column style="padding: 10px; margin: 10px; border: 1px solid rgb(61, 61, 61);">
+		<sp-radio data-tm="10x15"  class="radiobtn" ><label class="sp-radio-txt" >Pequena</label></sp-radio>
+		<sp-radio data-tm="15x21"  class="radiobtn" ><label class="sp-radio-txt" >Média</label></sp-radio>
+		<sp-radio data-tm="20x25"  class="radiobtn" ><label class="sp-radio-txt" >Grande</label></sp-radio>
+		<sp-radio data-tm="20x30"  class="radiobtn" ><label class="sp-radio-txt" >Tam GG</label></sp-radio>
+	</sp-radio-group>
+
+	<sp-radio-group column style="padding: 10px; margin: 10px; border: 1px solid rgb(61, 61, 61);">
+		<sp-radio data-tm="10x15"  class="radiobtn" >01</sp-radio>
+		<sp-radio data-tm="15x21"  class="radiobtn" >02</sp-radio>
+		<sp-radio data-tm="20x25"  class="radiobtn" >03</sp-radio>
+		<sp-radio data-tm="20x30"  class="radiobtn">04</sp-radio>
+	</sp-radio-group>
+
+	<sp-radio-group column style="padding: 10px; margin: 10px; border: 1px solid rgb(61, 61, 61);">
+	   <sp-radio data-tm="30x40"  class="radiobtn" >05</sp-radio>
+	   <sp-radio data-tm="30x45"  class="radiobtn" >06</sp-radio>
+	   <sp-radio data-tm="30x50"  class="radiobtn" >07</sp-radio>
+	   <sp-radio data-tm="40x50"  class="radiobtn" >08</sp-radio>
+	</sp-radio-group>
+</div>
+
+<h2 id="result" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: aliceblue; transform: translate(30px,5px);">Grande</h2>
+
+</body>
+

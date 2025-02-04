@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="index.js"></script>    
+    <link  href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<style>
+	@charset "UTF-8";
+   *{margin: 0; }
+   body{cursor: Default;  }
+
+   .main{
+      width:90px;
+      transform: translate(3px, 0px); 
+      }
+
+    .containder{
+        width: 120px;
+        background: #444444;
+        border: 1px solid #464545;
+        border-radius: 5px;
+        padding: 10px;
+        margin: auto;
+        position: relative;
+    }
+
+    .frameConf {
+        width: 120px;
+        height: 178px;
+        background: #444444;
+        position: absolute;
+         top:20px;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        z-index: 1;
+    }
+
+    .btnColor{
+        width: 120px;
+        display: flex;
+    }
+
+    .colorIcon{	
+        width: 16px;
+        height: 14px; 
+    }
+
+    .colorIcon:hover{	
+        border:  1px solid rgb(255, 255, 255); 
+    }
+
+    .colorIcon:active{	
+        background:#3e6c92;
+        transform: translate(0px, 1px);
+        border-top: 3px solid #232323;
+}
+
+    .btnc{
+        width: 98px; 
+        height: 20px; margin: 2px; 
+        background-color: rgb(101, 101, 102); 
+        transform: translate(-2px, 2px); 
+        color: rgb(223, 219, 219);
+        text-align: center;
+        line-height: 18px;
+    }
+
+    /* CSS LISTA DOPDOWLIST */
+    /* //////////////////////////// */
+
+    .lista-btns-base{
+       width: 100px;
+       height: 22px;
+       align-items: center;
+       line-height:19px;
+       color: rgb(255, 255, 255);
+       border:  1px solid rgb(110, 109, 109); 
+       padding-left: 9px ;
+       background-color: #2d2e2e;
+       border-radius: 3px; 
+       position: relative;
+       font-size: 11px;
+     }
+     .icon{
+		display: flex;
+		position: absolute;
+		right: 7px;	top: 7px;
+		justify-content: center;
+		font-size: 15px; 
+		color: aliceblue;
+	}
+
+     .lista{
+        width: 100%;
+        display:none;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+     }
+
+   .lista_btns{
+       width: 100px;
+       flex-direction: column;
+       margin: auto;
+       align-items: center;
+       border:  1px solid rgb(99, 96, 96); 
+       border-radius: 0px; 
+       padding: 2px; 
+       background-color: #292929;
+       overflow-y: scroll; height: 125px;
+    }
+
+   .btns{
+        width: 200px;
+        height: 20px; 
+        color: rgb(224, 220, 220);
+        text-align: left;
+        line-height: 18px;
+        border-radius: 0px; 
+        font-size: 10px;
+        padding-left: 5px ;
+        display: block;
+     }
+
+    .btns:hover{	
+        background: #535353;
+        color: rgb(255, 255, 255);
+    }
+
+    .clicado { 
+        background-color:#979797;
+        color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0); 
+    }
+
+</style>
+
+<body>
+
+    <sp-action-button  id="r1" size="s" style="width: 122px; height: 30px; transform: translate(-1px, 0px);">Default</sp-action-button>
+    <div class="containder">
+        <hr style="background-color: #696868;">
+        <sp-slider   id="txt1" size="s" min="1" max="20" value="0" style="width: 80px; " ><sp-label slot="label">Verticais:</sp-label> </sp-slider>
+        <sp-slider   id="txt2" size="s" min="1" max="20" value="0" style="width: 80px; " ><sp-label slot="label">Horizontais</sp-label> </sp-slider>
+
+        <sp-textfield size="s" class="main" id="txt3" value="25"><sp-label slot="label">Espaço</sp-label></sp-textfield>
+     
+        <sp-action-button class="main" id="btn1" size="s">Add Masks</sp-action-button>
+        <sp-action-button class="main" id="btn2" size="s" >Add Picture</sp-action-button>
+    </div>
+
+    <div class="frameConf"> 
+        <div style="transform: translate(0px, -8px); ">
+            <sp-label slot="label">Mollduras</sp-label> 
+            <div class="lista-btns-base"><div  id="result"  >Default</div><div class="icon"><img src="icons/iconList.png" ></div></div>
+            <div class="lista"> <div class="lista_btns"  id="container"></div> </div>
+        </div>
+
+        <div id="configBD" style="transform: translate(0px, -5px); ">
+            <sp-slider id="border" size="s" min="0" max="100" value="0" style="width: 80px; " ><sp-label slot="label">Border Size</sp-label> </sp-slider>
+            <sp-label slot="label">Border Color</sp-label>
+            <div class="btnColor">
+            <div id="c01" class="colorIcon" style=" background-color: aliceblue;  margin: 2px;"></div>
+            <div id="c02" class="colorIcon" style="background-color: rgb(0, 0, 0); margin: 2px;"></div>
+            <div id="c03" class="colorIcon" style="background-color: rgb(88, 177, 255); margin: 2px;"></div>
+            <div id="c04" class="colorIcon" style="background-color: rgb(245, 255, 107); margin: 2px;"></div>
+            <div id="c05" class="colorIcon" style="background-color: rgb(255, 107, 107); margin: 2px;"></div>
+            </div> <div id="close" class="btnc" >Close</div> </div>
+         </div>
+
+   
+
+</body>
+</html>
