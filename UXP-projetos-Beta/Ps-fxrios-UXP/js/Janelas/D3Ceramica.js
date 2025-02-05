@@ -6,90 +6,80 @@ try {
         else { process = true; await incialConfigs() ;}
     });
 
-    ///FUNCTION incialConfigs INCIAR
-    async function incialConfigs() {
-            dialogsEventsFalse();
-            if(app.documents.length==0){  const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};}
-            StampConfigP1();
+///FUNCTION incialConfigs INCIAR
+async function incialConfigs() {
+    dialogsEventsFalse();
+    if(app.documents.length==0){  const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};}
+    StampConfigP1();
+    doc= app.activeDocument;
+    resol = app.activeDocument.resolution;
+    gethDOC = app.activeDocument.height;
+    getwDOC = app.activeDocument.width;
+    shapStamp = true;
+};
+//////:::::::::::::::::::
+/////////////// CRIAÇÃO CONFIG INICAIL
+async function StampConfigP1(){
+    estampar= app.activeDocument.name.match (/^\[OK! \]/) || app.activeDocument.name.match (/^\[Amostra\]/)  ;    
+    if(estampar){
+        process =false;
+        txtMsg  = `"${app.activeDocument.name}" já foi processado!\nVocê deseja abrir um outro?`
+        confiramar(txtMsg);
+        document.querySelector("#confirm_btn2").addEventListener("click", async () => {
+        dlg.close('OK'); 
+        const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};
+        estampar= app.activeDocument.name.match (/^\[OK! \]/) || app.activeDocument.name.match (/^\[Amostra\]/) ;    
+        if(estampar){alertar(`"${app.activeDocument.name}" já foi processado!\nAdicione um documento válido!`)}else{exeConfigP1()}
+        });
     };
-    //////:::::::::::::::::::
-    ////////////////////////////////////////
-     async function StampConfigP1(){
-            estampar= app.activeDocument.name.match (/^\[OK! \]/) || app.activeDocument.name.match (/^\[Amostra\]/)  ;    
-            if(estampar){
-                process =false;
-                txtMsg  = `"${app.activeDocument.name}" já foi processado!\nVocê deseja abrir um outro?`
-                confiramar(txtMsg);
-                document.querySelector("#confirm_btn2").addEventListener("click", async () => {
-                dlg.close('OK'); 
-                const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};
-                estampar= app.activeDocument.name.match (/^\[OK! \]/) || app.activeDocument.name.match (/^\[Amostra\]/) ;    
-                if(estampar){alertar(`"${app.activeDocument.name}" já foi processado!\nAdicione um documento válido!`)}else{exeConfigP1()}
-                });
-            };
-        if(process == false){return}else{exeConfigP1()};
+if(process == false){return}else{exeConfigP1()};
 
-        async function exeConfigP1(){
-            await refeshDocumento();
-            progressDLG("Aquarde Processing . . ."); 
-            function evento() { setTimeout(() =>configurar());} setTimeout(evento, 100);
-            //////////CONFIGURAÇÃO INICIAL 
-            async function configurar() {
-                await core.executeAsModal(async (executionContext) => {
-                    ////// FUNÃO SUSPENDHISTORY DA FUNÇÃO INICIAL
-                    let hostControl = executionContext.hostControl; documentID = app.activeDocument.id; 
-                    suspensionID = await hostControl.suspendHistory({ "documentID": documentID,"name": "P1Confg" });  
-                    //////:::::::::::::::::::
-                    docMatriz = app.activeDocument.id;
-                    diretorioDoc = app.activeDocument.path.replace(/\\[^\\]*$/, "");
-                    arte = "Cerâmica";
-                    doc= app.activeDocument;
-                    resol = app.activeDocument.resolution;
-                    gethDOC = app.activeDocument.height;
-                    getwDOC = app.activeDocument.width;
+async function exeConfigP1(){
+    await refeshDocumento();
+   progressDLG("Aquarde Processing . . ."); 
+    function evento() { setTimeout(() =>configurar());} setTimeout(evento, 100);
+    //////////CONFIGURAÇÃO INICIAL 
+    async function configurar() {
+        await core.executeAsModal(async () => {
+            try {
+                docMatriz = app.activeDocument.id;
+                diretorioDoc = app.activeDocument.path.replace(/\\[^\\]*$/, "");
+                arte = "Cerâmica";
+                criarPasta(`${Usuario}/AppData/Roaming`, "temp_stamps");
+                ////// AÇÕES DE EVENTOS AQUI!
+                await app.batchPlay([{"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},], {});
 
-                    criarPasta(`${Usuario}/AppData/Roaming`, "temp_stamps");
-                    await app.batchPlay([
-                        {"_obj":"flattenImage"},
-                        {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
-                        {"_obj":"set","_target":[{"_property":"background","_ref":"layer"}],"layerID":15,"to":{"_obj":"layer","mode":{"_enum":"blendMode","_value":"normal"},"name":"Conteudo","opacity":{"_unit":"percentUnit","_value":100.0}}},
-                        {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"distanceUnit","_value":567.0},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":200.0},"scaleStyles":true},
-                        {"_obj":"canvasSize","horizontal":{"_enum":"horizontalLocation","_value":"center"},"width":{"_unit":"distanceUnit","_value":567.0}},
-                        {"_obj":"newPlacedLayer"},{"_obj":"set","_target":[{"_property":"selection","_ref":"channel"}],"to":{"_enum":"ordinal","_value":"allEnum"}},
-                        ], {});
-                    await estampaGuias();   
-                    await app.batchPlay([
-                        {"_obj":"contract","by":{"_unit":"pixelsUnit","_value":1.0},"selectionModifyEffectAtCanvasBounds":true},
-                        {"_obj":"make","at":{"_enum":"channel","_ref":"channel","_value":"mask"},"new":{"_class":"channel"},"using":{"_enum":"userMaskEnabled","_value":"revealSelection"}},
-                        {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","userMaskLinked":false}},
-                        {"_obj":"canvasSize","canvasExtensionColorType":{"_enum":"canvasExtensionColorType","_value":"white"},"height":{"_unit":"distanceUnit","_value":34.01574803149607},"horizontal":{"_enum":"horizontalLocation","_value":"center"},"relative":true,"vertical":{"_enum":"verticalLocation","_value":"center"},"width":{"_unit":"distanceUnit","_value":34.01574803149607}},
-                        {"_obj":"make","_target":[{"_ref":"layer"}],"below":true,"layerID":26},
-                        {"_obj":"make","_target":[{"_ref":"contentLayer"}],"using":{"_obj":"contentLayer","type":{"_obj":"solidColorLayer","color":{"_obj":"RGBColor","blue":255.0,"grain":255.0,"red":255.0}}}},
-                        {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","name":"Background"}},
-                        {"_obj":"select","_target":[{"_name":"Conteudo","_ref":"layer"}],"layerID":[22],"makeVisible":false},
-                        {"_obj":"adaptCorrect","blackClip":0.01,"center":0,"colorCorrection":0,"highlightMode":{"_obj":"adaptCorrectTones","amount":{"_unit":"percentUnit","_value":0.0},"radius":0,"width":{"_unit":"percentUnit","_value":0.0}},"shadowMode":{"_obj":"adaptCorrectTones","amount":{"_unit":"percentUnit","_value":0.0},"radius":0,"width":{"_unit":"percentUnit","_value":0.0}},"whiteClip":0.01}
-                    ], {});
-                    await loadAjustes(); 
-                    await app.batchPlay([
-                        {"_obj":"set","_target":[{"_property":"selection","_ref":"channel"}],"to":{"_ref":[{"_enum":"channel","_ref":"channel","_value":"mask"},{"_name":"Conteudo","_ref":"layer"}]}},
-                        {"_obj":"select","_target":[{"_name":"AjustColor","_ref":"layer"}],"layerID":[34],"makeVisible":false},
-                        {"_obj":"make","at":{"_enum":"channel","_ref":"channel","_value":"mask"},"new":{"_class":"channel"},"using":{"_enum":"userMaskEnabled","_value":"revealSelection"}}
-                        ])
-                    await ZoomDOC(0); await ZoomDOC(1);
-                    await app.batchPlay([{"_obj":"selectAllLayers","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}]},{"_obj":"make","_target":[{"_ref":"layerSection"}],"from":{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"},"layerSectionEnd":216,"layerSectionStart":215,"name":"Group 1"} ], {});
-                    await removeCamada("ConfigsOBJ");
-                    await dlgCeramica();
-                    await creatSnapshot("Inciar");
-                    sanapBase= "P1Confg";
-                    await document.querySelector('#processServic').close('OK');
-                    await legendaDados();
-                        ////////////////////////
-               },{"interactive": true});
-            //////////////::::::::::::::
-            };          
-        };
-    };
-    ////////::::::::::::::::::::
+                ////// TAMANHO MEDIO
+                if(gethDOC>getwDOC){await configMoldes(2167, 1532, 2167, 1532, "shp_QKbcas", "MD-CONFG-B" );}
+                else{ await configMoldes(1532, 2167, 1532, 2167, "shp_QKbcas", "MD-CONFG-B" );};
+                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+
+                ////// TAMANHO GRANDE
+                if(gethDOC>getwDOC){await configMoldes(3140, 2157, 3140, 2157, "shp_QKbcas", "MD-CONFG-C" );}
+                else{await configMoldes(2157, 3140, 2157, 3140, "shp_QKbcas", "MD-CONFG-C" ); };
+                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+    
+                ////// TAMANHO PEQUENO
+                if(gethDOC>getwDOC){await configMoldes( 1417, 1102,  1417, 1102, "shp_QKbcas", "MD-CONFG-A" );}
+                else{await configMoldes(1102,  1417, 1102,  1417, "shp_QKbcas", "MD-CONFG-A" );};
+                await configsPositions(5, null);
+                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+                await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
+                sanapBase ="MD-CONFG-A";
+               
+                // await ZoomDOC(0); 
+                await document.querySelector('#processServic').close('OK');
+                await dlgCeramica()
+              
+                await legendaDados();
+            } catch (err) {alert(err)}
+            ////////////////////////
+       },{"interactive": true});
+    //////////////::::::::::::::
+    };          
+};
+};
+////////::::::::::::::::::::
         
      ////////////////////////////////////////
      async function StampConfigP2(){
@@ -380,6 +370,42 @@ try {
             execonfigsD3();
         });
     };
+
+
+       ////////// CONFIGURAÇÃO DO MOLDE DAS ESTAMPAS
+       async function configMoldes(h, w, btm, rig, mold, snapref){ /// 1 altura - 2 largura - 3 bottom  - 4 right - 5 shap molde 6 snapshot name
+        try {
+            await app.batchPlay([
+                {"_obj":"set","_target":[{"_property":"background","_ref":"layer"}],"layerID":2,"to":{"_obj":"layer","mode":{"_enum":"blendMode","_value":"normal"},"name":"Conteudo","opacity":{"_unit":"percentUnit","_value":100.0}}},
+                {"_obj":"newPlacedLayer"},
+                {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"pixelsUnit","_value":h},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":200.0},"scaleStyles":true},
+                {"_obj":"canvasSize","horizontal":{"_enum":"horizontalLocation","_value":"center"},"width":{"_unit":"pixelsUnit","_value":w}},
+                {"_obj":"set","_target":[{"_property":"workPath","_ref":"path"}],"to":{"_obj":"customShape","bottom":{"_unit":"pixelsUnit","_value":btm},"keyOriginType":9,"left":{"_unit":"pixelsUnit","_value":0.0},"name":mold,"right":{"_unit":"pixelsUnit","_value":rig},"top":{"_unit":"pixelsUnit","_value":0.0}}},
+                {"_obj":"set","_target":[{"_property":"selection","_ref":"channel"}],"to":{"_property":"workPath","_ref":"path"}},
+                {"_obj":"make","at":{"_enum":"channel","_ref":"channel","_value":"mask"},"new":{"_class":"channel"},"using":{"_enum":"userMaskEnabled","_value":"revealSelection"}},
+                {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","userMaskLinked":false}},
+                {"_obj":"delete","_target":[{"_property":"workPath","_ref":"path"}]},
+                {"_obj":"make","_target":[{"_ref":"layer"}],"below":true,"layerID":22},
+                {"_obj":"make","_target":[{"_ref":"contentLayer"}],"using":{"_obj":"contentLayer","type":{"_obj":"solidColorLayer","color":{"_obj":"RGBColor","blue":255.0,"grain":255.0,"red":255.0}}}},
+                {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","name":"Background"}},
+                {"_obj":"select","_target":[{"_name":"Conteudo","_ref":"layer"}],"layerID":[3],"makeVisible":false},
+                {"_obj":"adaptCorrect","blackClip":0.01,"center":0,"colorCorrection":0,"highlightMode":{"_obj":"adaptCorrectTones","amount":{"_unit":"percentUnit","_value":0.0},"radius":0,"width":{"_unit":"percentUnit","_value":0.0}},"shadowMode":{"_obj":"adaptCorrectTones","amount":{"_unit":"percentUnit","_value":0.0},"radius":0,"width":{"_unit":"percentUnit","_value":0.0}},"whiteClip":0.01},
+                {"_obj":"newGuideLayout","guideLayout":{"$GdCA":0,"$GdCB":255,"$GdCG":132,"$GdCR":74,"_obj":"guideLayout","marginBottom":{"_unit":"pixelsUnit","_value":0.0},"marginLeft":{"_unit":"pixelsUnit","_value":0.0},"marginRight":{"_unit":"pixelsUnit","_value":0.0},"marginTop":{"_unit":"pixelsUnit","_value":0.0}},"guideTarget":{"_enum":"guideTarget","_value":"guideTargetCanvas"},"presetKind":{"_enum":"presetKindType","_value":"presetKindCustom"}},
+                {"_obj":"canvasSize","height":{"_unit":"pixelsUnit","_value":118},"horizontal":{"_enum":"horizontalLocation","_value":"center"},"relative":true,"vertical":{"_enum":"verticalLocation","_value":"center"},"width":{"_unit":"pixelsUnit","_value":118}},
+            ], {});
+            await loadAjustes(); 
+            await app.batchPlay([
+                {"_obj":"selectAllLayers","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}]},
+                {"_obj":"make","_target":[{"_ref":"layerSection"}],"from":{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"},"layerSectionEnd":23,"layerSectionStart":22,"name":"Group 1"},
+                {"_obj":"set","_target":[{"_enum":"ordinal","_ref":"layer","_value":"targetEnum"}],"to":{"_obj":"layer","name":"ConfigsOBJ"}},
+                {"_obj":"make","_target":[{"_ref":"snapshotClass"}],"from":{"_property":"currentHistoryState","_ref":"historyState"}},
+                {"_obj":"select","_target":[{"_name":"Snapshot 1","_ref":"snapshotClass"}]},
+                {"_obj":"set","_target":[{"_property":"currentHistoryState","_ref":"historyState"}],"to":{"_obj":"snapshotClass","name":snapref}},
+            ], {});
+        } catch (err) {alert(err)}
+    };
+
+
 
 } catch (err) { alert(err)};
 
