@@ -1,10 +1,10 @@
 {
   "hash": "c22557f39e8fc7dc752c",
   "version": "5.95.0",
-  "time": 45,
-  "builtAt": 1737486334233,
+  "time": 50,
+  "builtAt": 1738717586295,
   "publicPath": "",
-  "outputPath": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\dist",
+  "outputPath": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\dist",
   "assetsByChunkName": {
     "main": [
       "main.bundle.js"
@@ -15,9 +15,9 @@
       "type": "asset",
       "name": "main.bundle.js",
       "size": 181100,
-      "emitted": true,
+      "emitted": false,
       "comparedForEmit": false,
-      "cached": false,
+      "cached": true,
       "info": {
         "javascriptModule": false,
         "related": {
@@ -37,9 +37,9 @@
           "type": "sourceMap",
           "name": "main.bundle.js.map",
           "size": 210017,
-          "emitted": true,
+          "emitted": false,
           "comparedForEmit": false,
-          "cached": false,
+          "cached": true,
           "info": {
             "development": true,
             "size": 210017
@@ -173,9 +173,9 @@
       "type": "asset",
       "name": "@ms-wc/ms-color-seletor.js",
       "size": 14727,
-      "emitted": true,
+      "emitted": false,
       "comparedForEmit": false,
-      "cached": false,
+      "cached": true,
       "info": {
         "copied": true,
         "sourceFilename": "src/@ms-wc/ms-color-seletor.js",
@@ -404,9 +404,9 @@
       "type": "asset",
       "name": "index.html",
       "size": 9192,
-      "emitted": false,
+      "emitted": true,
       "comparedForEmit": false,
-      "cached": true,
+      "cached": false,
       "info": {
         "copied": true,
         "sourceFilename": "src/index.html",
@@ -864,15 +864,15 @@
     },
     {
       "type": "asset",
-      "name": "icons/icon026.svg",
-      "size": 2178,
+      "name": "manifest.json",
+      "size": 2180,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
       "info": {
         "copied": true,
-        "sourceFilename": "src/icons/icon026.svg",
-        "size": 2178
+        "sourceFilename": "manifest.json",
+        "size": 2180
       },
       "chunkNames": [],
       "chunkIdHints": [],
@@ -885,15 +885,15 @@
     },
     {
       "type": "asset",
-      "name": "manifest.json",
-      "size": 2077,
+      "name": "icons/icon026.svg",
+      "size": 2178,
       "emitted": false,
       "comparedForEmit": false,
       "cached": true,
       "info": {
         "copied": true,
-        "sourceFilename": "manifest.json",
-        "size": 2077
+        "sourceFilename": "src/icons/icon026.svg",
+        "size": 2178
       },
       "chunkNames": [],
       "chunkIdHints": [],
@@ -2860,7 +2860,7 @@
   ],
   "chunks": [
     {
-      "rendered": true,
+      "rendered": false,
       "initial": true,
       "entry": true,
       "recorded": false,
@@ -2901,9 +2901,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
           "name": "./src/@ms-wc/ms-box-number.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
           "index": 2,
           "preOrderIndex": 2,
           "index2": 1,
@@ -2912,11 +2912,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -2932,10 +2932,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -2963,9 +2963,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
           "name": "./src/@ms-wc/ms-busca.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
           "index": 11,
           "preOrderIndex": 11,
           "index2": 10,
@@ -2974,11 +2974,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -2994,10 +2994,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3025,9 +3025,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
           "name": "./src/@ms-wc/ms-buttom.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
           "index": 5,
           "preOrderIndex": 5,
           "index2": 4,
@@ -3036,11 +3036,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3056,10 +3056,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3087,9 +3087,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
           "name": "./src/@ms-wc/ms-checkbox.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
           "index": 3,
           "preOrderIndex": 3,
           "index2": 2,
@@ -3098,11 +3098,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3118,10 +3118,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3145,13 +3145,13 @@
           "sizes": {
             "javascript": 14727
           },
-          "built": true,
-          "codeGenerated": true,
+          "built": false,
+          "codeGenerated": false,
           "buildTimeExecuted": false,
-          "cached": false,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
+          "cached": true,
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
           "name": "./src/@ms-wc/ms-color-seletor.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
           "index": 13,
           "preOrderIndex": 13,
           "index2": 12,
@@ -3160,11 +3160,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3180,10 +3180,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3211,9 +3211,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
           "name": "./src/@ms-wc/ms-dropdowlist.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
           "index": 9,
           "preOrderIndex": 9,
           "index2": 8,
@@ -3222,11 +3222,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3242,10 +3242,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3273,9 +3273,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
           "name": "./src/@ms-wc/ms-icon.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
           "index": 4,
           "preOrderIndex": 4,
           "index2": 3,
@@ -3284,11 +3284,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3304,10 +3304,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3335,9 +3335,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
           "name": "./src/@ms-wc/ms-painel.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
           "index": 1,
           "preOrderIndex": 1,
           "index2": 0,
@@ -3346,11 +3346,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3366,10 +3366,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3397,9 +3397,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
           "name": "./src/@ms-wc/ms-popover.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
           "index": 14,
           "preOrderIndex": 14,
           "index2": 13,
@@ -3408,11 +3408,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3428,10 +3428,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3459,9 +3459,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
           "name": "./src/@ms-wc/ms-radio-group.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
           "index": 10,
           "preOrderIndex": 10,
           "index2": 9,
@@ -3470,11 +3470,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3490,10 +3490,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3521,9 +3521,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
           "name": "./src/@ms-wc/ms-slider-circular.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
           "index": 12,
           "preOrderIndex": 12,
           "index2": 11,
@@ -3532,11 +3532,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3552,10 +3552,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3583,9 +3583,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
           "name": "./src/@ms-wc/ms-slider.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
           "index": 6,
           "preOrderIndex": 6,
           "index2": 5,
@@ -3594,11 +3594,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3614,10 +3614,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3645,9 +3645,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
           "name": "./src/@ms-wc/ms-tab-group.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
           "index": 7,
           "preOrderIndex": 7,
           "index2": 6,
@@ -3656,11 +3656,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3676,10 +3676,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3707,9 +3707,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
           "name": "./src/@ms-wc/ps-combobox.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
           "index": 8,
           "preOrderIndex": 8,
           "index2": 7,
@@ -3718,11 +3718,11 @@
           "optional": false,
           "orphan": false,
           "dependent": true,
-          "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "issuerName": "./src/index.js",
           "issuerPath": [
             {
-              "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "name": "./src/index.js",
               "id": "./src/index.js"
             }
@@ -3738,10 +3738,10 @@
           "assets": [],
           "reasons": [
             {
-              "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "module": "./src/index.js",
               "moduleName": "./src/index.js",
-              "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+              "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
               "resolvedModule": "./src/index.js",
               "type": "harmony side effect evaluation",
               "active": true,
@@ -3769,9 +3769,9 @@
           "codeGenerated": false,
           "buildTimeExecuted": false,
           "cached": true,
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
-          "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "index": 0,
           "preOrderIndex": 0,
           "index2": 14,
@@ -3822,9 +3822,9 @@
             "runtime": 274
           },
           "built": false,
-          "codeGenerated": true,
+          "codeGenerated": false,
           "buildTimeExecuted": false,
-          "cached": false,
+          "cached": true,
           "identifier": "webpack/runtime/make namespace object",
           "name": "webpack/runtime/make namespace object",
           "nameForCondition": null,
@@ -3874,9 +3874,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "name": "./src/index.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "index": 0,
       "preOrderIndex": 0,
       "index2": 14,
@@ -3929,9 +3929,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
       "name": "./src/@ms-wc/ms-painel.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-painel.js",
       "index": 1,
       "preOrderIndex": 1,
       "index2": 0,
@@ -3939,11 +3939,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -3959,10 +3959,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -3990,9 +3990,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
       "name": "./src/@ms-wc/ms-box-number.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-box-number.js",
       "index": 2,
       "preOrderIndex": 2,
       "index2": 1,
@@ -4000,11 +4000,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4020,10 +4020,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4051,9 +4051,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
       "name": "./src/@ms-wc/ms-checkbox.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-checkbox.js",
       "index": 3,
       "preOrderIndex": 3,
       "index2": 2,
@@ -4061,11 +4061,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4081,10 +4081,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4112,9 +4112,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
       "name": "./src/@ms-wc/ms-icon.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-icon.js",
       "index": 4,
       "preOrderIndex": 4,
       "index2": 3,
@@ -4122,11 +4122,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4142,10 +4142,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4173,9 +4173,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
       "name": "./src/@ms-wc/ms-buttom.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-buttom.js",
       "index": 5,
       "preOrderIndex": 5,
       "index2": 4,
@@ -4183,11 +4183,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4203,10 +4203,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4234,9 +4234,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
       "name": "./src/@ms-wc/ms-slider.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider.js",
       "index": 6,
       "preOrderIndex": 6,
       "index2": 5,
@@ -4244,11 +4244,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4264,10 +4264,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4295,9 +4295,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
       "name": "./src/@ms-wc/ms-tab-group.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-tab-group.js",
       "index": 7,
       "preOrderIndex": 7,
       "index2": 6,
@@ -4305,11 +4305,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4325,10 +4325,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4356,9 +4356,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
       "name": "./src/@ms-wc/ps-combobox.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ps-combobox.js",
       "index": 8,
       "preOrderIndex": 8,
       "index2": 7,
@@ -4366,11 +4366,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4386,10 +4386,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4417,9 +4417,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
       "name": "./src/@ms-wc/ms-dropdowlist.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-dropdowlist.js",
       "index": 9,
       "preOrderIndex": 9,
       "index2": 8,
@@ -4427,11 +4427,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4447,10 +4447,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4478,9 +4478,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
       "name": "./src/@ms-wc/ms-radio-group.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-radio-group.js",
       "index": 10,
       "preOrderIndex": 10,
       "index2": 9,
@@ -4488,11 +4488,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4508,10 +4508,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4539,9 +4539,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
       "name": "./src/@ms-wc/ms-busca.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-busca.js",
       "index": 11,
       "preOrderIndex": 11,
       "index2": 10,
@@ -4549,11 +4549,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4569,10 +4569,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4600,9 +4600,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
       "name": "./src/@ms-wc/ms-slider-circular.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-slider-circular.js",
       "index": 12,
       "preOrderIndex": 12,
       "index2": 11,
@@ -4610,11 +4610,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4630,10 +4630,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4657,13 +4657,13 @@
       "sizes": {
         "javascript": 14727
       },
-      "built": true,
-      "codeGenerated": true,
+      "built": false,
+      "codeGenerated": false,
       "buildTimeExecuted": false,
-      "cached": false,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
+      "cached": true,
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
       "name": "./src/@ms-wc/ms-color-seletor.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-color-seletor.js",
       "index": 13,
       "preOrderIndex": 13,
       "index2": 12,
@@ -4671,11 +4671,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4691,10 +4691,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4722,9 +4722,9 @@
       "codeGenerated": false,
       "buildTimeExecuted": false,
       "cached": true,
-      "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
+      "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
       "name": "./src/@ms-wc/ms-popover.js",
-      "nameForCondition": "D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
+      "nameForCondition": "E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\@ms-wc\\ms-popover.js",
       "index": 14,
       "preOrderIndex": 14,
       "index2": 13,
@@ -4732,11 +4732,11 @@
       "cacheable": true,
       "optional": false,
       "orphan": false,
-      "issuer": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+      "issuer": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
       "issuerName": "./src/index.js",
       "issuerPath": [
         {
-          "identifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "identifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "name": "./src/index.js",
           "id": "./src/index.js"
         }
@@ -4752,10 +4752,10 @@
       "assets": [],
       "reasons": [
         {
-          "moduleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "moduleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "module": "./src/index.js",
           "moduleName": "./src/index.js",
-          "resolvedModuleIdentifier": "javascript/esm|D:\\DADOS\\Google Drive\\_Plugins HTML\\UXP- JavaScript\\Estudos UXP\\UXP-wc-Biblioteca\\src\\index.js",
+          "resolvedModuleIdentifier": "javascript/esm|E:\\• Trabalhos\\Programação\\UXP-JavaScript\\UXP-wc-Biblioteca\\src\\index.js",
           "resolvedModule": "./src/index.js",
           "type": "harmony side effect evaluation",
           "active": true,
@@ -4780,9 +4780,9 @@
         "runtime": 274
       },
       "built": false,
-      "codeGenerated": true,
+      "codeGenerated": false,
       "buildTimeExecuted": false,
-      "cached": false,
+      "cached": true,
       "identifier": "webpack/runtime/make namespace object",
       "name": "webpack/runtime/make namespace object",
       "nameForCondition": null,
