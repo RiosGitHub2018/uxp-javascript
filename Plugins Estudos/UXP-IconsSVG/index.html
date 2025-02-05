@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="main.js" defer></script> <!-- Adicione "defer" para garantir que o script seja executado após o DOM ser carregado -->
+    <link rel="stylesheet" href="style.css">   
+</head>
+<style>
+    .svg-icon {
+      width: 30px;
+      height: 30px;
+      margin: 2px;
+      padding: 2px;
+      background-color: rgb(56, 56, 56);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 1px 0px 1px rgb(95, 95, 95);
+      transition: background-color 0.3s ease, filter 0.3s ease; /* Adiciona transição suave */
+    }
+
+    /* Efeito hover */
+    .svg-icon:hover {
+      background-color: #4CAF50; /* Cor de fundo ao passar o mouse */
+      cursor: pointer; /* Altera o cursor para indicar interatividade */
+    }
+
+    /* Altera a cor do SVG ao passar o mouse */
+    .svg-icon:hover svg path,
+    .svg-icon:hover svg rect,
+    .svg-icon:hover svg circle,
+    .svg-icon:hover svg polygon {
+      fill: #222222 !important; /* Cor do SVG ao passar o mouse */
+    }
+</style>
+
+<body style="padding: 30px;">
+<div style="display: flex; flex-wrap: wrap;">
+    <div class="svg-icon" data-size="20px" data-icon="icon013" data-fill="#dafcf3"></div>
+    <div class="svg-icon" data-size="20px" data-icon="icon015" data-fill="#dafcf3"></div>
+    <div class="svg-icon" data-size="20px" data-icon="icon040" data-fill="#dafcf3"></div>
+    <div class="svg-icon" data-size="20px" data-icon="icon044" data-fill="#dafcf3"></div>
+    <div class="svg-icon" data-size="20px" data-icon="icon082" data-fill="#dafcf3"></div>
+</div>
+</body>
+</html>
