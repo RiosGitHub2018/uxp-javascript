@@ -50,22 +50,23 @@ async function exeConfigP1(){
                 await app.batchPlay([{"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},], {});
 
                 ////// TAMANHO MEDIO
-                if(gethDOC>getwDOC){await configMoldes(2167, 1532, 2167, 1532, "shp_QKbcas", "MD-CONFG-B" );}
-                else{ await configMoldes(1532, 2167, 1532, 2167, "shp_QKbcas", "MD-CONFG-B" );};
+                // if(gethDOC>getwDOC){await configMoldes(2362, 1575, 2362, 1575, "shp_QKbcas", "MD-QUAD" );}
+                // else{ await configMoldes(1575, 2362, 1575, 2362, "shp_QKbcas", "MD-QUAD" );};
+                await configMoldes(1622, 1622, 1622, 1622, "shp_QKbcas", "MD-QUAD" );
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
 
                 ////// TAMANHO GRANDE
-                if(gethDOC>getwDOC){await configMoldes(3140, 2157, 3140, 2157, "shp_QKbcas", "MD-CONFG-C" );}
-                else{await configMoldes(2157, 3140, 2157, 3140, "shp_QKbcas", "MD-CONFG-C" ); };
+                if(gethDOC>getwDOC){await configMoldes(1622, 1228, 1622, 1228, "shp_QKbcas", "MD-15x20" );}
+                else{await configMoldes(1228, 1622, 1228, 1622, "shp_QKbcas",  "MD-15x20" ); };
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
     
                 ////// TAMANHO PEQUENO
-                if(gethDOC>getwDOC){await configMoldes( 1417, 1102,  1417, 1102, "shp_QKbcas", "MD-CONFG-A" );}
-                else{await configMoldes(1102,  1417, 1102,  1417, "shp_QKbcas", "MD-CONFG-A" );};
+                if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
+                else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
                 await configsPositions(5, null);
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
                 await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
-                sanapBase ="MD-CONFG-A";
+                sanapBase ="MD-20x30";
                
                 // await ZoomDOC(0); 
                 await document.querySelector('#processServic').close('OK');
@@ -112,7 +113,7 @@ async function exeConfigP1(){
                     {"_obj":"select","_target":[{"_name":"AjustColor","_ref":"layer"}],"makeVisible":false,"selectionModifier":{"_enum":"selectionModifierType","_value":"addToSelectionContinuous"}},
                     {"_obj":"clearAllGuides"},{"_obj":"newPlacedLayer"}
                 ]);
-                 app.activeDocument.resizeCanvas(1654, 2323, anchorPos.TOPCENTER);
+                 app.activeDocument.resizeCanvas(1622, 2323, anchorPos.TOPCENTER);
     
                 app.activeDocument.activeLayers[0].scale(scalaWH, scalaWH);
                 app.activeDocument.activeLayers[0].translate(0, ajusteY);

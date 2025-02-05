@@ -92,7 +92,7 @@
                         await configsPositions(5, null);
                         app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
                         await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
-                        sanapBase ="MD-CONFG-A";
+                   //     sanapBase ="MD-CONFG-A";
                        
                         // await ZoomDOC(0); 
                         await document.querySelector('#processServic').close('OK');
