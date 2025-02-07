@@ -218,20 +218,23 @@ async function exeConfigP1(){
             fetch('icons/B64PNG/BCeramica.rtf').then(response => response.text()).then(imgB64 => {
                 document.querySelector("#imgBase4").src=imgB64;
                 });
+
+
+
             ///////////:::::::::::::::::::::
-            document.querySelector("#d3-btn1").classList.add('d3selecionado');
-            /////// CARREGA  OS DADOS DO LOCALSTORAGE
-            const dadosRecuperados = localStorage.getItem('d3DadosSave');
-            if(dadosRecuperados) {
-                    const dadosObjeto = JSON.parse(dadosRecuperados);
-                    document.querySelector("#D3-r1"  ).checked = dadosObjeto.dados1;
-                    document.querySelector("#D3-r2"  ).checked = dadosObjeto.dados2;
-                    document.querySelector("#D3-ck1").checked = dadosObjeto.dados3;
-                    document.querySelector("#D3-ck2").checked = dadosObjeto.dados4;
-                    document.querySelector("#D3-ck3").checked = dadosObjeto.dados5;
-                    document.querySelector("#D3-ck5").checked = dadosObjeto.dados6;
-            }
-            ////////:::::::::::::::::::::::::::::::::::::::::::::::
+        //     document.querySelector("#d3-btn1").classList.add('d3selecionado');
+        //     /////// CARREGA  OS DADOS DO LOCALSTORAGE
+        //     const dadosRecuperados = localStorage.getItem('d3DadosSave');
+        //     if(dadosRecuperados) {
+        //             const dadosObjeto = JSON.parse(dadosRecuperados);
+        //             document.querySelector("#D3-r1"  ).checked = dadosObjeto.dados1;
+        //             document.querySelector("#D3-r2"  ).checked = dadosObjeto.dados2;
+        //             document.querySelector("#D3-ck1").checked = dadosObjeto.dados3;
+        //             document.querySelector("#D3-ck2").checked = dadosObjeto.dados4;
+        //             document.querySelector("#D3-ck3").checked = dadosObjeto.dados5;
+        //             document.querySelector("#D3-ck5").checked = dadosObjeto.dados6;
+        //     }
+        //     ////////:::::::::::::::::::::::::::::::::::::::::::::::
     
             const D3Btns = document.getElementsByClassName("d3-btAbas");
             const D3Abas = document.getElementsByClassName("d3-Abas");
@@ -247,78 +250,80 @@ async function exeConfigP1(){
                 });
             };
            ////////::::::::::::::::::::
+
+           initSvgIcons(".svg-icon");
     
-          ////////OUVINTES BOÕES DE ENQUADRAMENTO
-          controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
-           ////////::::::::::::::::::::
-           ///////// ABRIR O MENU DE AJUSTE DE CORES
-            const menuAjuste = document.querySelector("#btn-Cores");
-            menuAjuste.addEventListener('click', (event) => {
-                try {
-                    /////////REMOVE O FOCU DA JANELHA PRINCIPAL
-                    require('photoshop').core.performMenuCommand({
-                        commandID:5933,
-                        kcanDispatchWhileModal: true,
-                        _isCommand: false
-                    });
-                    janelaAjustesx();
-                } catch (err) {alert(err)}
-            });
-            ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
-            const restar= document.querySelector("#D3btn-resetar");
-            restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
-            ////////::::::::::::::::::::
-            /////////////// FUNÇÃO PROCESSAMENTO FINAL
-            document.querySelector("#d3Btn1").addEventListener('click', async () => { finalProcess()});
-            ///////////////////////////////////////////
-            document.querySelector("#d3Btn2").addEventListener('click', () => {
-                document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
-                D3CeramicaEventos=false;
-            });
+        //   ////////OUVINTES BOÕES DE ENQUADRAMENTO
+        //   controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
+        //    ////////::::::::::::::::::::
+        //    ///////// ABRIR O MENU DE AJUSTE DE CORES
+        //     const menuAjuste = document.querySelector("#btn-Cores");
+        //     menuAjuste.addEventListener('click', (event) => {
+        //         try {
+        //             /////////REMOVE O FOCU DA JANELHA PRINCIPAL
+        //             require('photoshop').core.performMenuCommand({
+        //                 commandID:5933,
+        //                 kcanDispatchWhileModal: true,
+        //                 _isCommand: false
+        //             });
+        //             janelaAjustesx();
+        //         } catch (err) {alert(err)}
+        //     });
+        //     ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
+        //     const restar= document.querySelector("#D3btn-resetar");
+        //     restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
+        //     ////////::::::::::::::::::::
+        //     /////////////// FUNÇÃO PROCESSAMENTO FINAL
+        //     document.querySelector("#d3Btn1").addEventListener('click', async () => { finalProcess()});
+        //     ///////////////////////////////////////////
+        //     document.querySelector("#d3Btn2").addEventListener('click', () => {
+        //         document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
+        //         D3CeramicaEventos=false;
+        //     });
 
-            ////////////// ATALHOS CONFIGSXXXXXXXXXXXX
-            //////// PRECESSO FINAL 
-            document.addEventListener("keydown", canecaKey);
-            async function canecaKey(event) {
-                    if (event.keyCode === 13) {
-                        document.removeEventListener("keydown", canecaKey); // Remove o event listener após o evento ter sido acionado
-                        await finalProcess();
-                    };
-                    if (event.keyCode == 68) { document.querySelector("#D3-r1").checked=true;}
-                    if (event.keyCode == 86) { document.querySelector("#D3-r2").checked=true;}
-                    ////////// AJUSTAR ENQUADRAMENTO
-                    if (event.keyCode == 107) {await configsPositions(1, 102)}////ZOOM MAIS
-                    if (event.keyCode == 109) {await configsPositions(2,   98)}////ZOOM MENOS
-                    if (event.keyCode ==   37) {await configsPositions(3, -10);}////MOVERA PARA ESQUEDA
-                    if (event.keyCode ==   39) {await configsPositions(3, 10);}////MOVERA PARA DIREITA
-                    if (event.keyCode ==   38) {await configsPositions(4, -10);}////MOVERA PARA CIMA
-                    if (event.keyCode ==   40) {await configsPositions(4, 10);}////MOVERA PARA BAIXO
-                    if (event.keyCode == 112) {await configsPositions(5, null);}////PRENCHER HORIZONTALMENTE
-                    if (event.keyCode == 113) {await configsPositions(6, null);}////PRENCHER VERTICALMENTE
-                    //////// PRECESSO CANCELAR
-                    if (event.keyCode == 27) {  
-                        document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
-                        D3CeramicaEventos=false;
-                    };
-                };
-               ////////////////////:::::::::::::::::
+        //     ////////////// ATALHOS CONFIGSXXXXXXXXXXXX
+        //     //////// PRECESSO FINAL 
+        //     document.addEventListener("keydown", canecaKey);
+        //     async function canecaKey(event) {
+        //             if (event.keyCode === 13) {
+        //                 document.removeEventListener("keydown", canecaKey); // Remove o event listener após o evento ter sido acionado
+        //                 await finalProcess();
+        //             };
+        //             if (event.keyCode == 68) { document.querySelector("#D3-r1").checked=true;}
+        //             if (event.keyCode == 86) { document.querySelector("#D3-r2").checked=true;}
+        //             ////////// AJUSTAR ENQUADRAMENTO
+        //             if (event.keyCode == 107) {await configsPositions(1, 102)}////ZOOM MAIS
+        //             if (event.keyCode == 109) {await configsPositions(2,   98)}////ZOOM MENOS
+        //             if (event.keyCode ==   37) {await configsPositions(3, -10);}////MOVERA PARA ESQUEDA
+        //             if (event.keyCode ==   39) {await configsPositions(3, 10);}////MOVERA PARA DIREITA
+        //             if (event.keyCode ==   38) {await configsPositions(4, -10);}////MOVERA PARA CIMA
+        //             if (event.keyCode ==   40) {await configsPositions(4, 10);}////MOVERA PARA BAIXO
+        //             if (event.keyCode == 112) {await configsPositions(5, null);}////PRENCHER HORIZONTALMENTE
+        //             if (event.keyCode == 113) {await configsPositions(6, null);}////PRENCHER VERTICALMENTE
+        //             //////// PRECESSO CANCELAR
+        //             if (event.keyCode == 27) {  
+        //                 document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
+        //                 D3CeramicaEventos=false;
+        //             };
+        //         };
+        //        ////////////////////:::::::::::::::::
 
-                async function finalProcess(){
-                    try { 
-                        if(D3CeramicaEventos === false){return};
-                         D3CeramicaEventos=false;
-                          document.querySelector("#dlgCeramica").close('OK'); SalvarDados(); 
-                          ajustePreview(100, "show");
-                          progressDLG("Aquarde Processing . . ."); 
-                          function evento() { setTimeout(() =>{
-                              ////////  VERIFICA SE O PRECESSO FINAL 
-                              const D3ck5= document.querySelector("#D3-ck5");
-                                if(D3ck5.checked==true){  StampConfigP3() }else{ StampConfigP2()}
-                              ////////:::::::::::::::::::::::::::::::::::::::::::::
-                              }
-                          )} setTimeout(evento, 1000);//////depois alterar para 1000
-                      } catch (err) {alert(err)};
-                 };
+        //         async function finalProcess(){
+        //             try { 
+        //                 if(D3CeramicaEventos === false){return};
+        //                  D3CeramicaEventos=false;
+        //                   document.querySelector("#dlgCeramica").close('OK'); SalvarDados(); 
+        //                   ajustePreview(100, "show");
+        //                   progressDLG("Aquarde Processing . . ."); 
+        //                   function evento() { setTimeout(() =>{
+        //                       ////////  VERIFICA SE O PRECESSO FINAL 
+        //                       const D3ck5= document.querySelector("#D3-ck5");
+        //                         if(D3ck5.checked==true){  StampConfigP3() }else{ StampConfigP2()}
+        //                       ////////:::::::::::::::::::::::::::::::::::::::::::::
+        //                       }
+        //                   )} setTimeout(evento, 1000);//////depois alterar para 1000
+        //               } catch (err) {alert(err)};
+        //          };
                  ////////::::::::::::::::::::::::::::
     
             /////// CHECKBOC PREVIEW
@@ -405,6 +410,49 @@ async function exeConfigP1(){
             ], {});
         } catch (err) {alert(err)}
     };
+
+
+    async function initSvgIcons(csvg) {
+        const icons = document.querySelectorAll(csvg);
+            icons.forEach(async (element, index) => {
+            // Adiciona um id dinâmico se não existir
+            const id = element.id || `svg-icon-${index}`;
+            element.id = id;
+            
+            const size = element.dataset.size || "20px";
+            const icone = element.dataset.icon;
+            const fill = element.dataset.fill || "#b8b8b8";
+            
+            const response = await fetch(`/icons/svg/${icone}.svg`);
+            if (!response.ok) {
+                throw new Error(`Failed to load icon: ${icone}`);
+            }
+            
+            const svgCode = await response.text();
+            element.innerHTML = `
+                <style>
+                    .${id} {
+                        width: ${size};
+                        height: ${size};
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .${id} svg,
+                    .${id} svg path,
+                    .${id} svg rect,
+                    .${id} svg circle,
+                    .${id} svg polygon {
+                        width: 100% !important;
+                        height: 100% !important;
+                        fill: ${fill} !important;
+                    }
+                </style>
+                <div class="${id}">${svgCode}</div>
+            `;
+        });
+    }
+    // Inicializa todos os ícones com uma única chamada
 
 
 
