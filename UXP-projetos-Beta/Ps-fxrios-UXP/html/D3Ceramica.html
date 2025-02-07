@@ -62,20 +62,71 @@
 
                     
                      <div style="width: 100%; display: flex; align-items: center; transform: translateY(5px);"> 
-                        <form> <select id="D3list_MD"  style="width:90px; margin: 0px;">
+                        <form> <select id="D3list_MD"  style="width:96px; margin: 0px;">
                             <option >MD-20x20</option>
                         </select></form>
-                        <div class="svg-icon" id="D13-Presets" data-size="15px" data-icon="icon025" data-fill="#dafcf3" style="height: 22px; margin-right: 10px;"></div>
-                        <sp-checkbox id="D3-ck1" size="s" ><label class="sp-checkbox-txt" >MT Vidro</label></sp-checkbox >
+                        <div class="svg-icon" id="D13-btnPresets" data-size="15px" data-icon="icon026" data-fill="#d6d6d6" style="width: 22px; ;height: 22px; margin-right: 2px;"></div>
+                        <sp-checkbox id="D3-ck1" size="s" style="margin-left: 5px;" ><label class="sp-checkbox-txt" >Mater. Vidro</label></sp-checkbox >
+                        <!-- ///////CONIJUNTO DE BTÕES PARA PRESETS -->
+                        <div id="D13-presets"  style="width: 90px; height: 22px;  display: flex; padding: 0px; display: none;">
+                            <div class="svg-icon" id="D13-Pres01" data-size="12px" data-icon="icon047" data-fill="#d6d6d6" style="width: 19px ;height: 21px; margin: 1px;"></div>
+                            <div class="svg-icon" id="D13-Pres02" data-size="12px" data-icon="icon042" data-fill="#d6d6d6" style="width: 19px ;height: 21px; margin: 1px;"></div>
+                            <div class="svg-icon" id="D13-Pres03" data-size="14px" data-icon="icon024" data-fill="#d6d6d6" style="width: 19px ;height: 21px; margin: 1px;"></div>
+                            <div class="svg-icon" id="D13-Pres04" data-size="14px" data-icon="icon017" data-fill="#d6d6d6" style="width: 19px ;height: 21px; margin: 1px;"></div>
+                        </div>
                       </div>
 
-                        <div style="width: 250px; height: 120px; background-color: #424242; z-index: 100; position: absolute; top: -60px; left: -10px; box-shadow: 4px 3px 21px 9px rgba(0,0,0,0.6);; border: 3px solid #cac8c8;"> 
+                      <!-- /////// NANELA DE PREDEFINIÇÕES -->
+                      <div id="D13-DlgPrests" style="width: 200px; height: 200px; display: flex; flex-direction: column; padding: 10px; background-color: #4d4d4d;  
+                        position: absolute;  border: 5px solid #8f8f8f; top: -90px; left: 10px; z-index: 50; display: none; box-shadow: 1px 2px 15px 4px rgba(0,0,0,0.48);">  
+
+                        <div>
+                            <div  style="width: 100%; height: 100%; border: 1px solid #5c5b5b; padding: 10px; display: flex; justify-content: center;">
+                            
+                                <div style="display: flex; align-items: flex-end; flex-direction: column; ">
+                                            <div style="display: flex; "> 
+                                                <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Nome:</label>
+                                                <input  type="number"  id="D13-Pre-w" value="9.5" style="width: 90px; height: 21px; padding: 2px; margin: 2px;">
+                                            </div>
+
+                                            <div style="display: flex;"> 
+                                                <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Moldura</label>
+                                                <input  type="number"  id="D13-Pre-h" value="9.5" style="width: 90px; height: 21px; padding: 2px; margin: 2px;">
+                                            </div>
+
+
+                                            <div style="display: flex; "> 
+                                                <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Largura:</label>
+                                                <input  type="number"  id="D13-Pre-w" value="9.5" style="width: 90px; height: 21px; padding: 2px; margin: 2px;">
+                                            </div>
+
+                                            <div style="display: flex;"> 
+                                                <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Altura:</label>
+                                                <input  type="number"  id="D13-Pre-h" value="9.5" style="width: 90px; height: 21px; padding: 2px; margin: 2px;">
+                                            </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
+                        <div style="width: 100%; height: 34px; background-color: #303030; display: flex; align-items: center; justify-content: flex-end;">
+                            <div class="btnMedio " id="D13-PresSair" style="width:70px; margin: 2px;">Sair</div>
+                            <div class="btnMedio " id="D13-PresSaves" style="width:70px; margin: 2px; margin-right: 5px;">Salvar</div>
+                        </div>
+                      </div>
 
-
-                    <!-- <sp-checkbox id="D3-ck1" size="s" style="transform: translateY(4px);" ><label class="sp-checkbox-txt" >MT. Vidro</label></sp-checkbox > -->
                 </div>
 
+
+
+
+
+
+
+
+
+                
                 <div style="display: flex; margin-top: 15px;">
                     <!-- ///////// PAINEL BACKUP ESTAMPA -->
                     <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative; ">

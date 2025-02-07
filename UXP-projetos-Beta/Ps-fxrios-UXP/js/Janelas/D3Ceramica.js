@@ -9,6 +9,8 @@ try {
 ///FUNCTION incialConfigs INCIAR
 async function incialConfigs() {
     dialogsEventsFalse();
+    await dlgCeramica();
+    return
     if(app.documents.length==0){  const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};}
     StampConfigP1();
     doc= app.activeDocument;
@@ -214,125 +216,195 @@ async function exeConfigP1(){
      //////// TODAS AS FUNÇÕES AQUI! ::::::::::::
     function execonfigsD3(){
         try {
-            ///////// IMGEM TEMA DA JANELA EM FORMAR CODIFICADO
-            fetch('icons/B64PNG/BCeramica.rtf').then(response => response.text()).then(imgB64 => {
-                document.querySelector("#imgBase4").src=imgB64;
-                });
-
-
-
-            ///////////:::::::::::::::::::::
-        //     document.querySelector("#d3-btn1").classList.add('d3selecionado');
-        //     /////// CARREGA  OS DADOS DO LOCALSTORAGE
-        //     const dadosRecuperados = localStorage.getItem('d3DadosSave');
-        //     if(dadosRecuperados) {
-        //             const dadosObjeto = JSON.parse(dadosRecuperados);
-        //             document.querySelector("#D3-r1"  ).checked = dadosObjeto.dados1;
-        //             document.querySelector("#D3-r2"  ).checked = dadosObjeto.dados2;
-        //             document.querySelector("#D3-ck1").checked = dadosObjeto.dados3;
-        //             document.querySelector("#D3-ck2").checked = dadosObjeto.dados4;
-        //             document.querySelector("#D3-ck3").checked = dadosObjeto.dados5;
-        //             document.querySelector("#D3-ck5").checked = dadosObjeto.dados6;
-        //     }
-        //     ////////:::::::::::::::::::::::::::::::::::::::::::::::
-    
-            const D3Btns = document.getElementsByClassName("d3-btAbas");
-            const D3Abas = document.getElementsByClassName("d3-Abas");
-            const D3Btn = Array.from(D3Btns);
-            
-            for (let i = 0; i < D3Btn.length; i++) {
-                D3Btn[i].addEventListener('click', (event) => {
-                    // Esconder todas as abas
-                    for (let j = 0; j < D3Abas.length; j++){ D3Abas[j].style.display = 'none';}
-                    for (let j = 0; j < D3Btn.length; j++) { D3Btn[j].classList.remove('d3selecionado');}
-                    D3Abas[i].style.display = 'block';
-                    event.currentTarget.classList.add('d3selecionado');
-                });
-            };
-           ////////::::::::::::::::::::
-
-           initSvgIcons(".svg-icon");
-    
-        //   ////////OUVINTES BOÕES DE ENQUADRAMENTO
-        //   controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
-        //    ////////::::::::::::::::::::
-        //    ///////// ABRIR O MENU DE AJUSTE DE CORES
-        //     const menuAjuste = document.querySelector("#btn-Cores");
-        //     menuAjuste.addEventListener('click', (event) => {
-        //         try {
-        //             /////////REMOVE O FOCU DA JANELHA PRINCIPAL
-        //             require('photoshop').core.performMenuCommand({
-        //                 commandID:5933,
-        //                 kcanDispatchWhileModal: true,
-        //                 _isCommand: false
-        //             });
-        //             janelaAjustesx();
-        //         } catch (err) {alert(err)}
-        //     });
-        //     ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
-        //     const restar= document.querySelector("#D3btn-resetar");
-        //     restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
-        //     ////////::::::::::::::::::::
-        //     /////////////// FUNÇÃO PROCESSAMENTO FINAL
-        //     document.querySelector("#d3Btn1").addEventListener('click', async () => { finalProcess()});
-        //     ///////////////////////////////////////////
-        //     document.querySelector("#d3Btn2").addEventListener('click', () => {
-        //         document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
-        //         D3CeramicaEventos=false;
-        //     });
-
-        //     ////////////// ATALHOS CONFIGSXXXXXXXXXXXX
-        //     //////// PRECESSO FINAL 
-        //     document.addEventListener("keydown", canecaKey);
-        //     async function canecaKey(event) {
-        //             if (event.keyCode === 13) {
-        //                 document.removeEventListener("keydown", canecaKey); // Remove o event listener após o evento ter sido acionado
-        //                 await finalProcess();
-        //             };
-        //             if (event.keyCode == 68) { document.querySelector("#D3-r1").checked=true;}
-        //             if (event.keyCode == 86) { document.querySelector("#D3-r2").checked=true;}
-        //             ////////// AJUSTAR ENQUADRAMENTO
-        //             if (event.keyCode == 107) {await configsPositions(1, 102)}////ZOOM MAIS
-        //             if (event.keyCode == 109) {await configsPositions(2,   98)}////ZOOM MENOS
-        //             if (event.keyCode ==   37) {await configsPositions(3, -10);}////MOVERA PARA ESQUEDA
-        //             if (event.keyCode ==   39) {await configsPositions(3, 10);}////MOVERA PARA DIREITA
-        //             if (event.keyCode ==   38) {await configsPositions(4, -10);}////MOVERA PARA CIMA
-        //             if (event.keyCode ==   40) {await configsPositions(4, 10);}////MOVERA PARA BAIXO
-        //             if (event.keyCode == 112) {await configsPositions(5, null);}////PRENCHER HORIZONTALMENTE
-        //             if (event.keyCode == 113) {await configsPositions(6, null);}////PRENCHER VERTICALMENTE
-        //             //////// PRECESSO CANCELAR
-        //             if (event.keyCode == 27) {  
-        //                 document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
-        //                 D3CeramicaEventos=false;
-        //             };
-        //         };
-        //        ////////////////////:::::::::::::::::
-
-        //         async function finalProcess(){
-        //             try { 
-        //                 if(D3CeramicaEventos === false){return};
-        //                  D3CeramicaEventos=false;
-        //                   document.querySelector("#dlgCeramica").close('OK'); SalvarDados(); 
-        //                   ajustePreview(100, "show");
-        //                   progressDLG("Aquarde Processing . . ."); 
-        //                   function evento() { setTimeout(() =>{
-        //                       ////////  VERIFICA SE O PRECESSO FINAL 
-        //                       const D3ck5= document.querySelector("#D3-ck5");
-        //                         if(D3ck5.checked==true){  StampConfigP3() }else{ StampConfigP2()}
-        //                       ////////:::::::::::::::::::::::::::::::::::::::::::::
-        //                       }
-        //                   )} setTimeout(evento, 1000);//////depois alterar para 1000
-        //               } catch (err) {alert(err)};
-        //          };
-                 ////////::::::::::::::::::::::::::::
-    
-            /////// CHECKBOC PREVIEW
-            const D3Ck4 = document.querySelector("#D3-ck4");
-            D3Ck4.addEventListener('click', (event) => {
-                if(D3Ck4.checked == true){ ajustePreview(100, "show")}
-                else{ ajustePreview(0, "hide")}; 
+          ///////// IMGEM TEMA DA JANELA EM FORMAR CODIFICADO
+          fetch("icons/B64PNG/BCeramica.rtf")
+            .then((response) => response.text())
+            .then((imgB64) => {
+              document.querySelector("#imgBase4").src = imgB64;
             });
-            ////////::::::::::::::::::::
+
+          ///////////:::::::::::::::::::::
+          //     document.querySelector("#d3-btn1").classList.add('d3selecionado');
+          //     /////// CARREGA  OS DADOS DO LOCALSTORAGE
+          //     const dadosRecuperados = localStorage.getItem('d3DadosSave');
+          //     if(dadosRecuperados) {
+          //             const dadosObjeto = JSON.parse(dadosRecuperados);
+          //             document.querySelector("#D3-r1"  ).checked = dadosObjeto.dados1;
+          //             document.querySelector("#D3-r2"  ).checked = dadosObjeto.dados2;
+          //             document.querySelector("#D3-ck1").checked = dadosObjeto.dados3;
+          //             document.querySelector("#D3-ck2").checked = dadosObjeto.dados4;
+          //             document.querySelector("#D3-ck3").checked = dadosObjeto.dados5;
+          //             document.querySelector("#D3-ck5").checked = dadosObjeto.dados6;
+          //     }
+          //     ////////:::::::::::::::::::::::::::::::::::::::::::::::
+
+          const D3Btns = document.getElementsByClassName("d3-btAbas");
+          const D3Abas = document.getElementsByClassName("d3-Abas");
+          const D3Btn = Array.from(D3Btns);
+
+          for (let i = 0; i < D3Btn.length; i++) {
+            D3Btn[i].addEventListener("click", (event) => {
+              // Esconder todas as abas
+              for (let j = 0; j < D3Abas.length; j++) {
+                D3Abas[j].style.display = "none";
+              }
+              for (let j = 0; j < D3Btn.length; j++) {
+                D3Btn[j].classList.remove("d3selecionado");
+              }
+              D3Abas[i].style.display = "block";
+              event.currentTarget.classList.add("d3selecionado");
+            });
+          }
+          ////////::::::::::::::::::::
+
+          ////////PRESETS DE MODELOS
+          let presetsUI = false;
+          initSvgIcons(".svg-icon");
+          es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
+          es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
+          //////// CRIAR PRESETS
+          es1.on("#D13-Pres01", "click", () => { toggleDlgUIpreset()});
+          /////// EDITAR PRESSETS
+          es1.on("#D13-Pres03", "click", () => { toggleDlgUIpreset()});
+
+            ////// SAIR DA JANELA PRESETS
+            es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
+            ////// SALVAR PRESETS
+            es1.on("#D13-PresSaves", "click", () => { 
+                toggleDlgUIpreset(); 
+                alert("Prest salvo com sucessso!")
+            });
+          
+          function toggleBtnsUIpreset() {
+            if (presetsUI != true) {
+                es1.css("#D13-presets", { display: "flex" });
+                es1.css("#D3-ck1", { display: "none" });
+              presetsUI = true;
+            } else {
+                es1.css("#D13-presets", { display: "none" });
+                es1.css("#D3-ck1", { display: "flex" });
+                presetsUI = false;
+            }
+          };
+
+          ////// JANELA CONFIG PRESTS
+          let presetsUIDlg  = false;
+          function toggleDlgUIpreset() {
+            if (presetsUIDlg != true) {
+                es1.css("#D3list_MD", { display: "none" });
+                es1.css("#D13-DlgPrests", { display: "flex" });
+                presetsUIDlg = true;
+            } else {
+                es1.css("#D3list_MD", { display: "flex" });
+                es1.css("#D13-DlgPrests", { display: "none" });
+                presetsUIDlg = false;
+            }
+          };
+
+           ///////// FECHAR JANELA PRESETS CLICANDO FORA
+          document.addEventListener('click', function(event) {
+                if ( !s1("#D13-DlgPrests" ).contains(event.target) && !s1("#D13-Pres01").contains(event.target) &&
+                    !s1("#D13-Pres03").contains(event.target) ) 
+                    { presetsUIDlg = true; toggleDlgUIpreset(); presetsUIDlg = false; }
+           });
+
+
+          
+       
+
+          //    s1('#').value = 'string';
+          //    s1('#').selectedIndex= Number(index);
+          //    s1('#').textContent= 'Text';
+          //    s1('#').innerHTML =`string`;
+          //    s1('#').checked = true;
+          //    s1('#').disabled = true;
+          //    s2('.elemento').forEach(element =>{alert(element.textContent)});
+          //    es1.css('#elemento5', { transform:'translateX(4px)'})
+          //    es1.on('#elemento', 'click', () =>{ funcao();});
+
+          //   ////////OUVINTES BOÕES DE ENQUADRAMENTO
+          //   controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
+          //    ////////::::::::::::::::::::
+          //    ///////// ABRIR O MENU DE AJUSTE DE CORES
+          //     const menuAjuste = document.querySelector("#btn-Cores");
+          //     menuAjuste.addEventListener('click', (event) => {
+          //         try {
+          //             /////////REMOVE O FOCU DA JANELHA PRINCIPAL
+          //             require('photoshop').core.performMenuCommand({
+          //                 commandID:5933,
+          //                 kcanDispatchWhileModal: true,
+          //                 _isCommand: false
+          //             });
+          //             janelaAjustesx();
+          //         } catch (err) {alert(err)}
+          //     });
+              ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
+              const restar= document.querySelector("#D3btn-resetar");
+              restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
+              ////////::::::::::::::::::::
+              /////////////// FUNÇÃO PROCESSAMENTO FINAL
+              document.querySelector("#d3Btn1").addEventListener('click', async () => { finalProcess()});
+              ///////////////////////////////////////////
+              document.querySelector("#d3Btn2").addEventListener('click', () => {
+                  document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
+                  D3CeramicaEventos=false;
+              });
+
+          //     ////////////// ATALHOS CONFIGSXXXXXXXXXXXX
+          //     //////// PRECESSO FINAL
+          //     document.addEventListener("keydown", canecaKey);
+          //     async function canecaKey(event) {
+          //             if (event.keyCode === 13) {
+          //                 document.removeEventListener("keydown", canecaKey); // Remove o event listener após o evento ter sido acionado
+          //                 await finalProcess();
+          //             };
+          //             if (event.keyCode == 68) { document.querySelector("#D3-r1").checked=true;}
+          //             if (event.keyCode == 86) { document.querySelector("#D3-r2").checked=true;}
+          //             ////////// AJUSTAR ENQUADRAMENTO
+          //             if (event.keyCode == 107) {await configsPositions(1, 102)}////ZOOM MAIS
+          //             if (event.keyCode == 109) {await configsPositions(2,   98)}////ZOOM MENOS
+          //             if (event.keyCode ==   37) {await configsPositions(3, -10);}////MOVERA PARA ESQUEDA
+          //             if (event.keyCode ==   39) {await configsPositions(3, 10);}////MOVERA PARA DIREITA
+          //             if (event.keyCode ==   38) {await configsPositions(4, -10);}////MOVERA PARA CIMA
+          //             if (event.keyCode ==   40) {await configsPositions(4, 10);}////MOVERA PARA BAIXO
+          //             if (event.keyCode == 112) {await configsPositions(5, null);}////PRENCHER HORIZONTALMENTE
+          //             if (event.keyCode == 113) {await configsPositions(6, null);}////PRENCHER VERTICALMENTE
+          //             //////// PRECESSO CANCELAR
+          //             if (event.keyCode == 27) {
+          //                 document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
+          //                 D3CeramicaEventos=false;
+          //             };
+          //         };
+          //        ////////////////////:::::::::::::::::
+
+          //         async function finalProcess(){
+          //             try {
+          //                 if(D3CeramicaEventos === false){return};
+          //                  D3CeramicaEventos=false;
+          //                   document.querySelector("#dlgCeramica").close('OK'); SalvarDados();
+          //                   ajustePreview(100, "show");
+          //                   progressDLG("Aquarde Processing . . .");
+          //                   function evento() { setTimeout(() =>{
+          //                       ////////  VERIFICA SE O PRECESSO FINAL
+          //                       const D3ck5= document.querySelector("#D3-ck5");
+          //                         if(D3ck5.checked==true){  StampConfigP3() }else{ StampConfigP2()}
+          //                       ////////:::::::::::::::::::::::::::::::::::::::::::::
+          //                       }
+          //                   )} setTimeout(evento, 1000);//////depois alterar para 1000
+          //               } catch (err) {alert(err)};
+          //          };
+          ////////::::::::::::::::::::::::::::
+
+          /////// CHECKBOC PREVIEW
+          const D3Ck4 = document.querySelector("#D3-ck4");
+          D3Ck4.addEventListener("click", (event) => {
+            if (D3Ck4.checked == true) {
+              ajustePreview(100, "show");
+            } else {
+              ajustePreview(0, "hide");
+            }
+          });
+          ////////::::::::::::::::::::
         } catch (err) {  alert(err)   }
     };
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
