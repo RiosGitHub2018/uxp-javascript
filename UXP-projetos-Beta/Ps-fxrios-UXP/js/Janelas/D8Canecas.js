@@ -774,7 +774,7 @@
    };
 
    async function savePresets() {
-        if (process == "adicionar"){ novoItemADD();} else  if (process == "editar"){edidadoOKItem()}
+        if (process == "adicionar"){ novoItemADD();} else  if (process == "editar"){edidadoOKItem()}n
         document.querySelector("#D8-ck5").checked= false;
         process = "finalizado"; //////// PERMITE LIBERAR A PROCESSAMENTO FINAL
     };

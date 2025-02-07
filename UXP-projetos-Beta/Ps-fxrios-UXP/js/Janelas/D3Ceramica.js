@@ -258,21 +258,20 @@ async function exeConfigP1(){
           ////////::::::::::::::::::::
 
           ////////PRESETS DE MODELOS
-          let presetsUI = false;
           initSvgIcons(".svg-icon");
           es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
           es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
           //////// CRIAR PRESETS
           es1.on("#D13-Pres01", "click", () => { toggleDlgUIpreset()});
           /////// EDITAR PRESSETS
+          es1.on("#D13-Pres02", "click", () => { deleteItemList(); toggleDlgUIpreset()});
           es1.on("#D13-Pres03", "click", () => { toggleDlgUIpreset()});
-
+   
             ////// SAIR DA JANELA PRESETS
             es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
-                toggleDlgUIpreset(); 
-                alert("Prest salvo com sucessso!")
+                toggleDlgUIpreset();   presetsConfig();
             });
          
            ///////// CARREGAR LISTA DINÂMICA
@@ -299,42 +298,66 @@ async function exeConfigP1(){
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                     });
-
                } catch (err) {alert(err) }
            }
            ///////////:::::::::::::::::::::::::::::::::::::
 
 
+         async  function presetsConfig(){
+            s1("#D3list_MD").innerHTML=""
+               nomeMD = s1("#D13v01").value;
+               formaMD = s1("#D13v02").value;
+               wSizeMD  = s1("#D13v03").value;
+               hSizeMD  = s1("#D13v04").value;
+
+               await conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD })
+               await atualizarLista();
+           };
+
+
+           async function deleteItemList(){
+                s1("#D3list_MD").innerHTML=""
+                await conteudo_Obj.splice(indice, 1)
+                await atualizarLista();
+            };
+          
+           function atualizarLista(){
+            conteudo_Obj.forEach(  (modelo) => {
+                s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
+              });
+           };
+
+
            s1("#D3list_MD").addEventListener("change", ()=> { 
                  indice = s1('#D3list_MD').selectedIndex;
-                alert(conteudo_Obj[indice].nome)
+                alert(conteudo_Obj[indice].wSize)    
            });
 
- 
+           let presetsUI = false;
            function toggleBtnsUIpreset() {
-            if (presetsUI != true) {
-                es1.css("#D13-presets", { display: "flex" });
-                es1.css("#D3-ck1", { display: "none" });
-              presetsUI = true;
-            } else {
-                es1.css("#D13-presets", { display: "none" });
-                es1.css("#D3-ck1", { display: "flex" });
-                presetsUI = false;
-            }
+                if (presetsUI != true) {
+                    es1.css("#D13-presets", { display: "flex" });
+                    es1.css("#D3-ck1", { display: "none" });
+                    presetsUI = true;
+                } else {
+                    es1.css("#D13-presets", { display: "none" });
+                    es1.css("#D3-ck1", { display: "flex" });
+                    presetsUI = false;
+                }
           };
 
           ////// JANELA CONFIG PRESTS
           let presetsUIDlg  = false;
           function toggleDlgUIpreset() {
-            if (presetsUIDlg != true) {
-                es1.css("#D3list_MD", { display: "none" });
-                es1.css("#D13-DlgPrests", { display: "flex" });
-                presetsUIDlg = true;
-            } else {
-                es1.css("#D3list_MD", { display: "flex" });
-                es1.css("#D13-DlgPrests", { display: "none" });
-                presetsUIDlg = false;
-            }
+                if (presetsUIDlg != true) {
+                    es1.css("#D3list_MD", { display: "none" });
+                    es1.css("#D13-DlgPrests", { display: "flex" });
+                    presetsUIDlg = true;
+                } else {
+                    es1.css("#D3list_MD", { display: "flex" });
+                    es1.css("#D13-DlgPrests", { display: "none" });
+                    presetsUIDlg = false;
+                }
           };
 
            ///////// FECHAR JANELA PRESETS CLICANDO FORA
