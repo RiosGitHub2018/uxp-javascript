@@ -303,15 +303,16 @@ async function exeConfigP1(){
            ///////////:::::::::::::::::::::::::::::::::::::
 
 
-         async  function presetsConfig(){
-            s1("#D3list_MD").innerHTML=""
+          function presetsConfig(){
+               s1("#D3list_MD").innerHTML=""
                nomeMD = s1("#D13v01").value;
                formaMD = s1("#D13v02").value;
                wSizeMD  = s1("#D13v03").value;
                hSizeMD  = s1("#D13v04").value;
 
-               await conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD })
-               await atualizarLista();
+                conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD })
+              //  conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD });
+                atualizarLista();
            };
 
 
