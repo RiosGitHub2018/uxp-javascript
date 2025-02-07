@@ -274,8 +274,44 @@ async function exeConfigP1(){
                 toggleDlgUIpreset(); 
                 alert("Prest salvo com sucessso!")
             });
-          
-          function toggleBtnsUIpreset() {
+         
+           ///////// CARREGAR LISTA DINÂMICA
+           corregarLista();
+           async function corregarLista() {
+               try {
+                   conteudo_Obj = new Array();  
+                   //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
+                   // conteudo_Obj = JSON.parse(localStorage.getItem("conteudo")) || [ 
+                    conteudo_Obj = [ 
+                        {
+                            nome: "MD-15x15",
+                            forma: "shp_QKbcas",
+                            wSize: 1228,
+                            hSize: 1228
+                        }, {
+                            nome: "MD-20x20",
+                            forma: "shp_QKbcas",
+                            wSize: 1622,
+                            hSize: 1622
+                        },
+                    ];	
+
+                    conteudo_Obj.forEach(  (modelo) => {
+                        s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
+                    });
+
+               } catch (err) {alert(err) }
+           }
+           ///////////:::::::::::::::::::::::::::::::::::::
+
+
+           s1("#D3list_MD").addEventListener("change", ()=> { 
+                 indice = s1('#D3list_MD').selectedIndex;
+                alert(conteudo_Obj[indice].nome)
+           });
+
+ 
+           function toggleBtnsUIpreset() {
             if (presetsUI != true) {
                 es1.css("#D13-presets", { display: "flex" });
                 es1.css("#D3-ck1", { display: "none" });
@@ -307,10 +343,9 @@ async function exeConfigP1(){
                     !s1("#D13-Pres03").contains(event.target) ) 
                     { presetsUIDlg = true; toggleDlgUIpreset(); presetsUIDlg = false; }
            });
+          /////////::::::::::::::::::::::
 
 
-          
-       
 
           //    s1('#').value = 'string';
           //    s1('#').selectedIndex= Number(index);
