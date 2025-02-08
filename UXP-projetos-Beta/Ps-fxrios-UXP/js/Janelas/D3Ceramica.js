@@ -272,6 +272,7 @@ async function exeConfigP1(){
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
                 toggleDlgUIpreset();   presetsConfig();
+                s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
             });
          
            ///////// CARREGAR LISTA DINÂMICA
