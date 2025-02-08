@@ -258,16 +258,16 @@ async function exeConfigP1(){
           ////////::::::::::::::::::::
 
           ////////PRESETS DE MODELOS
+          indice = 0
           initSvgIcons(".svg-icon");
           es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
           es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
           //////// CRIAR PRESETS
-          es1.on("#D13-Pres01", "click", () => { toggleDlgUIpreset()});
-          /////// EDITAR PRESSETS
-          es1.on("#D13-Pres02", "click", () => { deleteItemList(); toggleDlgUIpreset()});
-          es1.on("#D13-Pres03", "click", () => { toggleDlgUIpreset()});
-   
-            ////// SAIR DA JANELA PRESETS
+          es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
+          /////// DELETAR PRESSETS
+          es1.on("#D13-Pres02", "click", () => {  deleteItemList(); toggleDlgUIpreset() });
+          es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
+               ////// SAIR DA JANELA PRESETS
             es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
@@ -281,18 +281,18 @@ async function exeConfigP1(){
                try {
                    conteudo_Obj = new Array();  
                    //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
-                   // conteudo_Obj = JSON.parse(localStorage.getItem("conteudo")) || [ 
-                    conteudo_Obj = [ 
+                   conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
+                    // conteudo_Obj = [ 
                         {
                             nome: "MD-15x15",
                             forma: "shp_QKbcas",
-                            wSize: 1228,
-                            hSize: 1228
+                            wSize: 15,
+                            hSize: 15
                         }, {
                             nome: "MD-20x20",
                             forma: "shp_QKbcas",
-                            wSize: 1622,
-                            hSize: 1622
+                            wSize: 20,
+                            hSize: 20
                         },
                     ];	
 
@@ -303,17 +303,37 @@ async function exeConfigP1(){
            }
            ///////////:::::::::::::::::::::::::::::::::::::
 
+           function statusDlgUIpreset(){
+                try {
+                    if(novoPreset==true){
+                        s1("#D13v01").value = "";
+                        s1("#D13v02").value = "";
+                        s1("#D13v03").value = "";
+                        s1("#D13v04").value = "";   
+                        s1("#D13-PresSaves").textContent= 'Salvar';
+                    }
+                    else{
+                        s1("#D13v01").value =  conteudo_Obj[indice].nome
+                        s1("#D13v02").value =  conteudo_Obj[indice].forma
+                        s1("#D13v03").value =  conteudo_Obj[indice].wSize
+                        s1("#D13v04").value =  conteudo_Obj[indice].hSize
+                        s1("#D13-PresSaves").textContent= 'Atualizar';
+                    }
+                    function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
+                } catch (err) {alert(err)}
+           };
 
           function presetsConfig(){
-               s1("#D3list_MD").innerHTML=""
-               nomeMD = s1("#D13v01").value;
-               formaMD = s1("#D13v02").value;
-               wSizeMD  = s1("#D13v03").value;
-               hSizeMD  = s1("#D13v04").value;
-
-                conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD })
-              //  conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD });
-                atualizarLista();
+                try {
+                    s1("#D3list_MD").innerHTML=""
+                    nomeMD = s1("#D13v01").value;
+                    formaMD = s1("#D13v02").value;
+                    wSizeMD  = s1("#D13v03").value;
+                    hSizeMD  = s1("#D13v04").value;
+                    if(novoPreset==true){ conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }) }
+                    else{ conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }); }
+                    atualizarLista();
+                } catch (err) {alert(err)}
            };
 
 
@@ -327,6 +347,7 @@ async function exeConfigP1(){
             conteudo_Obj.forEach(  (modelo) => {
                 s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
               });
+              localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
            };
 
 
@@ -355,6 +376,7 @@ async function exeConfigP1(){
                     es1.css("#D3list_MD", { display: "none" });
                     es1.css("#D13-DlgPrests", { display: "flex" });
                     presetsUIDlg = true;
+                    statusDlgUIpreset()
                 } else {
                     es1.css("#D3list_MD", { display: "flex" });
                     es1.css("#D13-DlgPrests", { display: "none" });
