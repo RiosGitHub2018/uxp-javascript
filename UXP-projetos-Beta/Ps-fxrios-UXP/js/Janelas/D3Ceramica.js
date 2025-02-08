@@ -267,6 +267,13 @@ async function exeConfigP1(){
           /////// DELETAR PRESSETS
           es1.on("#D13-Pres02", "click", () => {  deleteItemList(); toggleDlgUIpreset() });
           es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
+          ///////RESETAR PRESETS
+          es1.on("#D13-Pres04", "click", () => { 
+              localStorage.removeItem("modelosSave"); 
+              s1("#D3list_MD").innerHTML=""
+              corregarLista(); 
+              atualizarLista();
+           });
                ////// SAIR DA JANELA PRESETS
             es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
             ////// SALVAR PRESETS
