@@ -257,15 +257,17 @@ async function exeConfigP1(){
           }
           ////////::::::::::::::::::::
 
-          ////////PRESETS DE MODELOS
+            ////////PRESETS DE MODELOS
             indice = 0
+            let novoPreset;
+
             initSvgIcons(".svg-icon");
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
             es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
             /////// DELETAR PRESSETS
-            es1.on("#D13-Pres02", "click", () => {  deleteItemList(); toggleDlgUIpreset() });
+            es1.on("#D13-Pres02", "click", () => {  deleteIitens(); toggleDlgUIpreset() });
             es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
             ///////RESETAR PRESETS
             es1.on("#D13-Pres04", "click", () => { resetarLista();});
@@ -273,7 +275,7 @@ async function exeConfigP1(){
             es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
-                toggleDlgUIpreset();   presetsConfig();
+                presetsConfig();
                 s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
             });
             ////// OUNVITES DA LISTA
@@ -301,7 +303,6 @@ async function exeConfigP1(){
                             hSize: 20
                         },
                     ];	
-
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                     });
@@ -331,14 +332,29 @@ async function exeConfigP1(){
 
           function presetsConfig(){
                 try {
-                    s1("#D3list_MD").innerHTML=""
+                   atualizar = true;
+                 
                     nomeMD = s1("#D13v01").value;
                     formaMD = s1("#D13v02").value;
                     wSizeMD  = s1("#D13v03").value;
                     hSizeMD  = s1("#D13v04").value;
-                    if(novoPreset==true){ conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }) }
-                    else{ conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }); }
-                    atualizarLista();
+
+                    if(novoPreset==true){
+                        itemExite = conteudo_Obj.map(function (iitens) {return iitens.nome}) 
+                        if(itemExite.includes( nomeMD) == true) {
+                            alertar("Esse preset já consta na lista, adicione outro nome!");  
+                            atualizar = false 
+                            return;  
+                        } 
+                        else{conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }) }
+                     }
+                     else{ conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }); }
+
+                    if (atualizar ==true) {
+                        toggleDlgUIpreset();  
+                        s1("#D3list_MD").innerHTML=""
+                        atualizarLista();
+                    }  
                 } catch (err) {alert(err)}
            };
 
@@ -353,10 +369,14 @@ async function exeConfigP1(){
                 })
             };
 
-           function deleteItemList(){
-                s1("#D3list_MD").innerHTML=""
-                conteudo_Obj.splice(indice, 1)
-                atualizarLista();
+           function deleteIitens(){
+                confiramar(`Você tem certeza que deseja remover o preset "${conteudo_Obj[indice].nome}"?`);
+                s1("#confirm_btn2").addEventListener("click", async () => {
+                    dlg.close('OK'); 
+                    conteudo_Obj.splice(indice, 1)
+                    s1("#D3list_MD").innerHTML=""
+                    atualizarLista();
+                })
             };
           
            function atualizarLista(){
