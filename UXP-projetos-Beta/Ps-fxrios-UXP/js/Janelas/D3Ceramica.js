@@ -258,23 +258,18 @@ async function exeConfigP1(){
           ////////::::::::::::::::::::
 
           ////////PRESETS DE MODELOS
-          indice = 0
-          initSvgIcons(".svg-icon");
-          es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
-          es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
-          //////// CRIAR PRESETS
-          es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
-          /////// DELETAR PRESSETS
-          es1.on("#D13-Pres02", "click", () => {  deleteItemList(); toggleDlgUIpreset() });
-          es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
-          ///////RESETAR PRESETS
-          es1.on("#D13-Pres04", "click", () => { 
-              localStorage.removeItem("modelosSave"); 
-              s1("#D3list_MD").innerHTML=""
-              corregarLista(); 
-              atualizarLista();
-           });
-               ////// SAIR DA JANELA PRESETS
+            indice = 0
+            initSvgIcons(".svg-icon");
+            es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
+            es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
+            //////// CRIAR PRESETS
+            es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
+            /////// DELETAR PRESSETS
+            es1.on("#D13-Pres02", "click", () => {  deleteItemList(); toggleDlgUIpreset() });
+            es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
+            ///////RESETAR PRESETS
+            es1.on("#D13-Pres04", "click", () => { resetarLista();});
+            ////// SAIR DA JANELA PRESETS
             es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
@@ -313,7 +308,7 @@ async function exeConfigP1(){
            function statusDlgUIpreset(){
                 try {
                     if(novoPreset==true){
-                        s1("#D13v01").value = "";
+                        s1("#D13v01").value = "MD-";
                         s1("#D13v02").value = "";
                         s1("#D13v03").value = "";
                         s1("#D13v04").value = "";   
@@ -343,11 +338,20 @@ async function exeConfigP1(){
                 } catch (err) {alert(err)}
            };
 
+            function resetarLista(){
+                confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
+                s1("#confirm_btn2").addEventListener("click", async () => {
+                    localStorage.removeItem("modelosSave"); 
+                    corregarLista(); 
+                    s1("#D3list_MD").innerHTML=""
+                    atualizarLista();
+                })
+            };
 
-           async function deleteItemList(){
+           function deleteItemList(){
                 s1("#D3list_MD").innerHTML=""
-                await conteudo_Obj.splice(indice, 1)
-                await atualizarLista();
+                conteudo_Obj.splice(indice, 1)
+                atualizarLista();
             };
           
            function atualizarLista(){
