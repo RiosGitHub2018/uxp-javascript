@@ -276,6 +276,11 @@ async function exeConfigP1(){
                 toggleDlgUIpreset();   presetsConfig();
                 s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
             });
+            ////// OUNVITES DA LISTA
+            s1("#D3list_MD").addEventListener("change", ()=> { 
+                indice = s1('#D3list_MD').selectedIndex;
+               alert(conteudo_Obj[indice].wSize)    
+          });
          
            ///////// CARREGAR LISTA DINÂMICA
            corregarLista();
@@ -341,6 +346,7 @@ async function exeConfigP1(){
             function resetarLista(){
                 confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
                 s1("#confirm_btn2").addEventListener("click", async () => {
+                    dlg.close('OK'); 
                     localStorage.removeItem("modelosSave"); 
                     corregarLista(); 
                     s1("#D3list_MD").innerHTML=""
@@ -360,12 +366,6 @@ async function exeConfigP1(){
               });
               localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
            };
-
-
-           s1("#D3list_MD").addEventListener("change", ()=> { 
-                 indice = s1('#D3list_MD').selectedIndex;
-                alert(conteudo_Obj[indice].wSize)    
-           });
 
            let presetsUI = false;
            function toggleBtnsUIpreset() {
