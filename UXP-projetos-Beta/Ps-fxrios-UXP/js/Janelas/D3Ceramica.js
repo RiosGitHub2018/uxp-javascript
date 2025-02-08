@@ -289,7 +289,6 @@ async function exeConfigP1(){
                    conteudo_Obj = new Array();  
                    //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
                    conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
-                    // conteudo_Obj = [ 
                         {
                             nome: "MD-15x15",
                             forma: "shp_QKbcas",
