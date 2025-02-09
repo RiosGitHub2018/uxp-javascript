@@ -686,7 +686,7 @@ async function msgAlertaPxfxrios(txtIcon,  txtMsg, txtBtn1, txtBtn2, btn2False, 
         });
 
         document.querySelector("#confirm_btn1").addEventListener("click", () => {
-            dlg.close('OK'); Start=false; dialogsEventsFalse();
+            dlg.close('OK'); Start=false; dialogsEventsFalse(); return
          });
     } catch (err) {}
 };

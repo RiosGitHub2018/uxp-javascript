@@ -267,6 +267,8 @@ async function exeConfigP1(){
             let novoPreset;
   
             initSvgIcons(".svg-icon");
+            initSvgIcons(".svg-icon2");
+
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
@@ -314,7 +316,7 @@ async function exeConfigP1(){
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                         s1('#D3list_MD').selectedIndex = dadosUI_Obj[0].dadosA;    
-                        maquetStatus(conteudo_Obj[indice].make)
+                        try {maquetStatus(conteudo_Obj[indice].make) } catch (err) {}
                     });
                } catch (err) {alert(err) }
            }
@@ -356,7 +358,7 @@ async function exeConfigP1(){
                     const msg2 = "Preencha todos campos!";
                     if(novoPreset==true){
                         itemExite = conteudo_Obj.map(function (iitens) {return iitens.nome}) 
-                        if(itemExite.includes( nomeMD) == true) {alertar(msg1);  atualizar = false; } 
+                        if(itemExite.includes( nomeMD) == true) {alertar(msg1);  atualizar = false;  presetsUIDlg  = false} 
                         else if(!nomeMD || !formaMD || !wSizeMD || !hSizeMD){ alertar(msg2); atualizar = false;} 
                         else{ conteudo_Obj.push(objectItens);   maquete = s1("#D13ck3").checked;  }
                      }
@@ -440,7 +442,7 @@ async function exeConfigP1(){
            ///////// FECHAR JANELA PRESETS CLICANDO FORA
           document.addEventListener('click', function(event) {
                 if ( !s1("#D13-DlgPrests" ).contains(event.target) && !s1("#D13-Pres01").contains(event.target) &&
-                    !s1("#D13-Pres03").contains(event.target) ) 
+                    !s1("#D13-Pres03").contains(event.target)  && !s1("#confirm_btn1").contains(event.target)) 
                     { presetsUIDlg = true; toggleDlgUIpreset(); presetsUIDlg = false; }
            });
           /////////::::::::::::::::::::::
