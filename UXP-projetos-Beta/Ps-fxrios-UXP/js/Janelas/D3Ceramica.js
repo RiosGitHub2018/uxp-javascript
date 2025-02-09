@@ -281,7 +281,8 @@ async function exeConfigP1(){
             ////// OUNVITES DA LISTA
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
-               alert(conteudo_Obj[indice].wSize)    
+                maquetStatus(conteudo_Obj[indice].make)
+              // alert(conteudo_Obj[indice].wSize)    
           });
          
            ///////// CARREGAR LISTA DINÂMICA
@@ -295,12 +296,14 @@ async function exeConfigP1(){
                             nome: "MD-15x15",
                             forma: "shp_QKbcas",
                             wSize: 15,
-                            hSize: 15
+                            hSize: 15,
+                            make: true
                         }, {
                             nome: "MD-20x20",
                             forma: "shp_QKbcas",
                             wSize: 20,
-                            hSize: 20
+                            hSize: 20,
+                            make: true
                         },
                     ];	
                     conteudo_Obj.forEach(  (modelo) => {
@@ -317,6 +320,7 @@ async function exeConfigP1(){
                         s1("#D13v02").value = "";
                         s1("#D13v03").value = "";
                         s1("#D13v04").value = "";   
+                        s1("#D13ck3").checked=false;
                         s1("#D13-PresSaves").textContent= 'Salvar';
                     }
                     else{
@@ -324,6 +328,7 @@ async function exeConfigP1(){
                         s1("#D13v02").value =  conteudo_Obj[indice].forma
                         s1("#D13v03").value =  conteudo_Obj[indice].wSize
                         s1("#D13v04").value =  conteudo_Obj[indice].hSize
+                        s1("#D13ck3").checked =  conteudo_Obj[indice].make
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
@@ -332,28 +337,38 @@ async function exeConfigP1(){
 
           function presetsConfig(){
                 try {
-                   atualizar = true;
-                 
+                    atualizar = true;
                     nomeMD = s1("#D13v01").value;
                     formaMD = s1("#D13v02").value;
                     wSizeMD  = s1("#D13v03").value;
                     hSizeMD  = s1("#D13v04").value;
+                    makeMD =  s1("#D13ck3").checked
 
                     if(novoPreset==true){
                         itemExite = conteudo_Obj.map(function (iitens) {return iitens.nome}) 
                         if(itemExite.includes( nomeMD) == true) {
                             alertar("Esse preset já consta na lista, adicione outro nome!");  
-                            atualizar = false 
-                            return;  
+                            atualizar = false;
                         } 
-                        else{conteudo_Obj.push({  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }) }
+                        else if(!nomeMD || !formaMD || !wSizeMD || !hSizeMD){
+                            alertar("Preencha todos campos!");  
+                            atualizar = false;
+                        } 
+                        else{
+                            conteudo_Obj.push({ nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }) 
+                            maquete = s1("#D13ck3").checked;
+                        }
                      }
-                     else{ conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,   wSize: wSizeMD,  hSize: hSizeMD }); }
+                     else{ 
+                        conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD });
+                        maquete = conteudo_Obj[indice].make
+                     }
 
                     if (atualizar ==true) {
                         toggleDlgUIpreset();  
                         s1("#D3list_MD").innerHTML=""
                         atualizarLista();
+                        maquetStatus(maquete)    
                     }  
                 } catch (err) {alert(err)}
            };
@@ -380,11 +395,20 @@ async function exeConfigP1(){
             };
           
            function atualizarLista(){
-            conteudo_Obj.forEach(  (modelo) => {
-                s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
-              });
-              localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
+                conteudo_Obj.forEach(  (modelo) => {
+                    s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
+                });
+                localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
            };
+
+            function maquetStatus(maquete){
+                try {
+                      if(maquete ==false ){ 
+                        s1("#D3-ck5").disabled= true; es1.css('#D13-lbMac', { color: "#707070"}) 
+                    }
+                     else{ s1("#D3-ck5").disabled= false; es1.css('#D13-lbMac', { color: "#dddada"}) }
+                } catch (err) {alert(err)}
+            };
 
            let presetsUI = false;
            function toggleBtnsUIpreset() {
@@ -422,8 +446,7 @@ async function exeConfigP1(){
            });
           /////////::::::::::::::::::::::
 
-
-
+ 
           //    s1('#').value = 'string';
           //    s1('#').selectedIndex= Number(index);
           //    s1('#').textContent= 'Text';
