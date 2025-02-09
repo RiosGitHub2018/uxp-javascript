@@ -25,6 +25,7 @@ async function StampConfigP1(){
     estampar= app.activeDocument.name.match (/^\[OK! \]/) || app.activeDocument.name.match (/^\[Amostra\]/)  ;    
     if(estampar){
         process =false;
+        
         txtMsg  = `"${app.activeDocument.name}" já foi processado!\nVocê deseja abrir um outro?`
         confiramar(txtMsg);
         document.querySelector("#confirm_btn2").addEventListener("click", async () => {
@@ -223,6 +224,7 @@ async function exeConfigP1(){
               document.querySelector("#imgBase4").src = imgB64;
             });
 
+            corregarDados();
           ///////////:::::::::::::::::::::
           //     document.querySelector("#d3-btn1").classList.add('d3selecionado');
           //     /////// CARREGA  OS DADOS DO LOCALSTORAGE
@@ -258,14 +260,17 @@ async function exeConfigP1(){
           ////////::::::::::::::::::::
 
             ////////PRESETS DE MODELOS
-            indice = 0
+            indice = dadosUI_Obj[0].dadosA;
+            s1("#D3-ck2").checked =  dadosUI_Obj[0].dadosB;    
+            s1("#D3-ck3").checked =  dadosUI_Obj[0].dadosC;   
+            s1("#D3-ck5").checked =  dadosUI_Obj[0].dadosD;     
             let novoPreset;
-
+  
             initSvgIcons(".svg-icon");
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
-            es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
+            es1.on("#D13-Pres01", "click", () => { novoPreset=true;  toggleDlgUIpreset();  });
             /////// DELETAR PRESSETS
             es1.on("#D13-Pres02", "click", () => {  deleteIitens(); toggleDlgUIpreset() });
             /////// EDITAR PRESETS
@@ -283,8 +288,7 @@ async function exeConfigP1(){
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make)
-              // alert(conteudo_Obj[indice].wSize)    
-          });
+            });
          
            ///////// CARREGAR LISTA DINÂMICA
            corregarLista();
@@ -309,6 +313,8 @@ async function exeConfigP1(){
                     ];	
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
+                        s1('#D3list_MD').selectedIndex = dadosUI_Obj[0].dadosA;    
+                        maquetStatus(conteudo_Obj[indice].make)
                     });
                } catch (err) {alert(err) }
            }
@@ -400,6 +406,7 @@ async function exeConfigP1(){
                 try {
                       if(maquete ==false ){ 
                         s1("#D3-ck5").disabled= true; es1.css('#D13-lbMac', { color: "#707070"}) 
+                        s1("#D3-ck5").checked=false;
                     }
                      else{ s1("#D3-ck5").disabled= false; es1.css('#D13-lbMac', { color: "#dddada"}) }
                 } catch (err) {alert(err)}
@@ -468,17 +475,23 @@ async function exeConfigP1(){
           //             janelaAjustesx();
           //         } catch (err) {alert(err)}
           //     });
-              ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
-              const restar= document.querySelector("#D3btn-resetar");
-              restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
-              ////////::::::::::::::::::::
-              /////////////// FUNÇÃO PROCESSAMENTO FINAL
-              document.querySelector("#d3Btn1").addEventListener('click', async () => { finalProcess()});
+            //   ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
+            //   const restar= document.querySelector("#D3btn-resetar");
+            //   restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
+            //   ////////::::::::::::::::::::
               ///////////////////////////////////////////
               document.querySelector("#d3Btn2").addEventListener('click', () => {
                   document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
                   D3CeramicaEventos=false;
               });
+
+            /////////////// FUNÇÃO PROCESSAMENTO FINAL
+            document.querySelector("#d3Btn1").addEventListener('click', async () => { 
+               // finalProcess()
+                exportarDados()
+                alert("Processs")
+
+             });
 
           //     ////////////// ATALHOS CONFIGSXXXXXXXXXXXX
           //     //////// PRECESSO FINAL
@@ -540,18 +553,18 @@ async function exeConfigP1(){
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////// TODAS AS FUNÇÕES AQUI! ::::::::::::
     
-     /////// SALVAR  DINAMICAMENTE OS DADOS
-     function SalvarDados(){
-            const dadosD3 = {
-                dados1: document.querySelector("#D3-r1"  ).checked,
-                dados2: document.querySelector("#D3-r2"  ).checked,
-                dados3: document.querySelector("#D3-ck1").checked,
-                dados4: document.querySelector("#D3-ck2").checked,
-                dados5: document.querySelector("#D3-ck3").checked,
-                dados6: document.querySelector("#D3-ck5").checked,
-            };
-            localStorage.setItem('d3DadosSave', JSON.stringify(dadosD3));
-    };
+    //  /////// SALVAR  DINAMICAMENTE OS DADOS
+    //  function SalvarDados(){
+    //         const dadosD3 = {
+    //             dados1: document.querySelector("#D3-r1"  ).checked,
+    //             dados2: document.querySelector("#D3-r2"  ).checked,
+    //             dados3: document.querySelector("#D3-ck1").checked,
+    //             dados4: document.querySelector("#D3-ck2").checked,
+    //             dados5: document.querySelector("#D3-ck3").checked,
+    //             dados6: document.querySelector("#D3-ck5").checked,
+    //         };
+    //         localStorage.setItem('d3DadosSave', JSON.stringify(dadosD3));
+    // };
     
     //////// PREVISUALIZAR AJUSTES
     async function ajustePreview(v1,v2){
@@ -655,6 +668,36 @@ async function exeConfigP1(){
         });
     }
     // Inicializa todos os ícones com uma única chamada
+
+
+    async function corregarDados() {
+        try {
+            dadosUI_Obj = [];
+            dadosUI_Obj = JSON.parse(localStorage.getItem("dadosUISave")) || [ 
+                 {
+                     dadosA: 0,         ///// LISTA DE MODELOS
+                     dadosB: false,    ///// BACKUP DOCS
+                     dadosC: false,    ///// AUTO PRINT
+                     dadosD: false,   ///// MAQUETE EXECUTE
+                    }
+             ];	
+        } catch (err) {alert(err) }
+    }
+
+    function exportarDados(){
+        try {
+            dadosUI_Obj = [];
+            const dadosOBJ =  {
+                dadosA: s1('#D3list_MD').selectedIndex,   ///// LISTA DE MODELOS
+                dadosB:  s1("#D3-ck2").checked,               ///// BACKUP DOCS
+                dadosC:  s1("#D3-ck3").checked,               ///// AUTO PRINT
+                dadosD:  s1("#D3-ck5").checked,               ///// MAQUETE EXECUTE
+             };
+            dadosUI_Obj.push(dadosOBJ);  
+            localStorage.setItem("dadosUISave", JSON.stringify(dadosUI_Obj ));
+        } catch (err) {alert(err)}
+   };
+    ///////////:::::::::::::::::::::::::::::::::::::
 
 
 
