@@ -268,6 +268,7 @@ async function exeConfigP1(){
             es1.on("#D13-Pres01", "click", () => {  novoPreset=true;  toggleDlgUIpreset();  });
             /////// DELETAR PRESSETS
             es1.on("#D13-Pres02", "click", () => {  deleteIitens(); toggleDlgUIpreset() });
+            /////// EDITAR PRESETS
             es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
             ///////RESETAR PRESETS
             es1.on("#D13-Pres04", "click", () => { resetarLista();});
@@ -344,6 +345,8 @@ async function exeConfigP1(){
                     hSizeMD  = s1("#D13v04").value;
                     makeMD =  s1("#D13ck3").checked
 
+                    const objectItens = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
+
                     if(novoPreset==true){
                         itemExite = conteudo_Obj.map(function (iitens) {return iitens.nome}) 
                         if(itemExite.includes( nomeMD) == true) {
@@ -351,24 +354,16 @@ async function exeConfigP1(){
                             atualizar = false;
                         } 
                         else if(!nomeMD || !formaMD || !wSizeMD || !hSizeMD){
-                            alertar("Preencha todos campos!");  
-                            atualizar = false;
+                            alertar("Preencha todos campos!");   atualizar = false;
                         } 
-                        else{
-                            conteudo_Obj.push({ nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }) 
-                            maquete = s1("#D13ck3").checked;
-                        }
-                     }
-                     else{ 
-                        conteudo_Obj.splice( indice, 1, {  nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD });
-                        maquete = conteudo_Obj[indice].make
-                     }
+                        else{ conteudo_Obj.push(objectItens);   maquete = s1("#D13ck3").checked;  }
+                     } else{  conteudo_Obj.splice( indice, 1, objectItens ); maquete = conteudo_Obj[indice].make }
 
                     if (atualizar ==true) {
                         toggleDlgUIpreset();  
                         s1("#D3list_MD").innerHTML=""
                         atualizarLista();
-                        maquetStatus(maquete)    
+                        maquetStatus(maquete);   
                     }  
                 } catch (err) {alert(err)}
            };
