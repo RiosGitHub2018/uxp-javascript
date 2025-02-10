@@ -353,16 +353,31 @@ async function exeConfigP1(){
                     hSizeMD  = s1("#D13v04").value;
                     makeMD =  s1("#D13ck3").checked
 
-                    const objectItens = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
+                    const itensPrefs = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
+
                     const msg1 = "Esse preset já consta na lista, adicione outro nome!";
                     const msg2 = "Preencha todos campos!";
-                    if(novoPreset==true){
-                        itemExite = conteudo_Obj.map(function (iitens) {return iitens.nome}) 
-                        if(itemExite.includes( nomeMD) == true) {alertar(msg1);  atualizar = false;  presetsUIDlg  = false} 
-                        else if(!nomeMD || !formaMD || !wSizeMD || !hSizeMD){ alertar(msg2); atualizar = false;} 
-                        else{ conteudo_Obj.push(objectItens);   maquete = s1("#D13ck3").checked;  }
-                     }
-                      else{  conteudo_Obj.splice( indice, 1, objectItens ); maquete = conteudo_Obj[indice].make }
+
+                    if (novoPreset == true) {
+                      itemExite = conteudo_Obj.map(function (iitens) {                        
+                        return iitens.nome;
+                      });
+                      if (itemExite.includes(nomeMD) == true) {
+                        alertar(msg1);
+                        atualizar = false;
+                        presetsUIDlg = false;
+                      } else if (!nomeMD || !formaMD || !wSizeMD || !hSizeMD) {
+                        alertar(msg2);
+                        atualizar = false;
+                      } else {
+                        if(conteudo_Obj.length==2){ conteudo_Obj.push({ nome: "-"});}
+                        conteudo_Obj.push(itensPrefs);
+                        maquete = s1("#D13ck3").checked;
+                      }
+                    } else {
+                      conteudo_Obj.splice(indice, 1, itensPrefs);
+                      maquete = conteudo_Obj[indice].make;
+                    }
 
                     if (atualizar ==true) {
                         toggleDlgUIpreset();  
@@ -388,7 +403,8 @@ async function exeConfigP1(){
                 confiramar(`Você tem certeza que deseja remover o preset "${conteudo_Obj[indice].nome}"?`);
                 s1("#confirm_btn2").addEventListener("click", async () => {
                     dlg.close('OK'); 
-                    conteudo_Obj.splice(indice, 1)
+                    conteudo_Obj.splice(indice, 1);
+                    if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
                     s1("#D3list_MD").innerHTML=""
                     atualizarLista();
                 })
