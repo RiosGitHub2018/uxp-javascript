@@ -269,13 +269,13 @@ async function exeConfigP1(){
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
 
-        //    suaFunction();
-        //    async function suaFunction(){
-        //              // Inicializa os ícones
-        //             const updateIcon = await initSvgIcons(".icon");
-        //             // Altera dinamicamente o fill de um ícone específico
-        //            updateIcon("#D13-Pres01", "#ff0000"); // Altera o fill do primeiro ícone para vermelho
-        //     };
+           suaFunction();
+           async function suaFunction(){
+                     // Inicializa os ícones
+                    const updateIcon = await initSvgIcons(".icon");
+                    // Altera dinamicamente o fill de um ícone específico
+                   updateIcon("#D13-Pres01", "#878787"); // Altera o fill do primeiro ícone para vermelho
+            };
             
 
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
