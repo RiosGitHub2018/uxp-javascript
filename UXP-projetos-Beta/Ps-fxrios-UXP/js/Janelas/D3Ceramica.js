@@ -341,26 +341,8 @@ async function exeConfigP1(){
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
-
-
-                    suaFunction();
-                    function suaFunction(){
-                           s1("#D13v01").addEventListener('input', function() {
-                            // Remove o prefixo existente se houver
-                            let value = this.value.replace('MD-', '');
-                            // Adiciona o prefixo apenas se houver algum texto
-                            if (value) { this.value = 'MD-' + value; }
-                            // Se o campo estiver vazio, não adiciona o prefixo
-                            if (!value) { this.value = ''; }
-                            // Posiciona o cursor no final do texto
-                            const end = this.value.length;
-                            this.setSelectionRange(end, end);
-                        });
-                    };
-
-
-
-                } catch (err) {alert(err)}
+                    formatNomePrests();
+                  } catch (err) {alert(err)}
            };
 
           function presetsConfig(){
@@ -435,7 +417,7 @@ async function exeConfigP1(){
                 });
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
            };
-
+           
             function maquetStatus(maquete){
                 try {
                       if(maquete ==false ){ 
@@ -474,11 +456,29 @@ async function exeConfigP1(){
                 }
           };
 
+          ///////// FORMATAÇÃO DO NOME COM PREFIXO PADRÃO
+            function formatNomePrests(){
+                s1("#D13v01").addEventListener('input', function() {
+                     let value = this.value.replace('MD-', '');  // Remove o prefixo existente se houver
+                    if (value) { this.value = 'MD-' + value; }   // Adiciona o prefixo apenas se houver algum texto
+                    if (!value) { this.value = ''; }   // Se o campo estiver vazio, não adiciona o prefixo
+                    const end = this.value.length;  // Posiciona o cursor no final do texto
+                    this.setSelectionRange(end, end);
+                });
+            };
+
            ///////// FECHAR JANELA PRESETS CLICANDO FORA
           document.addEventListener('click', function(event) {
-                if ( !s1("#D13-DlgPrests" ).contains(event.target) && !s1("#D13-Pres01").contains(event.target) &&
-                    !s1("#D13-Pres03").contains(event.target)  && !s1("#confirm_btn1").contains(event.target)) 
-                    { presetsUIDlg = true; toggleDlgUIpreset(); presetsUIDlg = false; }
+                if (
+                  !s1("#D13-DlgPrests").contains(event.target) &&
+                  !s1("#D13-Pres01").contains(event.target) &&
+                  !s1("#D13-Pres03").contains(event.target)  ||
+                  !s1("#confirm_btn1").contains(event.target)
+                ) {
+                 presetsUIDlg = true;
+                  toggleDlgUIpreset();
+                  presetsUIDlg = false;
+                 }
            });
           /////////::::::::::::::::::::::
 
@@ -718,7 +718,7 @@ async function exeConfigP1(){
         } catch (err) {alert(err) }
     }
 
-    function exportarDados(){
+   async function exportarDados(){
         try {
             dadosUI_Obj = [];
             const dadosOBJ =  {
