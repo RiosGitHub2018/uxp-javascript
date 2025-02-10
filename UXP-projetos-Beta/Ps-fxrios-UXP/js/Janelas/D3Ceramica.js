@@ -325,8 +325,8 @@ async function exeConfigP1(){
            function statusDlgUIpreset(){
                 try {
                     if(novoPreset==true){
-                        s1("#D13v01").value = "MD-";
-                        s1("#D13v02").value = "";
+                        s1("#D13v01").value = "";
+                        s1("#D13v02").value = "shp_QKbcas",
                         s1("#D13v03").value = "";
                         s1("#D13v04").value = "";   
                         s1("#D13ck3").checked=false;
@@ -341,6 +341,25 @@ async function exeConfigP1(){
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
+
+
+                    suaFunction();
+                    function suaFunction(){
+                           s1("#D13v01").addEventListener('input', function() {
+                            // Remove o prefixo existente se houver
+                            let value = this.value.replace('MD-', '');
+                            // Adiciona o prefixo apenas se houver algum texto
+                            if (value) { this.value = 'MD-' + value; }
+                            // Se o campo estiver vazio, não adiciona o prefixo
+                            if (!value) { this.value = ''; }
+                            // Posiciona o cursor no final do texto
+                            const end = this.value.length;
+                            this.setSelectionRange(end, end);
+                        });
+                    };
+
+
+
                 } catch (err) {alert(err)}
            };
 
