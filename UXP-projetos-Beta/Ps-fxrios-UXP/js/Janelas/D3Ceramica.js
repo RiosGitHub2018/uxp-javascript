@@ -468,18 +468,20 @@ async function exeConfigP1(){
             };
 
            ///////// FECHAR JANELA PRESETS CLICANDO FORA
-          document.addEventListener('click', function(event) {
-                if (
-                  !s1("#D13-DlgPrests").contains(event.target) &&
-                  !s1("#D13-Pres01").contains(event.target) &&
-                  !s1("#D13-Pres03").contains(event.target)  ||
-                  !s1("#confirm_btn1").contains(event.target)
-                ) {
-                 presetsUIDlg = true;
-                  toggleDlgUIpreset();
-                  presetsUIDlg = false;
-                 }
-           });
+        //   document.addEventListener('click', function(event) {
+        //       try {
+        //         if (
+        //             !s1("#D13-DlgPrests").contains(event.target) &&
+        //             !s1("#D13-Pres01").contains(event.target) &&
+        //             !s1("#D13-Pres03").contains(event.target) &&
+        //             !s1("#confirm_btn1").contains(event.target)
+        //           ) {
+        //            presetsUIDlg = true;
+        //             toggleDlgUIpreset();
+        //             presetsUIDlg = false;
+        //            }
+        //       } catch (err) {}
+        //    });
           /////////::::::::::::::::::::::
 
  
