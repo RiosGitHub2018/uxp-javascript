@@ -268,8 +268,16 @@ async function exeConfigP1(){
   
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
-            initSvgIcons(".svg-iconDisabled");
-     
+
+        //    suaFunction();
+        //    async function suaFunction(){
+        //              // Inicializa os ícones
+        //             const updateIcon = await initSvgIcons(".icon");
+        //             // Altera dinamicamente o fill de um ícone específico
+        //            updateIcon("#D13-Pres01", "#ff0000"); // Altera o fill do primeiro ícone para vermelho
+        //     };
+            
+
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
@@ -343,6 +351,7 @@ async function exeConfigP1(){
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
                     formatNomePrests();
+
                   } catch (err) {alert(err)}
            };
 
@@ -666,44 +675,62 @@ async function exeConfigP1(){
 
     async function initSvgIcons(csvg) {
         const icons = document.querySelectorAll(csvg);
-            icons.forEach(async (element, index) => {
+    
+        // Função para carregar e renderizar o ícone
+        async function loadIcon(element, index) {
             // Adiciona um id dinâmico se não existir
             const id = element.id || `svg-icon-${index}`;
             element.id = id;
-            
+    
             const size = element.dataset.size || "20px";
             const icone = element.dataset.icon;
             const fill = element.dataset.fill || "#b8b8b8";
-            
-            const response = await fetch(`/icons/svg/${icone}.svg`);
-            if (!response.ok) {
-                throw new Error(`Failed to load icon: ${icone}`);
+    
+            try {
+                const response = await fetch(`/icons/svg/${icone}.svg`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load icon: ${icone}`);
+                }
+                const svgCode = await response.text();
+    
+                element.innerHTML = `
+                    <style>
+                        .${id} {
+                            width: ${size};
+                            height: ${size};
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .${id} svg,
+                        .${id} svg path,
+                        .${id} svg rect,
+                        .${id} svg circle,
+                        .${id} svg polygon {
+                            width: 100% !important;
+                            height: 100% !important;
+                            fill: ${fill} !important;
+                        }
+                    </style>
+                    <div class="${id}">${svgCode}</div>
+                `;
+            } catch (error) { console.error(error);}
+        }
+    
+        // Carrega todos os ícones inicialmente
+        icons.forEach(async (element, index) => {  await loadIcon(element, index); });
+    
+        // Retorna uma função para atualizar dinamicamente os ícones
+        return async function updateIcon(selector, newFill) {
+            const targetElement = document.querySelector(selector);
+            if (targetElement) {
+                targetElement.dataset.fill = newFill; // Atualiza o dataset.fill
+                const index = Array.from(icons).indexOf(targetElement); // Obtém o índice do elemento
+                await loadIcon(targetElement, index); // Recarrega o ícone com o novo fill
+            } else {
+                console.error("Element not found:", selector);
             }
-            
-            const svgCode = await response.text();
-            element.innerHTML = `
-                <style>
-                    #${id} {
-                        width: ${size};
-                        height: ${size};
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    #${id} svg {
-                        width: 100% !important;
-                        height: 100% !important;
-                    }
-                    #${id} svg path,
-                    #${id} svg rect,
-                    #${id} svg circle,
-                    #${id} svg polygon {
-                        fill: ${fill} !important;
-                    }
-                </style>
-                ${svgCode}
-            `;
-        });
+        };
     }
     // Inicializa todos os ícones com uma única chamada
 

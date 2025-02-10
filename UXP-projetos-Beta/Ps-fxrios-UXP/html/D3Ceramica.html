@@ -67,20 +67,8 @@
         fill: #222222 !important; /* Cor do SVG ao passar o mouse */
     }
 
-    .svg-iconDisabled{
-        width: 30px;
-		height: 30px;
-		margin: 2px;
-		padding: 2px;
-        background-image: none !important;
-        background-color: #5c5b5b; /* Cor de fundo ao passar o mouse */
-    }
-    
-    .svg-iconDisabled svg path,
-    .svg-iconDisabled svg rect,
-    .svg-iconDisabled svg circle,
-    .svg-iconDisabled svg polygon {
-    fill: #222222 !important;
+    .desabilitar svg path {
+     fill: gray; /* Altera a cor do SVG para cinza */
     }
 
  </style>
@@ -116,7 +104,7 @@
                         <sp-checkbox id="D3-ck1" size="s" style="margin-left: 5px;" ><label class="sp-checkbox-txt" >Mater. Vidro</label></sp-checkbox >
                         <!-- ///////CONIJUNTO DE BTÕES PARA PRESETS -->
                         <div id="D13-presets"  style="width: 90px; height: 22px;  display: flex; padding: 0px; display: none;">
-                            <div class="svg-icon  svg-iconDisabled" id="D13-Pres01" data-size="12px" data-icon="icon047" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
+                            <div class="svg-icon" id="D13-Pres01" data-size="12px" data-icon="icon047" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
                             <div class="svg-icon" id="D13-Pres02" data-size="12px" data-icon="icon042" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
                             <div class="svg-icon" id="D13-Pres03" data-size="14px" data-icon="icon024" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
                             <div class="svg-icon" id="D13-Pres04" data-size="14px" data-icon="icon017" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
