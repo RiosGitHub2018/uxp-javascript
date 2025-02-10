@@ -451,33 +451,5 @@
 			margin-top: 20px;
 }
 
-.svg-icon {
-		width: 30px;
-		height: 30px;
-		margin: 2px;
-		padding: 2px;
-		background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #3b3b3b 100%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 0px 1px 0px 1px rgb(95, 95, 95);
-		transition: background-color 0.3s ease, filter 0.3s ease; /* Adiciona transição suave */
-		border: 1px solid #2b2b2b;
-		/* border-radius: 3px; */
-}
 
-/* Efeito hover */
-.svg-icon:hover {
-		background-image: none !important;
-		background-color: #4CAF50; /* Cor de fundo ao passar o mouse */
-		cursor: pointer; /* Altera o cursor para indicar interatividade */
-}
-
-	/* Altera a cor do SVG ao passar o mouse */	
-	.svg-icon:hover svg path,
-	.svg-icon:hover svg rect,
-	.svg-icon:hover svg circle,
-	.svg-icon:hover svg polygon {
-		fill: #222222 !important; /* Cor do SVG ao passar o mouse */
-}
 

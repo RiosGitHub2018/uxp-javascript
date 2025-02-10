@@ -268,7 +268,8 @@ async function exeConfigP1(){
   
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
-
+            initSvgIcons(".svg-iconDisabled");
+     
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
@@ -682,24 +683,25 @@ async function exeConfigP1(){
             const svgCode = await response.text();
             element.innerHTML = `
                 <style>
-                    .${id} {
+                    #${id} {
                         width: ${size};
                         height: ${size};
                         display: flex;
                         justify-content: center;
                         align-items: center;
                     }
-                    .${id} svg,
-                    .${id} svg path,
-                    .${id} svg rect,
-                    .${id} svg circle,
-                    .${id} svg polygon {
+                    #${id} svg {
                         width: 100% !important;
                         height: 100% !important;
+                    }
+                    #${id} svg path,
+                    #${id} svg rect,
+                    #${id} svg circle,
+                    #${id} svg polygon {
                         fill: ${fill} !important;
                     }
                 </style>
-                <div class="${id}">${svgCode}</div>
+                ${svgCode}
             `;
         });
     }
