@@ -370,9 +370,11 @@ async function exeConfigP1(){
                         alertar(msg1);
                         atualizar = false;
                         presetsUIDlg = false; 
+                        presetsUI = false;
                       } else if (!nomeMD || !formaMD || !wSizeMD || !hSizeMD) {
                         alertar(msg2);
                         atualizar = false;
+                        presetsUI = false;
                       } else {
                         if(conteudo_Obj.length==2){ conteudo_Obj.push({ nome: "-"});}
                         conteudo_Obj.push(itensPrefs);
@@ -452,11 +454,13 @@ async function exeConfigP1(){
           function toggleDlgUIpreset() {
                 if (presetsUIDlg != true) {
                     es1.css("#D3list_MD", { display: "none" });
+                    es1.css("#D3list_MT", { display: "none" });
                     es1.css("#D13-DlgPrests", { display: "flex" });
                     presetsUIDlg = true;
                     statusDlgUIpreset()
                 } else {
                     es1.css("#D3list_MD", { display: "flex" });
+                    es1.css("#D3list_MT", { display: "flex" });
                     es1.css("#D13-DlgPrests", { display: "none" });
                     presetsUIDlg = false;
                 }
