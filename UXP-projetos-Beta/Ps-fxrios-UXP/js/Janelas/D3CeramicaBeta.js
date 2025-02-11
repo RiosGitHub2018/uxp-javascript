@@ -260,7 +260,7 @@ async function exeConfigP1(){
             initSvgIcons(".svg-icon2");
 
           //  es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
-            es1.on("#D13-btnPresets", "click", () => { 
+            es1.on("#D13-btnPresets", "click", async () => { 
                 toggleBtnsUIpreset();
             });
             //////// CRIAR PRESETS
