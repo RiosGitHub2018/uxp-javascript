@@ -698,7 +698,7 @@ function confiramar(txtMsg){ msgAlertaPxfxrios("W", txtMsg, "Não", "Sim", "bloc
 async function progressDLG(msg) {
     try { documentoAtivo = app.activeDocument.name } catch (error) {documentoAtivo=""}
     const dlgProg = document.querySelector("#processServic");
-    dlgProg.show({ title: "Processing", resize: "both", size: { width:250, height: 40} })
+    dlgProg.show({ title: "Processing", resize: "both", size: { width:250} })
     dlgProg.innerHTML = `<style>
     .progConteudo {
         width: 100%;
@@ -716,13 +716,26 @@ async function progressDLG(msg) {
   </style>
   <!-- //////// DIALOGO LAYOUT -->
   <div class="progConteudo">
-    <div style="display: flex; align-items: flex-start; position: relative; margin-left: 10px;">
-      <label id="iconLabel" style=" font-family: UXPSfxIcon; font-size: 70px; color: rgb(211, 216, 214); margin: 7px; margin-left: 12px; margin-bottom: -5px; " >h</label > 
-      <label id="txtMsgDLG" style="width: 80%; color: aliceblue; font-size: 13px; position: absolute; left: 80px; top: 28px;" ></label>
-      <label id="NomeDoc"  class="sp-radio-txt etd" style="font-size: 10px; position: absolute; left: 85px; top: 48px;" >${documentoAtivo}</label>
+    <div style="width: 100%; height: 90px; display: flex; align-items: center;  position: relative; margin-left: 10px;">
+       <div class="svg-relogio" id="svg-progress" data-size="70px" data-icon="icon068" data-fill="#d6d6d6" style="margin: 10px;"></div>
+      <!-- <label id="iconLabel" style=" font-family: UXPSfxIcon; font-size: 70px; color: rgb(211, 216, 214); margin: 7px; margin-left: 12px; margin-bottom: -5px; " >h</label >  -->
+      <label id="txtMsgDLG" style="width: 80%; color: aliceblue; font-size: 13px; position: absolute; left: 90px; top: 28px;" ></label>
+      <label id="NomeDoc"  class="sp-radio-txt etd" style="font-size: 10px; position: absolute; left: 95px; top: 48px;" >${documentoAtivo}</label>
     </div>
   </div>`;
+
+    //////// ROTACIONAR INGRENAGEM
     document.querySelector("#txtMsgDLG").innerHTML= msg;
+    initSvgIcons(".svg-relogio");
+    let angle = 0;
+    const element = document.getElementById('svg-progress');
+    function rotateElement() {
+        angle += 5; // Incrementa o ângulo de rotação
+        if (angle >= 360) { angle = 0; }  // Reseta o ângulo após uma volta completa
+        element.style.transform = `rotate(${angle}deg)`;   // Aplica a transformação de rotação ao elemento
+        requestAnimationFrame(rotateElement);    // Chama a função novamente para criar um loop contínuo
+    }
+    rotateElement(); // Inicia a animação
 };
 
 /////////// ADICIONAR SNAPSHOT

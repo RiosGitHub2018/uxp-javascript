@@ -407,9 +407,6 @@
 
 ////////// DESABILITAR/HABILITAR COMPONENTES
 /////////////xxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-
     
 })(this);
 
@@ -419,6 +416,67 @@ var s2 = e.$$; // Múltiplos elementos
 var es1 = e; // Biblioteca principal
 
 
+////////CARREGAR  ICONES SVG
+async function initSvgIcons(csvg) {
+    const icons = document.querySelectorAll(csvg);
+
+    // Função para carregar e renderizar o ícone
+    async function loadIcon(element, index) {
+        // Adiciona um id dinâmico se não existir
+        const id = element.id || `svg-icon-${index}`;
+        element.id = id;
+
+        const size = element.dataset.size || "20px";
+        const icone = element.dataset.icon;
+        const fill = element.dataset.fill || "#b8b8b8";
+
+        try {
+            const response = await fetch(`/icons/svg/${icone}.svg`);
+            if (!response.ok) {
+                throw new Error(`Failed to load icon: ${icone}`);
+            }
+            const svgCode = await response.text();
+
+            element.innerHTML = `
+                <style>
+                    .${id} {
+                        width: ${size};
+                        height: ${size};
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .${id} svg,
+                    .${id} svg path,
+                    .${id} svg rect,
+                    .${id} svg circle,
+                    .${id} svg polygon {
+                        width: 100% !important;
+                        height: 100% !important;
+                        fill: ${fill} !important;
+                    }
+                </style>
+                <div class="${id}">${svgCode}</div>
+            `;
+        } catch (error) { console.error(error);}
+    }
+
+    // Carrega todos os ícones inicialmente
+    icons.forEach(async (element, index) => {  await loadIcon(element, index); });
+
+    // Retorna uma função para atualizar dinamicamente os ícones
+    return async function updateIcon(selector, newFill) {
+        const targetElement = document.querySelector(selector);
+        if (targetElement) {
+            targetElement.dataset.fill = newFill; // Atualiza o dataset.fill
+            const index = Array.from(icons).indexOf(targetElement); // Obtém o índice do elemento
+            await loadIcon(targetElement, index); // Recarrega o ícone com o novo fill
+        } else {
+            console.error("Element not found:", selector);
+        }
+    };
+};
+////////////::::::::::::::::::
 
 
 ////////////// FUNÇAO TEMPLATE PARA CAIXA DE TEXTO NUMERAL COM SETAS
