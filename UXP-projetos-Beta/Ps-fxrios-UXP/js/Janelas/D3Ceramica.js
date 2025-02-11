@@ -224,21 +224,7 @@ async function exeConfigP1(){
               document.querySelector("#imgBase4").src = imgB64;
             });
 
-            corregarDados();
-          ///////////:::::::::::::::::::::
-          //     document.querySelector("#d3-btn1").classList.add('d3selecionado');
-          //     /////// CARREGA  OS DADOS DO LOCALSTORAGE
-          //     const dadosRecuperados = localStorage.getItem('d3DadosSave');
-          //     if(dadosRecuperados) {
-          //             const dadosObjeto = JSON.parse(dadosRecuperados);
-          //             document.querySelector("#D3-r1"  ).checked = dadosObjeto.dados1;
-          //             document.querySelector("#D3-r2"  ).checked = dadosObjeto.dados2;
-          //             document.querySelector("#D3-ck1").checked = dadosObjeto.dados3;
-          //             document.querySelector("#D3-ck2").checked = dadosObjeto.dados4;
-          //             document.querySelector("#D3-ck3").checked = dadosObjeto.dados5;
-          //             document.querySelector("#D3-ck5").checked = dadosObjeto.dados6;
-          //     }
-          //     ////////:::::::::::::::::::::::::::::::::::::::::::::::
+          corregarDados();
 
           const D3Btns = document.getElementsByClassName("d3-btAbas");
           const D3Abas = document.getElementsByClassName("d3-Abas");
@@ -269,25 +255,12 @@ async function exeConfigP1(){
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
 
-           suaFunction();
-           async function suaFunction(){
-                    botoes = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"]
-                     // Inicializa os ícones
-                    const updateIcon = await initSvgIcons(".icon");
-                    // Altera dinamicamente o fill de um ícone específico
-                    botoes.forEach( botoes=> {
-                        updateIcon( botoes, "#878787"); 
-                        document.querySelector(botoes).classList.add("desabilitar")
-                  });
-            };
-            
-
             es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
             es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
             //////// CRIAR PRESETS
             es1.on("#D13-Pres01", "click", () => { novoPreset=true;  toggleDlgUIpreset();  });
             /////// DELETAR PRESSETS
-            es1.on("#D13-Pres02", "click", () => {  deleteIitens(); toggleDlgUIpreset() });
+            es1.on("#D13-Pres02", "click", () => {  deleteIitens()});
             /////// EDITAR PRESETS
             es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
             ///////RESETAR PRESETS
@@ -430,6 +403,7 @@ async function exeConfigP1(){
                     s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                 });
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
+                desabledBtnsSVG( ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"] );
            };
            
             function maquetStatus(maquete){
@@ -453,6 +427,7 @@ async function exeConfigP1(){
                     es1.css("#D3-ck1", { display: "flex" });
                     presetsUI = false;
                 }
+                desabledBtnsSVG( ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"] );
           };
 
           ////// JANELA CONFIG PRESTS
@@ -735,10 +710,17 @@ async function exeConfigP1(){
                 console.error("Element not found:", selector);
             }
         };
-    }
-    // Inicializa todos os ícones com uma única chamada
+    };
+    ////////////::::::::::::::::::
 
-
+    async function desabledBtnsSVG(botoes){
+        const updateIcon = await initSvgIcons(".icon");
+        botoes.forEach( botoes=> {
+            if(conteudo_Obj.length==2){  updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable") }
+            else{updateIcon( botoes, "#d6d6d6"); s1(botoes).classList.remove("D13disable")}
+        });
+    };
+    
     async function corregarDados() {
         try {
             dadosUI_Obj = [];
