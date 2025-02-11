@@ -271,10 +271,14 @@ async function exeConfigP1(){
 
            suaFunction();
            async function suaFunction(){
+                    botoes = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"]
                      // Inicializa os ícones
                     const updateIcon = await initSvgIcons(".icon");
                     // Altera dinamicamente o fill de um ícone específico
-                   updateIcon("#D13-Pres01", "#878787"); // Altera o fill do primeiro ícone para vermelho
+                    botoes.forEach( botoes=> {
+                        updateIcon( botoes, "#878787"); 
+                        document.querySelector(botoes).classList.add("desabilitar")
+                  });
             };
             
 
