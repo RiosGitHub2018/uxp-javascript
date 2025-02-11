@@ -43,6 +43,10 @@ const m19 = require("./js/Janelas/D12CropTool.js");
 const m20 = require("./js/Janelas/D13CapaAlbuns.js");
 
 
+const m21 = require("./js/Janelas/D3Ceramica_beta.js");
+
+
+
 
 
 

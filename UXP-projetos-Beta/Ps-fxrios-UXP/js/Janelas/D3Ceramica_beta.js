@@ -1,6 +1,8 @@
 try {
     //////////////////////////////////////////////////////////////////
-    const inciarD3 = document.querySelector("#serv-btn8");
+   // const inciarD3 = document.querySelector("#serv-btn8");
+    const inciarD3 = document.querySelector("#serv-btn11");
+
     inciarD3.addEventListener("click", async (event) => {
         if (event.altKey || event.metaKey) { await docEstampa(566.6, 566.6, "Cerâmica")} 
         else { process = true; await incialConfigs() ;}
@@ -640,7 +642,8 @@ async function exeConfigP1(){
     ////// CARREGAR JALELA PRINCIPAL
     async function dlgCeramica() {
         D3CeramicaEventos =true;
-        fetch('html/D3Ceramica.html').then(response => response.text()).then(data => {
+        fetch('html/D3Ceramica_beta.html').then(response => response.text()).then(data => {
+        //fetch('html/D3Ceramica.html').then(response => response.text()).then(data => {
             D3dlg = document.querySelector("#dlgCeramica");
             D3dlg.show({ title: `PS-fxrios: Cerâmica Personalizada!`, resize: "both", size: { width:367, height:270}})
             D3dlg.innerHTML = data;

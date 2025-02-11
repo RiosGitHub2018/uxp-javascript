@@ -24,9 +24,9 @@ folderJSX = `${Usuario}/AppData/Roaming/Adobe/CEP/extensions/Ps-fxrios/host`;
 //       await core.executeAsModal(async () => {await exexutarJSXfile(`${folderJSX}/1DLG-Canecas.jsx`)},{"interactive": true});
 // });
 
-document.querySelector("#serv-btn11").addEventListener("click", async () => {
-      await core.executeAsModal(async () => {await exexutarJSXfile(`${folderJSX}/1DLG-Almofadas.jsx`)},{"interactive": true});
-});
+// document.querySelector("#serv-btn11").addEventListener("click", async () => {
+//       await core.executeAsModal(async () => {await exexutarJSXfile(`${folderJSX}/1DLG-Almofadas.jsx`)},{"interactive": true});
+// });
 
 
 ////////  SCRIPS JSX  //////////////////////////////////////////////////////////////////////////  
