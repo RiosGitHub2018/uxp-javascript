@@ -255,27 +255,39 @@ async function exeConfigP1(){
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
 
-            es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
-            es1.on("#D13-btnPresets", "click", () => { toggleBtnsUIpreset();});
+          //  es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
+            es1.on("#D13-btnPresets", "click", () => { 
+                toggleBtnsUIpreset();
+            });
             //////// CRIAR PRESETS
-            es1.on("#D13-Pres01", "click", () => { novoPreset=true;  toggleDlgUIpreset();  });
+            es1.on("#D13-Pres01", "click", () => {
+                 novoPreset=true;  toggleDlgUIpreset(); 
+             });
             /////// DELETAR PRESSETS
-            es1.on("#D13-Pres02", "click", () => {  deleteIitens()});
+            es1.on("#D13-Pres02", "click", () => { 
+                         deleteIitens()
+            });
             /////// EDITAR PRESETS
-            es1.on("#D13-Pres03", "click", () => { novoPreset=false;  toggleDlgUIpreset() });
+            es1.on("#D13-Pres03", "click", () => {
+                 novoPreset=false;  toggleDlgUIpreset()
+                 });
             ///////RESETAR PRESETS
             es1.on("#D13-Pres04", "click", () => { resetarLista();});
             ////// SAIR DA JANELA PRESETS
-            es1.on("#D13-PresSair", "click", () => { toggleDlgUIpreset()});
+            es1.on("#D13-PresSair", "click", () => {
+                 toggleDlgUIpreset(); toggleBtnsUIpreset();
+                });
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
                 presetsConfig();
                 s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
+                toggleBtnsUIpreset();
             });
             ////// OUNVITES DA LISTA
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make)
+                desabledBtnsSVG( ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"] );
             });
          
            ///////// CARREGAR LISTA DINÂMICA
@@ -353,7 +365,7 @@ async function exeConfigP1(){
                       if (itemExite.includes(nomeMD) == true) {
                         alertar(msg1);
                         atualizar = false;
-                        presetsUIDlg = false;
+                        presetsUIDlg = false; 
                       } else if (!nomeMD || !formaMD || !wSizeMD || !hSizeMD) {
                         alertar(msg2);
                         atualizar = false;
@@ -390,7 +402,7 @@ async function exeConfigP1(){
            function deleteIitens(){
                 confiramar(`Você tem certeza que deseja remover o preset "${conteudo_Obj[indice].nome}"?`);
                 s1("#confirm_btn2").addEventListener("click", async () => {
-                    dlg.close('OK'); 
+                    dlg.close(toggleBtnsUIpreset()); 
                     conteudo_Obj.splice(indice, 1);
                     if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
                     s1("#D3list_MD").innerHTML=""
@@ -404,6 +416,7 @@ async function exeConfigP1(){
                 });
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
                 desabledBtnsSVG( ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"] );
+                toggleBtnsUIpreset();
            };
            
             function maquetStatus(maquete){
@@ -445,6 +458,23 @@ async function exeConfigP1(){
                 }
           };
 
+          async function desabledBtnsSVG(botoes){
+            try {
+                const updateIcon = await initSvgIcons(".icon");
+                botoes.forEach( botoes=> {
+                    if(conteudo_Obj.length==2){
+                          updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable");
+                         }
+                         else if(
+                            s1('#D3list_MD').selectedIndex ==0 ||
+                             s1('#D3list_MD').selectedIndex ==1)
+                             {
+                          updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable");
+                         }
+                    else{ updateIcon( botoes, "#d6d6d6"); s1(botoes).classList.remove("D13disable") }
+                });
+            } catch (error) {alert(error)}
+        };
           ///////// FORMATAÇÃO DO NOME COM PREFIXO PADRÃO
             function formatNomePrests(){
                 s1("#D13v01").addEventListener('input', function() {
@@ -713,13 +743,6 @@ async function exeConfigP1(){
     };
     ////////////::::::::::::::::::
 
-    async function desabledBtnsSVG(botoes){
-        const updateIcon = await initSvgIcons(".icon");
-        botoes.forEach( botoes=> {
-            if(conteudo_Obj.length==2){  updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable") }
-            else{updateIcon( botoes, "#d6d6d6"); s1(botoes).classList.remove("D13disable")}
-        });
-    };
     
     async function corregarDados() {
         try {
