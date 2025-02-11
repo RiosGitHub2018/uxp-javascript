@@ -2,7 +2,6 @@
     .janelaBase{
        display: flex;
        align-items: flex-start;
-       position: relative;
     }
     .d3colunaA{
         width: 100%; 
@@ -36,44 +35,7 @@
         font-size: 11px;
         line-height: 1.8;
     }
-
-    .svg-icon {
-		width: 30px;
-		height: 30px;
-		margin: 2px;
-		padding: 2px;
-		background: linear-gradient(to bottom,  #919191 1%, #919191 5%, #6f6f6f 5%,#676767 44%, #3b3b3b 100%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: 0px 1px 0px 1px rgb(95, 95, 95);
-		transition: background-color 0.3s ease, filter 0.3s ease; /* Adiciona transição suave */
-		border: 1px solid #2b2b2b;
-		/* border-radius: 3px; */
-    }
-
-    /* Efeito hover */
-    .svg-icon:hover {
-        background-image: none !important;
-        background-color: #4CAF50; /* Cor de fundo ao passar o mouse */
-        cursor: pointer; /* Altera o cursor para indicar interatividade */
-    }
-
-    /* Altera a cor do SVG ao passar o mouse */	
-    .svg-icon:hover svg path,
-    .svg-icon:hover svg rect,
-    .svg-icon:hover svg circle,
-    .svg-icon:hover svg polygon {
-        fill: #222222 !important; /* Cor do SVG ao passar o mouse */
-    }
-
-    .D13disable,
-    .D13disable * {
-        background-image: none !important;
-        background-color: #636363;
-        pointer-events: none;
-    }
-
+   
  </style>
  
  <div class="janelaBase">
@@ -92,82 +54,14 @@
             <div class="d3-Abas" id="d3ID-Aba1" style="width: 248px; height: 145px; background-color:#5c5b5b; padding: 10px; padding-top: 15px;">
                    <!-- ///////// PAINEL CONFIGURAÇÕES  -->
                 <div style="width: 100%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative;">
-                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Modelo de Cerâmica</label>
-                    <!-- <sp-radio-group style="margin-left: 5px;">
+                    <label class="sp-radio-txt" style="position: absolute; top: -1em; left: 20px; background-color: #5c5b5b; padding: 2px;" >Preferências</label>
+                    <sp-radio-group style="margin-left: 5px;">
                     <sp-radio id="D3-r1" checked><label class="sp-radio-txt" >10x15</label></sp-radio>
                     <sp-radio id="D3-r2" ><label class="sp-radio-txt" >20x20</label></sp-radio>
-                    </sp-radio-group> -->
-
-                    
-                     <div style="width: 100%; height: 22px; display: flex; align-items: center; transform: translateY(5px); position: relative;"> 
-                       <select id="D3list_MD"  style="width:96px; margin: 0px; position: absolute;"></select>
-                        
-                        <div style="display: flex; transform: translateX(95px); align-items: center;">
-                            <div class="svg-icon" id="D13-btnPresets" data-size="13px" data-icon="icon026" data-fill="#d6d6d6" style="width: 22px; ;height: 22px; margin-right: 2px;"></div>
-                        <sp-checkbox id="D3-ck1" size="s" style="margin-left: 5px;" ><label class="sp-checkbox-txt" >Mater. Vidro</label></sp-checkbox >
-                        <!-- ///////CONIJUNTO DE BTÕES PARA PRESETS -->
-                        <div id="D13-presets"  style="width: 90px; height: 22px;  display: flex; padding: 0px; display: none;">
-                            <div class="svg-icon" id="D13-Pres01" data-size="12px" data-icon="icon047" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
-                            <div class="svg-icon" id="D13-Pres02" data-size="12px" data-icon="icon042" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
-                            <div class="svg-icon" id="D13-Pres03" data-size="14px" data-icon="icon024" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
-                            <div class="svg-icon" id="D13-Pres04" data-size="14px" data-icon="icon017" data-fill="#d6d6d6" style="width: 20px ;height: 22px; margin: 0px;"></div>
-                        </div>
-                        </div>
-                      </div>
-
-                      <!-- /////// NANELA DE PREDEFINIÇÕES -->
-
-
-                      <div id="D13-DlgPrests" style="width:333px;  height: 230px; display: none; flex-direction: column; position: fixed; z-index: 9999; left: 50%; top: 50%; justify-content: space-between; box-shadow: 1px 2px 17px 7px rgba(41, 41, 41, 0.44); transform: translate(-50%, -51%);  background-color: #535353; ">
-                              <div style="width: 100%; background-color: #ffffff; padding: 5px; display: flex; align-items: center;">
-                                <div class="svg-icon2" data-size="20px" data-icon="icon024" data-fill="#4d4d4d"></div>
-                                <label style="color: #232323; margin-left: 5px;">Presetes Configs</label>
-                             </div>
-
-                              <div style="width: 100%; height: 100%; background-color: #535353; padding: 10px;">
-                                    <div style="width: 100%; height: 100%; background-color: #7c7979; padding: 10px; box-sizing: border-box; position: relative;">
-                                           <div style="width: 100%;  height: calc(100% - 31px); display: flex;"> 
-                                                    <div style="width: 30%; height: 100%; display: flex; justify-content: center; align-items: center;">
-                                                        <div class="svg-icon2" data-size="70px" data-icon="icon068" data-fill="#f7f5f5"></div>
-                                                    </div>
-
-                                                    <div style="width: calc(100% - 30%); height: 100%; display: flex; box-sizing: border-box; position: relative; padding: 10px; padding-right: 0px; display: flex; flex-direction: column; align-items: center;"> 
-                                                        <div style="width: 100%; display: flex; flex-direction: column; padding: 10px;  border: 1px solid #9b9898; border-radius: 5px; background-color: #535353;  align-items: flex-end;">
-                                                                <div style="display: flex; margin: 2px; align-items: center;"> 
-                                                                    <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Nome:</label>
-                                                                    <input  type="text"  id="D13v01" value="" style="width: 100%; height: 21px; padding: 2px; margin: 2px;" placeholder="Nome">
-                                                                </div>
-                    
-                                                                <div style="display: flex; margin: 2px; align-items: center;"> 
-                                                                    <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Forma:</label>
-                                                                    <input  type="text"   id="D13v02" value="" style="width: 100%; height: 21px; padding: 2px; margin: 2px;" placeholder="Forma">
-                                                                </div>
-                            
-                                                                <div style="display: flex; margin: 2px; align-items: center;"> 
-                                                                    <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">Medidas:</label>
-                                                                    <input  type="number"  id="D13v03" value="" style="width: 35px; height: 21px; padding: 2px; margin: 2px;" placeholder="Larg">
-                                                                    <input  type="number"  id="D13v04" value="" style="width: 35px; height: 21px; padding: 2px; margin: 2px;" placeholder="Altu.">
-                                                                    <label style="color: #ffffff; font-size: 11px; margin-right: 1px;">CM</label>
-                                                                </div>
-                                                        </div>
-                                                        <sp-checkbox id="D13ck3" size="s" ><label class="sp-checkbox-txt" >Incluir Maquete</label></sp-checkbox >
-                                                   </div>
-                                            
-                                           </div>
-                                           <div style="width: 100%; height: 31px; background-color: #484949; display: flex; align-items: center; justify-content: flex-end;">
-                                                <div class="btnMedio " id="D13-PresSair" style="width:75px; margin: 2px;">Sair</div>
-                                                <div class="btnMedio " id="D13-PresSaves" style="width:75px; margin: 2px; margin-right: 7px;">Salvar</div>
-                                         </div>
-                                    </div>
-
-                              </div>
-                      </div>
-
-
+                    </sp-radio-group>
+                    <sp-checkbox id="D3-ck1" size="s" style="transform: translateY(4px);" ><label class="sp-checkbox-txt" >Material Vidro</label></sp-checkbox >
                 </div>
 
-
-                
                 <div style="display: flex; margin-top: 15px;">
                     <!-- ///////// PAINEL BACKUP ESTAMPA -->
                     <div style="width: 50%; height: 50px;  border: 1px solid rgb(73, 73, 73); font-display: flex;  align-items: center; padding: 10px; background-color: #5c5b5b; border-radius: 4px; position: relative; ">
@@ -220,7 +114,7 @@
        <div class="d3colunaB">
             <div class="d3btnMedio d3altura btn-Executar" id="d3Btn1" style="width: 71px; margin: 1px;">Enter</div>
             <div class="d3btnMedio d3altura" id="d3Btn2" style="width: 71px; margin: 1px;">Cancelar</div>
-            <sp-checkbox  id="D3-ck5" size="s" ><label class="sp-checkbox-txt" id="D13-lbMac">Maquete</label></sp-checkbox >
+            <sp-checkbox  id="D3-ck5" size="s" ><label class="sp-checkbox-txt" >Maquete</label></sp-checkbox >
        </div>
  </div>
  
