@@ -40,10 +40,10 @@ const m16 = require("./js/Janelas/D9Almofada.js");
 const m17 = require("./js/Janelas/D10Camisa.js");
 const m18 = require("./js/Janelas/D11SaveDocs.js");
 const m19 = require("./js/Janelas/D12CropTool.js");
+const m21 = require("./js/Janelas/D3CeramicaBeta.js");
 const m20 = require("./js/Janelas/D13CapaAlbuns.js");
 
 
-const m21 = require("./js/Janelas/D3Ceramica_beta.js");
 
 
 
