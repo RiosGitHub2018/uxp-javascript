@@ -250,29 +250,20 @@ try {
           ////////::::::::::::::::::::
    
             ////////PRESETS DE MODELOS
-
-           iconsBtnPrestes = [ "icon042", "icon024", "icon017"];
-           BtnPrestesDisab = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"];
-
             indice = dadosUI_Obj[0].dadosA;
             s1("#D3-ck2").checked =  dadosUI_Obj[0].dadosB;    
             s1("#D3-ck3").checked =  dadosUI_Obj[0].dadosC;   
             s1("#D3-ck5").checked =  dadosUI_Obj[0].dadosD;     
             let novoPreset;
    
+            /////// CARREGAR IMAGENS SVG DINAMICAMENTE
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
 
-
-            suaFunction();
-           async function suaFunction(){
-               try {
-                const updateIcon2 = await initSvgIcons(".icon");
-                updateIcon2( "#D13-Pres01", "#7df7b4"); 
-               } catch (err) {alert(err)}
-            };
-   
-          //  es1.on("#D13-presets", "click", () => { toggleBtnsUIpreset(); });
+            //////// ARRAYS CORREPONDENTE AO BOTÕES DESABILITADOS
+            iconsBtnPrestes = [ "icon042", "icon024", "icon017"];
+            BtnPrestesDisab = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"];
+  
             es1.on("#D13-btnPresets", "click", async () => { 
                 toggleBtnsUIpreset();
             });
@@ -282,7 +273,7 @@ try {
              });
             /////// DELETAR PRESSETS
             es1.on("#D13-Pres02", "click", () => { 
-                         deleteIitens()
+                 deleteIitens()
             });
             /////// EDITAR PRESETS
             es1.on("#D13-Pres03", "click", () => {
@@ -304,7 +295,7 @@ try {
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make);
-                desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
+                desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
             });
          
            ///////// CARREGAR LISTA DINÂMICA
@@ -449,15 +440,19 @@ try {
             };
    
            let presetsUI = false;
-           function toggleBtnsUIpreset() {
+           async function toggleBtnsUIpreset() {
                 if (presetsUI != true) {
                     es1.css("#D13-presets", { display: "flex" });
                     es1.css("#D3list_MT", { display: "none" });
                     presetsUI = true;
+                    const Icon2 = await initSvgIcons(".icon");
+                    Icon2( "#D13-btnPresets", "#7df7b4", "icon018"); 
                 } else {
                     es1.css("#D13-presets", { display: "none" });
                     es1.css("#D3list_MT", { display: "flex" });
                     presetsUI = false;
+                    const Icon2 = await initSvgIcons(".icon");
+                    Icon2( "#D13-btnPresets", "#d6d6d6", "icon026"); 
                 }
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
           };
