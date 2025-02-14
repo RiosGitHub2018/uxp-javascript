@@ -429,7 +429,6 @@ async function initSvgIcons(csvg) {
         const size = element.dataset.size || "20px";
         const icone = element.dataset.icon || "icon009.svg"
         const fill = element.dataset.fill || "#b8b8b8";
-
         try {
             const response = await fetch(`/icons/svg/${icone}.svg`);
             if (!response.ok) {
@@ -465,10 +464,11 @@ async function initSvgIcons(csvg) {
     icons.forEach(async (element, index) => {  await loadIcon(element, index); });
 
     // Retorna uma função para atualizar dinamicamente os ícones
-    return async function updateIcon(selector, newFill) {
+    return async function updateIcon(selector, newFill, nicons) {
         const targetElement = document.querySelector(selector);
         if (targetElement) {
             targetElement.dataset.fill = newFill; // Atualiza o dataset.fill
+            targetElement.dataset.icon =  nicons;
             const index = Array.from(icons).indexOf(targetElement); // Obtém o índice do elemento
             await loadIcon(targetElement, index); // Recarrega o ícone com o novo fill
         } else {
