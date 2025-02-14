@@ -427,7 +427,7 @@ async function initSvgIcons(csvg) {
         element.id = id;
 
         const size = element.dataset.size || "20px";
-        const icone = element.dataset.icon;
+        const icone = element.dataset.icon || "icon009.svg"
         const fill = element.dataset.fill || "#b8b8b8";
 
         try {
