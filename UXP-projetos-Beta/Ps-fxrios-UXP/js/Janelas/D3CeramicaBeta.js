@@ -11,14 +11,14 @@ try {
    ///FUNCTION incialConfigs INCIAR
    async function incialConfigs() {
     dialogsEventsFalse();
-   await dlgCeramica();
+   //await dlgCeramica();
    
    
-    return
+   // return
     if(app.documents.length==0){  const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};}
     StampConfigP1();
     doc= app.activeDocument;
-    resol = app.activeDocument.resolution;
+    resol =  200//  app.activeDocument.resolution;
     gethDOC = app.activeDocument.height;
     getwDOC = app.activeDocument.width;
     shapStamp = true;
@@ -54,23 +54,36 @@ try {
                 arte = "Cerâmica";
                 criarPasta(`${Usuario}/AppData/Roaming`, "temp_stamps");
                 ////// AÇÕES DE EVENTOS AQUI!
-                await app.batchPlay([{"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},], {});
+                await app.batchPlay([
+                    {"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
+                    { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
+                ]);
+
+                await listaPresetsDefault();
+                /////// DADOS MODELO 15X15
+                const  nomeA = conteudo_Obj[0].nome
+                const  formaA = conteudo_Obj[0].forma
+                const  tamanA = conteudo_Obj[0].wSize/2.54*resol ////// CONVERTE PARA DE CM PARA PX         //////// OU HSize POIS É MODELO QUADRADO
+
+                /////// DADOS MODELO 20x20
+                const  nomeB = conteudo_Obj[1].nome
+                const  formaB = conteudo_Obj[1].forma
+                const  tamanB = conteudo_Obj[1].wSize/2.54*resol ////// CONVERTE PARA DE CM PARA PX         //////// OU HSize POIS É MODELO QUADRADO
    
-                ////// TAMANHO MEDIO
-                // if(gethDOC>getwDOC){await configMoldes(2362, 1575, 2362, 1575, "shp_QKbcas", "MD-QUAD" );}
-                // else{ await configMoldes(1575, 2362, 1575, 2362, "shp_QKbcas", "MD-QUAD" );};
-                await configMoldes(1622, 1622, 1622, 1622, "shp_QKbcas", "MD-QUAD" );
+                ////// TAMANHO 15x15
+                  await configMoldes(tamanA, tamanA, tamanA, tamanA, formaA, nomeA );
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
-   
-                ////// TAMANHO GRANDE
-                if(gethDOC>getwDOC){await configMoldes(1622, 1228, 1622, 1228, "shp_QKbcas", "MD-15x20" );}
-                else{await configMoldes(1228, 1622, 1228, 1622, "shp_QKbcas",  "MD-15x20" ); };
+     
+                ////// TAMANHO 20x20
+                await configMoldes(tamanB, tamanB, tamanB, tamanB, formaB, nomeB );
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
-    
-                ////// TAMANHO PEQUENO
-                if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
-                else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
-                await configsPositions(5, null);
+
+
+                // ////// TAMANHO PEQUENO
+                // if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
+                // else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
+                // await configsPositions(5, null);
+
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
                 await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
                 sanapBase ="MD-20x30";
@@ -300,25 +313,11 @@ try {
          
            ///////// CARREGAR LISTA DINÂMICA
            corregarLista();
-           async function corregarLista() {
+          async function corregarLista() {
                try {
-                   conteudo_Obj = new Array();  
-                   //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
-                   conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
-                        {
-                            nome: "MD-15x15",
-                            forma: "shp_QKbcas",
-                            wSize: 15,
-                            hSize: 15,
-                            make: true
-                        }, {
-                            nome: "MD-20x20",
-                            forma: "shp_QKbcas",
-                            wSize: 20,
-                            hSize: 20,
-                            make: true
-                        },
-                    ];	
+                conteudo_Obj = new Array();  
+                //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
+                    listaPresetsDefault();
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                         s1('#D3list_MD').selectedIndex = dadosUI_Obj[0].dadosA;    
@@ -399,14 +398,16 @@ try {
            };
    
             function resetarLista(){
-                confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
-                s1("#confirm_btn2").addEventListener("click", async () => {
-                    dlg.close('OK'); 
-                    localStorage.removeItem("modelosSave"); 
-                    corregarLista(); 
-                    s1("#D3list_MD").innerHTML=""
-                    atualizarLista();
-                })
+                try {
+                    confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
+                    s1("#confirm_btn2").addEventListener("click", async () => {
+                        dlg.close('OK'); 
+                        localStorage.removeItem("modelosSave"); 
+                        corregarLista(); 
+                        s1("#D3list_MD").innerHTML=""
+                        atualizarLista();
+                    })
+                } catch (err) {alert(err)}
             };
    
            function deleteIitens(){
@@ -674,7 +675,7 @@ try {
             await app.batchPlay([
                 {"_obj":"set","_target":[{"_property":"background","_ref":"layer"}],"layerID":2,"to":{"_obj":"layer","mode":{"_enum":"blendMode","_value":"normal"},"name":"Conteudo","opacity":{"_unit":"percentUnit","_value":100.0}}},
                 {"_obj":"newPlacedLayer"},
-                {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"pixelsUnit","_value":h},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":200.0},"scaleStyles":true},
+                {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"pixelsUnit","_value":h},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":resol},"scaleStyles":true},
                 {"_obj":"canvasSize","horizontal":{"_enum":"horizontalLocation","_value":"center"},"width":{"_unit":"pixelsUnit","_value":w}},
                 {"_obj":"set","_target":[{"_property":"workPath","_ref":"path"}],"to":{"_obj":"customShape","bottom":{"_unit":"pixelsUnit","_value":btm},"keyOriginType":9,"left":{"_unit":"pixelsUnit","_value":0.0},"name":mold,"right":{"_unit":"pixelsUnit","_value":rig},"top":{"_unit":"pixelsUnit","_value":0.0}}},
                 {"_obj":"set","_target":[{"_property":"selection","_ref":"channel"}],"to":{"_property":"workPath","_ref":"path"}},
@@ -700,9 +701,27 @@ try {
             ], {});
         } catch (err) {alert(err)}
     };
-   
-   
-    
+
+
+    ////// ARRAY CO PRESTES DEFAULTS
+    function listaPresetsDefault(){
+        conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
+             {
+                 nome: "MD-15x15",
+                 forma: "shp_QKbcas",
+                 wSize: 15,
+                 hSize: 15,
+                 make: true
+             }, {
+                 nome: "MD-20x20",
+                 forma: "shp_QKbcas",
+                 wSize: 20,
+                 hSize: 20,
+                 make: true
+             },
+         ];	
+     };
+
     async function corregarDados() {
         try {
             dadosUI_Obj = [];
