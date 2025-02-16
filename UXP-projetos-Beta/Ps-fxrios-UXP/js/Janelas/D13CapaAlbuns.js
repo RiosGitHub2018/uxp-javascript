@@ -237,7 +237,12 @@ es1.on('#List01', 'change', function() {
 
 async function criarDocConfigs(){
     try {
-        resol = 250;
+        dadosRecuperados = localStorage.getItem('D1DadosSave');
+        const dadosObjeto = JSON.parse(dadosRecuperados);
+
+        gramatura =  dadosObjeto.dados7 || 0.06;
+        resol = 254;
+
         paginas =parseFloat(s1("#et03").value.toString().replace(/,/g, ".")); 
         switch (radioOpcoes) {
             case 0:
@@ -245,7 +250,7 @@ async function criarDocConfigs(){
                 hDados= parseFloat(s1("#et02").value.toString().replace(/,/g, "."))+1; 
                 tamnhoFont= 75;
                 convasSizeAlterar=true;
-                dorsoSizeCM = paginas*2*0.06; ////VALOR EM CENTIMETRO
+                dorsoSizeCM = paginas*2*gramatura; ////VALOR EM CENTIMETRO
                 break;
             case 1:
                 try {
@@ -264,7 +269,7 @@ async function criarDocConfigs(){
                     }
                     else if(sizeFBk.split("x")[0] ==30){ hDados = 30.4}
                     if(wDados>30){ tamnhoFont= 75;} else{ tamnhoFont= 40;}
-                    dorsoSizeCM = paginas*2*0.06; ////VALOR EM CENTIMETRO
+                    dorsoSizeCM = paginas*2*gramatura; ////VALOR EM CENTIMETRO
                 } catch (error) {alert(error)}
               break;
         };
@@ -337,7 +342,7 @@ async function newDocument(nome, largura, altura, dorsoSizePT, finalSize){
         await core.executeAsModal(async (executionContext) => {
             await app.batchPlay([
                 {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
-                {"_obj":"make","documentID":408,"new":{"_obj":"document","artboard":false,"autoPromoteBackgroundLayer":false,"depth":8,"fill":{"_enum":"fill","_value":"white"},"guides":[],"height":{"_unit":"pixelsUnit","_value":altura},"mode":{"_class":"RGBColorMode"},"name":nome,"pixelScaleFactor":1.0,"profile":"sRGB IEC61966-2.1","resolution":{"_unit":"densityUnit","_value":250.0},"width":{"_unit":"pixelsUnit","_value":largura}}}, {"_obj":"delete","_target":[{"_property":"currentHistoryState","_ref":"historyState"}]}
+                {"_obj":"make","documentID":408,"new":{"_obj":"document","artboard":false,"autoPromoteBackgroundLayer":false,"depth":8,"fill":{"_enum":"fill","_value":"white"},"guides":[],"height":{"_unit":"pixelsUnit","_value":altura},"mode":{"_class":"RGBColorMode"},"name":nome,"pixelScaleFactor":1.0,"profile":"sRGB IEC61966-2.1","resolution":{"_unit":"densityUnit","_value":254.0},"width":{"_unit":"pixelsUnit","_value":largura}}}, {"_obj":"delete","_target":[{"_property":"currentHistoryState","_ref":"historyState"}]}
             ]);
 
             ////////////SUSPERDE HISTÓRICO: OBS: NESSE CASO LOGO APÓS O DOCUMENTO SER ADICIONADO
