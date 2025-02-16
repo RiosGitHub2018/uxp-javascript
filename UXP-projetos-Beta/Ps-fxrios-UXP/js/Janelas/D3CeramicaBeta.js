@@ -265,7 +265,7 @@ try {
             BtnPrestesDisab = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"];
   
             es1.on("#D13-btnPresets", "click", async () => { 
-                toggleBtnsUIpreset();
+                toggleBtnsUIpreset();  
             });
             //////// CRIAR PRESETS
             es1.on("#D13-Pres01", "click", () => {
@@ -447,6 +447,7 @@ try {
                     presetsUI = true;
                     const Icon2 = await initSvgIcons(".icon");
                     Icon2( "#D13-btnPresets", "#7df7b4", "icon018"); 
+                    desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 } else {
                     es1.css("#D13-presets", { display: "none" });
                     es1.css("#D3list_MT", { display: "flex" });
@@ -454,7 +455,7 @@ try {
                     const Icon2 = await initSvgIcons(".icon");
                     Icon2( "#D13-btnPresets", "#d6d6d6", "icon026"); 
                 }
-                desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
+              
           };
    
           ////// JANELA CONFIG PRESTS
