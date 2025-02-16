@@ -603,9 +603,11 @@ async function wCapaConfig(){
     ////// CARREGAR CARTÃO
     async function outroLogoFolder(){
         core.executeAsModal(async () => {
-        const directory = await fs.getFileForOpening(); 
-        const persistentTokenLogo = await fs.createPersistentToken(directory);   
+        const novoLogoDir = await fs.getFileForOpening(); 
+        const persistentTokenLogo = await fs.createPersistentToken(novoLogoDir) ;   
         localStorage.setItem("persistentLogo", persistentTokenLogo);
+        defaultLogo = true;
+        s1("#btnBuslogo").classList.remove("bordaVermelha")
         },{"interactive": true});
     };
 
@@ -621,8 +623,8 @@ async function wCapaConfig(){
         else{
             ////// SE O CHECKBOX [selectLogo] FOR MARCADO, BUSCAR LOGO INSERIDO NA FUNÇÃO [outroLogoFolder()]
             novoLogo = localStorage.getItem("persistentLogo");
-            thePersistentFolder = await fs.getEntryForPersistentToken(novoLogo);
-            token = fs.createSessionToken(thePersistentFolder); 
+            localLogo = await fs.getEntryForPersistentToken(novoLogo);
+            token = fs.createSessionToken(localLogo) ;
         };
 
         await app.batchPlay( [{"_obj":"placeEvent","antiAlias":true,"freeTransformCenterState":{"_enum":"quadCenterState","_value":"QCSAverage"},"linked":true,"null":{"_kind":"local","_path":token},"offset":{"_obj":"offset","horizontal":{"_unit":"distanceUnit","_value":0.0},"vertical":{"_unit":"distanceUnit","_value":0.0}}}], { synchronousExecution: false, });
@@ -757,6 +759,7 @@ function dlgPreferencias() {
 //////************* 
 
 function configsPreferences(){
+    defaultLogo=true;
     dlgConfig =document.querySelector("#dlgCartconfig")
     dlgConfig.innerHTML= `<div class="D1aimg_main"> <div class="D1aimg_Container"> <h1 style="color: #f4f2f2;">Preferências</h1> <sp-divider></sp-divider> <div style="width: 100%; height: 210px; border: 1px solid rgb(65, 65, 65); margin-top: 5px; padding: 5px;"> <div style="width: 200px; display: flex; flex-direction: column; margin: 2px 10px; align-items: center; justify-content: center;"> <div style="display: flex; align-items: center; justify-content: center;  transform: translateX(-50px); "> <sp-checkbox  id="insImagem" size="s"  style="width: 20px;" ><label class="sp-checkbox-txt"  style="margin: 0px;">Inseir Imagem</label></sp-checkbox > <div class="btnMedio elem-Desabilitado" id="btnBuscar" style="width: 70px; margin: 5px; transform: translateX(70px);">Diretório</div> </div> <label id="caminho" style="color: #a8a8a8; font-size: 11px; transform: translateX(-10px); ">C://Diretotio..........</label> </div> <sp-divider style=" transform: translateY(5px); "></sp-divider> <div style="display: flex; flex-direction: column; transform: translateY(10px); margin: 2px 8px"> <sp-checkbox  id="addMcVinco" size="s"  style="width: 20px;" ><label class="sp-checkbox-txt"  style="margin: 0px;">Adiciona marcas do vinco</label></sp-checkbox > <input type="number" value="30" id="McVincoSize" style="width: 30px; display: flex; transform: translate(140px, -30px);"> <sp-checkbox  id="exibTabela" size="s"  style=" position: absolute; top: 163px;" ><label class="sp-checkbox-txt"  style="margin: 0px;">Exibir a Tabela no final </label></sp-checkbox > </div> <sp-divider style=" transform: translateY(-7px); "></sp-divider> <sp-checkbox  id="desAddLogo" size="s"  style=" position: absolute; top: 193px; left: 46px;" ><label class="sp-checkbox-txt"  style="margin: 0px;">Habiliitar adiçao do Logotipo</label></sp-checkbox > <div style="display: flex; align-items: center; justify-content: center;  transform: translate(-35px, 16px); "> <sp-checkbox  disabled id="selectLogo" size="s"  style="width: 20px;" >Selecionar logo</sp-checkbox > <div class="btnMedio elem-Desabilitado" id="btnBuslogo" style="width: 50px; margin: 5px; transform: translateX(76px);">Buscar</div> </div> </div> <sp-divider style=" width: 200px; transform: translateY(-30px); "></sp-divider> <div style="display: flex; position: absolute; top: 255px; align-items: center;"> <label class="sp-checkbox-txt"  style="margin: 0px;">Gramatura</label> <input type="text" value="0.05" id="gramatura" style="width: 40px; height: 21px; padding: 2px; margin: 0px;"> <label class="sp-checkbox-txt"  style="margin-left: 7px;">cm</label> </div> </div> </div> <div style="width: 100%; height: 100%; display: flex; align-items: center; margin-top: 5px; border: 1px solid #474747; padding: 10px; justify-content: center; border-radius: 0 0 7px 7px; background-color: #4e4d4d;"> <div class="btnMedio" id="D1btnFec" style="width: 70px; margin: 5px;">Sair</div> <div class="btnMedio" id="D1btnOK" style="width: 70px; margin: 5px;">Salvar</div> </div> </div> </div> `
         try {
@@ -790,16 +793,29 @@ function configsPreferences(){
             else { bt0001.classList.remove('elem-Desabilitado'); cartaoADD = true};
         });
 
-        document.getElementById("selectLogo").addEventListener("click", function(){ statusConfigsADDLogo() });
+        document.getElementById("selectLogo").addEventListener("click", function(){
+             statusConfigsADDLogo()
+             });
         document.getElementById("desAddLogo").addEventListener("click", async function(){ statusConfigsADDLogo()});
         document.getElementById("btnBuslogo").addEventListener("click", function(){outroLogoFolder()});
                    
         bt0001.addEventListener("click", function(){  cartaoFolder();  });
+
+        /////////// FECHA JANELA DE PREDEFINIÇÕES
         document.getElementById("D1btnOK").addEventListener("click", async function(){ 
-            document.querySelector("#dlgCartconfig").close('OK');  SalvarDados();
-             ////// REDIMENSINA A CAPA COM BASE NO VALOR DA GRAMATURA;
-             gramaturaDados();  gramaturaDados(); wCapaConfig()
-        });
+            ////// ALERTAR SE A OPÇÃO NOVO LOGO FOR TRU E SE O NOVO LOGO NÃO FOI SELECIONADO
+            if(s1("#selectLogo").checked ==true && defaultLogo==false){
+                alertar("Você não adcionou o novo logo!");
+                s1("#btnBuslogo").classList.add("bordaVermelha")
+            }
+            ////// PROCEGUIR SE A OPÇÃO NOVO LOGO FOR  FALSE OU TRUE SE O NOVO LOGO  FOI SELECIONADO
+            else{
+                 s1("#dlgCartconfig").close('OK');  SalvarDados();
+                 gramaturaDados();  gramaturaDados(); wCapaConfig() 
+            }
+         });
+
+
         document.getElementById("D1btnFec").addEventListener("click", function(){ 
             document.querySelector("#dlgCartconfig").close('OK');
         });
@@ -865,8 +881,12 @@ function statusConfigsADDLogo(){
         };
         if (document.getElementById("selectLogo").checked === true)  {
             document.getElementById("btnBuslogo").classList.remove('elem-Desabilitado');
+            defaultLogo=false;
         }  
-        else {document.getElementById("btnBuslogo").classList.add('elem-Desabilitado');};
+        else {
+            document.getElementById("btnBuslogo").classList.add('elem-Desabilitado')
+            defaultLogo=true;
+        };
     } catch (err) {}
 };///////ATUALIZA OS STATUS DAS CONFIGURAÇÕES DE LOGO FINAL
 ////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -238,9 +238,11 @@ es1.on('#List01', 'change', function() {
 async function criarDocConfigs(){
     try {
         dadosRecuperados = localStorage.getItem('D1DadosSave');
-        const dadosObjeto = JSON.parse(dadosRecuperados);
-
-        gramatura =  dadosObjeto.dados7 || 0.06;
+        if(dadosRecuperados) {
+            const dadosObjeto = JSON.parse(dadosRecuperados)
+            gramatura =  dadosObjeto.dados7 
+        }
+        else{ gramatura = 0.06}
         resol = 254;
 
         paginas =parseFloat(s1("#et03").value.toString().replace(/,/g, ".")); 
