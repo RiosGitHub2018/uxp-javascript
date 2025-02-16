@@ -259,7 +259,7 @@ async function criarDocConfigs(){
                     if(sizeFBk.split("x")[0] ==20){ hDados = 20.3}
                     else if(sizeFBk.split("x")[0] ==20){ hDados = 20.3}
                     else if(sizeFBk.split("x")[0] ==21){ hDados = 21}
-                    else if(sizeFBk.split("x")[0] ==25){ hDados = 25.4}
+                    else if(sizeFBk.split("x")[0] ==25){ hDados = 30.4}
                     else if(sizeFBk.split("x")[0] ==30){ hDados = 30.4}
                     if(wDados>30){ tamnhoFont= 75;} else{ tamnhoFont= 40;}
                     dorsoSizeCM = paginas*2*0.06; ////VALOR EM CENTIMETRO
