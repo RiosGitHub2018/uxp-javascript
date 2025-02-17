@@ -778,7 +778,7 @@ try {
                     { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
                 ]);
 
-                for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
+                for (let md of conteudo_Obj.slice( ordem )) { // Remove os 3 primeiros itens
                     await configMoldes(
                         parseFloat(md.wSize+1)/2.54*resol,
                         parseFloat(md.hSize+1)/2.54*resol,
