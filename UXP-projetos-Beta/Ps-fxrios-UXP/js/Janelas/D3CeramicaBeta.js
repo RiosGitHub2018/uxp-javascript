@@ -421,11 +421,14 @@ try {
            function deleteIitens(){
                 confiramar(`Você tem certeza que deseja remover o preset "${conteudo_Obj[indice].nome}"?`);
                 s1("#confirm_btn2").addEventListener("click", async () => {
-                    dlg.close(toggleBtnsUIpreset()); 
-                    conteudo_Obj.splice(indice, 1);
-                    if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
-                    s1("#D3list_MD").innerHTML=""
-                    atualizarLista();
+                    try {
+                        dlg.close(toggleBtnsUIpreset()); 
+                        await deletarSanpshots(conteudo_Obj[indice].nome ); //// REMOVE O SNAPSHOT DA LISTA
+                        conteudo_Obj.splice(indice, 1);
+                        if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
+                        s1("#D3list_MD").innerHTML=""
+                        atualizarLista();
+                    } catch (err) {alert(err)}
                 })
             };
           
