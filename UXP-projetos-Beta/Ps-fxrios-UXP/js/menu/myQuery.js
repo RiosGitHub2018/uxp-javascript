@@ -53,7 +53,7 @@
         var container = e.$(selector);
 
         if (!container) {
-            console.error('Elemento contêiner não encontrado.');
+            alert('Elemento contêiner não encontrado.');
             return;
         }
 
@@ -183,7 +183,7 @@
         var container = e.$(selector);
 
         if (!container) {
-            console.error('Elemento contêiner não encontrado.');
+            alert('Elemento contêiner não encontrado.');
             return;
         }
 
@@ -243,7 +243,7 @@
         if (contentElement) {
             conteudoDiv.appendChild(contentElement); // Mover o conteúdo original para o fieldset
         } else {
-            console.error('Conteúdo não encontrado.');
+            alert('Conteúdo não encontrado.');
         }
 
         // Adicionar a legenda e o conteúdo dentro do fieldset
@@ -278,7 +278,7 @@
     var container = e.$(selector);
 
     if (!container) {
-        console.error('Elemento contêiner não encontrado.');
+        alert('Elemento contêiner não encontrado.');
         return;
     }
 
@@ -364,7 +364,7 @@
     var container = e.$(selector);
 
     if (!container) {
-        console.error('Elemento contêiner não encontrado.');
+        alert('Elemento contêiner não encontrado.');
         return;
     }
 
@@ -432,7 +432,7 @@ async function initSvgIcons(csvg) {
         try {
             const response = await fetch(`/icons/svg/${icone}.svg`);
             if (!response.ok) {
-                throw new Error(`Failed to load icon: ${icone}`);
+                alert(`Failed to load icon: ${icone}`);
             }
             const svgCode = await response.text();
 
@@ -457,7 +457,7 @@ async function initSvgIcons(csvg) {
                 </style>
                 <div class="${id}">${svgCode}</div>
             `;
-        } catch (error) { console.error(error);}
+        } catch (error) {}
     }
 
     // Carrega todos os ícones inicialmente
@@ -472,7 +472,7 @@ async function initSvgIcons(csvg) {
             const index = Array.from(icons).indexOf(targetElement); // Obtém o índice do elemento
             await loadIcon(targetElement, index); // Recarrega o ícone com o novo fill
         } else {
-            console.error("Element not found:", selector);
+            alert("Element not found:", selector);
         }
     };
 };

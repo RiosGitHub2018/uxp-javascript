@@ -59,24 +59,22 @@ try {
                     { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
                 ]);
 
+                /////// CARREGA O ARRAY COM PRESETS
                 await listaPresetsDefault();
-                /////// DADOS MODELO 15X15
-                const  nomeA = conteudo_Obj[0].nome
-                const  formaA = conteudo_Obj[0].forma
-                const  tamanA = conteudo_Obj[0].wSize/2.54*resol ////// CONVERTE PARA DE CM PARA PX         //////// OU HSize POIS É MODELO QUADRADO
 
-                /////// DADOS MODELO 20x20
-                const  nomeB = conteudo_Obj[1].nome
-                const  formaB = conteudo_Obj[1].forma
-                const  tamanB = conteudo_Obj[1].wSize/2.54*resol ////// CONVERTE PARA DE CM PARA PX         //////// OU HSize POIS É MODELO QUADRADO
-   
-                ////// TAMANHO 15x15
-                  await configMoldes(tamanA, tamanA, tamanA, tamanA, formaA, nomeA );
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
-     
-                ////// TAMANHO 20x20
-                await configMoldes(tamanB, tamanB, tamanB, tamanB, formaB, nomeB );
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+                ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
+                for (let md of conteudo_Obj) {
+                    await configMoldes(
+                        md.wSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
+                        md.forma,
+                        md.nome
+                    );
+                   app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
+                }
+                ////////////::::::::::::::::::::::::::::::
 
 
                 // ////// TAMANHO PEQUENO
@@ -84,13 +82,26 @@ try {
                 // else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
                 // await configsPositions(5, null);
 
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+                //app.activeDocument.activeHistoryState = await app.activeDocument.historyStates [0];
+
+
+
+                corregarDados() 
+                //alert(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome); return
+               await selSanpshots(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome)
+
                 await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
-                sanapBase ="MD-20x30";
+                // sanapBase ="MD-20x30";
                
                 // await ZoomDOC(0); 
                 await document.querySelector('#processServic').close('OK');
                 await dlgCeramica()
+
+
+
+
+
+
               
                 await legendaDados();
             } catch (err) {alert(err)}
@@ -268,7 +279,7 @@ try {
             s1("#D3-ck3").checked =  dadosUI_Obj[0].dadosC;   
             s1("#D3-ck5").checked =  dadosUI_Obj[0].dadosD;     
             let novoPreset;
-   
+     
             /////// CARREGAR IMAGENS SVG DINAMICAMENTE
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
@@ -276,7 +287,8 @@ try {
             //////// ARRAYS CORREPONDENTE AO BOTÕES DESABILITADOS
             iconsBtnPrestes = [ "icon042", "icon024", "icon017"];
             BtnPrestesDisab = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"];
-  
+
+ 
             es1.on("#D13-btnPresets", "click", async () => { 
                 toggleBtnsUIpreset();  
             });
@@ -308,11 +320,12 @@ try {
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make);
+                selSanpshots(conteudo_Obj[indice].nome)
                 desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
             });
          
-           ///////// CARREGAR LISTA DINÂMICA
-           corregarLista();
+          ///////// CARREGAR LISTA DINÂMICA
+          corregarLista();
           async function corregarLista() {
                try {
                 conteudo_Obj = new Array();  
@@ -356,8 +369,8 @@ try {
                     atualizar = true;
                     nomeMD = s1("#D13v01").value;
                     formaMD = s1("#D13v02").value;
-                    wSizeMD  = s1("#D13v03").value;
-                    hSizeMD  = s1("#D13v04").value;
+                    wSizeMD  = parseFloat(s1("#D13v03").value)+1;
+                    hSizeMD  = parseFloat(s1("#D13v04").value)+1;
                     makeMD =  s1("#D13ck3").checked
    
                     const itensPrefs = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
@@ -405,7 +418,7 @@ try {
                         localStorage.removeItem("modelosSave"); 
                         corregarLista(); 
                         s1("#D3list_MD").innerHTML=""
-                        atualizarLista();
+                        await atualizarLista();
                     })
                 } catch (err) {alert(err)}
             };
@@ -428,6 +441,10 @@ try {
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 toggleBtnsUIpreset();
+
+                ////// AO RESETAR SELECIONAR O PRIMEIRO ITEM ANTES DE EXPORTAR OS DADOS
+                s1('#D3list_MD').selectedIndex = 0;
+                exportarDados()
            };
            
             function maquetStatus(maquete){
@@ -481,7 +498,8 @@ try {
                 const updateIcon = await initSvgIcons(".icon");
                 botoes.forEach( (botoes, index)=> {
                     if(conteudo_Obj.length==2){
-                    updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable");
+                        updateIcon( botoes, "#878787",  noincons[index]); 
+                        s1(botoes).classList.add("D13disable");
                     }
                     else if( s1('#D3list_MD').selectedIndex ==0 || s1('#D3list_MD').selectedIndex ==1) {
                         updateIcon( botoes, "#878787", noincons[index] );
@@ -699,7 +717,7 @@ try {
                 {"_obj":"select","_target":[{"_name":"Snapshot 1","_ref":"snapshotClass"}]},
                 {"_obj":"set","_target":[{"_property":"currentHistoryState","_ref":"historyState"}],"to":{"_obj":"snapshotClass","name":snapref}},
             ], {});
-        } catch (err) {alert(err)}
+        } catch (err) {}
     };
 
 
