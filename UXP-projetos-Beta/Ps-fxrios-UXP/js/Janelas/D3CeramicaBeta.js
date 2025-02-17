@@ -20,7 +20,7 @@ try {
     doc= app.activeDocument;
     resol =  200//  app.activeDocument.resolution;
     gethDOC = app.activeDocument.height;
-    getwDOC = app.activeDocument.width;
+    getwDOC = app.activeDocument.width-120;
     shapStamp = true;
    };
    //////:::::::::::::::::::
@@ -65,13 +65,14 @@ try {
                 ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
                 for (let md of conteudo_Obj) {
                     await configMoldes(
-                        md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
                         md.wSize / 2.54 * resol,
                         md.hSize / 2.54 * resol,
-                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
                         md.forma,
                         md.nome
                     );
+                    await configsPositions(5, null);
                    app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
                 }
                 ////////////::::::::::::::::::::::::::::::
@@ -313,12 +314,13 @@ try {
 
 
             ////// SALVAR PRESETS
-            es1.on("#D13-PresSaves", "click", () => { 
+            es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
                     s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
-                    toggleBtnsUIpreset();
-                    novoItemConfig( s1('#D3list_MD').selectedIndex );
+                    await novoItemConfig( s1('#D3list_MD').selectedIndex );
+                    await configsPositions(5, null);
+                    await toggleBtnsUIpreset();
                 } catch (err) {alert(err)}
             });
 
@@ -423,6 +425,7 @@ try {
                     confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
                     s1("#confirm_btn2").addEventListener("click", async () => {
                         dlg.close('OK'); 
+                        await resetSnapshots();
                         localStorage.removeItem("modelosSave"); 
                         corregarLista(); 
                         s1("#D3list_MD").innerHTML=""
@@ -560,22 +563,22 @@ try {
           //    es1.css('#elemento5', { transform:'translateX(4px)'})
           //    es1.on('#elemento', 'click', () =>{ funcao();});
    
-          //   ////////OUVINTES BOÕES DE ENQUADRAMENTO
-          //   controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
-          //    ////////::::::::::::::::::::
-          //    ///////// ABRIR O MENU DE AJUSTE DE CORES
-          //     const menuAjuste = document.querySelector("#btn-Cores");
-          //     menuAjuste.addEventListener('click', (event) => {
-          //         try {
-          //             /////////REMOVE O FOCU DA JANELHA PRINCIPAL
-          //             require('photoshop').core.performMenuCommand({
-          //                 commandID:5933,
-          //                 kcanDispatchWhileModal: true,
-          //                 _isCommand: false
-          //             });
-          //             janelaAjustesx();
-          //         } catch (err) {alert(err)}
-          //     });
+            ////////OUVINTES BOÕES DE ENQUADRAMENTO
+            controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
+             ////////::::::::::::::::::::
+             ///////// ABRIR O MENU DE AJUSTE DE CORES
+              const menuAjuste = document.querySelector("#btn-Cores");
+              menuAjuste.addEventListener('click', (event) => {
+                  try {
+                      /////////REMOVE O FOCU DA JANELHA PRINCIPAL
+                      require('photoshop').core.performMenuCommand({
+                          commandID:5933,
+                          kcanDispatchWhileModal: true,
+                          _isCommand: false
+                      });
+                      janelaAjustesx();
+                  } catch (err) {alert(err)}
+              });
             //   ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
             //   const restar= document.querySelector("#D3btn-resetar");
             //   restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
@@ -778,27 +781,48 @@ try {
     ///////////:::::::::::::::::::::::::::::::::::::
 
     
-   async function novoItemConfig(ni){
+   async function novoItemConfig(ordem ){
         try {
            await core.executeAsModal( async() => {
-                await configMoldes(
-                    conteudo_Obj[ni].wSize / 2.54 * resol,
-                    conteudo_Obj[ni].wSize / 2.54 * resol,
-                    conteudo_Obj[ni].hSize / 2.54 * resol,
-                    conteudo_Obj[ni].hSize / 2.54 * resol,
-                    conteudo_Obj[ni].forma,
-                    conteudo_Obj[ni].nome
-                );
-             // app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
-              await selSanpshots(conteudo_Obj[ni].nome)
-              await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
+                app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
+                await app.batchPlay([
+                    {"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
+                    { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
+                ]);
+
+                for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
+                    await configMoldes(
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.forma,
+                        md.nome
+                    );
+                }
+                //////// SELECIONA A CONFIGURAÇÃO ADICIONADA
+                await selSanpshots(conteudo_Obj[ ordem].nome)
+                await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
            });
         } catch (err) {alert(err)}
     };
+
    
-   
+    async function resetSnapshots(){
+        try {
+           for (let md of conteudo_Obj.slice( 2)) { // Remove os 3 primeiros itens
+                await core.executeAsModal( async() => {
+                    await app.batchPlay( [ { "_obj": "select", "_target": [ { "_name": md.nome, "_ref": "snapshotClass" } ] },  { "_obj": "delete", "_target": [ { "_property": "currentHistoryState", "_ref": "historyState" } ] }
+                    ]);
+                    await selSanpshots(conteudo_Obj[ 0].nome)
+                },{"interactive": true});
+           }
+        } catch (err) {alert(err)}
+    };
+      
    
    } catch (err) { alert(err)};
-   
-   
+
+
+
    
