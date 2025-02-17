@@ -752,6 +752,17 @@ async function creatSnapshot(nome){
     ], {});
 };
 
+//////////// DELETAR SNAPSHOTS
+async function deletarSanpshots(nome){
+    await core.executeAsModal(async () => { 
+        await app.batchPlay([
+            { "_obj": "select", "_target": [ { "_name": nome, "_ref": "snapshotClass" } ] },
+            // Delete Current History State
+            { "_obj": "delete", "_target": [ { "_property": "currentHistoryState", "_ref": "historyState" } ] }
+        ], {}); 
+    });
+};
+
 ////// RESETA TDS VALORES
 async function restauraIniConfig(nome){
     try {
@@ -1140,7 +1151,7 @@ function dialogsEventsFalse(){
 
 /////// EXPORTA TODAS AS FUNÇÕES:::::::::::
 module.exports = {
-    unidadeseRegua, stayleCamdadaADD, criarSelecao, renomearCamada, ordemNumerica, textoTranferencia, fecarTodososDocs,exibirTodososDocs, colunacResetClasss, limparHistorico, focarJanela, dialogsEventsFalse, docEstampa, obterIndexDocAtivo, ocultarCamada, vincadoTarget, exploradorDiretorio, encurtaLegenda, renomeaAquivos, getImageThumbnail, modalFocus, selSanpshots, restauraIniConfig, janelaAjustesx, creatSnapshot, pathPlugin, saveThumbSTP, importMokups, carregThumbSTP, dellTempStamp, progressDLG, error, alertar, confiramar, msgAlertaPxfxrios, estampasSave, moveOrigArtes, sequenciaSave, legendaDados, controlPosition, configsPositions, estampaGuias, loadAjustes, configsAjusteCor, getColorPickerRGBH, statusBorder, rotacionarDOC, BGconvertoCMD, abrirArquivo, ADDselecaoDOC, alignCamada, selectCamada, ZoomDOC, resetarConfigs, 
+    deletarSanpshots, unidadeseRegua, stayleCamdadaADD, criarSelecao, renomearCamada, ordemNumerica, textoTranferencia, fecarTodososDocs,exibirTodososDocs, colunacResetClasss, limparHistorico, focarJanela, dialogsEventsFalse, docEstampa, obterIndexDocAtivo, ocultarCamada, vincadoTarget, exploradorDiretorio, encurtaLegenda, renomeaAquivos, getImageThumbnail, modalFocus, selSanpshots, restauraIniConfig, janelaAjustesx, creatSnapshot, pathPlugin, saveThumbSTP, importMokups, carregThumbSTP, dellTempStamp, progressDLG, error, alertar, confiramar, msgAlertaPxfxrios, estampasSave, moveOrigArtes, sequenciaSave, legendaDados, controlPosition, configsPositions, estampaGuias, loadAjustes, configsAjusteCor, getColorPickerRGBH, statusBorder, rotacionarDOC, BGconvertoCMD, abrirArquivo, ADDselecaoDOC, alignCamada, selectCamada, ZoomDOC, resetarConfigs, 
     ADDselecaoShapes, solidColorCamada, carregarSelecao, refeshDocumento, backupCapa, salvarDocumto,
     modoDeTela, getZoomInform, importSuportes, exibirDiretorio, criarPasta, vbsExecutarBat, ZoomCamada, removeCamada
 };

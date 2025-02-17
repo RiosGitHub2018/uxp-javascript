@@ -65,27 +65,16 @@ try {
                 ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
                 for (let md of conteudo_Obj) {
                     await configMoldes(
-                        parseFloat(md.wSize+1) / 2.54 * resol,
-                        parseFloat(md.hSize+1) / 2.54 * resol,
-                        parseFloat (md.wSize+1) / 2.54 * resol,
-                        parseFloat(md.hSize+1) / 2.54 * resol,
+                        parseFloat(md.wSize+1)/2.54*resol,
+                        parseFloat(md.hSize+1)/2.54*resol,
+                        parseFloat(md.wSize+1)/2.54*resol,
+                        parseFloat(md.hSize+1)/2.54*resol,
                         md.forma,
                         md.nome
                     );
                    app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
                 }
                 ////////////::::::::::::::::::::::::::::::
-
-    
-
-                // ////// TAMANHO PEQUENO
-                // if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
-                // else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
-                // await configsPositions(5, null);
-
-                //app.activeDocument.activeHistoryState = await app.activeDocument.historyStates [0];
-
-
 
                await corregarDados() 
                 //alert(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome); return
@@ -97,12 +86,6 @@ try {
                 // await ZoomDOC(0); 
                 await document.querySelector('#processServic').close('OK');
                 await dlgCeramica()
-
-
-
-
-
-
               
                 await legendaDados();
             } catch (err) {alert(err)}
@@ -317,11 +300,9 @@ try {
             es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
-                  
                     s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
                     await novoItemConfig( s1('#D3list_MD').selectedIndex );
                     await toggleBtnsUIpreset();
-                 //   await configsPositions(5, null);
                 } catch (err) {alert(err)} 
             });
 
@@ -409,6 +390,7 @@ try {
                         maquete = s1("#D13ck3").checked;
                       }
                     } else {
+                        alert("editar")
                       conteudo_Obj.splice(indice, 1, itensPrefs);
                       maquete = conteudo_Obj[indice].make;
                     }
@@ -794,10 +776,10 @@ try {
 
                 for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
                     await configMoldes(
-                        parseFloat(md.wSize+1) / 2.54 * resol,
-                        parseFloat(md.hSize+1) / 2.54 * resol,
-                        parseFloat (md.wSize+1) / 2.54 * resol,
-                        parseFloat(md.hSize+1) / 2.54 * resol,
+                        parseFloat(md.wSize+1)/2.54*resol,
+                        parseFloat(md.hSize+1)/2.54*resol,
+                        parseFloat(md.wSize+1)/2.54*resol,
+                        parseFloat(md.hSize+1)/2.54*resol,
                         md.forma,
                         md.nome
                     );
