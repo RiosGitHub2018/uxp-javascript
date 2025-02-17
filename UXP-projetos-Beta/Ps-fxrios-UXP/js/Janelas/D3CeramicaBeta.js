@@ -11,16 +11,16 @@ try {
    ///FUNCTION incialConfigs INCIAR
    async function incialConfigs() {
     dialogsEventsFalse();
-   await dlgCeramica();
+   //await dlgCeramica();
    
    
-    return
+   // return
     if(app.documents.length==0){  const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};}
     StampConfigP1();
     doc= app.activeDocument;
-    resol = app.activeDocument.resolution;
+    resol =  200//  app.activeDocument.resolution;
     gethDOC = app.activeDocument.height;
-    getwDOC = app.activeDocument.width;
+    getwDOC = app.activeDocument.width-120;
     shapStamp = true;
    };
    //////:::::::::::::::::::
@@ -54,30 +54,55 @@ try {
                 arte = "Cerâmica";
                 criarPasta(`${Usuario}/AppData/Roaming`, "temp_stamps");
                 ////// AÇÕES DE EVENTOS AQUI!
-                await app.batchPlay([{"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},], {});
-   
-                ////// TAMANHO MEDIO
-                // if(gethDOC>getwDOC){await configMoldes(2362, 1575, 2362, 1575, "shp_QKbcas", "MD-QUAD" );}
-                // else{ await configMoldes(1575, 2362, 1575, 2362, "shp_QKbcas", "MD-QUAD" );};
-                await configMoldes(1622, 1622, 1622, 1622, "shp_QKbcas", "MD-QUAD" );
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
-   
-                ////// TAMANHO GRANDE
-                if(gethDOC>getwDOC){await configMoldes(1622, 1228, 1622, 1228, "shp_QKbcas", "MD-15x20" );}
-                else{await configMoldes(1228, 1622, 1228, 1622, "shp_QKbcas",  "MD-15x20" ); };
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
-    
-                ////// TAMANHO PEQUENO
-                if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
-                else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
-                await configsPositions(5, null);
-                app.activeDocument.activeHistoryState = app.activeDocument.historyStates [0];
+                await app.batchPlay([
+                    {"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
+                    { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
+                ]);
+
+                /////// CARREGA O ARRAY COM PRESETS
+                await listaPresetsDefault();
+
+                ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
+                for (let md of conteudo_Obj) {
+                    await configMoldes(
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.forma,
+                        md.nome
+                    );
+                    await configsPositions(5, null);
+                   app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
+                }
+                ////////////::::::::::::::::::::::::::::::
+
+
+                // ////// TAMANHO PEQUENO
+                // if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
+                // else{await configMoldes(1622,  2409, 1622,  2409, "shp_QKbcas", "MD-20x30" );};
+                // await configsPositions(5, null);
+
+                //app.activeDocument.activeHistoryState = await app.activeDocument.historyStates [0];
+
+
+
+                corregarDados() 
+                //alert(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome); return
+               await selSanpshots(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome)
+
                 await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
-                sanapBase ="MD-20x30";
+                // sanapBase ="MD-20x30";
                
                 // await ZoomDOC(0); 
                 await document.querySelector('#processServic').close('OK');
                 await dlgCeramica()
+
+
+
+
+
+
               
                 await legendaDados();
             } catch (err) {alert(err)}
@@ -255,7 +280,7 @@ try {
             s1("#D3-ck3").checked =  dadosUI_Obj[0].dadosC;   
             s1("#D3-ck5").checked =  dadosUI_Obj[0].dadosD;     
             let novoPreset;
-   
+     
             /////// CARREGAR IMAGENS SVG DINAMICAMENTE
             initSvgIcons(".svg-icon");
             initSvgIcons(".svg-icon2");
@@ -263,9 +288,10 @@ try {
             //////// ARRAYS CORREPONDENTE AO BOTÕES DESABILITADOS
             iconsBtnPrestes = [ "icon042", "icon024", "icon017"];
             BtnPrestesDisab = ["#D13-Pres02", "#D13-Pres03", "#D13-Pres04"];
-  
+
+ 
             es1.on("#D13-btnPresets", "click", async () => { 
-                toggleBtnsUIpreset();
+                toggleBtnsUIpreset();  
             });
             //////// CRIAR PRESETS
             es1.on("#D13-Pres01", "click", () => {
@@ -285,40 +311,36 @@ try {
             es1.on("#D13-PresSair", "click", () => {
                  toggleDlgUIpreset(); toggleBtnsUIpreset();
                 });
+
+
             ////// SALVAR PRESETS
-            es1.on("#D13-PresSaves", "click", () => { 
-                presetsConfig();
-                s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
-                toggleBtnsUIpreset();
+            es1.on("#D13-PresSaves", "click", async () => { 
+                   try {
+                    presetsConfig();
+                    s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+                    await novoItemConfig( s1('#D3list_MD').selectedIndex );
+                    await configsPositions(5, null);
+                    await toggleBtnsUIpreset();
+                } catch (err) {alert(err)}
             });
+
+
+
             ////// OUNVITES DA LISTA
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make);
+                selSanpshots(conteudo_Obj[indice].nome)
                 desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
             });
          
-           ///////// CARREGAR LISTA DINÂMICA
-           corregarLista();
-           async function corregarLista() {
+          ///////// CARREGAR LISTA DINÂMICA
+          corregarLista();
+          async function corregarLista() {
                try {
-                   conteudo_Obj = new Array();  
-                   //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
-                   conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
-                        {
-                            nome: "MD-15x15",
-                            forma: "shp_QKbcas",
-                            wSize: 15,
-                            hSize: 15,
-                            make: true
-                        }, {
-                            nome: "MD-20x20",
-                            forma: "shp_QKbcas",
-                            wSize: 20,
-                            hSize: 20,
-                            make: true
-                        },
-                    ];	
+                conteudo_Obj = new Array();  
+                //// RESGATA DO LOCALSTORAG SE NAO EXISTIR ADICIONA OS ITENS PADROES:
+                    listaPresetsDefault();
                     conteudo_Obj.forEach(  (modelo) => {
                         s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                         s1('#D3list_MD').selectedIndex = dadosUI_Obj[0].dadosA;    
@@ -357,8 +379,8 @@ try {
                     atualizar = true;
                     nomeMD = s1("#D13v01").value;
                     formaMD = s1("#D13v02").value;
-                    wSizeMD  = s1("#D13v03").value;
-                    hSizeMD  = s1("#D13v04").value;
+                    wSizeMD  = parseFloat(s1("#D13v03").value)+1;
+                    hSizeMD  = parseFloat(s1("#D13v04").value)+1;
                     makeMD =  s1("#D13ck3").checked
    
                     const itensPrefs = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
@@ -399,14 +421,17 @@ try {
            };
    
             function resetarLista(){
-                confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
-                s1("#confirm_btn2").addEventListener("click", async () => {
-                    dlg.close('OK'); 
-                    localStorage.removeItem("modelosSave"); 
-                    corregarLista(); 
-                    s1("#D3list_MD").innerHTML=""
-                    atualizarLista();
-                })
+                try {
+                    confiramar("Todos os presets adicionados seram removidos! Você deseja  removê-los?");
+                    s1("#confirm_btn2").addEventListener("click", async () => {
+                        dlg.close('OK'); 
+                        await resetSnapshots();
+                        localStorage.removeItem("modelosSave"); 
+                        corregarLista(); 
+                        s1("#D3list_MD").innerHTML=""
+                        await atualizarLista();
+                    })
+                } catch (err) {alert(err)}
             };
    
            function deleteIitens(){
@@ -427,6 +452,10 @@ try {
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 toggleBtnsUIpreset();
+
+                ////// AO RESETAR SELECIONAR O PRIMEIRO ITEM ANTES DE EXPORTAR OS DADOS
+                s1('#D3list_MD').selectedIndex = 0;
+                exportarDados()
            };
            
             function maquetStatus(maquete){
@@ -447,6 +476,7 @@ try {
                     presetsUI = true;
                     const Icon2 = await initSvgIcons(".icon");
                     Icon2( "#D13-btnPresets", "#7df7b4", "icon018"); 
+                    desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 } else {
                     es1.css("#D13-presets", { display: "none" });
                     es1.css("#D3list_MT", { display: "flex" });
@@ -454,7 +484,7 @@ try {
                     const Icon2 = await initSvgIcons(".icon");
                     Icon2( "#D13-btnPresets", "#d6d6d6", "icon018"); 
                 }
-                desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
+              
           };
    
           ////// JANELA CONFIG PRESTS
@@ -479,7 +509,8 @@ try {
                 const updateIcon = await initSvgIcons(".icon");
                 botoes.forEach( (botoes, index)=> {
                     if(conteudo_Obj.length==2){
-                    updateIcon( botoes, "#878787"); s1(botoes).classList.add("D13disable");
+                        updateIcon( botoes, "#878787",  noincons[index]); 
+                        s1(botoes).classList.add("D13disable");
                     }
                     else if( s1('#D3list_MD').selectedIndex ==0 || s1('#D3list_MD').selectedIndex ==1) {
                         updateIcon( botoes, "#878787", noincons[index] );
@@ -532,22 +563,22 @@ try {
           //    es1.css('#elemento5', { transform:'translateX(4px)'})
           //    es1.on('#elemento', 'click', () =>{ funcao();});
    
-          //   ////////OUVINTES BOÕES DE ENQUADRAMENTO
-          //   controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
-          //    ////////::::::::::::::::::::
-          //    ///////// ABRIR O MENU DE AJUSTE DE CORES
-          //     const menuAjuste = document.querySelector("#btn-Cores");
-          //     menuAjuste.addEventListener('click', (event) => {
-          //         try {
-          //             /////////REMOVE O FOCU DA JANELHA PRINCIPAL
-          //             require('photoshop').core.performMenuCommand({
-          //                 commandID:5933,
-          //                 kcanDispatchWhileModal: true,
-          //                 _isCommand: false
-          //             });
-          //             janelaAjustesx();
-          //         } catch (err) {alert(err)}
-          //     });
+            ////////OUVINTES BOÕES DE ENQUADRAMENTO
+            controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
+             ////////::::::::::::::::::::
+             ///////// ABRIR O MENU DE AJUSTE DE CORES
+              const menuAjuste = document.querySelector("#btn-Cores");
+              menuAjuste.addEventListener('click', (event) => {
+                  try {
+                      /////////REMOVE O FOCU DA JANELHA PRINCIPAL
+                      require('photoshop').core.performMenuCommand({
+                          commandID:5933,
+                          kcanDispatchWhileModal: true,
+                          _isCommand: false
+                      });
+                      janelaAjustesx();
+                  } catch (err) {alert(err)}
+              });
             //   ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
             //   const restar= document.querySelector("#D3btn-resetar");
             //   restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
@@ -673,7 +704,7 @@ try {
             await app.batchPlay([
                 {"_obj":"set","_target":[{"_property":"background","_ref":"layer"}],"layerID":2,"to":{"_obj":"layer","mode":{"_enum":"blendMode","_value":"normal"},"name":"Conteudo","opacity":{"_unit":"percentUnit","_value":100.0}}},
                 {"_obj":"newPlacedLayer"},
-                {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"pixelsUnit","_value":h},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":200.0},"scaleStyles":true},
+                {"_obj":"imageSize","constrainProportions":true,"height":{"_unit":"pixelsUnit","_value":h},"interfaceIconFrameDimmed":{"_enum":"interpolationType","_value":"automaticInterpolation"},"resolution":{"_unit":"densityUnit","_value":resol},"scaleStyles":true},
                 {"_obj":"canvasSize","horizontal":{"_enum":"horizontalLocation","_value":"center"},"width":{"_unit":"pixelsUnit","_value":w}},
                 {"_obj":"set","_target":[{"_property":"workPath","_ref":"path"}],"to":{"_obj":"customShape","bottom":{"_unit":"pixelsUnit","_value":btm},"keyOriginType":9,"left":{"_unit":"pixelsUnit","_value":0.0},"name":mold,"right":{"_unit":"pixelsUnit","_value":rig},"top":{"_unit":"pixelsUnit","_value":0.0}}},
                 {"_obj":"set","_target":[{"_property":"selection","_ref":"channel"}],"to":{"_property":"workPath","_ref":"path"}},
@@ -697,11 +728,29 @@ try {
                 {"_obj":"select","_target":[{"_name":"Snapshot 1","_ref":"snapshotClass"}]},
                 {"_obj":"set","_target":[{"_property":"currentHistoryState","_ref":"historyState"}],"to":{"_obj":"snapshotClass","name":snapref}},
             ], {});
-        } catch (err) {alert(err)}
+        } catch (err) {}
     };
-   
-   
-    
+
+
+    ////// ARRAY CO PRESTES DEFAULTS
+    function listaPresetsDefault(){
+        conteudo_Obj = JSON.parse(localStorage.getItem("modelosSave")) || [ 
+             {
+                 nome: "MD-15x15",
+                 forma: "shp_QKbcas",
+                 wSize: 15,
+                 hSize: 15,
+                 make: true
+             }, {
+                 nome: "MD-20x20",
+                 forma: "shp_QKbcas",
+                 wSize: 20,
+                 hSize: 20,
+                 make: true
+             },
+         ];	
+     };
+
     async function corregarDados() {
         try {
             dadosUI_Obj = [];
@@ -730,10 +779,50 @@ try {
         } catch (err) {alert(err)}
    };
     ///////////:::::::::::::::::::::::::::::::::::::
+
+    
+   async function novoItemConfig(ordem ){
+        try {
+           await core.executeAsModal( async() => {
+                app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
+                await app.batchPlay([
+                    {"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
+                    { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
+                ]);
+
+                for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
+                    await configMoldes(
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
+                        md.wSize / 2.54 * resol,
+                        md.forma,
+                        md.nome
+                    );
+                }
+                //////// SELECIONA A CONFIGURAÇÃO ADICIONADA
+                await selSanpshots(conteudo_Obj[ ordem].nome)
+                await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
+           });
+        } catch (err) {alert(err)}
+    };
+
    
-   
+    async function resetSnapshots(){
+        try {
+           for (let md of conteudo_Obj.slice( 2)) { // Remove os 3 primeiros itens
+                await core.executeAsModal( async() => {
+                    await app.batchPlay( [ { "_obj": "select", "_target": [ { "_name": md.nome, "_ref": "snapshotClass" } ] },  { "_obj": "delete", "_target": [ { "_property": "currentHistoryState", "_ref": "historyState" } ] }
+                    ]);
+                    await selSanpshots(conteudo_Obj[ 0].nome)
+                },{"interactive": true});
+           }
+        } catch (err) {alert(err)}
+    };
+      
    
    } catch (err) { alert(err)};
-   
-   
+
+
+
    
