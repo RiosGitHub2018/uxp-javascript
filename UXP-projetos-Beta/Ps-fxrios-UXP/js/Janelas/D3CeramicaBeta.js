@@ -452,7 +452,7 @@ try {
                     es1.css("#D3list_MT", { display: "flex" });
                     presetsUI = false;
                     const Icon2 = await initSvgIcons(".icon");
-                    Icon2( "#D13-btnPresets", "#d6d6d6", "icon026"); 
+                    Icon2( "#D13-btnPresets", "#d6d6d6", "icon018"); 
                 }
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
           };

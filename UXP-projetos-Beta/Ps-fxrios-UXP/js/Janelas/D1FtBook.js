@@ -422,7 +422,7 @@ function configsPrestsSel(method){
         case 1: try{ stautusRadiosBtn(true,false,false) ; radioTrue("#rd03");}catch(e){}; wDOC=3030; hDOC=2100; hDoCfinal = 3040;  wDOCfinal= 3500; break; 
         case 2: try{ stautusRadiosBtn(false,false, false); radioTrue("#rd01");}catch(e){}; wDOC=4000; hDOC=2030; hDoCfinal = 2030;  wDOCfinal= 4350+160; cartaoADD=false; break; 
         case 3: try{ stautusRadiosBtn(false,false, false); radioTrue("#rd01");}catch(e){}; wDOC=6000; hDOC=2030; hDoCfinal = 2030;  wDOCfinal= 6350+160; cartaoADD=false; break; 
-        case 4: try{stautusRadiosBtn(true,false,  false); radioTrue("#rd02");}catch(e){}; wDOC=6000; hDOC=2540; hDoCfinal = 2540;  wDOCfinal= 6350+160; cartaoADD=false; break; 
+        case 4: try{stautusRadiosBtn(true,false,  false); radioTrue("#rd02");}catch(e){}; wDOC=5000; hDOC=3040; hDoCfinal = 3040;  wDOCfinal= 5000+160; cartaoADD=false; break; 
         case 5: try{ stautusRadiosBtn(true,false,  false); radioTrue("#rd03");}catch(e){}; wDOC=6000; hDOC=3040; hDoCfinal = 3040;  wDOCfinal= 6350+160; cartaoADD=false; break; 
     };
 }
