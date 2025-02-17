@@ -72,11 +72,6 @@ try {
                         md.forma,
                         md.nome
                     );
-
-                    gethDOC = md.hSize / 2.54 * resol;
-                    getwDOC =md.wSize / 2.54 * resol;
-                    
-                    await configsPositions(5, null);
                    app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
                 }
                 ////////////::::::::::::::::::::::::::::::
@@ -332,11 +327,15 @@ try {
 
 
             ////// OUNVITES DA LISTA
-            s1("#D3list_MD").addEventListener("change", ()=> { 
+            s1("#D3list_MD").addEventListener("change", async ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
                 maquetStatus(conteudo_Obj[indice].make);
                 selSanpshots(conteudo_Obj[indice].nome)
                 desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
+
+                gethDOC =  conteudo_Obj[indice].hSize / 2.54 * resol //app.activeDocument.height;
+                getwDOC = conteudo_Obj[indice].wSize / 2.54 * resol //app.activeDocument.width-120;
+                await configsPositions(5, null);
             });
          
           ///////// CARREGAR LISTA DINÂMICA
