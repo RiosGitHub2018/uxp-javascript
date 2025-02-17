@@ -757,9 +757,9 @@ async function deletarSanpshots(nome){
     await core.executeAsModal(async () => { 
         await app.batchPlay([
             { "_obj": "select", "_target": [ { "_name": nome, "_ref": "snapshotClass" } ] },
-            // Delete Current History State
             { "_obj": "delete", "_target": [ { "_property": "currentHistoryState", "_ref": "historyState" } ] }
-        ], {}); 
+        ]); 
+        await ZoomDOC(0);
     });
 };
 

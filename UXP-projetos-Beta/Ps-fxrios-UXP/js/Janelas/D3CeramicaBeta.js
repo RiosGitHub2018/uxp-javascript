@@ -390,7 +390,8 @@ try {
                         maquete = s1("#D13ck3").checked;
                       }
                     } else {
-                        alert("editar")
+                      //  alert("editar")
+                      deletarSanpshots(conteudo_Obj[indice].nome ); //// REMOVE O SNAPSHOT DA LISTA
                       conteudo_Obj.splice(indice, 1, itensPrefs);
                       maquete = conteudo_Obj[indice].make;
                     }
