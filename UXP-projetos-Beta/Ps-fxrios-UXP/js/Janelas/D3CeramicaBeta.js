@@ -794,10 +794,10 @@ try {
 
                 for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
                     await configMoldes(
-                        md.wSize / 2.54 * resol,
-                        md.hSize / 2.54 * resol,
-                        md.wSize / 2.54 * resol,
-                        md.hSize / 2.54 * resol,
+                        parseFloat(md.wSize+1) / 2.54 * resol,
+                        parseFloat(md.hSize+1) / 2.54 * resol,
+                        parseFloat (md.wSize+1) / 2.54 * resol,
+                        parseFloat(md.hSize+1) / 2.54 * resol,
                         md.forma,
                         md.nome
                     );
