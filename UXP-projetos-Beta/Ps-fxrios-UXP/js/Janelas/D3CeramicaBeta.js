@@ -72,11 +72,16 @@ try {
                         md.forma,
                         md.nome
                     );
+
+                    gethDOC = md.hSize / 2.54 * resol;
+                    getwDOC =md.wSize / 2.54 * resol;
+                    
                     await configsPositions(5, null);
                    app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
                 }
                 ////////////::::::::::::::::::::::::::::::
 
+    
 
                 // ////// TAMANHO PEQUENO
                 // if(gethDOC>getwDOC){await configMoldes( 2409, 1622,  2409, 1622, "shp_QKbcas", "MD-20x30" );}
