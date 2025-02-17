@@ -310,12 +310,20 @@ try {
             es1.on("#D13-PresSair", "click", () => {
                  toggleDlgUIpreset(); toggleBtnsUIpreset();
                 });
+
+
             ////// SALVAR PRESETS
             es1.on("#D13-PresSaves", "click", () => { 
-                presetsConfig();
-                s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1;
-                toggleBtnsUIpreset();
+                   try {
+                    presetsConfig();
+                    s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+                    toggleBtnsUIpreset();
+                    novoItemConfig( s1('#D3list_MD').selectedIndex );
+                } catch (err) {alert(err)}
             });
+
+
+
             ////// OUNVITES DA LISTA
             s1("#D3list_MD").addEventListener("change", ()=> { 
                 indice = s1('#D3list_MD').selectedIndex;
@@ -768,6 +776,25 @@ try {
         } catch (err) {alert(err)}
    };
     ///////////:::::::::::::::::::::::::::::::::::::
+
+    
+   async function novoItemConfig(ni){
+        try {
+           await core.executeAsModal( async() => {
+                await configMoldes(
+                    conteudo_Obj[ni].wSize / 2.54 * resol,
+                    conteudo_Obj[ni].wSize / 2.54 * resol,
+                    conteudo_Obj[ni].hSize / 2.54 * resol,
+                    conteudo_Obj[ni].hSize / 2.54 * resol,
+                    conteudo_Obj[ni].forma,
+                    conteudo_Obj[ni].nome
+                );
+             // app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
+              await selSanpshots(conteudo_Obj[ni].nome)
+              await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
+           });
+        } catch (err) {alert(err)}
+    };
    
    
    
