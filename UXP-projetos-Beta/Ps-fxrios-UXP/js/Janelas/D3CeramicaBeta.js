@@ -19,8 +19,8 @@ try {
     StampConfigP1();
     doc= app.activeDocument;
     resol =  200//  app.activeDocument.resolution;
-    gethDOC = app.activeDocument.height;
-    getwDOC = app.activeDocument.width-120;
+    // gethDOC = app.activeDocument.height;
+    // getwDOC = app.activeDocument.width-120;
     shapStamp = true;
    };
    //////:::::::::::::::::::
@@ -65,10 +65,10 @@ try {
                 ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
                 for (let md of conteudo_Obj) {
                     await configMoldes(
-                        md.hSize / 2.54 * resol,
-                        md.wSize / 2.54 * resol,
-                        md.hSize / 2.54 * resol,
-                        md.wSize / 2.54 * resol,
+                        parseFloat(md.wSize+1) / 2.54 * resol,
+                        parseFloat(md.hSize+1) / 2.54 * resol,
+                        parseFloat (md.wSize+1) / 2.54 * resol,
+                        parseFloat(md.hSize+1) / 2.54 * resol,
                         md.forma,
                         md.nome
                     );
@@ -87,13 +87,13 @@ try {
 
 
 
-                corregarDados() 
+               await corregarDados() 
                 //alert(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome); return
                await selSanpshots(conteudo_Obj[ dadosUI_Obj[0].dadosA].nome)
+               configsPositions(5, null);
 
                 await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
-                // sanapBase ="MD-20x30";
-               
+              
                 // await ZoomDOC(0); 
                 await document.querySelector('#processServic').close('OK');
                 await dlgCeramica()
@@ -317,11 +317,12 @@ try {
             es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
+                  
                     s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
                     await novoItemConfig( s1('#D3list_MD').selectedIndex );
-                    await configsPositions(5, null);
                     await toggleBtnsUIpreset();
-                } catch (err) {alert(err)}
+                 //   await configsPositions(5, null);
+                } catch (err) {alert(err)} 
             });
 
 
@@ -332,10 +333,7 @@ try {
                 maquetStatus(conteudo_Obj[indice].make);
                 selSanpshots(conteudo_Obj[indice].nome)
                 desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
-
-                gethDOC =  conteudo_Obj[indice].hSize / 2.54 * resol //app.activeDocument.height;
-                getwDOC = conteudo_Obj[indice].wSize / 2.54 * resol //app.activeDocument.width-120;
-                await configsPositions(5, null);
+                configsPositions(5, null);
             });
          
           ///////// CARREGAR LISTA DINÂMICA
@@ -383,8 +381,8 @@ try {
                     atualizar = true;
                     nomeMD = s1("#D13v01").value;
                     formaMD = s1("#D13v02").value;
-                    wSizeMD  = parseFloat(s1("#D13v03").value)+1;
-                    hSizeMD  = parseFloat(s1("#D13v04").value)+1;
+                    wSizeMD  = parseFloat(s1("#D13v03").value);
+                    hSizeMD  = parseFloat(s1("#D13v04").value);
                     makeMD =  s1("#D13ck3").checked
    
                     const itensPrefs = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
@@ -796,10 +794,10 @@ try {
 
                 for (let md of conteudo_Obj.slice(  ordem )) { // Remove os 3 primeiros itens
                     await configMoldes(
-                        md.hSize / 2.54 * resol,
                         md.wSize / 2.54 * resol,
                         md.hSize / 2.54 * resol,
                         md.wSize / 2.54 * resol,
+                        md.hSize / 2.54 * resol,
                         md.forma,
                         md.nome
                     );

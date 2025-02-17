@@ -512,6 +512,10 @@ function configsAjusteCor(){
 async function configsPositions(ajuste, valor) {
     try {
         await core.executeAsModal(async () => {
+            guia = app.activeDocument.guides
+            gethDOC = guia[3].coordinate-guia[2].coordinate
+            getwDOC= guia[1].coordinate-guia[0].coordinate;
+
             const doc = app.activeDocument;
             doc.layers.forEach(layer => {
                 if (layer.kind == "group") {
