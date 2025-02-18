@@ -287,7 +287,8 @@ try {
             /////// EDITAR PRESETS
             es1.on("#D13-Pres03", "click", () => {
                  novoPreset=false;  toggleDlgUIpreset()
-                 });
+                 selOrdem = s1('#D3list_MD').selectedIndex
+             });
             ///////RESETAR PRESETS
             es1.on("#D13-Pres04", "click", () => { resetarLista();});
             ////// SAIR DA JANELA PRESETS
@@ -302,11 +303,16 @@ try {
                     presetsConfig();
                     ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
                     if(novoPreset==true ){
-                         indice= conteudo_Obj.length-1;
-                         setTimeout(() =>{  docPresetConfigs(indice);   s1('#D3list_MD').selectedIndex= indice }, 90) 
+                        s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+                        setTimeout(() =>{  docPresetConfig( s1('#D3list_MD').selectedIndex ) }, 90);
                     }
                     ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
-                    else{ setTimeout(() =>{ docPresetConfigs( indice ); s1('#D3list_MD').selectedIndex=indice }, 90) }
+                    else{
+                        setTimeout(() =>{ 
+                            docPresetConfig( selOrdem ); s1('#D3list_MD').selectedIndex = selOrdem;
+                        }, 90) 
+                   }
+      
                     await toggleBtnsUIpreset();
                 } catch (err) {alert(err)} 
             });
@@ -753,7 +759,7 @@ try {
     ///////////:::::::::::::::::::::::::::::::::::::
 
     
-   async function docPresetConfigs(ordem ){
+   async function docPresetConfig(ordem ){
         try {
            await core.executeAsModal( async() => {
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
@@ -761,20 +767,18 @@ try {
                     {"_obj":"flattenImage"}, {"_obj":"reset","_target":[{"_property":"colors","_ref":"color"}]},
                     { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
                 ]);
-
-             
-               // for (let md of conteudo_Obj.slice( ordem )) { // Remove os 3 primeiros itens
-                    await configMoldes(
-                        (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
-                        (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
-                        (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
-                        (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
-                        s1("#D13v02").value,
-                        s1("#D13v01").value
-                    );
-             //   }
+                ///////// ATUALIZA A CONFIG DO DOC COM BASE NOS DADOS EDITADOS
+                await configMoldes(
+                    (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
+                    (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
+                    (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
+                    (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
+                    s1("#D13v02").value,
+                    s1("#D13v01").value
+                );
                 //////// SELECIONA A CONFIGURAÇÃO ADICIONADA
-               await selSanpshots(conteudo_Obj[ ordem].nome)
+                await selSanpshots(conteudo_Obj[ ordem].nome);
+                await configsPositions(5, null); //// REDIMENSIONA A IMAGEM COM BASE NA LARGURA
                 app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
            });
         } catch (err) {alert(err)}
@@ -790,7 +794,7 @@ try {
                     await selSanpshots(conteudo_Obj[ 0].nome)
                 },{"interactive": true});
            }
-        } catch (err) {alert(err)}
+        } catch (err) {}
     };
       
    
