@@ -300,11 +300,16 @@ try {
             es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
-                    s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+
                     ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
-                    if(novoPreset==true ){await novoItemConfig( s1('#D3list_MD').selectedIndex );}
+                    if(novoPreset==true ){
+                        s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+                        await novoItemConfig( s1('#D3list_MD').selectedIndex )
+                    ;}
                     ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
-                    else{alert("editdo")}
+                    else{
+                        await novoItemConfig( s1('#D3list_MD').selectedIndex )
+                    }
       
 
                     await toggleBtnsUIpreset();
@@ -762,19 +767,19 @@ try {
                     { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
                 ]);
 
-                for (let md of conteudo_Obj.slice( ordem )) { // Remove os 3 primeiros itens
+               // for (let md of conteudo_Obj.slice( ordem )) { // Remove os 3 primeiros itens
                     await configMoldes(
-                        parseFloat(md.wSize+1)/2.54*resol,
-                        parseFloat(md.hSize+1)/2.54*resol,
-                        parseFloat(md.wSize+1)/2.54*resol,
-                        parseFloat(md.hSize+1)/2.54*resol,
-                        md.forma,
-                        md.nome
+                        (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
+                        (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
+                        (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
+                        (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
+                        s1("#D13v02").value,
+                        s1("#D13v01").value
                     );
-                }
+             //   }
                 //////// SELECIONA A CONFIGURAÇÃO ADICIONADA
-                await selSanpshots(conteudo_Obj[ ordem].nome)
-                await app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
+               await selSanpshots(conteudo_Obj[ ordem].nome)
+                app.batchPlay([ {"_obj":"clearEvent","_target":[{"_property":"historyStates","_ref":"property"},{"_enum":"ordinal","_ref":"document","_value":"targetEnum"}]}], {});
            });
         } catch (err) {alert(err)}
     };
