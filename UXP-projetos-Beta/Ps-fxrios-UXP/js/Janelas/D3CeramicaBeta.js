@@ -300,19 +300,17 @@ try {
             es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
-
                     ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
                     if(novoPreset==true ){
-                        s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
-                        await novoItemConfig( s1('#D3list_MD').selectedIndex )
-                    ;}
-                    ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
-                    else{
-                        await novoItemConfig( s1('#D3list_MD').selectedIndex )
+                         s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
+                         setTimeout(() =>{ 
+                            docPresetConfigs( s1('#D3list_MD').selectedIndex ); 
+                            s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1
+                        }, 90)
                     }
-      
-
-                    await toggleBtnsUIpreset();
+                    ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
+                    else{ setTimeout(() =>{ docPresetConfigs( indice ); s1('#D3list_MD').selectedIndex=indice }, 90) }
+                     await toggleBtnsUIpreset();
                 } catch (err) {alert(err)} 
             });
 
@@ -758,7 +756,7 @@ try {
     ///////////:::::::::::::::::::::::::::::::::::::
 
     
-   async function novoItemConfig(ordem ){
+   async function docPresetConfigs(ordem ){
         try {
            await core.executeAsModal( async() => {
                 app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
