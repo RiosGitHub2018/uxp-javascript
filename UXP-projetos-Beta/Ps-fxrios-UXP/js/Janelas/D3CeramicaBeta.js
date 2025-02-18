@@ -64,11 +64,12 @@ try {
 
                 ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
                 for (let md of conteudo_Obj) {
+                    const marg= md.mSize;  
                     await configMoldes(
-                        parseFloat(md.wSize+1)/2.54*resol,
-                        parseFloat(md.hSize+1)/2.54*resol,
-                        parseFloat(md.wSize+1)/2.54*resol,
-                        parseFloat(md.hSize+1)/2.54*resol,
+                        parseFloat(md.wSize+marg)/2.54*resol,
+                        parseFloat(md.hSize+marg)/2.54*resol,
+                        parseFloat(md.wSize+marg)/2.54*resol,
+                        parseFloat(md.hSize+marg)/2.54*resol,
                         md.forma,
                         md.nome
                     );
@@ -351,6 +352,7 @@ try {
                         s1("#D13v02").value = "shp_QKbcas",
                         s1("#D13v03").value = "";
                         s1("#D13v04").value = "";   
+                        s1("#D13v05").value = 1;   
                         s1("#D13ck3").checked=false;
                         s1("#D13-PresSaves").textContent= 'Salvar';
                     }
@@ -359,7 +361,8 @@ try {
                         s1("#D13v02").value =  conteudo_Obj[indice].forma
                         s1("#D13v03").value =  conteudo_Obj[indice].wSize
                         s1("#D13v04").value =  conteudo_Obj[indice].hSize
-                        s1("#D13ck3").checked =  conteudo_Obj[indice].make
+                        s1("#D13v05").value =  conteudo_Obj[indice].mSize
+                        s1("#D13ck3").checked = conteudo_Obj[indice].make
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
@@ -375,9 +378,17 @@ try {
                     formaMD = s1("#D13v02").value;
                     wSizeMD  = parseFloat(s1("#D13v03").value);
                     hSizeMD  = parseFloat(s1("#D13v04").value);
+                    mSizeMD  = parseFloat(s1("#D13v05").value);
                     makeMD =  s1("#D13ck3").checked
    
-                    const itensPrefs = { nome: nomeMD,  forma: formaMD,  wSize: wSizeMD,  hSize: hSizeMD, make: makeMD }
+                    const itensPrefs = { 
+                        nome: nomeMD,  
+                        forma: formaMD,  
+                        wSize: wSizeMD,  
+                        hSize: hSizeMD, 
+                        mSize: mSizeMD, 
+                        make: makeMD
+                     }
    
                     const msg1 = "Esse preset já consta na lista, adicione outro nome!";
                     const msg2 = "Preencha todos campos!";
@@ -672,6 +683,9 @@ try {
             D3dlg.innerHTML = data;
             D3dlg.addEventListener('load', evt => { setTimeout(() =>{ document.getElementById('D3-ck5').focus();}, 150) });
             execonfigsD3();
+
+            D3dlg.addEventListener("close", () => {resetarConfigs() });
+
         });
     };
    
@@ -718,12 +732,14 @@ try {
                  forma: "shp_QKbcas",
                  wSize: 15,
                  hSize: 15,
+                 mSize: 1,
                  make: true
              }, {
                  nome: "MD-20x20",
                  forma: "shp_QKbcas",
                  wSize: 20,
                  hSize: 20,
+                 mSize: 1,
                  make: true
              },
          ];	
@@ -768,11 +784,12 @@ try {
                     { "_obj": "imageSize", "constrainProportions": true, "interfaceIconFrameDimmed": { "_enum": "interpolationType", "_value": "automaticInterpolation" }, "resolution": { "_unit": "densityUnit", "_value": 200.0 }, "scaleStyles": true } 
                 ]);
                 ///////// ATUALIZA A CONFIG DO DOC COM BASE NOS DADOS EDITADOS
+                const marg= parseFloat(s1("#D13v05").value);  //// MARGEM DE SEGURANÇA
                 await configMoldes(
-                    (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
-                    (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
-                    (parseFloat(s1("#D13v03").value)+1)/2.54*resol,
-                    (parseFloat(s1("#D13v04").value)+1)/2.54*resol,
+                    (parseFloat(s1("#D13v03").value)+marg)/2.54*resol,
+                    (parseFloat(s1("#D13v04").value)+marg)/2.54*resol,
+                    (parseFloat(s1("#D13v03").value)+marg)/2.54*resol,
+                    (parseFloat(s1("#D13v04").value)+marg)/2.54*resol,
                     s1("#D13v02").value,
                     s1("#D13v01").value
                 );
