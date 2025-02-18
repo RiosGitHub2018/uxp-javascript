@@ -545,16 +545,7 @@ try {
         //    });
           /////////::::::::::::::::::::::
    
-   
-          //    s1('#').value = 'string';
-          //    s1('#').selectedIndex= Number(index);
-          //    s1('#').textContent= 'Text';
-          //    s1('#').innerHTML =`string`;
-          //    s1('#').checked = true;
-          //    s1('#').disabled = true;
-          //    s2('.elemento').forEach(element =>{alert(element.textContent)});
-          //    es1.css('#elemento5', { transform:'translateX(4px)'})
-          //    es1.on('#elemento', 'click', () =>{ funcao();});
+          
    
             ////////OUVINTES BOÕES DE ENQUADRAMENTO
             controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
