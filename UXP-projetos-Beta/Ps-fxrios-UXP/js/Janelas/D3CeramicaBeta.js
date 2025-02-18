@@ -302,15 +302,12 @@ try {
                     presetsConfig();
                     ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
                     if(novoPreset==true ){
-                         s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
-                         setTimeout(() =>{ 
-                            docPresetConfigs( s1('#D3list_MD').selectedIndex ); 
-                            s1('#D3list_MD').selectedIndex= conteudo_Obj.length-1
-                        }, 90)
+                         indice= conteudo_Obj.length-1;
+                         setTimeout(() =>{  docPresetConfigs(indice);   s1('#D3list_MD').selectedIndex= indice }, 90) 
                     }
                     ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
                     else{ setTimeout(() =>{ docPresetConfigs( indice ); s1('#D3list_MD').selectedIndex=indice }, 90) }
-                     await toggleBtnsUIpreset();
+                    await toggleBtnsUIpreset();
                 } catch (err) {alert(err)} 
             });
 
