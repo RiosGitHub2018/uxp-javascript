@@ -301,7 +301,12 @@ try {
                    try {
                     presetsConfig();
                     s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
-                    await novoItemConfig( s1('#D3list_MD').selectedIndex );
+                    ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
+                    if(novoPreset==true ){await novoItemConfig( s1('#D3list_MD').selectedIndex );}
+                    ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
+                    else{alert("editdo")}
+      
+
                     await toggleBtnsUIpreset();
                 } catch (err) {alert(err)} 
             });
@@ -371,36 +376,36 @@ try {
                     const msg1 = "Esse preset já consta na lista, adicione outro nome!";
                     const msg2 = "Preencha todos campos!";
    
+                    ////////////////////////////////////////////
+                    /////// PREPARA PARA O NOVO PRESET
                     if (novoPreset == true) {
-                      itemExite = conteudo_Obj.map(function (iitens) {                        
-                        return iitens.nome;
-                      });
-                      if (itemExite.includes(nomeMD) == true) {
-                        alertar(msg1);
-                        atualizar = false;
-                        presetsUIDlg = false; 
-                        presetsUI = false;
-                      } else if (!nomeMD || !formaMD || !wSizeMD || !hSizeMD) {
-                        alertar(msg2);
-                        atualizar = false;
-                        presetsUI = false;
-                      } else {
-                        if(conteudo_Obj.length==2){ conteudo_Obj.push({ nome: "-"});}
-                        conteudo_Obj.push(itensPrefs);
-                        maquete = s1("#D13ck3").checked;
-                      }
-                    } else {
-                      //  alert("editar")
-                      deletarSanpshots(conteudo_Obj[indice].nome ); //// REMOVE O SNAPSHOT DA LISTA
-                      conteudo_Obj.splice(indice, 1, itensPrefs);
-                      maquete = conteudo_Obj[indice].make;
-                    }
-   
+                        itemExite = conteudo_Obj.map(function (iitens) {                        
+                            return iitens.nome;
+                        });
+                        if (itemExite.includes(nomeMD) == true) {
+                            alertar(msg1);
+                            atualizar = false;
+                            presetsUIDlg = false; 
+                            presetsUI = false;
+                        } 
+                        else if (!nomeMD || !formaMD || !wSizeMD || !hSizeMD) { alertar(msg2);  atualizar = false; presetsUI = false; } 
+                        else {
+                            if(conteudo_Obj.length==2){ conteudo_Obj.push({ nome: "-"});}
+                            conteudo_Obj.push(itensPrefs); maquete = s1("#D13ck3").checked;
+                        }
+                    } 
+                     /////// PREPARA PARA EDITAR O  PRESET
+                    else {
+                        deletarSanpshots(conteudo_Obj[indice].nome ); //// REMOVE O SNAPSHOT DA LISTA
+                        conteudo_Obj.splice(indice, 1, itensPrefs);
+                        maquete = conteudo_Obj[indice].make;
+                    };////////////////////
+                    //////////////////////
+
                     if (atualizar ==true) {
                         toggleDlgUIpreset();  
                         s1("#D3list_MD").innerHTML=""
-                        atualizarLista();
-                        maquetStatus(maquete);   
+                        atualizarLista(); maquetStatus(maquete);   
                     }  
                 } catch (err) {alert(err)}
            };
@@ -645,18 +650,6 @@ try {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////// TODAS AS FUNÇÕES AQUI! ::::::::::::
     
-    //  /////// SALVAR  DINAMICAMENTE OS DADOS
-    //  function SalvarDados(){
-    //         const dadosD3 = {
-    //             dados1: document.querySelector("#D3-r1"  ).checked,
-    //             dados2: document.querySelector("#D3-r2"  ).checked,
-    //             dados3: document.querySelector("#D3-ck1").checked,
-    //             dados4: document.querySelector("#D3-ck2").checked,
-    //             dados5: document.querySelector("#D3-ck3").checked,
-    //             dados6: document.querySelector("#D3-ck5").checked,
-    //         };
-    //         localStorage.setItem('d3DadosSave', JSON.stringify(dadosD3));
-    // };
     
     //////// PREVISUALIZAR AJUSTES
     async function ajustePreview(v1,v2){
