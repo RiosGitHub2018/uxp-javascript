@@ -362,7 +362,7 @@ try {
                         s1("#D13v02").value =  conteudo_Obj[indice].forma
                         s1("#D13v03").value =  conteudo_Obj[indice].wSize
                         s1("#D13v04").value =  conteudo_Obj[indice].hSize
-                        s1("#D13v05").value =  conteudo_Obj[indice].mSize.toFixed(1)
+                        s1("#D13v05").value =  conteudo_Obj[indice].mSize//.toFixed(1)
                         s1("#D13ck3").checked = conteudo_Obj[indice].make
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
@@ -383,13 +383,8 @@ try {
                     makeMD =  s1("#D13ck3").checked
    
                     const itensPrefs = { 
-                        nome: nomeMD,  
-                        forma: formaMD,  
-                        wSize: wSizeMD,  
-                        hSize: hSizeMD, 
-                        mSize: mSizeMD, 
-                        make: makeMD
-                     }
+                        nome: nomeMD, forma: formaMD, wSize: wSizeMD, hSize: hSizeMD, mSize: mSizeMD, make: makeMD
+                     };
    
                     const msg1 = "Esse preset já consta na lista, adicione outro nome!";
                     const msg2 = "Preencha todos campos!";
@@ -787,10 +782,10 @@ try {
                 ///////// ATUALIZA A CONFIG DO DOC COM BASE NOS DADOS EDITADOS
                 const marg= parseFloat(s1("#D13v05").value);  //// MARGEM DE SEGURANÇA
                 await configMoldes(
-                    (parseFloat(s1("#D13v03").value)+marg)/2.54*resol,
-                    (parseFloat(s1("#D13v04").value)+marg)/2.54*resol,
-                    (parseFloat(s1("#D13v03").value)+marg)/2.54*resol,
-                    (parseFloat(s1("#D13v04").value)+marg)/2.54*resol,
+                    Number(parseFloat(s1("#D13v03").value)+parseFloat(marg))/2.54*resol,
+                    Number(parseFloat(s1("#D13v04").value)+parseFloat(marg))/2.54*resol,
+                    Number(parseFloat(s1("#D13v03").value)+parseFloat(marg))/2.54*resol,
+                    Number(parseFloat(s1("#D13v04").value)+parseFloat(marg))/2.54*resol,
                     s1("#D13v02").value,
                     s1("#D13v01").value
                 );
