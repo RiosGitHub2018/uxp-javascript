@@ -368,6 +368,7 @@ try {
                     }
                     function active() { s1("#D13v01").focus(), 16 }setTimeout(active, 50);
                     formatNomePrests();
+                    formatNumero("D13v05"); ////// APENAS DIGITOS E PONTO
    
                   } catch (err) {alert(err)}
            };
@@ -809,8 +810,7 @@ try {
            }
         } catch (err) {}
     };
-      
-   
+       
    } catch (err) { alert(err)};
 
 

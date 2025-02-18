@@ -479,6 +479,22 @@ async function initSvgIcons(csvg) {
 ////////////::::::::::::::::::
 
 
+///////FORMATAR NUMERO NO INPUT
+function formatNumero(elemento){
+    document.getElementById(elemento).addEventListener('input', function() {
+        let value = this.value.replace(/[^0-9,.]/g, '');
+        value = value.replace(',', '.');
+        let parts = value.split('.');
+        if (parts.length > 2) {
+            value = parts[0] + '.' + parts.slice(1).join('');
+        }
+        this.value = value;
+        this.setSelectionRange(this.value.length, this.value.length);
+    });
+};///////////////
+//////////:::::::::::
+
+
 ////////////// FUNÇAO TEMPLATE PARA CAIXA DE TEXTO NUMERAL COM SETAS
 ////DIV PAI NO HTML / TEXTO REF / LARGURA / ID INPUT / TAMNHO W / ID-SETA+ / ID-SETA-
 function inputNumberMD(inputIDx, tx, txtINExib, largura, Q, sp,sn) {
