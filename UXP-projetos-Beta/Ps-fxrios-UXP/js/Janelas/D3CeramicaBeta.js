@@ -361,7 +361,7 @@ try {
                         s1("#D13v02").value =  conteudo_Obj[indice].forma
                         s1("#D13v03").value =  conteudo_Obj[indice].wSize
                         s1("#D13v04").value =  conteudo_Obj[indice].hSize
-                        s1("#D13v05").value =  conteudo_Obj[indice].mSize
+                        s1("#D13v05").value =  conteudo_Obj[indice].mSize.toFixed(1)
                         s1("#D13ck3").checked = conteudo_Obj[indice].make
                         s1("#D13-PresSaves").textContent= 'Atualizar';
                     }
@@ -378,7 +378,7 @@ try {
                     formaMD = s1("#D13v02").value;
                     wSizeMD  = parseFloat(s1("#D13v03").value);
                     hSizeMD  = parseFloat(s1("#D13v04").value);
-                    mSizeMD  = parseFloat(s1("#D13v05").value);
+                    mSizeMD = parseFloat(s1("#D13v05").value).toFixed(1);
                     makeMD =  s1("#D13ck3").checked
    
                     const itensPrefs = { 
