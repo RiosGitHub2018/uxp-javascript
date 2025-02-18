@@ -65,14 +65,18 @@ try {
                 ////// CONFIGURA DINAMICAMENTE TODOS O MODES COM BASE NOS DODOS DOS PRESETS EXISTENTES
                 for (let md of conteudo_Obj) {
                     const marg= md.mSize;  
-                    await configMoldes(
-                        parseFloat(md.wSize+marg)/2.54*resol,
-                        parseFloat(md.hSize+marg)/2.54*resol,
-                        parseFloat(md.wSize+marg)/2.54*resol,
-                        parseFloat(md.hSize+marg)/2.54*resol,
-                        md.forma,
-                        md.nome
-                    );
+
+
+                    alert(parseFloat(md.hSize+marg))
+
+                    // await configMoldes(
+                    //     parseFloat(md.wSize+marg)/2.54*resol,
+                    //     parseFloat(md.hSize+marg)/2.54*resol,
+                    //     parseFloat(md.wSize+marg)/2.54*resol,
+                    //     parseFloat(md.hSize+marg)/2.54*resol,
+                    //     md.forma,
+                    //     md.nome
+                    // );
                    app.activeDocument.activeHistoryState = app.activeDocument.historyStates[0];
                 }
                 ////////////::::::::::::::::::::::::::::::
