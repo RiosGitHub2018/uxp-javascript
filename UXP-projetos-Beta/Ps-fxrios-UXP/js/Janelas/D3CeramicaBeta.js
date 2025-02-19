@@ -535,10 +535,15 @@ try {
             function formatNomePrests(){
                 s1("#D13v01").addEventListener('input', function() {
                      let value = this.value.replace('MD-', '');  // Remove o prefixo existente se houver
-                    if (value) { this.value = 'MD-' + value; }   // Adiciona o prefixo apenas se houver algum texto
+                    if (value) { this.value = 'MD-' + value.replace(/(\d{2})(\d)/, '$1x$2'); }   // Adiciona o prefixo apenas se houver algum texto
                     if (!value) { this.value = ''; }   // Se o campo estiver vazio, não adiciona o prefixo
                     const end = this.value.length;  // Posiciona o cursor no final do texto
                     this.setSelectionRange(end, end);
+                    ///// INSERIR LAGURA E AUTURA DINAMICAMENTE
+                    if(this.value.length==8){
+                        s1("#D13v03").value= this.value.split("-")[1].split("x")[0];
+                        s1("#D13v04").value= this.value.split("-")[1].split("x")[1]
+                    }
                 });
             };
    

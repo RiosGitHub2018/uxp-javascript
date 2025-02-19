@@ -5,7 +5,7 @@ dgm_btn1.addEventListener("click", async () => {
          const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};
         }
 
-    if (app.activeDocument.name.split(".")[1] !="jpg" && app.activeDocument.name.split(".")[1] !="jpeg") { 
+    if (app.activeDocument.name.split(".")[1] !="jpg") { 
         error(`O documento  "${app.activeDocument.name}" precisar estar em formatos JPG`); 
          return;
     }
@@ -42,6 +42,7 @@ async function incialConfigs() {
         caminho = app.activeDocument.path.replace(/\\[^\\]*$/, "");
         await paginaQTDobter(caminho ); //////// VERIFICA A QUANTIDADE DE PAGINAS VÁLIDAS
         let paginasQTD = conteudoA.length; //////// OBTEM A QUANTIDADE DE PAGINAS
+
         //////////:::::::::::::::::::::::::::::
         await unidadeseRegua("px");
         await gramaturaDados();
@@ -685,7 +686,8 @@ async function wCapaConfig(){
     async function mcvincarPG01(method){
         try {
             ///OBTER O PRIMEIRO ITEM DA LISTA DE ARQUVOS E ADD VINCO (PRIMEIRA LAMINA)
-            const PagsVinco = await fs.getEntryWithUrl(`${path}/PAG_001.jpg`);
+            const extens=conteudoA[0].split(".")[1];
+            const PagsVinco = await fs.getEntryWithUrl(`${path}/PAG_001.${extens}`);
             await app.open(PagsVinco);  await GetLuminosidade(); await  vincadoTarget(4, method);
             await app.batchPlay( [{"_obj":"flattenImage"}, {"_obj":"save"}, {"_obj":"close","documentID":138,"forceNotify":true}], {});
         } catch (err) {}
@@ -802,6 +804,7 @@ function configsPreferences(){
             document.querySelector("#dlgCartconfig").close('OK');
         });
 
+        formatNumero("gramatura")
         document.querySelector("#gramatura").value= gramaturaDados()
     }//////CONFIGS DA JANELA PREFERENCIAS FINAL
     ////////:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -898,8 +901,8 @@ async function renamePaginas(caminho ){
                 const nomeArquivo = paginasDoc.name;
                 const paginasJPG = nomeArquivo.split(".")[1];
                 ////// OBTEM SOMENTE AQUIVOS JPG e DESCARTA O ARQUIVO ATIVO "CAPA"
-                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" ) { conteudoA.push(nomeArquivo);}
-                if(paginasJPG !=="jpg"){ conteudoC.push(nomeArquivo)}
+                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" || paginasJPG=="jpeg" ) { conteudoA.push(nomeArquivo);}
+                if(paginasJPG !=="jpg" || paginasJPG !=="jpeg"){ conteudoC.push(nomeArquivo)}
             }
         };
 
@@ -929,9 +932,10 @@ async function paginaQTDobter(caminho ){
                 const nomeArquivo = paginasDoc.name;
                 const paginasJPG = nomeArquivo.split(".")[1];
                 ////// OBTEM SOMENTE AQUIVOS JPG e DESCARTA O ARQUIVO ATIVO "CAPA"
-                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" ) { conteudoA.push(nomeArquivo);}
+                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" || paginasJPG=="jpeg" ) { conteudoA.push(nomeArquivo);}
              }
         };
+        conteudoA.sort(ordemNumerica);
     } catch (err) {alert(err)}
 };
 
