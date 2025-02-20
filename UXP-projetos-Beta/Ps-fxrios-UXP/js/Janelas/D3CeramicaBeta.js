@@ -303,19 +303,7 @@ try {
             es1.on("#D13-PresSaves", "click", async () => { 
                    try {
                     presetsConfig();
-                    ////// ADICIONA A CONFIG. PADRÃO AO NOVO PRESET AO DOC ATUAL
-                    if(novoPreset==true ){
-                        s1('#D3list_MD').selectedIndex = conteudo_Obj.length-1;
-                        setTimeout(() =>{  docPresetConfig( s1('#D3list_MD').selectedIndex ) }, 90);
-                    }
-                    ////// ATUALIZA A CONFIG. PADRÃO AO  PRESET EDITADO AO DOC ATUAL
-                    else{
-                        setTimeout(() =>{ 
-                            docPresetConfig( selOrdem ); s1('#D3list_MD').selectedIndex = selOrdem;
-                        }, 90) 
-                   }
-      
-                    await toggleBtnsUIpreset();
+                     await toggleBtnsUIpreset();
                 } catch (err) {alert(err)} 
             });
 
@@ -406,20 +394,27 @@ try {
                         else {
                             if(conteudo_Obj.length==2){ conteudo_Obj.push({ nome: "-"});}
                             conteudo_Obj.push(itensPrefs); maquete = s1("#D13ck3").checked;
+                            setTimeout(() =>{  docPresetConfig( s1('#D3list_MD').selectedIndex ) }, 150);
+                            PresetSel = conteudo_Obj.length-1;
                         }
                     } 
                      /////// PREPARA PARA EDITAR O  PRESET
                     else {
-                        deletarSanpshots(conteudo_Obj[indice].nome ); //// REMOVE O SNAPSHOT DA LISTA
-                        conteudo_Obj.splice(indice, 1, itensPrefs);
-                        maquete = conteudo_Obj[indice].make;
+                        deletarSanpshots(conteudo_Obj[selOrdem].nome ); //// REMOVE O SNAPSHOT DA LISTA
+                        conteudo_Obj.splice(selOrdem, 1, itensPrefs);
+                        maquete = conteudo_Obj[selOrdem].make;
+                        setTimeout(() =>{ 
+                            docPresetConfig( selOrdem ); s1('#D3list_MD').selectedIndex = selOrdem;
+                            PresetSel = selOrdem;
+                        }, 150) 
                     };////////////////////
                     //////////////////////
 
                     if (atualizar ==true) {
                         toggleDlgUIpreset();  
                         s1("#D3list_MD").innerHTML=""
-                        atualizarLista(); maquetStatus(maquete);   
+                        atualizarLista(); 
+                        maquetStatus(maquete);   
                     }  
                 } catch (err) {alert(err)}
            };
@@ -447,12 +442,13 @@ try {
                         conteudo_Obj.splice(indice, 1);
                         if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
                         s1("#D3list_MD").innerHTML=""
+                        PresetSel = conteudo_Obj.length-1;
                         atualizarLista();
                     } catch (err) {alert(err)}
                 })
             };
           
-           function atualizarLista(){
+          async  function atualizarLista(){
                 conteudo_Obj.forEach(  (modelo) => {
                     s1("#D3list_MD").insertAdjacentHTML("beforeend", `<option>${modelo.nome}</option>`);
                 });
@@ -460,8 +456,9 @@ try {
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 toggleBtnsUIpreset();
 
-                ////// AO RESETAR SELECIONAR O PRIMEIRO ITEM ANTES DE EXPORTAR OS DADOS
-                s1('#D3list_MD').selectedIndex = 0;
+                s1('#D3list_MD').selectedIndex = PresetSel;
+                await  selSanpshots(conteudo_Obj[PresetSel].nome)
+             //   configsPositions(5, null); //// REDIMENSIONA A IMAGEM COM BASE NA LARGURA
                 exportarDados()
            };
            
@@ -543,28 +540,13 @@ try {
                     if(this.value.length==8){
                         s1("#D13v03").value= this.value.split("-")[1].split("x")[0];
                         s1("#D13v04").value= this.value.split("-")[1].split("x")[1]
+                        function active() { s1("#D13v05").focus(), 16 }setTimeout(active, 50);
+                    }
+                    else{
+                        s1("#D13v03").value=""; s1("#D13v04").value="";
                     }
                 });
             };
-   
-           ///////// FECHAR JANELA PRESETS CLICANDO FORA
-        //   document.addEventListener('click', function(event) {
-        //       try {
-        //         if (
-        //             !s1("#D13-DlgPrests").contains(event.target) &&
-        //             !s1("#D13-Pres01").contains(event.target) &&
-        //             !s1("#D13-Pres03").contains(event.target) &&
-        //             !s1("#confirm_btn1").contains(event.target)
-        //           ) {
-        //            presetsUIDlg = true;
-        //             toggleDlgUIpreset();
-        //             presetsUIDlg = false;
-        //            }
-        //       } catch (err) {}
-        //    });
-          /////////::::::::::::::::::::::
-   
-          
    
             ////////OUVINTES BOÕES DE ENQUADRAMENTO
             controlPosition("#D3AJPose1", "#D3AJPose2", "#D3AJPose3", "#D3AJPose4", "#D3AJPose5","#D3AJPose6", "#D3AJPose7", "#D3AJPose8");
@@ -582,10 +564,7 @@ try {
                       janelaAjustesx();
                   } catch (err) {alert(err)}
               });
-            //   ///////// RESTAURAR INICIAL CONFIGS ESTAMPA
-            //   const restar= document.querySelector("#D3btn-resetar");
-            //   restar.addEventListener('click', (event) => { restauraIniConfig("Inciar")});
-            //   ////////::::::::::::::::::::
+          
               ///////////////////////////////////////////
               document.querySelector("#d3Btn2").addEventListener('click', () => {
                   document.querySelector("#dlgCeramica").close('OK'); resetarConfigs();
