@@ -156,6 +156,11 @@
         "altura": "100"
     },
     {
+        "nome": "48 x 68",
+        "largura": "48",
+        "altura": "68"
+    },
+    {
         "nome": "50 x 50",
         "largura": "50",
         "altura": "50"
@@ -256,9 +261,9 @@
         "altura": "140"
     },
     {
-        "nome": "48 x 68",
-        "largura": "48",
-        "altura": "68"
+        "nome": "55 x 70",
+        "largura": "55",
+        "altura": "70"
     }
 ]
 }
