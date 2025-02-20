@@ -443,7 +443,8 @@ try {
                         if(conteudo_Obj.length==3){ conteudo_Obj.pop()}
                         s1("#D3list_MD").innerHTML=""
                         PresetSel = conteudo_Obj.length-1;
-                        atualizarLista();
+                        await atualizarLista();
+                                        alert(PresetSel)
                     } catch (err) {alert(err)}
                 })
             };
@@ -455,7 +456,6 @@ try {
                 localStorage.setItem("modelosSave", JSON.stringify(conteudo_Obj));
                 desabledBtnsSVG(BtnPrestesDisab, iconsBtnPrestes );
                 toggleBtnsUIpreset();
-
                 s1('#D3list_MD').selectedIndex = PresetSel;
                 await  selSanpshots(conteudo_Obj[PresetSel].nome)
              //   configsPositions(5, null); //// REDIMENSIONA A IMAGEM COM BASE NA LARGURA
