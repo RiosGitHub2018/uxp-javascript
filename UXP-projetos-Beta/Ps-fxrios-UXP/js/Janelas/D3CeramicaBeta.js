@@ -277,7 +277,7 @@ try {
  
             es1.on("#D13-btnPresets", "click", async () => { 
                 toggleBtnsUIpreset();  
-            });
+              });
             //////// CRIAR PRESETS
             es1.on("#D13-Pres01", "click", () => {
                  novoPreset=true;  toggleDlgUIpreset(); 
@@ -444,7 +444,12 @@ try {
                         s1("#D3list_MD").innerHTML=""
                         PresetSel = conteudo_Obj.length-1;
                         await atualizarLista();
-                                        alert(PresetSel)
+
+                        indice = s1('#D3list_MD').selectedIndex;
+                        maquetStatus(conteudo_Obj[indice].make);
+                        selSanpshots(conteudo_Obj[indice].nome)
+                        desabledBtnsSVG( BtnPrestesDisab, iconsBtnPrestes );
+                                 
                     } catch (err) {alert(err)}
                 })
             };
