@@ -833,21 +833,23 @@ async function getImageThumbnail(elementoDOM) {
 //// MOVER CAPA ORIG PARA SUBPASTA
 async function backupCapa(path){
   //  const path = app.activeDocument.path.replace(/\\[^\\]*$/, "") 
-    rootFolder = await fs.getEntryWithUrl(`file:${path}`) 
-    file = await rootFolder.getEntry(app.activeDocument.name);
-    //verificar se a subpasta existe e se não a cria
-    chekSubFolder = (await rootFolder.getEntries()).find(entry => entry.name.includes("nfz_Original"));
-    if (chekSubFolder!=null) {}else{ subPasta = await rootFolder.createFolder("nfz_Original");}; 
-    subfolderDir = subPasta.nativePath;
-    exibirFolder = rootFolder.nativePath;
-    moveSubfolder = await rootFolder.getEntry("nfz_Original");  
-    await file.moveTo(moveSubfolder);
-
-    ///// DESCARTAR ARQUIVOS NÃO JPG
-    for (const separar of conteudoC) {
-        const descartados = await rootFolder.getEntry(separar);
-        await descartados.moveTo(moveSubfolder);
-    }
+    try {
+        rootFolder = await fs.getEntryWithUrl(`file:${path}`) 
+        file = await rootFolder.getEntry(app.activeDocument.name);
+        //verificar se a subpasta existe e se não a cria
+        chekSubFolder = (await rootFolder.getEntries()).find(entry => entry.name.includes("nfz_Original"));
+        if (chekSubFolder!=null) {}else{ subPasta = await rootFolder.createFolder("nfz_Original");}; 
+        subfolderDir = subPasta.nativePath;
+        exibirFolder = rootFolder.nativePath;
+        moveSubfolder = await rootFolder.getEntry("nfz_Original");  
+        await file.moveTo(moveSubfolder);
+    
+        ///// DESCARTAR ARQUIVOS NÃO JPG
+        for (const separar of conteudoC) {
+            const descartados = await rootFolder.getEntry(separar);
+            await descartados.moveTo(moveSubfolder);
+        }
+    } catch (err) {}
 }
 
 function ordemNumerica(a, b) {

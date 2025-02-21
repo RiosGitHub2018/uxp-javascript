@@ -901,8 +901,8 @@ async function renamePaginas(caminho ){
                 const nomeArquivo = paginasDoc.name;
                 const paginasJPG = nomeArquivo.split(".")[1];
                 ////// OBTEM SOMENTE AQUIVOS JPG e DESCARTA O ARQUIVO ATIVO "CAPA"
-                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" || paginasJPG=="jpeg" ) { conteudoA.push(nomeArquivo);}
-                if(paginasJPG !=="jpg" || paginasJPG !=="jpeg"){ conteudoC.push(nomeArquivo)}
+                if (!app.activeDocument.name.includes(nomeArquivo) &&paginasJPG=="jpg" ) { conteudoA.push(nomeArquivo);}
+                if(paginasJPG !=="jpg"){ conteudoC.push(nomeArquivo)}
             }
         };
 
