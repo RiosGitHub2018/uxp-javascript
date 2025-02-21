@@ -1,5 +1,16 @@
 const dgm_btn1 = document.querySelector("#dgm-btn1");
 dgm_btn1.addEventListener("click", async () => {  
+
+        try {
+            
+            app.activeDocument.guides.forEach( ( guia, n )=> {
+                alert( guia.coordinate, guia.direction)
+                
+            });
+        } catch (err) {alert(err)}
+
+    return
+
     D1FtBookEventos=true;
     if(app.documents.length==0){ 
          const f = await fs.getFileForOpening(); if(f){await core.executeAsModal(() => app.open(f));} if(f==null){ return};
